@@ -2,8 +2,13 @@ package com.linesix.akhaten.blocks;
 
 import com.google.common.base.Preconditions;
 import com.linesix.akhaten.Reference;
+import com.linesix.akhaten.blocks.gallifrey.GallifreyDirt;
+import com.linesix.akhaten.blocks.gallifrey.GallifreyGrass;
+import com.linesix.akhaten.blocks.gallifrey.GallifreyStone;
+import com.linesix.akhaten.tabs.TabDim;
 import net.minecraft.block.Block;
 import net.minecraft.client.renderer.block.model.ModelResourceLocation;
+import net.minecraft.creativetab.CreativeTabs;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemBlock;
 import net.minecraft.util.ResourceLocation;
@@ -21,44 +26,49 @@ import java.util.Set;
 @Mod.EventBusSubscriber(modid = Reference.MODID)
 public class DimBlocks {
 
-    //TODO: Create Creative Tab for Dimensional blocks
-    //TODO: Add in Dimensional blocks
-    //TODO: Add in Dimensions
+    // TODO: Add in Dimensions
 
-   /*
-    * Registration Handler of all Dimensional Blocks
-    *
-    * Author: Felix Eckert (TheBertrahmPlays / Angry German)
-    *
-    */
+    /*
+     * Registration Handler of all Dimensional Blocks
+     *
+     * Author: Felix Eckert (TheBertrahmPlays / Angry German)
+     *
+     */
 
     public static final Set<ItemBlock> ITEM_BLOCKS = new HashSet<>(); // Create a set for all item blocks
+
+    public static CreativeTabs dimblocktab = new TabDim();
 
     private static Block[] blocks; // Create an array for all blocks
 
     // Creation of all Block-Variables below
+    public static GallifreyGrass gallifrey_grass;
+    public static GallifreyStone gallifrey_stone;
+    public static GallifreyDirt gallifrey_dirt;
     // End Creation of all Block-Variables
 
     public static void init() {
 
         System.out.println("Initializing block-variables...");
 
-        //Initialization of Block-Variables below
+        // Initialization of Block-Variables below
         try {
 
+            gallifrey_stone = new GallifreyStone();
+            gallifrey_grass = new GallifreyGrass();
+            gallifrey_dirt = new GallifreyDirt();
 
-
-        } catch (Exception e) {
+        } catch (Exception e) { // If theres an error whilst initializing any of the Variables, execute the code below
 
             throw e;
 
-        } finally {
+        } finally { // When everything is done, execute the code below
 
             System.out.println("DONE!");
 
         }
 
-        //End Initialization of Block-Variables
+        // End Initialization of Block-Variables
 
     }
 
@@ -69,7 +79,9 @@ public class DimBlocks {
 
         blocks = new Block[] { // Add all block vars in this array
 
-
+                gallifrey_stone,
+                gallifrey_grass,
+                gallifrey_dirt
 
         };
 
@@ -84,7 +96,9 @@ public class DimBlocks {
 
         final ItemBlock[] items = { // Put the registry in a variable
 
-
+                new ItemBlock(gallifrey_stone),
+                new ItemBlock(gallifrey_grass),
+                new ItemBlock(gallifrey_dirt)
 
         };
 
@@ -92,8 +106,10 @@ public class DimBlocks {
 
             final Block block = item.getBlock(); // Get the ItemBlock
 
-            final ResourceLocation registryName = Preconditions.checkNotNull(block.getRegistryName(), "Block %s gas null registry name", block); // Get the registry name of the block (if it's not null)
-            registry.register(item.setRegistryName(registryName)); // Set the registry name to content of variable "registryName"
+            final ResourceLocation registryName = Preconditions.checkNotNull(block.getRegistryName(),
+                    "Block %s gas null registry name", block); // Get the registry name of the block (if it's not null)
+            registry.register(item.setRegistryName(registryName)); // Set the registry name to content of variable
+                                                                   // "registryName"
 
             ITEM_BLOCKS.add(item); // Finally add the item to The ITEM_BLOCKS set
 
@@ -114,7 +130,8 @@ public class DimBlocks {
 
     public static void registerRender(Item item) {
 
-        ModelLoader.setCustomModelResourceLocation(item, 0, new ModelResourceLocation(item.getRegistryName(), "inventory"));
+        ModelLoader.setCustomModelResourceLocation(item, 0,
+                new ModelResourceLocation(item.getRegistryName(), "inventory"));
 
     }
 

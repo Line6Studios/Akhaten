@@ -1,6 +1,8 @@
 package com.linesix.akhaten;
 
 import com.linesix.akhaten.Reference;
+import com.linesix.akhaten.blocks.DimBlocks;
+import com.linesix.akhaten.items.Gadgets;
 import com.linesix.akhaten.proxy.CommonProxy;
 import net.minecraftforge.fml.common.Mod;
 import net.minecraftforge.fml.common.SidedProxy;
@@ -40,6 +42,9 @@ public class Akhaten {
     public void preInit(FMLPreInitializationEvent event) {
 
         System.out.println("Entering PreInit phase");
+
+        DimBlocks.init();
+        Gadgets.init();
 
     }
 

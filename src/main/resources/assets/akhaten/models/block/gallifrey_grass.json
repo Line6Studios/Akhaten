@@ -1,0 +1,10 @@
+{
+  "parent": "block/cube_bottom_top",
+  "textures": {
+
+    "bottom": "akhaten:blocks/gallifrey_dirt",
+    "top": "akhaten:blocks/gallifrey_grass_top",
+    "side": "akhaten:blocks/gallifrey_grass_side"
+
+  }
+}
