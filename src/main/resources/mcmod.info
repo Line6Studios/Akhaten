@@ -1,0 +1,16 @@
+[
+{
+  "modid": "akhaten",
+  "name": "Akhaten",
+  "description": "Akhaten Public Beta.\nAkhaten is a Doctor Who mod for minecraft",
+  "version": "${version}",
+  "mcversion": "${mcversion}",
+  "url": "https://minecraft.curseforge.com/projects/akhaten",
+  "updateUrl": "",
+  "authorList": ["Felix Eckert"],
+  "credits": "The Forge/FML team for making forge, LineSix Studios: Creaters of Akhaten",
+  "logoFile": "",
+  "screenshots": [],
+  "dependencies": []
+}
+]
