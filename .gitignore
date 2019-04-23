@@ -1,0 +1,13 @@
+#Directories
+mods/**
+saves/**
+logs/**
+out/**
+build/**
+eclipse/**
+crash-reports/**
+
+#Files
+options.txt
+usercache.json
+usernamecache.json
