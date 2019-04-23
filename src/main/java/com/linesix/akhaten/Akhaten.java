@@ -2,6 +2,8 @@ package com.linesix.akhaten;
 
 import com.linesix.akhaten.Reference;
 import com.linesix.akhaten.blocks.DimBlocks;
+import com.linesix.akhaten.blocks.MachineBlocks;
+import com.linesix.akhaten.dimensions.Dimensions;
 import com.linesix.akhaten.items.Gadgets;
 import com.linesix.akhaten.proxy.CommonProxy;
 import net.minecraftforge.fml.common.Mod;
@@ -19,7 +21,7 @@ public class Akhaten {
 
 
    /*
-    * Akhaten Public Beta (Version 0.4.0)
+    * Akhaten Public Alpha (Version 0.3.2)
     * Copyright (C) 2019 Linesix Studios, Licensed under the ISC license
     *
     * Author: Felix Eckert (TheBertrahmPlays / Angry German)
@@ -44,6 +46,7 @@ public class Akhaten {
         System.out.println("Entering PreInit phase");
 
         DimBlocks.init();
+        MachineBlocks.init();
         Gadgets.init();
 
     }
@@ -52,6 +55,7 @@ public class Akhaten {
     public void init(FMLInitializationEvent event) {
 
         System.out.println("Entering Init phase");
+        Dimensions.registerDimensions();
 
     }
 

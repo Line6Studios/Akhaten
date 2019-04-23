@@ -2,14 +2,14 @@
 {
   "modid": "akhaten",
   "name": "Akhaten",
-  "description": "Akhaten Public Beta.\nAkhaten is a Doctor Who mod for minecraft",
-  "version": "${version}",
-  "mcversion": "${mcversion}",
+  "description": "A Doctor Who Mod.",
+  "version": "0.3.1",
+  "mcversion": "1.12.2",
   "url": "https://minecraft.curseforge.com/projects/akhaten",
-  "updateUrl": "",
-  "authorList": ["Felix Eckert"],
-  "credits": "The Forge/FML team for making forge, LineSix Studios: Creaters of Akhaten",
-  "logoFile": "",
+  "updateUrl": "https://minecraft.curseforge.com/projects/akhaten/files",
+  "authorList": ["TheBertrahmPlays as Owner & Developer, GhanouCraft as Modeller / Texturer"],
+  "credits": "TheBertrahmPlays as Owner & Developer, GhanouCraft as Modeller / Texturer, Special thanks to McJty for the AkhatenTeleporter!",
+  "logoFile": "AkhatenLogo.png",
   "screenshots": [],
   "dependencies": []
 }

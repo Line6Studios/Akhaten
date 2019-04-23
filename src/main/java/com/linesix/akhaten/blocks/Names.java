@@ -12,4 +12,10 @@ public class Names {
 
     }
 
+    public class Machines {
+
+        public static final String machine_tardis = "machine_tardis";
+
+    }
+
 }

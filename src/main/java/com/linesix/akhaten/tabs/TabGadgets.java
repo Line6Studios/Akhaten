@@ -8,7 +8,7 @@ public class TabGadgets extends CreativeTabs {
 
     public TabGadgets() {
 
-        super("akhaten_dimensional_blocks");
+        super("akhaten_gadgets");
 
     }
 
