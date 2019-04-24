@@ -93,19 +93,24 @@ public class MachineTardis extends Block {
 
             if (placer instanceof EntityPlayer || placer instanceof EntityPlayerMP) {
 
-                placer.sendMessage(new TextComponentString("Congratulations for getting your own Type 40 TT Capsule!"));
+                if (!worldIn.isRemote) {
 
-                File saveRootDIR = DimensionManager.getCurrentSaveRootDirectory();
+                    placer.sendMessage(new TextComponentString("Congratulations for getting your own Type 40 TT Capsule!"));
 
-                String fullPath = FileUtil.combine(saveRootDIR.getPath(), "tardises");
-                File tardFile = new File(fullPath);
-                try {
+                    File saveRootDIR = DimensionManager.getCurrentSaveRootDirectory();
 
-                    Tardfile.genTardfile(worldIn, pos, placer, tardFile);
+                    String fullPath = FileUtil.combine(saveRootDIR.getPath(), "tardises");
+                    File tardFile = new File(fullPath);
 
-                } catch (FileNotFoundException e) {
+                    try {
 
-                    e.printStackTrace();
+                        Tardfile.genTardfile(worldIn, pos, placer, tardFile);
+
+                    } catch (FileNotFoundException e) {
+
+                        e.printStackTrace();
+
+                    }
 
                 }
 
