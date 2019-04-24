@@ -30,8 +30,19 @@ public class Tardfile {
             System.out.println("Generating tardFile for user" + placer.getName() + "...");
 
             int id = (path).list().length + 1;
+            id = id - 1;
 
             File pathComplete = new File(FileUtil.combine(path.getPath(), "/tardFile_" + placer.getName() + ".json")); // Create the whole path
+
+            // If the user already owns a tardFile, prevent him from entering the new TARDIS and prompt him to delete his old 
+            if (pathComplete.exists()) {
+
+                placer.sendMessage(new TextComponentString("You already have a TARDIS! To delete it type /delete-tardis (W.I.P.)"));
+                worldIn.destroyBlock(pos, true);
+
+                return;
+
+            }
 
             PrintWriter writer = new PrintWriter(pathComplete); // Create a new PrintWriter for the tardfile
 
