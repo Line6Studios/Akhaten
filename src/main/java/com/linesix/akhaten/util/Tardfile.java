@@ -1,8 +1,5 @@
 package com.linesix.akhaten.util;
 
-import com.google.gson.Gson;
-import com.google.gson.reflect.TypeToken;
-import com.google.gson.stream.JsonReader;
 import net.minecraft.command.ICommandSender;
 import net.minecraft.entity.EntityLivingBase;
 import net.minecraft.util.math.BlockPos;
@@ -10,33 +7,32 @@ import net.minecraft.util.text.TextComponentString;
 import net.minecraft.world.World;
 
 import java.io.*;
-import java.lang.reflect.Type;
 import java.nio.file.Files;
 import java.nio.file.Paths;
 import java.util.List;
 
 public class Tardfile {
 
-   /* Tardfile creation and update class
-    *
-    * This class is used to create and update "tardFiles"
-    * Information on tardFiles can be found under the github Akhaten wiki!
-    *
-    * Author: Felix Eckert (TheBertrahmPlays / Angry German)
-    *
-    */
+    /* Tardfile creation and update class
+     *
+     * This class is used to create and update "tardFiles"
+     * Information on tardFiles can be found under the github Akhaten wiki!
+     *
+     * Author: Felix Eckert (TheBertrahmPlays / Angry German)
+     *
+     */
 
     public TardfileTemplate tardfileTemplate;
 
-   /**
-    * Generates a simple Tardfile using PrintWriter.
-    *
-    * @throws FileNotFoundException if the json file / the "tardises" directory could not be found
-    *
-    */
-   public static void genTardfile(World worldIn, BlockPos pos, EntityLivingBase placer, File path) throws FileNotFoundException {
+    /**
+     * Generates a simple Tardfile using PrintWriter.
+     *
+     * @throws FileNotFoundException if the json file / the "tardises" directory could not be found
+     *
+     */
+    public static void genTardfile(World worldIn, BlockPos pos, EntityLivingBase placer, File path) throws FileNotFoundException {
 
-       if (path.exists()) {
+        if (path.exists()) {
 
             System.out.println("Generating tardFile for user" + placer.getName() + "...");
 
