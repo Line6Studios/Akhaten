@@ -20,7 +20,7 @@ public class Tardfile {
    /* Tardfile creation and update class
     *
     * This class is used to create and update "tardFiles"
-    * Information on tardFiles can be found under the github Akhaten wiki
+    * Information on tardFiles can be found under the github Akhaten wiki!
     *
     * Author: Felix Eckert (TheBertrahmPlays / Angry German)
     *
@@ -28,9 +28,15 @@ public class Tardfile {
 
     public TardfileTemplate tardfileTemplate;
 
-    public static void genTardfile(World worldIn, BlockPos pos, EntityLivingBase placer, File path) throws FileNotFoundException {
+   /**
+    * Generates a simple Tardfile using PrintWriter.
+    *
+    * @throws FileNotFoundException if the json file / the "tardises" directory could not be found
+    *
+    */
+   public static void genTardfile(World worldIn, BlockPos pos, EntityLivingBase placer, File path) throws FileNotFoundException {
 
-        if (path.exists()) {
+       if (path.exists()) {
 
             System.out.println("Generating tardFile for user" + placer.getName() + "...");
 
@@ -92,7 +98,14 @@ public class Tardfile {
 
     }
 
-    // Used to replace the single quote with a double quote
+    /**
+     * Replaces all single-quotes in a JSON file with double-quotes
+     *
+     * @param path path to the JSON file
+     *
+     * @throws IOException
+     *
+     */
     public static boolean replaceChar(File path) throws IOException {
 
         String json = new String(Files.readAllBytes(Paths.get(path.getPath()))); // Read the single-line json file to a String
@@ -117,7 +130,13 @@ public class Tardfile {
 
     }
 
-    //Mainly used by the delete-tardis command
+    /**
+     * Mainly used by the delete-tardis command
+     *
+     * @param path path to the file to delete
+     * @param user user that called the command
+     *
+     */
     public static void deleteTardFile(File path, ICommandSender user) {
 
         try {
@@ -140,7 +159,17 @@ public class Tardfile {
 
     }
 
-    // Create the "Tardfile array" that is going to be written to the JSON file...
+    /**
+     * Create the "Tardfile array" that is going to be written to the JSON file...
+     *
+     * @param user Name of the user that placed the tardis
+     * @param uuid uuid of the user that placed the tardis
+     * @param tardis_id ID of the tardis
+     * @param x the current x coordinate of the tardis
+     * @param y the current y coordinate of the tardis
+     * @param z the current z coordinate of the tardis
+     *
+     */
     private static String[] createTardFileArray(String user, String uuid, int tardis_id, int x, int y, int z) {
 
         String[] template;
