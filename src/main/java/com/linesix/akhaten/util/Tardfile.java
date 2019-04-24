@@ -11,28 +11,42 @@ import java.io.PrintWriter;
 
 public class Tardfile {
 
+   /* Tardfile creation and update class
+    *
+    * This class is used to create and update "tardFiles"
+    * Information on tardFiles can be found under the github Akhaten wiki
+    *
+    * Author: Felix Eckert (TheBertrahmPlays / Angry German)
+    *
+    */
+
     public static void genTardfile(World worldIn, BlockPos pos, EntityLivingBase placer, File path) throws FileNotFoundException {
 
         if (path.exists()) {
 
-            System.out.println("creating tardFile for user" + placer.getName() + "...");
+            System.out.println("Generating tardFile for user" + placer.getName() + "...");
 
             int id = (path).list().length + 1;
 
-            File pathComplete = new File(path.getPath() + "/tardFile_" + placer.getName() + ".json");
+            File pathComplete = new File(FileUtil.combine(path.getPath(), "/tardFile_" + placer.getName() + ".json")); // Create the whole path
 
-            PrintWriter writer = new PrintWriter(pathComplete);
+            PrintWriter writer = new PrintWriter(pathComplete); // Create a new PrintWriter for the tardfile
 
-            String[] tardfilearray = createTardFileArray(placer.getName(), placer.getUniqueID().toString(), id, pos.getX(), pos.getY(), pos.getZ());
+            String[] tardfilearray = createTardFileArray(placer.getName(), placer.getUniqueID().toString(), id, pos.getX(), pos.getY(), pos.getZ()); // Create the array containing all base information
 
-            for (String i : tardfilearray) {
+            for (String i : tardfilearray) { // Write the file from the array
 
                 writer.write(i);
-                placer.sendMessage(new TextComponentString(i));
 
             }
 
             writer.close();
+
+
+        } else {
+
+            path.mkdir();
+            return;
 
         }
 
