@@ -1,16 +1,19 @@
 package com.linesix.akhaten.util;
 
+import com.google.gson.Gson;
+import com.google.gson.reflect.TypeToken;
+import com.google.gson.stream.JsonReader;
+import net.minecraft.command.ICommandSender;
 import net.minecraft.entity.EntityLivingBase;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.text.TextComponentString;
 import net.minecraft.world.World;
 
-import java.io.File;
-import java.io.FileNotFoundException;
-import java.io.IOException;
-import java.io.PrintWriter;
+import java.io.*;
+import java.lang.reflect.Type;
 import java.nio.file.Files;
 import java.nio.file.Paths;
+import java.util.List;
 
 public class Tardfile {
 
@@ -23,6 +26,8 @@ public class Tardfile {
     *
     */
 
+    public TardfileTemplate tardfileTemplate;
+
     public static void genTardfile(World worldIn, BlockPos pos, EntityLivingBase placer, File path) throws FileNotFoundException {
 
         if (path.exists()) {
@@ -34,7 +39,7 @@ public class Tardfile {
 
             File pathComplete = new File(FileUtil.combine(path.getPath(), "/tardFile_" + placer.getName() + ".json")); // Create the whole path
 
-            // If the user already owns a tardFile, prevent him from entering the new TARDIS and prompt him to delete his old 
+            // If the user already owns a tardFile, prevent him from entering the new TARDIS and prompt him to delete his old
             if (pathComplete.exists()) {
 
                 placer.sendMessage(new TextComponentString("You already have a TARDIS! To delete it type /delete-tardis (W.I.P.)"));
@@ -50,7 +55,7 @@ public class Tardfile {
 
             for (String i : tardfilearray) { // Write the file from the array
 
-                writer.write(i);
+                writer.write(i+"\n");
 
             }
 
@@ -112,17 +117,46 @@ public class Tardfile {
 
     }
 
-    private static String[] createTardFileArray(String user, String uuid, int tardis_id, float x, float y, float z) {
+    //Mainly used by the delete-tardis command
+    public static void deleteTardFile(File path, ICommandSender user) {
+
+        try {
+
+            final Type TYPE = new TypeToken<List<TardfileTemplate>>() {}.getType();
+
+            Gson gson = new Gson();
+            JsonReader reader = new JsonReader(new FileReader(path));
+
+            List<TardfileTemplate> data = gson.fromJson(reader, TYPE);
+
+            System.out.println(data);
+
+            path.delete();
+            user.sendMessage(new TextComponentString("Succesfully deleted your old TARDIS!"));
+
+        } catch (Exception e) {
+
+            System.out.println("An Error occured whilst deleting tardis of player " + user.getName() + "!");
+            user.sendMessage(new TextComponentString("An error occured whilst deleting your TARDIS!"));
+            e.printStackTrace();
+            return;
+
+        }
+
+    }
+
+    // Create the "Tardfile array" that is going to be written to the JSON file...
+    private static String[] createTardFileArray(String user, String uuid, int tardis_id, int x, int y, int z) {
 
         String[] template;
         template = new String[]{
 
-                "{'user':'" + user + "',",
-                "'uuid':'" + uuid +  "',",
-                "'tardis_id':'"  + tardis_id +  "',",
-                "'x':'"  + x +  "',",
-                "'y':'"  + y +  "',",
-                "'z':'" + z +  "'}"
+                "[{\n  'user':'" + user + "',",
+                "  'uuid':'" + uuid +  "',",
+                "  'tardis_id':'"  + tardis_id +  "',",
+                "  'x':'"  + x +  "',",
+                "  'y':'"  + y +  "',",
+                "  'z':'" + z +  "'\n}]"
 
         };
 
