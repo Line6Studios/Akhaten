@@ -6,8 +6,11 @@ out/**
 build/**
 eclipse/**
 crash-reports/**
+.idea/**
+.gradle/**
 
 #Files
 options.txt
 usercache.json
 usernamecache.json
+.gradle/gradle.log
