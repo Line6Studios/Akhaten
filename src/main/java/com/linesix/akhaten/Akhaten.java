@@ -3,6 +3,7 @@ package com.linesix.akhaten;
 import com.linesix.akhaten.Reference;
 import com.linesix.akhaten.blocks.DimBlocks;
 import com.linesix.akhaten.blocks.MachineBlocks;
+import com.linesix.akhaten.commands.Commands;
 import com.linesix.akhaten.dimensions.Dimensions;
 import com.linesix.akhaten.items.Gadgets;
 import com.linesix.akhaten.proxy.CommonProxy;
@@ -11,6 +12,7 @@ import net.minecraftforge.fml.common.SidedProxy;
 import net.minecraftforge.fml.common.event.FMLInitializationEvent;
 import net.minecraftforge.fml.common.event.FMLPostInitializationEvent;
 import net.minecraftforge.fml.common.event.FMLPreInitializationEvent;
+import net.minecraftforge.fml.common.event.FMLServerStartingEvent;
 import org.apache.logging.log4j.Logger;
 
 import java.util.Random;
@@ -57,6 +59,12 @@ public class Akhaten {
 
     }
 
+    @Mod.EventHandler
+    public void serverStarting(FMLServerStartingEvent event) {
+
+        Commands.register(event);
+
+    }
 
     @Mod.EventHandler
     public void postInit(FMLPostInitializationEvent event) {
