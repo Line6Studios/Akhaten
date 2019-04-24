@@ -1,8 +1,12 @@
 package com.linesix.akhaten.util;
 
 import com.google.gson.Gson;
+import com.google.gson.reflect.TypeToken;
+import com.google.gson.stream.JsonReader;
 
 import java.io.*;
+import java.lang.reflect.Type;
+import java.util.List;
 
 public class FileUtil {
 
@@ -14,14 +18,16 @@ public class FileUtil {
 
     }
 
-    public static Object parseJson(FileReader path) {
+    public static List<TardfileTemplate> parseTardfileJSON(FileReader path) {
 
-        BufferedReader bufferedReader = new BufferedReader(path);
+        final Type TYPE = new TypeToken<List<TardfileTemplate>>() {}.getType();
 
         Gson gson = new Gson();
-        Object json = gson.fromJson(bufferedReader, Object.class);
+        JsonReader reader = new JsonReader(path);
 
-        return json;
+        List<TardfileTemplate> data = gson.fromJson(reader, TYPE);
+
+        return data;
 
     }
 
