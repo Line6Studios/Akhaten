@@ -28,8 +28,6 @@ public class Akhaten {
     *
     */
 
-
-
     private static Logger logger; //Create a new logger
 
     public static Random random = new Random();

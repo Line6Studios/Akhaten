@@ -7,7 +7,10 @@ import net.minecraft.world.World;
 
 import java.io.File;
 import java.io.FileNotFoundException;
+import java.io.IOException;
 import java.io.PrintWriter;
+import java.nio.file.Files;
+import java.nio.file.Paths;
 
 public class Tardfile {
 
@@ -42,6 +45,27 @@ public class Tardfile {
 
             writer.close();
 
+            try {
+
+                if (replaceChar(pathComplete)) {
+
+                    return;
+
+                } else {
+
+                    placer.sendMessage(new TextComponentString("A critical error has occured and the tardFile could not be written, try again later!"));
+                    worldIn.destroyBlock(pos, true);
+                    return;
+
+                }
+
+            } catch (IOException e) {
+
+                e.printStackTrace();
+                placer.sendMessage(new TextComponentString("A critical error has occured and the tardFile could not be written, try again later!"));
+                return;
+
+            }
 
         } else {
 
@@ -49,6 +73,31 @@ public class Tardfile {
             return;
 
         }
+
+    }
+
+    // Used to replace the single quote with a double quote
+    public static boolean replaceChar(File path) throws IOException {
+
+        String json = new String(Files.readAllBytes(Paths.get(path.getPath()))); // Read the single-line json file to a String
+
+        String newJSON = json.replaceAll("\\'", Character.toString('"')); // Replace all instances of the single quote with a double quote
+
+        // Delete the old file
+        if (!path.delete()) {
+
+            System.out.println("Couldn't delete JSON file! Returning...");
+            return false;
+
+        }
+
+        PrintWriter writer = new PrintWriter(path); // Create a new PrintWriter
+
+        writer.write(newJSON); // Write the new JSON
+
+        writer.close();
+
+        return true;
 
     }
 
