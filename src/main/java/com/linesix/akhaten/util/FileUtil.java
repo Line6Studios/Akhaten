@@ -1,13 +1,8 @@
 package com.linesix.akhaten.util;
 
-import net.minecraft.entity.EntityLivingBase;
-import net.minecraft.util.math.BlockPos;
-import net.minecraft.util.text.TextComponentString;
-import net.minecraft.world.World;
+import com.google.gson.Gson;
 
-import java.io.File;
-import java.io.FileNotFoundException;
-import java.io.PrintWriter;
+import java.io.*;
 
 public class FileUtil {
 
@@ -16,6 +11,17 @@ public class FileUtil {
         File file1 = new File(path1);
         File file2 = new File(file1, path2);
         return file2.getPath();
+
+    }
+
+    public static Object parseJson(FileReader path) {
+
+        BufferedReader bufferedReader = new BufferedReader(path);
+
+        Gson gson = new Gson();
+        Object json = gson.fromJson(bufferedReader, Object.class);
+
+        return json;
 
     }
 
