@@ -8,6 +8,7 @@ eclipse/**
 crash-reports/**
 .idea/**
 .gradle/**
+run/**
 
 #Files
 options.txt

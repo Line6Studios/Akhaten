@@ -6,6 +6,7 @@ import com.linesix.akhaten.blocks.Names;
 import com.linesix.akhaten.dimensions.DimensionTardis;
 import com.linesix.akhaten.util.AkhatenTeleporter;
 import com.linesix.akhaten.util.FileUtil;
+import com.linesix.akhaten.util.Tardfile;
 import net.minecraft.block.Block;
 import net.minecraft.block.SoundType;
 import net.minecraft.block.material.Material;
@@ -100,7 +101,7 @@ public class MachineTardis extends Block {
                 File tardFile = new File(fullPath);
                 try {
 
-                    FileUtil.tardFile(worldIn, pos, placer, tardFile);
+                    Tardfile.genTardfile(worldIn, pos, placer, tardFile);
 
                 } catch (FileNotFoundException e) {
 
