@@ -1,11 +1,14 @@
 package com.linesix.akhaten.util;
 
 import com.google.gson.Gson;
+import com.google.gson.JsonObject;
 import com.google.gson.reflect.TypeToken;
 import com.google.gson.stream.JsonReader;
 
 import java.io.*;
 import java.lang.reflect.Type;
+import java.nio.file.Files;
+import java.nio.file.Paths;
 import java.util.List;
 
 public class FileUtil {
@@ -18,14 +21,11 @@ public class FileUtil {
 
     }
 
-    public static List<TardfileTemplate> parseTardfileJSON(FileReader path) {
+    public static JsonObject parseJSON(File path) throws IOException {
 
-        final Type TYPE = new TypeToken<List<TardfileTemplate>>() {}.getType();
+        String rawData = new String(Files.readAllBytes(Paths.get(path.getPath())));
 
-        Gson gson = new Gson();
-        JsonReader reader = new JsonReader(path);
-
-        List<TardfileTemplate> data = gson.fromJson(reader, TYPE);
+        JsonObject data = new Gson().fromJson(rawData, JsonObject.class);
 
         return data;
 
