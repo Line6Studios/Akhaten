@@ -122,12 +122,7 @@ public class Tardfile {
 
         try {
 
-            final Type TYPE = new TypeToken<List<TardfileTemplate>>() {}.getType();
-
-            Gson gson = new Gson();
-            JsonReader reader = new JsonReader(new FileReader(path));
-
-            List<TardfileTemplate> data = gson.fromJson(reader, TYPE);
+            List<TardfileTemplate> data = FileUtil.parseTardfileJSON(new FileReader(path));
 
             System.out.println(data);
 
