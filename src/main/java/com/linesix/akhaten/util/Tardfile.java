@@ -1,5 +1,6 @@
 package com.linesix.akhaten.util;
 
+import com.google.gson.JsonObject;
 import net.minecraft.command.ICommandSender;
 import net.minecraft.entity.EntityLivingBase;
 import net.minecraft.util.math.BlockPos;
@@ -133,13 +134,21 @@ public class Tardfile {
      * @param user user that called the command
      *
      */
-    public static void deleteTardFile(File path, ICommandSender user) {
+    public static void deleteTardFile(File path, ICommandSender user, World world) {
 
         try {
 
-            List<TardfileTemplate> data = FileUtil.parseTardfileJSON(new FileReader(path));
+            JsonObject data = FileUtil.parseJSON(path);
 
-            System.out.println(data);
+            int[] coords = getCoordsFromTardfile(data);
+
+            int x = coords[0];
+            int y = coords[1];
+            int z = coords[2];
+
+            BlockPos tardisBlockPos = new BlockPos(x, y, z);
+
+            world.destroyBlock(tardisBlockPos, true);
 
             path.delete();
             user.sendMessage(new TextComponentString("Succesfully deleted your old TARDIS!"));
@@ -171,16 +180,25 @@ public class Tardfile {
         String[] template;
         template = new String[]{
 
-                "[{\n  'user':'" + user + "',",
+                "{\n  'user':'" + user + "',",
                 "  'uuid':'" + uuid +  "',",
                 "  'tardis_id':'"  + tardis_id +  "',",
+                "  'is_demat':'false'",
                 "  'x':'"  + x +  "',",
                 "  'y':'"  + y +  "',",
-                "  'z':'" + z +  "'\n}]"
+                "  'z':'" + z +  "'\n}"
 
         };
 
         return template;
+
+    }
+
+    public static int[] getCoordsFromTardfile(JsonObject data) {
+
+        int[] coords = {data.get("x").getAsInt(), data.get("y").getAsInt(), data.get("z").getAsInt()};
+
+        return coords;
 
     }
 
