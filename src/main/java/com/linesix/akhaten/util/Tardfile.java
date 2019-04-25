@@ -8,9 +8,9 @@ import net.minecraft.util.text.TextComponentString;
 import net.minecraft.world.World;
 
 import java.io.*;
+
 import java.nio.file.Files;
 import java.nio.file.Paths;
-import java.util.List;
 
 public class Tardfile {
 
@@ -92,6 +92,69 @@ public class Tardfile {
             return;
 
         }
+
+    }
+
+    /**
+     * Updates a tardfile
+     *
+     * @param data The JsonObject of the tardfile to update
+     * @param coords The current coordinates of the tardis
+     * @param setCoords The coordinates that were set for the tardis
+     * @param tardis_state The state of the tardis (demat / remat)
+     *
+     */
+    public static JsonObject updatedTardfile(JsonObject data, int[] coords, int[] setCoords, boolean[] tardis_state) {
+
+        String[] properties = {"is_demat", "is_remat", "x", "y", "z", "setX", "setY", "setZ"};
+
+        for (String property : properties) { // Removes every property that's in properties[]
+
+            data.remove(property);
+
+        }
+
+        // Messy code but it does the job xD
+
+        for (String property : properties) { // Loops through every property in properties[] and creates it
+
+            if (property == properties[0]) {
+
+                data.addProperty(property, tardis_state[0]);
+
+            } else if (property == properties[1]) {
+
+                data.addProperty(property, coords[0]);
+
+            } else if (property == properties[2]) {
+
+                data.addProperty(property, coords[1]);
+
+            } else if (property == properties[3]) {
+
+                data.addProperty(property, coords[2]);
+
+            } else if (property == properties[4]) {
+
+                data.addProperty(property, setCoords[0]);
+
+            } else if (property == properties[5]) {
+
+                data.addProperty(property, setCoords[1]);
+
+            } else if (property == properties[6]) {
+
+                data.addProperty(property, setCoords[2]);
+
+            } else {
+
+                data.addProperty(property, tardis_state[1]);
+
+            }
+
+        }
+
+        return data;
 
     }
 
@@ -183,7 +246,8 @@ public class Tardfile {
                 "{\n  'user':'" + user + "',",
                 "  'uuid':'" + uuid +  "',",
                 "  'tardis_id':'"  + tardis_id +  "',",
-                "  'is_demat':'false'",
+                "  'is_demat':'false',",
+                "  'is_remat':'true',",
                 "  'x':'"  + x +  "',",
                 "  'y':'"  + y +  "',",
                 "  'z':'" + z +  "',",
@@ -207,9 +271,9 @@ public class Tardfile {
 
     }
 
-    public static boolean getTardisStateFromTardFile(JsonObject data) {
+    public static boolean[] getTardisStateFromTardFile(JsonObject data) {
 
-        return data.get("is_demat").getAsBoolean();
+        return new boolean[]{data.get("is_demat").getAsBoolean(), data.get("is_remat").getAsBoolean()};
 
     }
 
