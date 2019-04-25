@@ -99,7 +99,7 @@ public class MachineTardis extends Block {
 
                     File saveRootDIR = DimensionManager.getCurrentSaveRootDirectory();
 
-                    String fullPath = FileUtil.combine(saveRootDIR.getPath(), "tardises");
+                    String fullPath = FileUtil.combine(saveRootDIR, new File("tardises"));
                     File tardFile = new File(fullPath);
 
                     try {
