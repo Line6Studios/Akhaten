@@ -2,12 +2,12 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="2c61b2dc-a3cd-4a64-831c-a7b6ecdfbbe7" name="Default" comment="">
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/linesix/akhaten/blocks/machines/tardisblocks/Handbrake.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/linesix/akhaten/Akhaten.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/linesix/akhaten/Akhaten.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/linesix/akhaten/blocks/MachineBlocks.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/linesix/akhaten/blocks/MachineBlocks.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/linesix/akhaten/blocks/Names.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/linesix/akhaten/blocks/Names.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/linesix/akhaten/blocks/machines/MachineTardis.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/linesix/akhaten/blocks/machines/MachineTardis.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/linesix/akhaten/dimensions/renderes/VoidRenderer.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/linesix/akhaten/dimensions/renderes/TardisDimRenderer.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/linesix/akhaten/dimensions/worldproviders/WorldProviderTardis.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/linesix/akhaten/dimensions/worldproviders/WorldProviderTardis.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/resources/assets/akhaten/lang/en_us.lang" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/assets/akhaten/lang/en_us.lang" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
@@ -61,7 +61,7 @@
         <entry file="file://$PROJECT_DIR$/src/main/java/com/linesix/akhaten/blocks/machines/tardisblocks/Handbrake.java">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="286">
-              <caret line="13" lean-forward="true" selection-start-line="13" selection-end-line="13" />
+              <caret line="13" selection-start-line="13" selection-end-line="13" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -69,11 +69,50 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="Akhaten.java" pinned="false" current-in-tab="true">
+      <file leaf-file-name="Akhaten.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/com/linesix/akhaten/Akhaten.java">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="286">
               <caret line="13" column="66" selection-start-line="13" selection-start-column="66" selection-end-line="13" selection-end-column="66" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name=".gitignore" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/.gitignore">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="396">
+              <caret line="18" column="8" selection-start-line="18" selection-start-column="8" selection-end-line="18" selection-end-column="8" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="WorldProviderTardis.java" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/main/java/com/linesix/akhaten/dimensions/worldproviders/WorldProviderTardis.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="704">
+              <caret line="36" column="13" lean-forward="true" selection-start-line="36" selection-start-column="13" selection-end-line="36" selection-end-column="13" />
+              <folding>
+                <element signature="imports" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="TardisDimRenderer.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/com/linesix/akhaten/dimensions/renderes/TardisDimRenderer.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="22">
+              <caret line="1" selection-start-line="1" selection-end-line="1" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="IRenderHandler.java" pinned="false" current-in-tab="false">
+        <entry file="jar://$USER_HOME$/.gradle/caches/minecraft/net/minecraftforge/forge/1.12.2-14.23.5.2836/snapshot/20171003/forgeSrc-1.12.2-14.23.5.2836-sources.jar!/net/minecraftforge/client/IRenderHandler.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="132">
+              <caret line="26" column="22" selection-start-line="26" selection-start-column="22" selection-end-line="26" selection-end-column="22" />
             </state>
           </provider>
         </entry>
@@ -692,7 +731,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/.gitignore" />
         <option value="$APPLICATION_CONFIG_DIR$/scratches/scratch.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/linesix/akhaten/util/TardfileTemplate.java" />
         <option value="$PROJECT_DIR$/run/saves/Tutorial/tardises/tardFile_Player825.json" />
@@ -711,6 +749,10 @@
         <option value="$PROJECT_DIR$/src/main/java/com/linesix/akhaten/blocks/machines/tardisblocks/Handbrake.java" />
         <option value="$PROJECT_DIR$/src/main/resources/assets/akhaten/lang/en_us.lang" />
         <option value="$PROJECT_DIR$/src/main/java/com/linesix/akhaten/Akhaten.java" />
+        <option value="$PROJECT_DIR$/.gitignore" />
+        <option value="$PROJECT_DIR$/src/main/java/com/linesix/akhaten/dimensions/renderes/VoidRenderer.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/linesix/akhaten/dimensions/renderes/TardisCloundRenderer.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/linesix/akhaten/dimensions/worldproviders/WorldProviderTardis.java" />
       </list>
     </option>
   </component>
@@ -792,6 +834,35 @@
               <item name="akhaten" type="462c0819:PsiDirectoryNode" />
               <item name="blocks" type="462c0819:PsiDirectoryNode" />
               <item name="machines" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="Akhaten" type="b2602c69:ProjectViewProjectNode" />
+              <item name="Akhaten" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+              <item name="akhaten" type="462c0819:PsiDirectoryNode" />
+              <item name="dimensions" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="Akhaten" type="b2602c69:ProjectViewProjectNode" />
+              <item name="Akhaten" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+              <item name="akhaten" type="462c0819:PsiDirectoryNode" />
+              <item name="dimensions" type="462c0819:PsiDirectoryNode" />
+              <item name="renderes" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="Akhaten" type="b2602c69:ProjectViewProjectNode" />
+              <item name="Akhaten" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+              <item name="akhaten" type="462c0819:PsiDirectoryNode" />
+              <item name="dimensions" type="462c0819:PsiDirectoryNode" />
+              <item name="worldproviders" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="Akhaten" type="b2602c69:ProjectViewProjectNode" />
@@ -987,14 +1058,14 @@
       <window_info anchor="right" id="Palette&#9;" order="1" />
       <window_info id="Image Layers" order="0" />
       <window_info anchor="right" id="Capture Analysis" order="2" />
-      <window_info anchor="bottom" id="Event Log" order="0" sideWeight="0.50296515" side_tool="true" visible="true" weight="0.329429" />
+      <window_info anchor="bottom" id="Event Log" order="0" sideWeight="0.50333583" side_tool="true" visible="true" weight="0.329429" />
       <window_info anchor="right" id="Maven Projects" order="3" />
-      <window_info anchor="bottom" id="Run" order="7" sideWeight="0.49703485" weight="0.329429" />
+      <window_info active="true" anchor="bottom" id="Run" order="7" sideWeight="0.4966642" visible="true" weight="0.329429" />
       <window_info anchor="bottom" id="Version Control" order="1" />
       <window_info anchor="bottom" id="Terminal" order="2" />
       <window_info id="Capture Tool" order="1" />
       <window_info id="Designer" order="2" />
-      <window_info active="true" content_ui="combo" id="Project" order="5" visible="true" weight="0.2509266" />
+      <window_info content_ui="combo" id="Project" order="5" visible="true" weight="0.2509266" />
       <window_info id="Gradle" order="6" weight="0.14420536" />
       <window_info anchor="right" id="Structure" order="8" side_tool="true" visible="true" weight="0.16604893" />
       <window_info anchor="right" id="Ant Build" order="6" weight="0.25" />
@@ -1108,13 +1179,6 @@
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/run/saves/Tutorial/tardises/tardFile_Player390.json" />
-    <entry file="file://$PROJECT_DIR$/.gitignore">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="220">
-          <caret line="10" column="6" selection-start-line="10" selection-start-column="6" selection-end-line="10" selection-end-column="6" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/run/saves/Tutorial/tardises/tardFile_Player26.json" />
     <entry file="file://$PROJECT_DIR$/run/saves/Tutorial/tardises/tardFile_Player199.json" />
     <entry file="file://$PROJECT_DIR$/run/saves/Tutorial/tardises/tardFile_Player355.json" />
@@ -1246,7 +1310,7 @@
     <entry file="file://$PROJECT_DIR$/src/main/java/com/linesix/akhaten/blocks/machines/tardisblocks/Handbrake.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="286">
-          <caret line="13" lean-forward="true" selection-start-line="13" selection-end-line="13" />
+          <caret line="13" selection-start-line="13" selection-end-line="13" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
@@ -1257,6 +1321,37 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="286">
           <caret line="13" column="66" selection-start-line="13" selection-start-column="66" selection-end-line="13" selection-end-column="66" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/.gitignore">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="396">
+          <caret line="18" column="8" selection-start-line="18" selection-start-column="8" selection-end-line="18" selection-end-column="8" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$USER_HOME$/.gradle/caches/minecraft/net/minecraftforge/forge/1.12.2-14.23.5.2836/snapshot/20171003/forgeSrc-1.12.2-14.23.5.2836-sources.jar!/net/minecraftforge/client/IRenderHandler.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="132">
+          <caret line="26" column="22" selection-start-line="26" selection-start-column="22" selection-end-line="26" selection-end-column="22" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/linesix/akhaten/dimensions/renderes/TardisDimRenderer.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="22">
+          <caret line="1" selection-start-line="1" selection-end-line="1" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/linesix/akhaten/dimensions/worldproviders/WorldProviderTardis.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="704">
+          <caret line="36" column="13" lean-forward="true" selection-start-line="36" selection-start-column="13" selection-end-line="36" selection-end-column="13" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>

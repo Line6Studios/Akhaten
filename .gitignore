@@ -15,3 +15,6 @@ options.txt
 usercache.json
 usernamecache.json
 .gradle/gradle.log
+
+#Classes
+src/main/java/com/linesix/akhaten/handler/TardisHandler.java
