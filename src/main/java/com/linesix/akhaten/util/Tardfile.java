@@ -186,7 +186,10 @@ public class Tardfile {
                 "  'is_demat':'false'",
                 "  'x':'"  + x +  "',",
                 "  'y':'"  + y +  "',",
-                "  'z':'" + z +  "'\n}"
+                "  'z':'" + z +  "',",
+                "  'setX':'"  + x +  "',",
+                "  'setY':'"  + y +  "',",
+                "  'setZ':'" + z +  "'\n}"
 
         };
 
@@ -194,11 +197,39 @@ public class Tardfile {
 
     }
 
+    // Tardfile field getters below
+
     public static int[] getCoordsFromTardfile(JsonObject data) {
 
         int[] coords = {data.get("x").getAsInt(), data.get("y").getAsInt(), data.get("z").getAsInt()};
 
         return coords;
+
+    }
+
+    public static boolean getTardisStateFromTardFile(JsonObject data) {
+
+        return data.get("is_demat").getAsBoolean();
+
+    }
+
+    public static int[] getSetCoordsFromTardfile(JsonObject data) {
+
+        int[] setCoords = {data.get("setX").getAsInt(), data.get("setY").getAsInt(), data.get("setZ").getAsInt()};
+
+        return setCoords;
+
+    }
+
+    public static int getTardisIDFromTardfile(JsonObject data) {
+
+        return data.get("tardis_id").getAsInt();
+
+    }
+
+    public static String getUUIDFromTardfile(JsonObject data) {
+
+        return data.get("uuid").getAsString();
 
     }
 
