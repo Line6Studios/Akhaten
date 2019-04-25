@@ -40,7 +40,7 @@ public class Tardfile {
             int id = (path).list().length + 1;
             id = id - 1;
 
-            File pathComplete = new File(FileUtil.combine(path.getPath(), "/tardFile_" + placer.getName() + ".json")); // Create the whole path
+            File pathComplete = new File(FileUtil.combine(path, new File("/tardFile_" + placer.getName() + ".json"))); // Create the whole path
 
             // If the user already owns a tardFile, prevent him from entering the new TARDIS and prompt him to delete his old
             if (pathComplete.exists()) {
