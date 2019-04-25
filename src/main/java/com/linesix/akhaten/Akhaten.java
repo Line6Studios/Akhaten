@@ -1,6 +1,5 @@
 package com.linesix.akhaten;
 
-import com.linesix.akhaten.Reference;
 import com.linesix.akhaten.blocks.DimBlocks;
 import com.linesix.akhaten.blocks.MachineBlocks;
 import com.linesix.akhaten.commands.Commands;
@@ -72,6 +71,5 @@ public class Akhaten {
         System.out.println("Entering PostInit phase");
 
     }
-
 
 }
