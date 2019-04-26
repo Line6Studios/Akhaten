@@ -201,19 +201,19 @@ public class Tardfile {
 
         try {
 
-            JsonObject data = FileUtil.parseJSON(path);
+            JsonObject data = FileUtil.parseJSON(path); // Parse the tardfile
 
-            int[] coords = getCoordsFromTardfile(data);
+            int[] coords = getCoordsFromTardfile(data); // Get the coords from the tardfile for generating a new BlockPos
 
-            int x = coords[0];
-            int y = coords[1];
-            int z = coords[2];
+            int x = coords[0]; // Get the x coordinate
+            int y = coords[1]; // Get the y coordinate
+            int z = coords[2]; // Geth the z coordinate
 
-            BlockPos tardisBlockPos = new BlockPos(x, y, z);
+            BlockPos tardisBlockPos = new BlockPos(x, y, z); // Create a new BlockPos
 
-            world.destroyBlock(tardisBlockPos, true);
+            world.destroyBlock(tardisBlockPos, true); // Destroy the tardis
 
-            path.delete();
+            path.delete(); // Delete the tardfile
             user.sendMessage(new TextComponentString("Succesfully deleted your old TARDIS!"));
 
         } catch (Exception e) {
