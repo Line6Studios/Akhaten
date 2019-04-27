@@ -6,6 +6,7 @@ import net.minecraft.entity.EntityLivingBase;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.text.TextComponentString;
 import net.minecraft.world.World;
+import net.minecraftforge.common.DimensionManager;
 
 import java.io.*;
 
@@ -224,6 +225,32 @@ public class Tardfile {
             return;
 
         }
+
+    }
+
+    /**
+     * Searches for a Json file by name and returns an JsonObject
+     *
+     * @param name Username
+     *
+     */
+    public static JsonObject findTardfileByName(String name) {
+
+        JsonObject data;
+
+        try {
+
+            data = FileUtil.parseJSON(new File(DimensionManager.getCurrentSaveRootDirectory().getPath() + "/tardises/tardFile_" + name + ".json"));
+
+        } catch (IOException e) {
+
+            e.printStackTrace();
+
+            return null;
+
+        }
+
+        return data;
 
     }
 
