@@ -16,6 +16,11 @@ public class Names {
 
         public static final String machine_tardis = "machine_tardis";
 
+        public class Tardis {
+
+            public static final String handbrake = "tardis_handbrake";
+
+        }
     }
 
 }

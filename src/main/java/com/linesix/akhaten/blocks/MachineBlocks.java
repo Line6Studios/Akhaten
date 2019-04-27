@@ -2,6 +2,7 @@ package com.linesix.akhaten.blocks;
 
 import com.google.common.base.Preconditions;
 import com.linesix.akhaten.blocks.machines.MachineTardis;
+import com.linesix.akhaten.blocks.machines.tardisblocks.Handbrake;
 import com.linesix.akhaten.tabs.TabMachines;
 import net.minecraft.block.Block;
 import net.minecraft.client.renderer.block.model.ModelResourceLocation;
@@ -37,6 +38,7 @@ public class MachineBlocks {
 
     // Creation of all Block-Variables below
     public static MachineTardis machine_tardis;
+    public static Handbrake tardis_handbrake;
     // End Creation of all Block-Variables
 
     public static void init() {
@@ -47,6 +49,7 @@ public class MachineBlocks {
         try {
 
             machine_tardis = new MachineTardis();
+            tardis_handbrake = new Handbrake();
 
         } catch (Exception e) {
 
@@ -67,7 +70,8 @@ public class MachineBlocks {
 
             blocks = new Block[] {
 
-                    machine_tardis
+                    machine_tardis,
+                    tardis_handbrake
 
             };
 
@@ -99,7 +103,8 @@ public class MachineBlocks {
 
         final ItemBlock[] items = {
 
-                new ItemBlock(machine_tardis)
+                new ItemBlock(machine_tardis),
+                new ItemBlock(tardis_handbrake)
 
         };
 
