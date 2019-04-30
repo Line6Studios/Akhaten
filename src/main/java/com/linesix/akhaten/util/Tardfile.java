@@ -278,6 +278,7 @@ public class Tardfile {
                 "  'x':'"  + x +  "',",
                 "  'y':'"  + y +  "',",
                 "  'z':'" + z +  "',",
+                "  'dimension':'0',",
                 "  'setX':'"  + x +  "',",
                 "  'setY':'"  + y +  "',",
                 "  'setZ':'" + z +  "'\n}"
@@ -321,6 +322,12 @@ public class Tardfile {
     public static String getUUIDFromTardfile(JsonObject data) {
 
         return data.get("uuid").getAsString();
+
+    }
+
+    public static int getDimensionFromTardfile(JsonObject data) {
+
+        return data.get("dimension").getAsInt();
 
     }
 
