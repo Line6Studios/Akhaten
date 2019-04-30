@@ -14,6 +14,9 @@ import net.minecraft.util.EnumFacing;
 import net.minecraft.util.EnumHand;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.World;
+import net.minecraftforge.common.DimensionManager;
+
+import java.awt.*;
 
 public class Handbrake extends Block {
 
@@ -49,6 +52,8 @@ public class Handbrake extends Block {
             int[] oldCoords;
             int x, y, z;
 
+            int dim;
+
             boolean[] tardisState;
 
             if (tardfile == null) {
@@ -71,17 +76,19 @@ public class Handbrake extends Block {
 
             tardisState = Tardfile.getTardisStateFromTardFile(tardfile);
 
+            dim = Tardfile.getDimensionFromTardfile(tardfile);
+
             if (!tardisState[0]) { // If the TARDIS isn't dematerialised, demat it
 
                 BlockPos oldPos = new BlockPos(x, y, z); // Generate new  BlockPos for old Tardis position
                 Tardfile.updatedTardfile(tardfile, oldCoords, setCoords, new boolean[] {true, false});
-                worldIn.destroyBlock(oldPos, false);
+                DimensionManager.getWorld(dim).destroyBlock(oldPos, false);
 
             } else if (!tardisState[1]) { // If the TARDIS isn't materialised, remat it
 
                 BlockPos newPos = new BlockPos(setX, setY, setZ); // Generate BlockPos for new Tardis position
                 Tardfile.updatedTardfile(tardfile, oldCoords, setCoords, new boolean[] {false, true});
-                worldIn.setBlockState(newPos, MachineBlocks.machine_tardis.getDefaultState());
+                DimensionManager.getWorld(dim).setBlockState(newPos, MachineBlocks.machine_tardis.getDefaultState());
 
             }
 

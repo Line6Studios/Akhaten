@@ -9,6 +9,7 @@ crash-reports/**
 .idea/**
 .gradle/**
 run/**
+build/**
 
 #Files
 options.txt
