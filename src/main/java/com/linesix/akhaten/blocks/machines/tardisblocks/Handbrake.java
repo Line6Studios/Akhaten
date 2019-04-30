@@ -5,6 +5,7 @@ import com.linesix.akhaten.Reference;
 import com.linesix.akhaten.blocks.MachineBlocks;
 import com.linesix.akhaten.blocks.Names;
 import com.linesix.akhaten.blocks.machines.MachineTardis;
+import com.linesix.akhaten.util.FileUtil;
 import com.linesix.akhaten.util.Tardfile;
 import net.minecraft.block.Block;
 import net.minecraft.block.material.Material;
@@ -17,6 +18,8 @@ import net.minecraft.world.World;
 import net.minecraftforge.common.DimensionManager;
 
 import java.awt.*;
+import java.io.File;
+import java.io.IOException;
 
 public class Handbrake extends Block {
 
@@ -44,7 +47,8 @@ public class Handbrake extends Block {
 
             System.out.println("TARDIS dematerialising");
 
-            JsonObject tardfile = Tardfile.findTardfileByName(playerIn.getName());
+            File tardfilePath = Tardfile.findTardfileByName(playerIn.getName());
+            JsonObject tardfile = Tardfile.findparseTardfileByName(playerIn.getName());
 
             int[] setCoords;
             int setX, setY, setZ;
@@ -52,7 +56,7 @@ public class Handbrake extends Block {
             int[] oldCoords;
             int x, y, z;
 
-            int dim;
+            int dim = 0;
 
             boolean[] tardisState;
 
@@ -81,13 +85,21 @@ public class Handbrake extends Block {
             if (!tardisState[0]) { // If the TARDIS isn't dematerialised, demat it
 
                 BlockPos oldPos = new BlockPos(x, y, z); // Generate new  BlockPos for old Tardis position
-                Tardfile.updatedTardfile(tardfile, oldCoords, setCoords, new boolean[] {true, false});
+                try {
+                    Tardfile.updatedTardfile(tardfilePath, oldCoords, setCoords, new boolean[] {true, false});
+                } catch (IOException e) {
+                    e.printStackTrace();
+                }
                 DimensionManager.getWorld(dim).destroyBlock(oldPos, false);
 
             } else if (!tardisState[1]) { // If the TARDIS isn't materialised, remat it
 
                 BlockPos newPos = new BlockPos(setX, setY, setZ); // Generate BlockPos for new Tardis position
-                Tardfile.updatedTardfile(tardfile, oldCoords, setCoords, new boolean[] {false, true});
+                try {
+                    Tardfile.updatedTardfile(tardfilePath, oldCoords, setCoords, new boolean[] {false, true});
+                } catch (IOException e) {
+                    e.printStackTrace();
+                }
                 DimensionManager.getWorld(dim).setBlockState(newPos, MachineBlocks.machine_tardis.getDefaultState());
 
             }

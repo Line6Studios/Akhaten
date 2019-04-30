@@ -99,63 +99,27 @@ public class Tardfile {
     /**
      * Updates a tardfile
      *
-     * @param data The JsonObject of the tardfile to update
+     * @param path The path of the tardfile to update
      * @param coords The current coordinates of the tardis
      * @param setCoords The coordinates that were set for the tardis
      * @param tardis_state The state of the tardis (demat / remat)
      *
      */
-    public static JsonObject updatedTardfile(JsonObject data, int[] coords, int[] setCoords, boolean[] tardis_state) {
+    public static void updatedTardfile(File path, int[] coords, int[] setCoords, boolean[] tardis_state) throws IOException {
 
-        String[] properties = {"is_demat", "is_remat", "x", "y", "z", "setX", "setY", "setZ"};
+        String[] properties = {"is_demat", "is_remat", "x", "y", "z", "dimension", "setX", "setY", "setZ"};
 
-        for (String property : properties) { // Removes every property that's in properties[]
+        String json = new String(Files.readAllBytes(Paths.get(path.getPath())));
 
-            data.remove(property);
+        String newJson = "";
 
-        }
+        for (String property : properties) {
 
-        // Messy code but it does the job xD
-
-        for (String property : properties) { // Loops through every property in properties[] and creates it
-
-            if (property == properties[0]) {
-
-                data.addProperty(property, tardis_state[0]);
-
-            } else if (property == properties[1]) {
-
-                data.addProperty(property, coords[0]);
-
-            } else if (property == properties[2]) {
-
-                data.addProperty(property, coords[1]);
-
-            } else if (property == properties[3]) {
-
-                data.addProperty(property, coords[2]);
-
-            } else if (property == properties[4]) {
-
-                data.addProperty(property, setCoords[0]);
-
-            } else if (property == properties[5]) {
-
-                data.addProperty(property, setCoords[1]);
-
-            } else if (property == properties[6]) {
-
-                data.addProperty(property, setCoords[2]);
-
-            } else {
-
-                data.addProperty(property, tardis_state[1]);
-
-            }
+            newJson = json.replaceAll(String.format("\\%s", property), "'" + property + "':''");
 
         }
 
-        return data;
+        System.out.println(newJson);
 
     }
 
@@ -234,7 +198,7 @@ public class Tardfile {
      * @param name Username
      *
      */
-    public static JsonObject findTardfileByName(String name) {
+    public static JsonObject findparseTardfileByName(String name) {
 
         JsonObject data;
 
@@ -249,6 +213,16 @@ public class Tardfile {
             return null;
 
         }
+
+        return data;
+
+    }
+
+    public static File findTardfileByName(String name) {
+
+        File data;
+
+        data = new File(DimensionManager.getCurrentSaveRootDirectory().getPath() + "/tardises/tardFile_" + name + ".json");
 
         return data;
 
