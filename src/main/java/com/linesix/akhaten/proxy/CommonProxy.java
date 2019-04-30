@@ -1,5 +1,6 @@
 package com.linesix.akhaten.proxy;
 
+import com.linesix.akhaten.blocks.BuildingBlocks;
 import com.linesix.akhaten.blocks.DimBlocks;
 import com.linesix.akhaten.blocks.MachineBlocks;
 import com.linesix.akhaten.dimensions.Dimensions;
@@ -16,6 +17,7 @@ public class CommonProxy {
 
         DimBlocks.init();
         MachineBlocks.init();
+        BuildingBlocks.init();
         Gadgets.init();
 
     }

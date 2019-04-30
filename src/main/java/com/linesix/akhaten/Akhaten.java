@@ -1,5 +1,6 @@
 package com.linesix.akhaten;
 
+import com.linesix.akhaten.blocks.BuildingBlocks;
 import com.linesix.akhaten.blocks.DimBlocks;
 import com.linesix.akhaten.blocks.MachineBlocks;
 import com.linesix.akhaten.commands.Commands;
@@ -46,6 +47,7 @@ public class Akhaten {
 
         DimBlocks.init();
         MachineBlocks.init();
+        BuildingBlocks.init();
         Gadgets.init();
 
     }

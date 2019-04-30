@@ -1,0 +1,7 @@
+{
+  "variants": {
+    "normal": [
+      { "model": "akhaten:block_roundel" }
+    ]
+  }
+}

@@ -19,6 +19,7 @@ public class Names {
         public class Tardis {
 
             public static final String handbrake = "tardis_handbrake";
+            public static final String roundel = "block_roundel";
 
         }
     }
