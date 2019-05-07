@@ -1,0 +1,18 @@
+# ПЕРЕВЕЛ SYORI
+# ВЕРСИЯ 2019.1
+# ДАТА 07.05.2019
+
+# Блоки [Blocks] [6-10]
+tile.akhaten:gallifrey_stone.name=Галлифрейский камень
+tile.akhaten:gallifrey_grass.name=Галлифрейская трава
+tile.akhaten:gallifrey_dirt.name=Галлифрейская грязь
+machine_tile.akhaten:machine_tardis.name=Капсула путешествия во времени
+machine_tile.akhaten:tardis_handbrake.name=Ручной тормоз TARDIS
+
+# Предметы [Items] [13]
+item.item.akhaten:vortex_manipulator.name=Манипулятор временной воронки
+
+# Разделы [Tabs] [16-18]
+itemGroup.akhaten_dimensional_blocks=Блоки измерения Akhaten 
+itemGroup.akhaten_gadgets=Устройства Akhaten
+itemGroup.akhaten_machines=Машины Akhaten

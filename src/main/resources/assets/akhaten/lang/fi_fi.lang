@@ -1,19 +1,18 @@
-######################
-# TRANSLATE BY SYORI #
-#    VERSION 0.2     #
-######################
+# KÄÄNTÄJÄ SYORI
+# VERSIO 2019.2
+# PVM 07.05.2019
 
-#Kuutiot [Blocks]
+# Kuutiot [Blocks] [6-10]
 tile.akhaten:gallifrey_stone.name=Gallifreyin Kivi
 tile.akhaten:gallifrey_grass.name=Gallifreyin Ruoho
 tile.akhaten:gallifrey_dirt.name=Gallifreyin Multa
 machine_tile.akhaten:machine_tardis.name=Aikamatka Kapseli
 machine_tile.akhaten:tardis_handbrake.name=TARDIS Seisontajarru
 
-#Esinet [Items]
+# Esinet [Items] [13]
 item.item.akhaten:vortex_manipulator.name=Vortex-manipulaattori
 
-#Välilehdet [Tabs]
+# Välilehdet [Tabs] [16-18]
 itemGroup.akhaten_dimensional_blocks=Akhaten Ulottuvuuden Kuutiot
 itemGroup.akhaten_gadgets=Akhaten Laiteet
 itemGroup.akhaten_machines=Akhaten Koneet
