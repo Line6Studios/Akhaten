@@ -120,11 +120,13 @@ public class Tardfile {
 
         for (String i : tardfile) {
 
-            writer.write(i);
+            writer.write(i+"\n");
 
         }
 
         writer.close();
+
+        replaceChar(path);
 
     }
 
