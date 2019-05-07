@@ -58,6 +58,8 @@ public class Handbrake extends Block {
 
             int dim = 0;
 
+            int id;
+
             boolean[] tardisState;
 
             if (tardfile == null) {
@@ -82,11 +84,13 @@ public class Handbrake extends Block {
 
             dim = Tardfile.getDimensionFromTardfile(tardfile);
 
+            id = Tardfile.getTardisIDFromTardfile(tardfile);
+
             if (!tardisState[0]) { // If the TARDIS isn't dematerialised, demat it
 
                 BlockPos oldPos = new BlockPos(x, y, z); // Generate new  BlockPos for old Tardis position
                 try {
-                    Tardfile.updatedTardfile(tardfilePath, oldCoords, setCoords, new boolean[] {true, false});
+                    Tardfile.updateTardfile(tardfilePath, playerIn.getName(), id, playerIn.getUniqueID().toString(), oldCoords, setCoords, new boolean[] {true, false});
                 } catch (IOException e) {
                     e.printStackTrace();
                 }
@@ -96,7 +100,7 @@ public class Handbrake extends Block {
 
                 BlockPos newPos = new BlockPos(setX, setY, setZ); // Generate BlockPos for new Tardis position
                 try {
-                    Tardfile.updatedTardfile(tardfilePath, oldCoords, setCoords, new boolean[] {false, true});
+                    Tardfile.updateTardfile(tardfilePath, playerIn.getName(), id, playerIn.getUniqueID().toString(), oldCoords, setCoords, new boolean[] {true, false});
                 } catch (IOException e) {
                     e.printStackTrace();
                 }
