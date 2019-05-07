@@ -12,6 +12,7 @@ run/**
 build/**
 
 #Files
+*.code-workspace
 options.txt
 usercache.json
 usernamecache.json
