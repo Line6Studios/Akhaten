@@ -114,11 +114,17 @@ public class Tardfile {
 
         String[] tardfile = createTardFileArray(name, uuid, tardis_id, coords[0], coords[1], coords[2], setCoords[0], setCoords[1], setCoords[2]);
 
+        PrintWriter writer = new PrintWriter(path);
+
+        writer.write("");
+
         for (String i : tardfile) {
 
-            System.out.println(i);
+            writer.write(i);
 
         }
+
+        writer.close();
 
     }
 
