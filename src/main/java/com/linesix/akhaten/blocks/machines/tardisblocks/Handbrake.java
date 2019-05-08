@@ -86,7 +86,7 @@ public class Handbrake extends Block {
 
             id = Tardfile.getTardisIDFromTardfile(tardfile);
 
-            if (!tardisState[0]) { // If the TARDIS isn't dematerialised, demat it
+            if (tardisState[1]) { // If the TARDIS isn't dematerialised, demat it
 
                 BlockPos oldPos = new BlockPos(x, y, z); // Generate new  BlockPos for old Tardis position
                 try {
@@ -96,11 +96,11 @@ public class Handbrake extends Block {
                 }
                 DimensionManager.getWorld(dim).destroyBlock(oldPos, false);
 
-            } else if (!tardisState[1]) { // If the TARDIS isn't materialised, remat it
+            } else if (tardisState[0]) { // If the TARDIS isn't materialised, remat it
 
                 BlockPos newPos = new BlockPos(setX, setY, setZ); // Generate BlockPos for new Tardis position
                 try {
-                    Tardfile.updateTardfile(tardfilePath, playerIn.getName(), id, playerIn.getUniqueID().toString(), oldCoords, setCoords, new boolean[] {true, false});
+                    Tardfile.updateTardfile(tardfilePath, playerIn.getName(), id, playerIn.getUniqueID().toString(), oldCoords, setCoords, new boolean[] {false, true});
                 } catch (IOException e) {
                     e.printStackTrace();
                 }

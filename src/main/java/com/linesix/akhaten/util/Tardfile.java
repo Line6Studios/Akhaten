@@ -55,7 +55,7 @@ public class Tardfile {
 
             PrintWriter writer = new PrintWriter(pathComplete); // Create a new PrintWriter for the tardfile
 
-            String[] tardfilearray = createTardFileArray(placer.getName(), placer.getUniqueID().toString(), id, pos.getX(), pos.getY(), pos.getZ(), pos.getX(), pos.getY(), pos.getZ()); // Create the array containing all base information
+            String[] tardfilearray = createTardFileArray(placer.getName(), placer.getUniqueID().toString(), id, pos.getX(), pos.getY(), pos.getZ(), pos.getX(), pos.getY(), pos.getZ(), new boolean[] {false, true}); // Create the array containing all base information
 
 
             for (String i : tardfilearray) { // Write the file from the array
@@ -112,7 +112,7 @@ public class Tardfile {
 
         System.out.println("Genearting new Tardfile for user "+name);
 
-        String[] tardfile = createTardFileArray(name, uuid, tardis_id, coords[0], coords[1], coords[2], setCoords[0], setCoords[1], setCoords[2]);
+        String[] tardfile = createTardFileArray(name, uuid, tardis_id, coords[0], coords[1], coords[2], setCoords[0], setCoords[1], setCoords[2], tardis_state);
 
         PrintWriter writer = new PrintWriter(path);
 
@@ -246,7 +246,7 @@ public class Tardfile {
      * @param z the current z coordinate of the tardis
      *
      */
-    private static String[] createTardFileArray(String user, String uuid, int tardis_id, int x, int y, int z, int setX, int setY, int setZ) {
+    private static String[] createTardFileArray(String user, String uuid, int tardis_id, int x, int y, int z, int setX, int setY, int setZ, boolean[] state) {
 
         String[] template;
         template = new String[]{
@@ -254,8 +254,8 @@ public class Tardfile {
                 "{\n  'user':'" + user + "',",
                 "  'uuid':'" + uuid +  "',",
                 "  'tardis_id':'"  + tardis_id +  "',",
-                "  'is_demat':'false',",
-                "  'is_remat':'true',",
+                "  'is_demat':'"+ state[0] +"',",
+                "  'is_remat':'"+ state[1] +"',",
                 "  'x':'"  + x +  "',",
                 "  'y':'"  + y +  "',",
                 "  'z':'" + z +  "',",
