@@ -23,4 +23,3 @@ run.sh
 
 #Classes
 src/main/java/com/linesix/akhaten/handler/TardisHandler.java
-config/splash.properties
