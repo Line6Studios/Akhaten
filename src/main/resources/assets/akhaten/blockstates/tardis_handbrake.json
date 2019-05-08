@@ -1,0 +1,9 @@
+{
+
+  "variants": {
+    "normal": [
+      { "model": "akhaten:tardis_handbrake" }
+    ]
+  }
+
+}
