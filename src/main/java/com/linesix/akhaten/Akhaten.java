@@ -23,7 +23,7 @@ public class Akhaten {
 
 
    /*
-    * Akhaten Public Alpha (Version 0.3.4)
+    * Akhaten Public Alpha (Version 0.3.5)
     * Copyright (C) 2019 Linesix Studios, Licensed under the ISC license
     *
     * Author: Felix Eckert (TheBertrahmPlays / Angry German)

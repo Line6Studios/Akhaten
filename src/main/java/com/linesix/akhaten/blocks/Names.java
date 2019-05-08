@@ -20,6 +20,7 @@ public class Names {
 
             public static final String handbrake = "tardis_handbrake";
             public static final String roundel = "block_roundel";
+            public static final String door = "tardis_door";
 
         }
     }
