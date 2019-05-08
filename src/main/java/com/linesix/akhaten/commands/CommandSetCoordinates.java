@@ -32,11 +32,11 @@ public class CommandSetCoordinates extends CommandBase {
         try {
 
             int id = Tardfile.findparseTardfileByName(sender.getName()).get("tardis_id").getAsInt();
+            int[] coords = Tardfile.getCoordsFromTardfile(FileUtil.parseJSON(Tardfile.findTardfileByName("Lord_Bertrahm")));
+            int[] setCoords = {Integer.parseInt(args[0]), Integer.parseInt(args[1]), Integer.parseInt(args[2])};
 
             Tardfile.updateTardfile(Tardfile.findTardfileByName(sender.getName()), sender.getName(), id,
-                    sender.getCommandSenderEntity().getUniqueID().toString(),
-                    Tardfile.getCoordsFromTardfile(FileUtil.parseJSON(Tardfile.findTardfileByName("Lord_Bertrahm"))), new int[] {
-                            Integer.parseInt(args[0]), Integer.parseInt(args[1]), Integer.parseInt(args[2])},
+                    sender.getCommandSenderEntity().getUniqueID().toString(), coords, setCoords,
                     Tardfile.getTardisStateFromTardFile(Tardfile.findparseTardfileByName("Lord_Bertrahm")));
 
         } catch (IOException e) {
