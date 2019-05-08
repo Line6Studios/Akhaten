@@ -10,6 +10,7 @@ crash-reports/**
 .gradle/**
 run/**
 build/**
+config/**
 
 #Files
 *.code-workspace
