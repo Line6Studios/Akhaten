@@ -90,7 +90,7 @@ public class Handbrake extends Block {
 
                 BlockPos oldPos = new BlockPos(x, y, z); // Generate new  BlockPos for old Tardis position
                 try {
-                    Tardfile.updateTardfile(tardfilePath, playerIn.getName(), id, playerIn.getUniqueID().toString(), oldCoords, setCoords, new boolean[] {true, false});
+                    Tardfile.updateTardfile(tardfilePath, playerIn.getName(), id, playerIn.getUniqueID().toString(), setCoords, setCoords, new boolean[] {true, false});
                 } catch (IOException e) {
                     e.printStackTrace();
                 }
@@ -105,6 +105,8 @@ public class Handbrake extends Block {
                     e.printStackTrace();
                 }
                 DimensionManager.getWorld(dim).setBlockState(newPos, MachineBlocks.machine_tardis.getDefaultState());
+
+                System.out.println(x+ " " + y + " " + z);//DEBUG
 
             }
 
