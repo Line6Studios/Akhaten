@@ -3,9 +3,11 @@ package com.linesix.akhaten.blocks;
 import com.google.common.base.Preconditions;
 import com.linesix.akhaten.Reference;
 import com.linesix.akhaten.blocks.building.BlockRoundel;
+import com.linesix.akhaten.blocks.building.Door;
 import com.linesix.akhaten.blocks.gallifrey.GallifreyDirt;
 import com.linesix.akhaten.blocks.gallifrey.GallifreyGrass;
 import com.linesix.akhaten.blocks.gallifrey.GallifreyStone;
+import com.linesix.akhaten.tabs.TabBuilding;
 import com.linesix.akhaten.tabs.TabDim;
 import net.minecraft.block.Block;
 import net.minecraft.client.renderer.block.model.ModelResourceLocation;
@@ -36,12 +38,13 @@ public class BuildingBlocks {
 
     public static final Set<ItemBlock> ITEM_BLOCKS = new HashSet<>(); // Create a set for all item blocks
 
-    public static CreativeTabs buildblocktab = new TabDim();
+    public static CreativeTabs buildblocktab = new TabBuilding();
 
     private static Block[] blocks; // Create an array for all blocks
 
     // Creation of all Block-Variables below
     public static BlockRoundel block_roundel;
+    public static Door block_door;
     // End Creation of all Block-Variables
 
     public static void init() {
@@ -52,6 +55,7 @@ public class BuildingBlocks {
         try {
 
             block_roundel = new BlockRoundel();
+            block_door = new Door();
 
         } catch (Exception e) { // If theres an error whilst initializing any of the Variables, execute the code below
 
@@ -74,7 +78,8 @@ public class BuildingBlocks {
 
         blocks = new Block[] { // Add all block vars in this array
 
-            block_roundel
+                block_roundel,
+                block_door
 
         };
 
@@ -89,7 +94,8 @@ public class BuildingBlocks {
 
         final ItemBlock[] items = { // Put the registry in a variable
 
-            new ItemBlock(block_roundel)
+                new ItemBlock(block_roundel),
+                new ItemBlock(block_door)
 
         };
 
