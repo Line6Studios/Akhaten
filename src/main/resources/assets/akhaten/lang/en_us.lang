@@ -3,6 +3,8 @@
 tile.akhaten:gallifrey_stone.name=Gallifrey Stone
 tile.akhaten:gallifrey_grass.name=Gallifrey Grass
 tile.akhaten:gallifrey_dirt.name=Gallifrey Dirt
+tile.akhaten:tardis_door.name=TARDIS Door
+tile.akhaten:block_roundel.name=Roundel
 machine_tile.akhaten:machine_tardis.name=TT Capsule
 machine_tile.akhaten:tardis_handbrake.name=TARDIS Handbrake
 
