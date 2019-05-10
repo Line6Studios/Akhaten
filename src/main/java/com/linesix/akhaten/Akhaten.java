@@ -7,6 +7,7 @@ import com.linesix.akhaten.commands.Commands;
 import com.linesix.akhaten.dimensions.Dimensions;
 import com.linesix.akhaten.items.Gadgets;
 import com.linesix.akhaten.proxy.CommonProxy;
+import com.linesix.akhaten.sound.SoundRegistry;
 import net.minecraftforge.fml.common.Mod;
 import net.minecraftforge.fml.common.SidedProxy;
 import net.minecraftforge.fml.common.event.FMLInitializationEvent;
@@ -45,6 +46,9 @@ public class Akhaten {
 
         System.out.println("Entering PreInit phase");
 
+
+        // Register Items Blocks and Sounds Below
+        SoundRegistry.init();
         DimBlocks.init();
         MachineBlocks.init();
         BuildingBlocks.init();
@@ -56,6 +60,8 @@ public class Akhaten {
     public void init(FMLInitializationEvent event) {
 
         System.out.println("Entering Init phase");
+
+        // Register Dimensions below
         Dimensions.registerDimensions();
 
     }
@@ -63,6 +69,7 @@ public class Akhaten {
     @Mod.EventHandler
     public void serverStarting(FMLServerStartingEvent event) {
 
+        // Register Commands Below
         Commands.register(event);
 
     }
