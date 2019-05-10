@@ -2,10 +2,10 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="2c61b2dc-a3cd-4a64-831c-a7b6ecdfbbe7" name="Default" comment="">
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/linesix/akhaten/sound/SoundRegistry.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/linesix/akhaten/Akhaten.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/linesix/akhaten/Akhaten.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/linesix/akhaten/blocks/machines/tardisblocks/Handbrake.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/linesix/akhaten/blocks/machines/tardisblocks/Handbrake.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/linesix/akhaten/sound/SoundRegistry.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/linesix/akhaten/sound/SoundRegistry.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/resources/assets/akhaten/models/block/machine_tardis.json" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/assets/akhaten/models/block/machine_tardis.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/assets/akhaten/sounds.json" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/assets/akhaten/sounds.json" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <ignored path="$PROJECT_DIR$/.gradle/" />
@@ -57,8 +57,8 @@
       <file leaf-file-name="Akhaten.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/com/linesix/akhaten/Akhaten.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="198">
-              <caret line="50" column="29" selection-start-line="50" selection-start-column="29" selection-end-line="50" selection-end-column="29" />
+            <state relative-caret-position="669">
+              <caret line="71" column="14" selection-start-line="71" selection-start-column="14" selection-end-line="71" selection-end-column="14" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -66,11 +66,24 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="SoundRegistry.java" pinned="false" current-in-tab="true">
+      <file leaf-file-name="Handbrake.java" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/main/java/com/linesix/akhaten/blocks/machines/tardisblocks/Handbrake.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="256">
+              <caret line="103" column="21" lean-forward="true" selection-start-line="103" selection-start-column="21" selection-end-line="103" selection-end-column="21" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="SoundRegistry.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/com/linesix/akhaten/sound/SoundRegistry.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="60">
-              <caret line="3" column="26" selection-start-line="3" selection-start-column="26" selection-end-line="3" selection-end-column="26" />
+            <state relative-caret-position="298">
+              <caret line="27" column="78" selection-start-line="27" selection-start-column="78" selection-end-line="27" selection-end-column="78" />
+              <folding>
+                <element signature="imports" expanded="true" />
+                <element signature="e#753#765#0" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -713,7 +726,6 @@
         <option value="$PROJECT_DIR$/src/main/java/com/linesix/akhaten/util/Tardfile.java" />
         <option value="$PROJECT_DIR$/.gitignore" />
         <option value="$PROJECT_DIR$/src/main/java/com/linesix/akhaten/commands/CommandSetCoordinates.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/linesix/akhaten/blocks/machines/tardisblocks/Handbrake.java" />
         <option value="$PROJECT_DIR$/build.gradle" />
         <option value="$PROJECT_DIR$/src/main/resources/mcmod.info" />
         <option value="$PROJECT_DIR$/src/main/java/com/linesix/akhaten/blocks/machines/tardisblocks/Door.java" />
@@ -724,6 +736,8 @@
         <option value="$PROJECT_DIR$/src/main/java/com/linesix/akhaten/blocks/building/Door.java" />
         <option value="$PROJECT_DIR$/src/main/resources/assets/akhaten/models/block/machine_tardis.json" />
         <option value="$PROJECT_DIR$/src/main/java/com/linesix/akhaten/Akhaten.java" />
+        <option value="$PROJECT_DIR$/src/main/resources/assets/akhaten/sounds.json" />
+        <option value="$PROJECT_DIR$/src/main/java/com/linesix/akhaten/blocks/machines/tardisblocks/Handbrake.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/linesix/akhaten/sound/SoundRegistry.java" />
       </list>
     </option>
@@ -753,40 +767,6 @@
             <path>
               <item name="Akhaten" type="b2602c69:ProjectViewProjectNode" />
               <item name="Akhaten" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
-              <item name="run" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="Akhaten" type="b2602c69:ProjectViewProjectNode" />
-              <item name="Akhaten" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
-              <item name="run" type="462c0819:PsiDirectoryNode" />
-              <item name="saves" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="Akhaten" type="b2602c69:ProjectViewProjectNode" />
-              <item name="Akhaten" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
-              <item name="run" type="462c0819:PsiDirectoryNode" />
-              <item name="saves" type="462c0819:PsiDirectoryNode" />
-              <item name="Tutorial" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="Akhaten" type="b2602c69:ProjectViewProjectNode" />
-              <item name="Akhaten" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
-              <item name="saves" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="Akhaten" type="b2602c69:ProjectViewProjectNode" />
-              <item name="Akhaten" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
-              <item name="saves" type="462c0819:PsiDirectoryNode" />
-              <item name="Test" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="Akhaten" type="b2602c69:ProjectViewProjectNode" />
-              <item name="Akhaten" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
-              <item name="screenshots" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="Akhaten" type="b2602c69:ProjectViewProjectNode" />
-              <item name="Akhaten" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
@@ -827,22 +807,27 @@
               <item name="java" type="462c0819:PsiDirectoryNode" />
               <item name="akhaten" type="462c0819:PsiDirectoryNode" />
               <item name="blocks" type="462c0819:PsiDirectoryNode" />
-              <item name="building" type="462c0819:PsiDirectoryNode" />
+              <item name="machines" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="Akhaten" type="b2602c69:ProjectViewProjectNode" />
               <item name="Akhaten" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
               <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="resources" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="Akhaten" type="b2602c69:ProjectViewProjectNode" />
-              <item name="Akhaten" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="resources" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
               <item name="akhaten" type="462c0819:PsiDirectoryNode" />
+              <item name="blocks" type="462c0819:PsiDirectoryNode" />
+              <item name="machines" type="462c0819:PsiDirectoryNode" />
+              <item name="tardisblocks" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="Akhaten" type="b2602c69:ProjectViewProjectNode" />
+              <item name="Akhaten" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+              <item name="akhaten" type="462c0819:PsiDirectoryNode" />
+              <item name="sound" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="Akhaten" type="b2602c69:ProjectViewProjectNode" />
@@ -1027,19 +1012,20 @@
     <layout>
       <window_info anchor="right" id="Palette" order="0" />
       <window_info anchor="bottom" id="TODO" order="10" />
+      <window_info anchor="right" id="Messages" order="9" sideWeight="0.50054526" side_tool="true" weight="0.16604893" />
       <window_info anchor="right" id="Palette&#9;" order="1" />
       <window_info id="Image Layers" order="0" />
       <window_info anchor="right" id="Capture Analysis" order="2" />
-      <window_info anchor="bottom" id="Event Log" order="0" sideWeight="0.5118606" side_tool="true" visible="true" weight="0.32869694" />
+      <window_info anchor="bottom" id="Event Log" order="0" sideWeight="0.5122313" side_tool="true" visible="true" weight="0.32869694" />
       <window_info anchor="right" id="Maven Projects" order="3" />
-      <window_info anchor="bottom" id="Run" order="6" sideWeight="0.48813936" weight="0.32869694" />
+      <window_info anchor="bottom" id="Run" order="6" sideWeight="0.4877687" weight="0.32869694" />
       <window_info anchor="bottom" id="Version Control" order="1" sideWeight="0.49962935" weight="0.329429" />
       <window_info anchor="bottom" id="Terminal" order="2" sideWeight="0.49851742" weight="0.329429" />
       <window_info id="Capture Tool" order="1" />
       <window_info id="Designer" order="2" />
-      <window_info active="true" content_ui="combo" id="Project" order="5" visible="true" weight="0.3035582" />
+      <window_info content_ui="combo" id="Project" order="5" visible="true" weight="0.3035582" />
       <window_info id="Gradle" order="6" weight="0.14418088" />
-      <window_info anchor="right" id="Structure" order="6" sideWeight="0.49945474" side_tool="true" visible="true" weight="0.16604893" />
+      <window_info anchor="right" id="Structure" order="6" sideWeight="0.49945474" side_tool="true" weight="0.16604893" />
       <window_info anchor="right" id="Ant Build" order="7" weight="0.24981467" />
       <window_info id="UI Designer" order="3" />
       <window_info anchor="right" id="Theme Preview" order="4" />
@@ -1047,7 +1033,6 @@
       <window_info id="Favorites" order="4" side_tool="true" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="8" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="9" weight="0.4" />
-      <window_info anchor="right" id="Messages" order="9" sideWeight="0.50054526" side_tool="true" weight="0.16604893" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="5" type="SLIDING" weight="0.4" />
       <window_info anchor="bottom" id="Message" order="4" />
       <window_info anchor="bottom" id="Cvs" order="8" weight="0.25" />
@@ -1134,13 +1119,6 @@
     <option name="FILTER_TARGETS" value="false" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/linesix/akhaten/util/FileUtil.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="506">
-          <caret line="32" column="33" selection-start-line="32" selection-start-column="33" selection-end-line="32" selection-end-column="33" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/com/linesix/akhaten/dimensions/worldproviders/WorldProviderTardis.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="836">
@@ -1316,13 +1294,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/linesix/akhaten/blocks/machines/tardisblocks/Handbrake.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="480">
-          <caret line="43" column="178" selection-start-line="42" selection-start-column="4" selection-end-line="43" selection-end-column="178" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/com/linesix/akhaten/blocks/machines/MachineTardis.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="680">
@@ -1405,10 +1376,17 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/resources/assets/akhaten/sounds.json">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="120">
+          <caret line="6" column="38" selection-start-line="6" selection-start-column="38" selection-end-line="6" selection-end-column="38" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/com/linesix/akhaten/Akhaten.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="198">
-          <caret line="50" column="29" selection-start-line="50" selection-start-column="29" selection-end-line="50" selection-end-column="29" />
+        <state relative-caret-position="669">
+          <caret line="71" column="14" selection-start-line="71" selection-start-column="14" selection-end-line="71" selection-end-column="14" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
@@ -1417,8 +1395,19 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/com/linesix/akhaten/sound/SoundRegistry.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="60">
-          <caret line="3" column="26" selection-start-line="3" selection-start-column="26" selection-end-line="3" selection-end-column="26" />
+        <state relative-caret-position="298">
+          <caret line="27" column="78" selection-start-line="27" selection-start-column="78" selection-end-line="27" selection-end-column="78" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#753#765#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/linesix/akhaten/blocks/machines/tardisblocks/Handbrake.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="256">
+          <caret line="103" column="21" lean-forward="true" selection-start-line="103" selection-start-column="21" selection-end-line="103" selection-end-column="21" />
         </state>
       </provider>
     </entry>

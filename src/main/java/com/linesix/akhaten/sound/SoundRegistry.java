@@ -8,6 +8,9 @@ import net.minecraftforge.fml.common.Mod;
 import net.minecraftforge.fml.common.eventhandler.SubscribeEvent;
 import net.minecraftforge.registries.IForgeRegistry;
 
+import java.util.ArrayList;
+import java.util.List;
+
 @Mod.EventBusSubscriber
 public class SoundRegistry {
 
@@ -15,25 +18,48 @@ public class SoundRegistry {
     *
     * Author: Felix Eckert ( TheBertrahmPlays / Angry German )
     *
+    * NOTE: ONLY APPEND TO ARRAY-LIST sound_events
+    *
     */
 
-    public static String[] sounds;
+    public static String[] sound_paths;
+    public static String[] sound_names;
+
+    public static List<SoundEvent> sound_events = new ArrayList<SoundEvent>();
 
     public static void init() { // Function to write the sound names to array "sounds"
 
-        sounds = new String[] {
+        sound_paths = new String[] {
 
-          "tardis_demat"
+          "machines/tardis_demat",
+          "machines/tardis_remat"
 
         };
 
+        sound_names = new String[] {
+
+                "tardis_demat",
+                "tardis_remat"
+
+        };
+
+        for (String sound_name : sound_names) {
+
+            for (String sound_path : sound_paths) {
+
+                sound_events.add(registerSound(sound_name, sound_path));
+
+            }
+
+        }
+
     }
 
-    public static SoundEvent registerSound(String sound) { // Basically returns a new SoundEvent for the given name
+    public static SoundEvent registerSound(String sound_name, String sound_path) { // Basically returns a new SoundEvent for the given name
 
-        ResourceLocation location = new ResourceLocation(Reference.RESOURCE_PREFIX + sound); // Create the new resource location for the sound
+        ResourceLocation location = new ResourceLocation(Reference.RESOURCE_PREFIX + sound_path); // Create the new resource location for the sound
         SoundEvent event = new SoundEvent(location); // Create the new SoundEvent
-        event.setRegistryName(Reference.RESOURCE_PREFIX + sound); // Set the registry name
+        event.setRegistryName(Reference.RESOURCE_PREFIX + sound_name); // Set the registry name
 
         return event; // Return the sound event
 
@@ -44,12 +70,13 @@ public class SoundRegistry {
 
         final IForgeRegistry<SoundEvent> registry = event.getRegistry(); // Get the registry from the event
 
-        for (String sound : sounds) { // Loop through the sounds array and register the according sound
+        for (SoundEvent sound : sound_events) { // Loop through the sounds array and register the according sound
 
-            registry.register(registerSound(sound)); // Register the sound
+
+            registry.register(sound); // Register the sound
+
 
         }
-
     }
 
 }

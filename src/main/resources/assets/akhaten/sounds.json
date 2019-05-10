@@ -1,19 +1,18 @@
 {
 
-  "gallifrey.grass": {
+  "tardis_demat": {
 
-    "category": "neutral",
+    "stream":"true",
 
-    "sounds": [
+    "sounds":[{"name":"akhaten:machines/tardis_demat"}]
 
-      "step/grass1",
-      "step/grass2",
-      "step/grass3",
-      "step/grass4",
-      "step/grass5",
-      "step/grass6"
+  },
 
-    ]
+  "tardis_remat": {
+
+    "stream":"true",
+
+    "sounds":[{"name":"akhaten:machines/tardis_remat"}]
 
   }
 

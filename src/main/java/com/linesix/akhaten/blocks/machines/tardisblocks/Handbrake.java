@@ -5,6 +5,7 @@ import com.linesix.akhaten.Reference;
 import com.linesix.akhaten.blocks.MachineBlocks;
 import com.linesix.akhaten.blocks.Names;
 import com.linesix.akhaten.blocks.machines.MachineTardis;
+import com.linesix.akhaten.sound.SoundRegistry;
 import com.linesix.akhaten.util.FileUtil;
 import com.linesix.akhaten.util.Tardfile;
 import net.minecraft.block.Block;
@@ -13,6 +14,7 @@ import net.minecraft.block.state.IBlockState;
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.util.EnumFacing;
 import net.minecraft.util.EnumHand;
+import net.minecraft.util.SoundCategory;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.World;
 import net.minecraftforge.common.DimensionManager;
@@ -43,50 +45,50 @@ public class Handbrake extends Block {
     @Override
     public boolean onBlockActivated(World worldIn, BlockPos pos, IBlockState state, EntityPlayer playerIn, EnumHand hand, EnumFacing facing, float hitX, float hitY, float hitZ) {
 
+        File tardfilePath = Tardfile.findTardfileByName(playerIn.getName());
+        JsonObject tardfile = Tardfile.findparseTardfileByName(playerIn.getName());
+
+        int[] setCoords;
+        int setX, setY, setZ;
+
+        int[] oldCoords;
+        int x, y, z;
+
+        int dim = 0;
+
+        int id;
+
+        boolean[] tardisState;
+
+        if (tardfile == null) {
+
+            return false;
+
+        }
+
+        setCoords = Tardfile.getSetCoordsFromTardfile(tardfile);
+
+        oldCoords = Tardfile.getCoordsFromTardfile(tardfile);
+
+        setX = setCoords[0];
+        setY = setCoords[1];
+        setZ = setCoords[2];
+
+        x = oldCoords[0];
+        y = oldCoords[1];
+        z = oldCoords[2];
+
+        tardisState = Tardfile.getTardisStateFromTardFile(tardfile);
+
+        dim = Tardfile.getDimensionFromTardfile(tardfile);
+
+        id = Tardfile.getTardisIDFromTardfile(tardfile);
+
         if (!worldIn.isRemote) {
 
-            System.out.println("TARDIS dematerialising");
-
-            File tardfilePath = Tardfile.findTardfileByName(playerIn.getName());
-            JsonObject tardfile = Tardfile.findparseTardfileByName(playerIn.getName());
-
-            int[] setCoords;
-            int setX, setY, setZ;
-
-            int[] oldCoords;
-            int x, y, z;
-
-            int dim = 0;
-
-            int id;
-
-            boolean[] tardisState;
-
-            if (tardfile == null) {
-
-                return false;
-
-            }
-
-            setCoords = Tardfile.getSetCoordsFromTardfile(tardfile);
-
-            oldCoords = Tardfile.getCoordsFromTardfile(tardfile);
-
-            setX = setCoords[0];
-            setY = setCoords[1];
-            setZ = setCoords[2];
-
-            x = oldCoords[0];
-            y = oldCoords[1];
-            z = oldCoords[2];
-
-            tardisState = Tardfile.getTardisStateFromTardFile(tardfile);
-
-            dim = Tardfile.getDimensionFromTardfile(tardfile);
-
-            id = Tardfile.getTardisIDFromTardfile(tardfile);
-
             if (tardisState[1]) { // If the TARDIS isn't dematerialised, demat it
+
+                //playerIn.playSound(SoundRegistry.sound_events.get(0), 10.0f, 0);
 
                 BlockPos oldPos = new BlockPos(x, y, z); // Generate new  BlockPos for old Tardis position
                 try {
@@ -106,13 +108,13 @@ public class Handbrake extends Block {
                 }
                 DimensionManager.getWorld(dim).setBlockState(newPos, MachineBlocks.machine_tardis.getDefaultState());
 
-                System.out.println(x+ " " + y + " " + z);//DEBUG
-
             }
 
             return true;
 
         } else {
+
+            worldIn.playSound(playerIn, pos, SoundRegistry.sound_events.get(0), SoundCategory.BLOCKS, 1.0f, 0.0f);
 
             return true;
 
