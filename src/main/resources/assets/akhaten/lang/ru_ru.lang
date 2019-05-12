@@ -1,6 +1,6 @@
 # ПЕРЕВЕЛ SYORI
-# ВЕРСИЯ 2019.2
-# ДАТА 09.05.2019
+# ВЕРСИЯ 2019.3
+# ДАТА 10.05.2019
 
 # Блоки [Blocks] [6-10]
 tile.akhaten:gallifrey_stone.name=Галлифрейский камень
@@ -16,7 +16,8 @@ machine_tile.akhaten:tardis_handbrake.name=Ручной тормоз TARDIS
 # Предметы [Items] [17]
 item.item.akhaten:vortex_manipulator.name=Манипулятор временной воронки
 
-# Разделы [Tabs] [20-22]
-itemGroup.akhaten_dimensional_blocks=Блоки измерения Akhaten 
-itemGroup.akhaten_gadgets=Устройства Akhaten
-itemGroup.akhaten_machines=Машины Akhaten
+# Разделы [Tabs] [20-23]
+itemGroup.akhaten_dimensional_blocks=Блоки измерения Akhaten:а
+itemGroup.akhaten_gadgets=Устройства Akhaten:а
+itemGroup.akhaten_machines=Машины Akhaten:а
+itemGroup.akhaten_building_blocks=Строительные блоки Akhaten:а

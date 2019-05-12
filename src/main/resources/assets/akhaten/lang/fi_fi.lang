@@ -1,6 +1,6 @@
 # KÄÄNTÄJÄ SYORI
-# VERSIO 2019.3
-# PVM 09.05.2019
+# VERSIO 2019.4
+# PVM 10.05.2019
 
 # Kuutiot [Blocks] [6-10]
 tile.akhaten:gallifrey_stone.name=Gallifreyin Kivi
@@ -16,7 +16,8 @@ machine_tile.akhaten:tardis_handbrake.name=TARDIS Seisontajarru
 # Esinet [Items] [17]
 item.item.akhaten:vortex_manipulator.name=Vortex-manipulaattori
 
-# Välilehdet [Tabs] [20-22]
+# Välilehdet [Tabs] [20-23]
 itemGroup.akhaten_dimensional_blocks=Akhaten Ulottuvuuden Kuutiot
 itemGroup.akhaten_gadgets=Akhaten Laiteet
 itemGroup.akhaten_machines=Akhaten Koneet
+itemGroup.akhaten_building_blocks=Akhaten Rakennus Kuutiot
