@@ -10,6 +10,7 @@ import net.minecraftforge.common.DimensionManager;
 
 import java.io.*;
 
+import java.nio.file.FileAlreadyExistsException;
 import java.nio.file.Files;
 import java.nio.file.Paths;
 
@@ -43,28 +44,17 @@ public class Tardfile {
 
             File pathComplete = new File(FileUtil.combine(path, new File("/tardFile_" + placer.getName() + ".json"))); // Create the whole path
 
-            // If the user already owns a tardFile, prevent him from entering the new TARDIS and prompt him to delete his old
-            if (pathComplete.exists()) {
-
-                placer.sendMessage(new TextComponentString("You already have a TARDIS! To delete it type /delete-tardis (W.I.P.)"));
-                worldIn.destroyBlock(pos, true);
-
-                return;
-
-            }
-
-            PrintWriter writer = new PrintWriter(pathComplete); // Create a new PrintWriter for the tardfile
-
             String[] tardfilearray = createTardFileArray(placer.getName(), placer.getUniqueID().toString(), id, pos.getX(), pos.getY(), pos.getZ(), pos.getX(), pos.getY(), pos.getZ(), new boolean[] {false, true}); // Create the array containing all base information
 
+            try {
+                FileUtil.writeFileFromArray(pathComplete, tardfilearray, FileUtil.LineMods.LN_BREAK);
+            } catch (FileAlreadyExistsException e) {
 
-            for (String i : tardfilearray) { // Write the file from the array
-
-                writer.write(i+"\n");
+                System.out.println("File for user " + placer.getName() + "already exists!");
+                placer.sendMessage(new TextComponentString("You already own a TARDIS! To delete it use /delete-tardis!"));
+                worldIn.destroyBlock(pos, true);
 
             }
-
-            writer.close();
 
             try {
 
@@ -109,8 +99,6 @@ public class Tardfile {
     public static void updateTardfile(File path, String name, int tardis_id, String uuid, int[] coords, int[] setCoords, boolean[] tardis_state) throws IOException {
 
         path.delete(); // Delete the old tardfile
-
-        System.out.println("Genearting new Tardfile for user "+name);
 
         String[] tardfile = createTardFileArray(name, uuid, tardis_id, coords[0], coords[1], coords[2], setCoords[0], setCoords[1], setCoords[2], tardis_state);
 

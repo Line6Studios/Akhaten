@@ -7,6 +7,7 @@ import com.google.gson.stream.JsonReader;
 
 import java.io.*;
 import java.lang.reflect.Type;
+import java.nio.file.FileAlreadyExistsException;
 import java.nio.file.Files;
 import java.nio.file.Paths;
 import java.util.List;
@@ -28,6 +29,36 @@ public class FileUtil {
     }
 
     /**
+     * Writes a file from an Array
+     *
+     * @param file The path for the file
+     * @param input The array to be written
+     * @param endlMod Modifiers for end of the Line, look at com.linesix.akhaten.util.FileUtil.LineMods
+     *
+     * @throws FileNotFoundException
+     *
+     * */
+    public static void writeFileFromArray(File file, String[] input, int endlMod) throws FileNotFoundException, FileAlreadyExistsException {
+
+        if (file.exists()) {
+
+            throw new FileAlreadyExistsException("The file "+file.getPath()+" already exists!");
+
+        }
+
+        PrintWriter writer = new PrintWriter(file);
+
+        for (String i : input) { // Write the file from the array
+
+            writer.write(i+"\n");
+
+        }
+
+        writer.close();
+
+    }
+
+    /**
      * Parses a json file and returns it as an JsonObject
      *
      * @param path Path to the JsonFile
@@ -40,6 +71,13 @@ public class FileUtil {
         JsonObject data = new Gson().fromJson(rawData, JsonObject.class);
 
         return data;
+
+    }
+
+    public static class LineMods {
+
+        public static int NO_MOD = 0;
+        public static int LN_BREAK = 1;
 
     }
 
