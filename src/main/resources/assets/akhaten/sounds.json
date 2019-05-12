@@ -1,6 +1,6 @@
 {
 
-  "tardis_demat": {
+  "machines/tardis_demat": {
 
     "stream":"true",
 
@@ -8,7 +8,7 @@
 
   },
 
-  "tardis_remat": {
+  "machines/tardis_remat": {
 
     "stream":"true",
 

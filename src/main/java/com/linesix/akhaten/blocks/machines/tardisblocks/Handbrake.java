@@ -11,10 +11,9 @@ import com.linesix.akhaten.util.Tardfile;
 import net.minecraft.block.Block;
 import net.minecraft.block.material.Material;
 import net.minecraft.block.state.IBlockState;
+import net.minecraft.client.audio.Sound;
 import net.minecraft.entity.player.EntityPlayer;
-import net.minecraft.util.EnumFacing;
-import net.minecraft.util.EnumHand;
-import net.minecraft.util.SoundCategory;
+import net.minecraft.util.*;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.World;
 import net.minecraftforge.common.DimensionManager;
@@ -22,6 +21,7 @@ import net.minecraftforge.common.DimensionManager;
 import java.awt.*;
 import java.io.File;
 import java.io.IOException;
+import java.util.Random;
 
 public class Handbrake extends Block {
 
@@ -44,6 +44,10 @@ public class Handbrake extends Block {
 
     @Override
     public boolean onBlockActivated(World worldIn, BlockPos pos, IBlockState state, EntityPlayer playerIn, EnumHand hand, EnumFacing facing, float hitX, float hitY, float hitZ) {
+
+        Random r = new Random();
+
+        float soundPitch = 0.1f + r.nextFloat() * (1.5f - 0.1f);
 
         File tardfilePath = Tardfile.findTardfileByName(playerIn.getName());
         JsonObject tardfile = Tardfile.findparseTardfileByName(playerIn.getName());
@@ -88,7 +92,9 @@ public class Handbrake extends Block {
 
             if (tardisState[1]) { // If the TARDIS isn't dematerialised, demat it
 
-                //playerIn.playSound(SoundRegistry.sound_events.get(0), 10.0f, 0);
+                worldIn.playSound(null, pos, new SoundEvent(new ResourceLocation(Reference.MODID, SoundRegistry.sound_paths[0])), SoundCategory.BLOCKS, 10.0f, soundPitch);
+
+                System.out.println(SoundRegistry.sound_events.get(1).getSoundName().toString());
 
                 BlockPos oldPos = new BlockPos(x, y, z); // Generate new  BlockPos for old Tardis position
                 try {
@@ -99,6 +105,8 @@ public class Handbrake extends Block {
                 DimensionManager.getWorld(dim).destroyBlock(oldPos, false);
 
             } else if (tardisState[0]) { // If the TARDIS isn't materialised, remat it
+
+                worldIn.playSound(null, pos, SoundRegistry.registerSound("", SoundRegistry.sound_paths[1]), SoundCategory.BLOCKS, 1.0f, soundPitch);
 
                 BlockPos newPos = new BlockPos(setX, setY, setZ); // Generate BlockPos for new Tardis position
                 try {
@@ -113,8 +121,6 @@ public class Handbrake extends Block {
             return true;
 
         } else {
-
-            worldIn.playSound(playerIn, pos, SoundRegistry.sound_events.get(0), SoundCategory.BLOCKS, 1.0f, 0.0f);
 
             return true;
 

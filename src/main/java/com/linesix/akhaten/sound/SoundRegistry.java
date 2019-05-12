@@ -11,14 +11,14 @@ import net.minecraftforge.registries.IForgeRegistry;
 import java.util.ArrayList;
 import java.util.List;
 
-@Mod.EventBusSubscriber
+@Mod.EventBusSubscriber( modid = Reference.MODID )
 public class SoundRegistry {
 
    /* This class Handles sound registration of Akhaten
     *
     * Author: Felix Eckert ( TheBertrahmPlays / Angry German )
     *
-    * NOTE: ONLY APPEND TO ARRAY-LIST sound_events
+    * NOTE: ONLY APPEND TO ARRAYS
     *
     */
 
@@ -57,9 +57,9 @@ public class SoundRegistry {
 
     public static SoundEvent registerSound(String sound_name, String sound_path) { // Basically returns a new SoundEvent for the given name
 
-        ResourceLocation location = new ResourceLocation(Reference.RESOURCE_PREFIX + sound_path); // Create the new resource location for the sound
+        ResourceLocation location = new ResourceLocation(Reference.MODID, sound_path); // Create the new resource location for the sound
         SoundEvent event = new SoundEvent(location); // Create the new SoundEvent
-        event.setRegistryName(Reference.RESOURCE_PREFIX + sound_name); // Set the registry name
+        event.setRegistryName(Reference.RESOURCE_PREFIX + sound_path); // Set the registry name
 
         return event; // Return the sound event
 
@@ -72,9 +72,9 @@ public class SoundRegistry {
 
         for (SoundEvent sound : sound_events) { // Loop through the sounds array and register the according sound
 
-
             registry.register(sound); // Register the sound
 
+            System.out.println(sound);
 
         }
     }
