@@ -47,7 +47,9 @@ public class Handbrake extends Block {
 
         Random r = new Random();
 
-        float soundPitch = 0.1f + r.nextFloat() * (1.5f - 0.1f);
+        float minPitch = 0.5f;
+
+        float soundPitch = minPitch + r.nextFloat() * (1.5f - minPitch);
 
         File tardfilePath = Tardfile.findTardfileByName(playerIn.getName());
         JsonObject tardfile = Tardfile.findparseTardfileByName(playerIn.getName());
@@ -58,7 +60,8 @@ public class Handbrake extends Block {
         int[] oldCoords;
         int x, y, z;
 
-        int dim = 0;
+        int dim;
+        int setDim;
 
         int id;
 
@@ -85,6 +88,7 @@ public class Handbrake extends Block {
         tardisState = Tardfile.getTardisStateFromTardFile(tardfile);
 
         dim = Tardfile.getDimensionFromTardfile(tardfile);
+        setDim = Tardfile.getSetDimensionFromTardfile(tardfile);
 
         id = Tardfile.getTardisIDFromTardfile(tardfile);
 
@@ -98,7 +102,7 @@ public class Handbrake extends Block {
 
                 BlockPos oldPos = new BlockPos(x, y, z); // Generate new  BlockPos for old Tardis position
                 try {
-                    Tardfile.updateTardfile(tardfilePath, playerIn.getName(), id, playerIn.getUniqueID().toString(), setCoords, setCoords, new boolean[] {true, false});
+                    Tardfile.updateTardfile(tardfilePath, playerIn.getName(), id, playerIn.getUniqueID().toString(), setCoords, setCoords, dim, setDim,new boolean[] {true, false});
                 } catch (IOException e) {
                     e.printStackTrace();
                 }
@@ -110,11 +114,12 @@ public class Handbrake extends Block {
 
                 BlockPos newPos = new BlockPos(setX, setY, setZ); // Generate BlockPos for new Tardis position
                 try {
-                    Tardfile.updateTardfile(tardfilePath, playerIn.getName(), id, playerIn.getUniqueID().toString(), oldCoords, setCoords, new boolean[] {false, true});
+                    Tardfile.updateTardfile(tardfilePath, playerIn.getName(), id, playerIn.getUniqueID().toString(), oldCoords, setCoords, dim, setDim, new boolean[] {false, true});
                 } catch (IOException e) {
                     e.printStackTrace();
                 }
-                DimensionManager.getWorld(dim).setBlockState(newPos, MachineBlocks.machine_tardis.getDefaultState());
+                System.out.println(setDim); // DEBUG
+                DimensionManager.getWorld(setDim).setBlockState(newPos, MachineBlocks.machine_tardis.getDefaultState());
 
             }
 

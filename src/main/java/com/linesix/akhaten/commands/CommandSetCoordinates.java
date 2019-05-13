@@ -1,5 +1,6 @@
 package com.linesix.akhaten.commands;
 
+import com.google.gson.JsonObject;
 import com.linesix.akhaten.util.FileUtil;
 import com.linesix.akhaten.util.Tardfile;
 import net.minecraft.command.CommandBase;
@@ -31,12 +32,16 @@ public class CommandSetCoordinates extends CommandBase {
 
         try {
 
-            int id = Tardfile.findparseTardfileByName(sender.getName()).get("tardis_id").getAsInt();
-            int[] coords = Tardfile.getCoordsFromTardfile(FileUtil.parseJSON(Tardfile.findTardfileByName("Lord_Bertrahm")));
+            JsonObject tf = Tardfile.findparseTardfileByName(sender.getName());
+
+            int id = tf.get("tardis_id").getAsInt();
+            int[] coords = Tardfile.getCoordsFromTardfile(tf);
             int[] setCoords = {Integer.parseInt(args[0]), Integer.parseInt(args[1]), Integer.parseInt(args[2])};
+            int dim = Tardfile.getDimensionFromTardfile(tf);
+            int setDim = Integer.parseInt(args[3]);
 
             Tardfile.updateTardfile(Tardfile.findTardfileByName(sender.getName()), sender.getName(), id,
-                    sender.getCommandSenderEntity().getUniqueID().toString(), coords, setCoords,
+                    sender.getCommandSenderEntity().getUniqueID().toString(), coords, setCoords, dim, setDim,
                     Tardfile.getTardisStateFromTardFile(Tardfile.findparseTardfileByName("Lord_Bertrahm")));
 
         } catch (IOException e) {

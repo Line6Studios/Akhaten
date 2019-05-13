@@ -44,7 +44,7 @@ public class Tardfile {
 
             File pathComplete = new File(FileUtil.combine(path, new File("/tardFile_" + placer.getName() + ".json"))); // Create the whole path
 
-            String[] tardfilearray = createTardFileArray(placer.getName(), placer.getUniqueID().toString(), id, pos.getX(), pos.getY(), pos.getZ(), pos.getX(), pos.getY(), pos.getZ(), new boolean[] {false, true}); // Create the array containing all base information
+            String[] tardfilearray = createTardFileArray(placer.getName(), placer.getUniqueID().toString(), id, pos.getX(), pos.getY(), pos.getZ(), pos.getX(), pos.getY(), pos.getZ(), 0, 0,new boolean[] {false, true}); // Create the array containing all base information
 
             try {
                 FileUtil.writeFileFromArray(pathComplete, tardfilearray, FileUtil.LineMods.LN_BREAK);
@@ -96,11 +96,11 @@ public class Tardfile {
      * @param tardis_state The state of the tardis (demat / remat)
      *
      */
-    public static void updateTardfile(File path, String name, int tardis_id, String uuid, int[] coords, int[] setCoords, boolean[] tardis_state) throws IOException {
+    public static void updateTardfile(File path, String name, int tardis_id, String uuid, int[] coords, int[] setCoords, int dimension, int setDimension, boolean[] tardis_state) throws IOException {
 
         path.delete(); // Delete the old tardfile
 
-        String[] tardfile = createTardFileArray(name, uuid, tardis_id, coords[0], coords[1], coords[2], setCoords[0], setCoords[1], setCoords[2], tardis_state);
+        String[] tardfile = createTardFileArray(name, uuid, tardis_id, coords[0], coords[1], coords[2], setCoords[0], setCoords[1], setCoords[2], dimension, setDimension,tardis_state);
 
         PrintWriter writer = new PrintWriter(path);
 
@@ -232,9 +232,14 @@ public class Tardfile {
      * @param x the current x coordinate of the tardis
      * @param y the current y coordinate of the tardis
      * @param z the current z coordinate of the tardis
+     * @param setX the x coordinate the tardis is set for
+     * @param setY the y coordinate the tardis is set for
+     * @param setZ the Z coordinate the tardis is set for
+     * @param dimension the current dimension of the tardis
+     * @param setDimension the dimension the tardis is set for
      *
      */
-    private static String[] createTardFileArray(String user, String uuid, int tardis_id, int x, int y, int z, int setX, int setY, int setZ, boolean[] state) {
+    private static String[] createTardFileArray(String user, String uuid, int tardis_id, int x, int y, int z, int setX, int setY, int setZ, int dimension, int setDimension,boolean[] state) {
 
         String[] template;
         template = new String[]{
@@ -247,10 +252,11 @@ public class Tardfile {
                 "  'x':'"  + x +  "',",
                 "  'y':'"  + y +  "',",
                 "  'z':'" + z +  "',",
-                "  'dimension':'0',",
+                "  'dimension':'" + dimension + "',",
                 "  'setX':'"  + setX +  "',",
                 "  'setY':'"  + setY +  "',",
-                "  'setZ':'" + setZ +  "'\n}"
+                "  'setZ':'" + setZ +  "',",
+                "  'setDimension':'" + setDimension + "'\n}"
 
         };
 
@@ -297,6 +303,12 @@ public class Tardfile {
     public static int getDimensionFromTardfile(JsonObject data) {
 
         return data.get("dimension").getAsInt();
+
+    }
+
+    public static int getSetDimensionFromTardfile(JsonObject data) {
+
+        return data.get("setDimension").getAsInt();
 
     }
 
