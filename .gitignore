@@ -24,3 +24,4 @@ run.sh
 #Classes
 src/main/java/com/linesix/akhaten/handler/TardisHandler.java
 *.png
+src/main/resources/assets/akhaten/models/block/machine_tardis.json
