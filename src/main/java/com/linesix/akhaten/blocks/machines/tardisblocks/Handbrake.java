@@ -45,36 +45,26 @@ public class Handbrake extends Block {
     @Override
     public boolean onBlockActivated(World worldIn, BlockPos pos, IBlockState state, EntityPlayer playerIn, EnumHand hand, EnumFacing facing, float hitX, float hitY, float hitZ) {
 
+        // This method handles de- and rematerialising of tardises
+
+        // Randomize the pitch of the sound
         Random r = new Random();
-
         float minPitch = 0.5f;
-
         float soundPitch = minPitch + r.nextFloat() * (1.5f - minPitch);
 
+        // Load and parse the Tardfile
         File tardfilePath = Tardfile.findTardfileByName(playerIn.getName());
         JsonObject tardfile = Tardfile.findparseTardfileByName(playerIn.getName());
 
-        int[] setCoords;
-        int setX, setY, setZ;
-
-        int[] oldCoords;
-        int x, y, z;
-
-        int dim;
-        int setDim;
-
+        // Create variables for all required properties of the Tardfile
+        int[] setCoords, oldCoords;
+        int setX, setY, setZ, x, y, z;
+        int dim, setDim;
         int id;
-
         boolean[] tardisState;
 
-        if (tardfile == null) {
-
-            return false;
-
-        }
-
+        // Write the tardfile property variables
         setCoords = Tardfile.getSetCoordsFromTardfile(tardfile);
-
         oldCoords = Tardfile.getCoordsFromTardfile(tardfile);
 
         setX = setCoords[0];
@@ -86,13 +76,12 @@ public class Handbrake extends Block {
         z = oldCoords[2];
 
         tardisState = Tardfile.getTardisStateFromTardFile(tardfile);
-
         dim = Tardfile.getDimensionFromTardfile(tardfile);
         setDim = Tardfile.getSetDimensionFromTardfile(tardfile);
-
         id = Tardfile.getTardisIDFromTardfile(tardfile);
+        // ---------------------------------------------------------
 
-        if (!worldIn.isRemote) {
+        if (!worldIn.isRemote) { // If it's serverside continue
 
             if (tardisState[1]) { // If the TARDIS isn't dematerialised, demat it
 
@@ -130,8 +119,6 @@ public class Handbrake extends Block {
             return true;
 
         }
-
-
 
     }
 
