@@ -2,11 +2,14 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="2c61b2dc-a3cd-4a64-831c-a7b6ecdfbbe7" name="Default" comment="">
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/linesix/akhaten/blocks/BlockTypes.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/linesix/akhaten/blocks/BuildingBlocks.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/linesix/akhaten/blocks/BuildingBlocks.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/linesix/akhaten/blocks/Names.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/linesix/akhaten/blocks/Names.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/linesix/akhaten/blocks/building/BlockRoundel.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/linesix/akhaten/blocks/building/HartnellRoundel.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/linesix/akhaten/blocks/machines/MachineTardis.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/linesix/akhaten/blocks/machines/MachineTardis.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/linesix/akhaten/blocks/machines/tardisblocks/Handbrake.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/linesix/akhaten/blocks/machines/tardisblocks/Handbrake.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/linesix/akhaten/commands/CommandSetCoordinates.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/linesix/akhaten/commands/CommandSetCoordinates.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/linesix/akhaten/util/Tardfile.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/linesix/akhaten/util/Tardfile.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/assets/akhaten/models/block/machine_tardis.json" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/assets/akhaten/models/block/machine_tardis.json" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <ignored path="$PROJECT_DIR$/.gradle/" />
@@ -55,38 +58,29 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="Handbrake.java" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/src/main/java/com/linesix/akhaten/blocks/machines/tardisblocks/Handbrake.java">
+      <file leaf-file-name="MachineTardis.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/com/linesix/akhaten/blocks/machines/MachineTardis.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="396">
-              <caret line="120" column="52" selection-start-line="120" selection-start-column="52" selection-end-line="120" selection-end-column="52" />
+            <state relative-caret-position="1340">
+              <caret line="93" column="28" selection-start-line="93" selection-start-column="28" selection-end-line="93" selection-end-column="28" />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="Tardfile.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/com/linesix/akhaten/util/Tardfile.java">
+      <file leaf-file-name="BlockTypes.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/com/linesix/akhaten/blocks/BlockTypes.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="285">
-              <caret line="98" column="23" selection-start-line="98" selection-start-column="23" selection-end-line="98" selection-end-column="23" />
+            <state relative-caret-position="380">
+              <caret line="19" selection-start-line="19" selection-end-line="19" />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="CommandSetCoordinates.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/com/linesix/akhaten/commands/CommandSetCoordinates.java">
+      <file leaf-file-name="HartnellRoundel.java" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/main/java/com/linesix/akhaten/blocks/building/HartnellRoundel.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="512">
-              <caret line="36" column="52" selection-start-line="36" selection-start-column="52" selection-end-line="36" selection-end-column="52" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="tardFile_Lord_Bertrahm.json" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/saves/Test/tardises/tardFile_Lord_Bertrahm.json">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="300">
-              <caret line="15" selection-start-line="15" selection-end-line="15" />
+            <state relative-caret-position="630">
+              <caret line="71" column="40" selection-start-line="71" selection-start-column="40" selection-end-line="71" selection-end-column="40" />
             </state>
           </provider>
         </entry>
@@ -545,7 +539,7 @@
     </option>
     <option name="modificationStamps">
       <map>
-        <entry key="$PROJECT_DIR$" value="6225680383000" />
+        <entry key="$PROJECT_DIR$" value="6225765162000" />
         <entry key="$PROJECT_DIR$/.gradle" value="0" />
         <entry key="$PROJECT_DIR$/build.gradle" value="1781506825" />
         <entry key="$PROJECT_DIR$/gradle.properties" value="2907694036" />
@@ -693,7 +687,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$APPLICATION_CONFIG_DIR$/scratches/scratch.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/linesix/akhaten/util/TardfileTemplate.java" />
         <option value="$PROJECT_DIR$/run/saves/Tutorial/tardises/tardFile_Player825.json" />
         <option value="$PROJECT_DIR$/run/saves/Tutorial/tardises/tardFile_Player961.json" />
@@ -716,7 +709,6 @@
         <option value="$PROJECT_DIR$/src/.gitignore" />
         <option value="$PROJECT_DIR$/src/main/java/com/linesix/akhaten/commands/CommandSetCoordinats.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/linesix/akhaten/handler/TardisHandler.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/linesix/akhaten/blocks/building/BlockRoundel.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/linesix/akhaten/proxy/ClientProxy.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/linesix/akhaten/proxy/CommonProxy.java" />
         <option value="$PROJECT_DIR$/src/main/resources/assets/akhaten/models/block/gallifrey_stone.json" />
@@ -726,8 +718,6 @@
         <option value="$PROJECT_DIR$/src/main/java/com/linesix/akhaten/commands/Commands.java" />
         <option value="$PROJECT_DIR$/.gitignore" />
         <option value="$PROJECT_DIR$/src/main/java/com/linesix/akhaten/blocks/machines/tardisblocks/Door.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/linesix/akhaten/blocks/Names.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/linesix/akhaten/blocks/machines/MachineTardis.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/linesix/akhaten/tabs/TabBuilding.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/linesix/akhaten/blocks/BuildingBlocks.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/linesix/akhaten/blocks/building/Door.java" />
@@ -743,6 +733,11 @@
         <option value="$PROJECT_DIR$/saves/Test/tardises/tardFile_Lord_Bertrahm.json" />
         <option value="$PROJECT_DIR$/src/main/java/com/linesix/akhaten/util/Tardfile.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/linesix/akhaten/blocks/machines/tardisblocks/Handbrake.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/linesix/akhaten/blocks/machines/MachineTardis.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/linesix/akhaten/blocks/BlockTypes.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/linesix/akhaten/blocks/building/BlockRoundel.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/linesix/akhaten/blocks/Names.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/linesix/akhaten/blocks/building/HartnellRoundel.java" />
       </list>
     </option>
   </component>
@@ -760,6 +755,9 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
+      <pane id="PackagesPane" />
+      <pane id="Scope" />
+      <pane id="AndroidView" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -810,27 +808,7 @@
               <item name="java" type="462c0819:PsiDirectoryNode" />
               <item name="akhaten" type="462c0819:PsiDirectoryNode" />
               <item name="blocks" type="462c0819:PsiDirectoryNode" />
-              <item name="machines" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="Akhaten" type="b2602c69:ProjectViewProjectNode" />
-              <item name="Akhaten" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-              <item name="akhaten" type="462c0819:PsiDirectoryNode" />
-              <item name="blocks" type="462c0819:PsiDirectoryNode" />
-              <item name="machines" type="462c0819:PsiDirectoryNode" />
-              <item name="tardisblocks" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="Akhaten" type="b2602c69:ProjectViewProjectNode" />
-              <item name="Akhaten" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-              <item name="akhaten" type="462c0819:PsiDirectoryNode" />
-              <item name="commands" type="462c0819:PsiDirectoryNode" />
+              <item name="building" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="Akhaten" type="b2602c69:ProjectViewProjectNode" />
@@ -854,9 +832,6 @@
           <select />
         </subPane>
       </pane>
-      <pane id="AndroidView" />
-      <pane id="Scope" />
-      <pane id="PackagesPane" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -866,15 +841,15 @@
     <property name="settings.editor.selected.configurable" value="reference.settingsdialog.IDE.editor.colors.Console Font" />
   </component>
   <component name="RecentsManager">
-    <key name="CopyFile.RECENT_KEYS">
-      <recent name="$PROJECT_DIR$/src/main/resources/assets/akhaten/models/block" />
-    </key>
     <key name="MoveFile.RECENT_KEYS">
       <recent name="$PROJECT_DIR$/src/main/resources/assets/akhaten/textures/blocks" />
       <recent name="$PROJECT_DIR$/src/main/resources/assets/akhaten/textures" />
       <recent name="$PROJECT_DIR$/src/main/resources/assets/akhaten/models/item" />
       <recent name="$PROJECT_DIR$" />
       <recent name="$PROJECT_DIR$/src" />
+    </key>
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/src/main/resources/assets/akhaten/models/block" />
     </key>
   </component>
   <component name="RunDashboard">
@@ -1025,18 +1000,17 @@
     <layout>
       <window_info anchor="right" id="Palette" order="0" />
       <window_info anchor="bottom" id="TODO" order="10" />
-      <window_info anchor="right" id="Messages" order="9" sideWeight="0.50054526" side_tool="true" weight="0.16604893" />
       <window_info anchor="right" id="Palette&#9;" order="1" />
       <window_info id="Image Layers" order="0" />
       <window_info anchor="right" id="Capture Analysis" order="2" />
-      <window_info anchor="bottom" id="Event Log" order="0" sideWeight="0.5140845" side_tool="true" visible="true" weight="0.32869694" />
+      <window_info active="true" anchor="bottom" id="Event Log" order="0" sideWeight="0.5140845" side_tool="true" visible="true" weight="0.32869694" />
       <window_info anchor="right" id="Maven Projects" order="3" />
-      <window_info active="true" anchor="bottom" id="Run" order="6" sideWeight="0.48591548" visible="true" weight="0.32869694" />
+      <window_info anchor="bottom" id="Run" order="6" sideWeight="0.48591548" weight="0.32869694" />
       <window_info anchor="bottom" id="Version Control" order="1" sideWeight="0.49962935" weight="0.329429" />
       <window_info anchor="bottom" id="Terminal" order="2" sideWeight="0.49851742" weight="0.329429" />
       <window_info id="Capture Tool" order="1" />
       <window_info id="Designer" order="2" />
-      <window_info content_ui="combo" id="Project" order="5" visible="true" weight="0.31653076" />
+      <window_info content_ui="combo" id="Project" order="5" visible="true" weight="0.32987398" />
       <window_info id="Gradle" order="6" weight="0.14418088" />
       <window_info anchor="right" id="Structure" order="6" sideWeight="0.49945474" side_tool="true" visible="true" weight="0.16604893" />
       <window_info anchor="right" id="Ant Build" order="7" weight="0.24981467" />
@@ -1046,6 +1020,7 @@
       <window_info id="Favorites" order="4" side_tool="true" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="8" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="9" weight="0.4" />
+      <window_info anchor="right" id="Messages" order="9" sideWeight="0.50054526" side_tool="true" weight="0.16604893" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="5" type="SLIDING" weight="0.4" />
       <window_info anchor="bottom" id="Message" order="4" />
       <window_info anchor="bottom" id="Cvs" order="8" weight="0.25" />
@@ -1132,13 +1107,6 @@
     <option name="FILTER_TARGETS" value="false" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/linesix/akhaten/blocks/MachineBlocks.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="808">
-          <caret line="109" selection-start-line="109" selection-end-line="109" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/run/saves/Tutorial/tardises/tardFile_Player610.json" />
     <entry file="file://$PROJECT_DIR$/run/saves/Tutorial/tardises/tardFile_Player964.json" />
     <entry file="file://$PROJECT_DIR$/run/saves/Tutorial/tardises/tardFile_Player645.json" />
@@ -1251,20 +1219,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/linesix/akhaten/blocks/Names.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="440">
-          <caret line="22" column="58" selection-start-line="22" selection-start-column="58" selection-end-line="22" selection-end-column="58" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/linesix/akhaten/blocks/machines/MachineTardis.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="680">
-          <caret line="60" column="124" selection-start-line="60" selection-start-column="11" selection-end-line="60" selection-end-column="124" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/screenshots/2019-05-08_08.05.40.png">
       <provider selected="true" editor-type-id="images" />
     </entry>
@@ -1309,13 +1263,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="80">
           <caret line="4" column="45" lean-forward="true" selection-start-line="4" selection-start-column="45" selection-end-line="4" selection-end-column="45" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/linesix/akhaten/blocks/building/BlockRoundel.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="260">
-          <caret line="18" column="11" selection-start-line="18" selection-start-column="11" selection-end-line="18" selection-end-column="11" />
         </state>
       </provider>
     </entry>
@@ -1400,15 +1347,36 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/com/linesix/akhaten/commands/CommandSetCoordinates.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="512">
+        <state relative-caret-position="540">
           <caret line="36" column="52" selection-start-line="36" selection-start-column="52" selection-end-line="36" selection-end-column="52" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/com/linesix/akhaten/util/Tardfile.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="285">
+        <state relative-caret-position="1720">
           <caret line="98" column="23" selection-start-line="98" selection-start-column="23" selection-end-line="98" selection-end-column="23" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/linesix/akhaten/blocks/machines/tardisblocks/Handbrake.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1820">
+          <caret line="112" column="13" selection-start-line="112" selection-start-column="13" selection-end-line="112" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/linesix/akhaten/blocks/machines/MachineTardis.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1340">
+          <caret line="93" column="28" selection-start-line="93" selection-start-column="28" selection-end-line="93" selection-end-column="28" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/linesix/akhaten/blocks/BlockTypes.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="380">
+          <caret line="19" selection-start-line="19" selection-end-line="19" />
         </state>
       </provider>
     </entry>
@@ -1419,10 +1387,17 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/linesix/akhaten/blocks/machines/tardisblocks/Handbrake.java">
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/linesix/akhaten/blocks/Names.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="396">
-          <caret line="120" column="52" selection-start-line="120" selection-start-column="52" selection-end-line="120" selection-end-column="52" />
+        <state relative-caret-position="460">
+          <caret line="23" column="35" selection-start-line="23" selection-start-column="35" selection-end-line="23" selection-end-column="35" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/linesix/akhaten/blocks/building/HartnellRoundel.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="630">
+          <caret line="71" column="40" selection-start-line="71" selection-start-column="40" selection-end-line="71" selection-end-column="40" />
         </state>
       </provider>
     </entry>
