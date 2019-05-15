@@ -2,14 +2,9 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="2c61b2dc-a3cd-4a64-831c-a7b6ecdfbbe7" name="Default" comment="">
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/linesix/akhaten/blocks/BlockTypes.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/linesix/akhaten/blocks/interfaces/item/IMetaBlockName.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/linesix/akhaten/blocks/BuildingBlocks.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/linesix/akhaten/blocks/BuildingBlocks.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/linesix/akhaten/blocks/Names.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/linesix/akhaten/blocks/Names.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/linesix/akhaten/blocks/building/BlockRoundel.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/linesix/akhaten/blocks/building/HartnellRoundel.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/linesix/akhaten/blocks/machines/MachineTardis.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/linesix/akhaten/blocks/machines/MachineTardis.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/linesix/akhaten/blocks/machines/tardisblocks/Handbrake.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/linesix/akhaten/blocks/machines/tardisblocks/Handbrake.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/linesix/akhaten/blocks/building/HartnellRoundel.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/linesix/akhaten/blocks/building/HartnellRoundel.java" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <ignored path="$PROJECT_DIR$/.gradle/" />
@@ -79,8 +74,20 @@
       <file leaf-file-name="HartnellRoundel.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/main/java/com/linesix/akhaten/blocks/building/HartnellRoundel.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="630">
-              <caret line="71" column="40" selection-start-line="71" selection-start-column="40" selection-end-line="71" selection-end-column="40" />
+            <state relative-caret-position="670">
+              <caret line="80" column="88" selection-start-line="80" selection-start-column="88" selection-end-line="80" selection-end-column="88" />
+              <folding>
+                <element signature="imports" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="IMetaBlockName.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/com/linesix/akhaten/blocks/interfaces/item/IMetaBlockName.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="120">
+              <caret line="6" column="41" selection-start-line="6" selection-start-column="41" selection-end-line="6" selection-end-column="41" />
             </state>
           </provider>
         </entry>
@@ -687,7 +694,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/src/main/java/com/linesix/akhaten/util/TardfileTemplate.java" />
         <option value="$PROJECT_DIR$/run/saves/Tutorial/tardises/tardFile_Player825.json" />
         <option value="$PROJECT_DIR$/run/saves/Tutorial/tardises/tardFile_Player961.json" />
         <option value="$PROJECT_DIR$/run/saves/Tutorial/tardises/tardFile_Player846.json" />
@@ -737,6 +743,7 @@
         <option value="$PROJECT_DIR$/src/main/java/com/linesix/akhaten/blocks/BlockTypes.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/linesix/akhaten/blocks/building/BlockRoundel.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/linesix/akhaten/blocks/Names.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/linesix/akhaten/blocks/item/IMetaBlockName.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/linesix/akhaten/blocks/building/HartnellRoundel.java" />
       </list>
     </option>
@@ -799,16 +806,6 @@
               <item name="java" type="462c0819:PsiDirectoryNode" />
               <item name="akhaten" type="462c0819:PsiDirectoryNode" />
               <item name="blocks" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="Akhaten" type="b2602c69:ProjectViewProjectNode" />
-              <item name="Akhaten" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-              <item name="akhaten" type="462c0819:PsiDirectoryNode" />
-              <item name="blocks" type="462c0819:PsiDirectoryNode" />
-              <item name="building" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="Akhaten" type="b2602c69:ProjectViewProjectNode" />
@@ -1003,14 +1000,14 @@
       <window_info anchor="right" id="Palette&#9;" order="1" />
       <window_info id="Image Layers" order="0" />
       <window_info anchor="right" id="Capture Analysis" order="2" />
-      <window_info active="true" anchor="bottom" id="Event Log" order="0" sideWeight="0.5140845" side_tool="true" visible="true" weight="0.32869694" />
+      <window_info anchor="bottom" id="Event Log" order="0" sideWeight="0.5140845" side_tool="true" visible="true" weight="0.32869694" />
       <window_info anchor="right" id="Maven Projects" order="3" />
       <window_info anchor="bottom" id="Run" order="6" sideWeight="0.48591548" weight="0.32869694" />
       <window_info anchor="bottom" id="Version Control" order="1" sideWeight="0.49962935" weight="0.329429" />
       <window_info anchor="bottom" id="Terminal" order="2" sideWeight="0.49851742" weight="0.329429" />
       <window_info id="Capture Tool" order="1" />
       <window_info id="Designer" order="2" />
-      <window_info content_ui="combo" id="Project" order="5" visible="true" weight="0.32987398" />
+      <window_info active="true" content_ui="combo" id="Project" order="5" visible="true" weight="0.32987398" />
       <window_info id="Gradle" order="6" weight="0.14418088" />
       <window_info anchor="right" id="Structure" order="6" sideWeight="0.49945474" side_tool="true" visible="true" weight="0.16604893" />
       <window_info anchor="right" id="Ant Build" order="7" weight="0.24981467" />
@@ -1107,7 +1104,6 @@
     <option name="FILTER_TARGETS" value="false" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/run/saves/Tutorial/tardises/tardFile_Player610.json" />
     <entry file="file://$PROJECT_DIR$/run/saves/Tutorial/tardises/tardFile_Player964.json" />
     <entry file="file://$PROJECT_DIR$/run/saves/Tutorial/tardises/tardFile_Player645.json" />
     <entry file="file://$PROJECT_DIR$/run/saves/Tutorial/tardises/tardFile_Player260.json" />
@@ -1373,13 +1369,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/linesix/akhaten/blocks/BlockTypes.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="380">
-          <caret line="19" selection-start-line="19" selection-end-line="19" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/saves/Test/tardises/tardFile_Lord_Bertrahm.json">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="300">
@@ -1394,10 +1383,27 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/linesix/akhaten/blocks/interfaces/item/IMetaBlockName.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="120">
+          <caret line="6" column="41" selection-start-line="6" selection-start-column="41" selection-end-line="6" selection-end-column="41" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/linesix/akhaten/blocks/BlockTypes.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="380">
+          <caret line="19" selection-start-line="19" selection-end-line="19" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/com/linesix/akhaten/blocks/building/HartnellRoundel.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="630">
-          <caret line="71" column="40" selection-start-line="71" selection-start-column="40" selection-end-line="71" selection-end-column="40" />
+        <state relative-caret-position="670">
+          <caret line="80" column="88" selection-start-line="80" selection-start-column="88" selection-end-line="80" selection-end-column="88" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>

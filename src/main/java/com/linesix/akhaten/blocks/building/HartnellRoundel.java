@@ -7,22 +7,21 @@ import com.linesix.akhaten.blocks.Names;
 import net.minecraft.block.Block;
 import net.minecraft.block.SoundType;
 import net.minecraft.block.material.Material;
-import net.minecraft.block.properties.IProperty;
 import net.minecraft.block.properties.PropertyEnum;
 import net.minecraft.block.state.BlockStateContainer;
-import net.minecraft.block.state.IBlockState;
 import net.minecraft.creativetab.CreativeTabs;
-import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
 import net.minecraft.util.NonNullList;
 
-import java.util.List;
+import com.linesix.akhaten.blocks.interfaces.item.IMetaBlockName;
+import net.minecraft.block.state.IBlockState;
+import net.minecraft.block.properties.IProperty;
 
-public class HartnellRoundel extends Block {
+public class HartnellRoundel extends Block implements IMetaBlockName {
 
     public static final PropertyEnum TYPE = PropertyEnum.create("type", BlockTypes.HartnellRoundelTypes.class);
 
-    public HartnellRoundel() {
+    public HartnellRoundel() { // Hartnell Roundel constructor
 
         super(Material.IRON);
 
@@ -40,6 +39,8 @@ public class HartnellRoundel extends Block {
         return "tile." + Reference.RESOURCE_PREFIX + Names.Machines.Tardis.Roundels.hartnell_roundels;
 
     }
+
+    // Block State related code below \/
 
     @Override
     protected BlockStateContainer createBlockState() {
@@ -74,4 +75,10 @@ public class HartnellRoundel extends Block {
         }
 
     }
+
+    @Override
+    public String getSpecialName(ItemStack stack) {
+        return BlockTypes.HartnellRoundelTypes.values()[stack.getItemDamage()].getName();
+    }
+
 }
