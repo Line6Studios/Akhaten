@@ -2,13 +2,9 @@ package com.linesix.akhaten.blocks;
 
 import com.google.common.base.Preconditions;
 import com.linesix.akhaten.Reference;
-import com.linesix.akhaten.blocks.building.BlockRoundel;
+import com.linesix.akhaten.blocks.building.HartnellRoundel;
 import com.linesix.akhaten.blocks.building.Door;
-import com.linesix.akhaten.blocks.gallifrey.GallifreyDirt;
-import com.linesix.akhaten.blocks.gallifrey.GallifreyGrass;
-import com.linesix.akhaten.blocks.gallifrey.GallifreyStone;
 import com.linesix.akhaten.tabs.TabBuilding;
-import com.linesix.akhaten.tabs.TabDim;
 import net.minecraft.block.Block;
 import net.minecraft.client.renderer.block.model.ModelResourceLocation;
 import net.minecraft.creativetab.CreativeTabs;
@@ -22,7 +18,6 @@ import net.minecraftforge.fml.common.Mod;
 import net.minecraftforge.fml.common.eventhandler.SubscribeEvent;
 import net.minecraftforge.registries.IForgeRegistry;
 
-import javax.annotation.Resource;
 import java.util.HashSet;
 import java.util.Set;
 
@@ -43,7 +38,7 @@ public class BuildingBlocks {
     private static Block[] blocks; // Create an array for all blocks
 
     // Creation of all Block-Variables below
-    public static BlockRoundel block_roundel;
+    public static HartnellRoundel block_roundel;
     public static Door block_door;
     // End Creation of all Block-Variables
 
@@ -54,7 +49,7 @@ public class BuildingBlocks {
         // Initialization of Block-Variables below
         try {
 
-            block_roundel = new BlockRoundel();
+            block_roundel = new HartnellRoundel();
             block_door = new Door();
 
         } catch (Exception e) { // If theres an error whilst initializing any of the Variables, execute the code below

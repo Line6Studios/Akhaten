@@ -19,10 +19,16 @@ public class Names {
         public class Tardis {
 
             public static final String handbrake = "tardis_handbrake";
-            public static final String roundel = "block_roundel";
             public static final String door = "tardis_door";
 
+            public class Roundels {
+
+                public static final String hartnell_roundels = "block_roundelhartnell";
+
+            }
+
         }
+
     }
 
 }
