@@ -1,13 +1,13 @@
 package com.linesix.akhaten;
 
-import com.linesix.akhaten.blocks.BuildingBlocks;
-import com.linesix.akhaten.blocks.DimBlocks;
-import com.linesix.akhaten.blocks.MachineBlocks;
-import com.linesix.akhaten.commands.Commands;
-import com.linesix.akhaten.dimensions.Dimensions;
-import com.linesix.akhaten.items.Gadgets;
+import com.linesix.akhaten.common.blocks.BuildingBlocks;
+import com.linesix.akhaten.common.blocks.DimBlocks;
+import com.linesix.akhaten.common.blocks.MachineBlocks;
+import com.linesix.akhaten.server.commands.Commands;
+import com.linesix.akhaten.common.dimensions.Dimensions;
+import com.linesix.akhaten.common.items.Gadgets;
 import com.linesix.akhaten.proxy.CommonProxy;
-import com.linesix.akhaten.sound.SoundRegistry;
+import com.linesix.akhaten.common.sound.SoundRegistry;
 import net.minecraftforge.fml.common.Mod;
 import net.minecraftforge.fml.common.SidedProxy;
 import net.minecraftforge.fml.common.event.FMLInitializationEvent;

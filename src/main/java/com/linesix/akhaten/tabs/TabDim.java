@@ -1,6 +1,6 @@
 package com.linesix.akhaten.tabs;
 
-import com.linesix.akhaten.blocks.DimBlocks;
+import com.linesix.akhaten.common.blocks.DimBlocks;
 import net.minecraft.creativetab.CreativeTabs;
 import net.minecraft.item.ItemStack;
 
