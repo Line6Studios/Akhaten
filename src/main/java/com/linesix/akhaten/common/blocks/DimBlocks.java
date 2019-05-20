@@ -1,7 +1,7 @@
 package com.linesix.akhaten.common.blocks;
 
 import com.google.common.base.Preconditions;
-import com.linesix.akhaten.Reference;
+import com.linesix.akhaten.common.Reference;
 import com.linesix.akhaten.common.blocks.gallifrey.GallifreyDirt;
 import com.linesix.akhaten.common.blocks.gallifrey.GallifreyGrass;
 import com.linesix.akhaten.common.blocks.gallifrey.GallifreyStone;

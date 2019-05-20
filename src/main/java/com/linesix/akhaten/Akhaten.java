@@ -8,13 +8,13 @@ import com.linesix.akhaten.common.dimensions.Dimensions;
 import com.linesix.akhaten.common.items.Gadgets;
 import com.linesix.akhaten.proxy.CommonProxy;
 import com.linesix.akhaten.common.sound.SoundRegistry;
+import com.linesix.akhaten.common.Reference;
 import net.minecraftforge.fml.common.Mod;
 import net.minecraftforge.fml.common.SidedProxy;
 import net.minecraftforge.fml.common.event.FMLInitializationEvent;
 import net.minecraftforge.fml.common.event.FMLPostInitializationEvent;
 import net.minecraftforge.fml.common.event.FMLPreInitializationEvent;
 import net.minecraftforge.fml.common.event.FMLServerStartingEvent;
-import org.apache.logging.log4j.Logger;
 
 import java.util.Random;
 
@@ -24,14 +24,12 @@ public class Akhaten {
 
 
    /*
-    * Akhaten Public Alpha (Version 0.3.5)
+    * Akhaten Public Beta (Version 0.3.91)
     * Copyright (C) 2019 Linesix Studios, Licensed under the ISC license
     *
     * Author: Felix Eckert (TheBertrahmPlays / Angry German)
     *
     */
-
-    private static Logger logger; //Create a new logger
 
     public static Random random = new Random();
 

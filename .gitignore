@@ -29,3 +29,4 @@ src/main/resources/assets/akhaten/models/block/machine_tardis.json
 /build/
 /bin/
 .settings/org.eclipse.buildship.core.prefs
+.idea/workspace.xml

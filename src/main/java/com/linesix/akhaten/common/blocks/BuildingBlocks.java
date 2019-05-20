@@ -1,7 +1,7 @@
 package com.linesix.akhaten.common.blocks;
 
 import com.google.common.base.Preconditions;
-import com.linesix.akhaten.Reference;
+import com.linesix.akhaten.common.Reference;
 import com.linesix.akhaten.common.blocks.building.HartnellRoundel;
 import com.linesix.akhaten.common.blocks.building.Door;
 import com.linesix.akhaten.tabs.TabBuilding;

@@ -1,6 +1,6 @@
 package com.linesix.akhaten.common.dimensions;
 
-import com.linesix.akhaten.Reference;
+import com.linesix.akhaten.common.Reference;
 import net.minecraft.world.biome.Biome;
 import net.minecraftforge.fml.common.Mod;
 

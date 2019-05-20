@@ -1,6 +1,6 @@
 package com.linesix.akhaten.common.sound;
 
-import com.linesix.akhaten.Reference;
+import com.linesix.akhaten.common.Reference;
 import net.minecraft.util.ResourceLocation;
 import net.minecraft.util.SoundEvent;
 import net.minecraftforge.event.RegistryEvent;

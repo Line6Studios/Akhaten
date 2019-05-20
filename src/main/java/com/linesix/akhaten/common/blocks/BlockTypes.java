@@ -18,6 +18,7 @@ public class BlockTypes {
         NORMAL("normal", 0),
         HIGHRES("high_res", 1);
 
+        public static String[] unlocNames = {};
         private int ID;
         private String name;
 

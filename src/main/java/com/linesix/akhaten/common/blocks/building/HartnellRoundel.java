@@ -1,9 +1,10 @@
 package com.linesix.akhaten.common.blocks.building;
 
-import com.linesix.akhaten.Reference;
+import com.linesix.akhaten.common.Reference;
 import com.linesix.akhaten.common.blocks.BlockTypes;
 import com.linesix.akhaten.common.blocks.DimBlocks;
 import com.linesix.akhaten.common.blocks.Names;
+import com.linesix.akhaten.util.Misc;
 import net.minecraft.block.Block;
 import net.minecraft.block.SoundType;
 import net.minecraft.block.material.Material;
@@ -13,7 +14,7 @@ import net.minecraft.creativetab.CreativeTabs;
 import net.minecraft.item.ItemStack;
 import net.minecraft.util.NonNullList;
 
-import com.linesix.akhaten.common.blocks.interfaces.item.IMetaBlockName;
+import com.linesix.akhaten.common.blocks.item.IMetaBlockName;
 import net.minecraft.block.state.IBlockState;
 import net.minecraft.block.properties.IProperty;
 
@@ -78,7 +79,10 @@ public class HartnellRoundel extends Block implements IMetaBlockName {
 
     @Override
     public String getSpecialName(ItemStack stack) {
-        return BlockTypes.HartnellRoundelTypes.values()[stack.getItemDamage()].getName();
+        String unlocName = stack.getUnlocalizedName();
+        int index = Misc.getIndexByVal(unlocName, BlockTypes.HartnellRoundelTypes.unlocNames);
+
+        return BlockTypes.HartnellRoundelTypes.values()[index].getName();
     }
 
 }

@@ -1,6 +1,6 @@
 package com.linesix.akhaten.common.items;
 
-import com.linesix.akhaten.Reference;
+import com.linesix.akhaten.common.Reference;
 import com.linesix.akhaten.tabs.TabGadgets;
 import net.minecraft.client.renderer.block.model.ModelResourceLocation;
 import net.minecraft.creativetab.CreativeTabs;

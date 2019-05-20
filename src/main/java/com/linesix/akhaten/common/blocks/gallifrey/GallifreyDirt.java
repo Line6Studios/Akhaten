@@ -1,6 +1,6 @@
 package com.linesix.akhaten.common.blocks.gallifrey;
 
-import com.linesix.akhaten.Reference;
+import com.linesix.akhaten.common.Reference;
 import com.linesix.akhaten.common.blocks.DimBlocks;
 import com.linesix.akhaten.common.blocks.Names;
 

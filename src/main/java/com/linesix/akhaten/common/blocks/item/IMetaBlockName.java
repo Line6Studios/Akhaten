@@ -1,4 +1,4 @@
-package com.linesix.akhaten.common.blocks.interfaces.item;
+package com.linesix.akhaten.common.blocks.item;
 
 import net.minecraft.item.ItemStack;
 

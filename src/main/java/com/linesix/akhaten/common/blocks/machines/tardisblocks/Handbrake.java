@@ -1,7 +1,7 @@
 package com.linesix.akhaten.common.blocks.machines.tardisblocks;
 
 import com.google.gson.JsonObject;
-import com.linesix.akhaten.Reference;
+import com.linesix.akhaten.common.Reference;
 import com.linesix.akhaten.common.blocks.MachineBlocks;
 import com.linesix.akhaten.common.blocks.Names;
 import com.linesix.akhaten.common.sound.SoundRegistry;
