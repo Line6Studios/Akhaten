@@ -1,8 +1,9 @@
 package com.linesix.akhaten.common.blocks;
 
 import com.google.common.base.Preconditions;
-import com.linesix.akhaten.common.blocks.machines.MachineTardis;
-import com.linesix.akhaten.common.blocks.machines.tardisblocks.Handbrake;
+import com.linesix.akhaten.common.blocks.machines.tardis.MachineTardis;
+import com.linesix.akhaten.common.blocks.machines.tardis.Handbrake;
+import com.linesix.akhaten.common.blocks.machines.tardis.TardisMonitor;
 import com.linesix.akhaten.tabs.TabMachines;
 import net.minecraft.block.Block;
 import net.minecraft.client.renderer.block.model.ModelResourceLocation;
@@ -39,17 +40,19 @@ public class MachineBlocks {
     // Creation of all Block-Variables below
     public static MachineTardis machine_tardis;
     public static Handbrake tardis_handbrake;
+    public static TardisMonitor tardis_monitor;
     // End Creation of all Block-Variables
 
     public static void init() {
 
-        System.out.println("Initializing machine-block-variables...");
+        Reference.logger.info("Initializing machine-block-variables...");
 
         // Initialization of Block-Variables below
         try {
 
             machine_tardis = new MachineTardis();
             tardis_handbrake = new Handbrake();
+            tardis_monitor = new TardisMonitor();
 
         } catch (Exception e) {
 
@@ -57,31 +60,25 @@ public class MachineBlocks {
 
         } finally { // When everything is done, execute the code below
 
-            System.out.println("DONE!");
+            Reference.logger.info("DONE!");
 
         }
         // End Initialization of Block-Variables
 
         // Write all block-variables to the blocks array
-
-        System.out.println("Adding machine-block-variables to blocks array...");
-
         try {
 
             blocks = new Block[] {
 
                     machine_tardis,
-                    tardis_handbrake
+                    tardis_handbrake,
+                    tardis_monitor
 
             };
 
         } catch (Exception e) {
 
             throw e;
-
-        } finally { // When everything is done, execute the code below
-
-            System.out.println("DONE!");
 
         }
 
@@ -104,7 +101,8 @@ public class MachineBlocks {
         final ItemBlock[] items = {
 
                 new ItemBlock(machine_tardis),
-                new ItemBlock(tardis_handbrake)
+                new ItemBlock(tardis_handbrake),
+                new ItemBlock(tardis_monitor)
 
         };
 

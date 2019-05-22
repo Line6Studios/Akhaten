@@ -1,5 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
+  <component name="BookmarkManager">
+    <bookmark url="file://$PROJECT_DIR$/src/main/java/com/linesix/akhaten/common/blocks/machines/tardis/TardisMonitor.java" line="19" />
+  </component>
   <component name="ChangeListManager">
     <list default="true" id="2c61b2dc-a3cd-4a64-831c-a7b6ecdfbbe7" name="Default" comment="">
       <change afterPath="$PROJECT_DIR$/src/main/resources/assets/akhaten/blockstates/block_roundelhartnell.json" afterDir="false" />
@@ -89,12 +92,33 @@
     </system>
   </component>
   <component name="FileEditorManager">
-    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
+    <leaf>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/com/linesix/akhaten/common/blocks/machines/tardis/TardisMonitor.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="289">
+              <caret line="17" column="13" selection-start-line="17" selection-start-column="13" selection-end-line="17" selection-end-column="13" />
+              <folding>
+                <element signature="imports" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/com/linesix/akhaten/common/blocks/MachineBlocks.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="-561">
+              <caret line="21" column="25" lean-forward="true" selection-start-line="21" selection-start-column="25" selection-end-line="21" selection-end-column="25" />
+            </state>
+          </provider>
+        </entry>
+      </file>
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/main/java/com/linesix/akhaten/common/blocks/building/HartnellRoundel.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="399">
-              <caret line="81" column="54" lean-forward="true" selection-start-line="81" selection-start-column="54" selection-end-line="81" selection-end-column="54" />
+            <state relative-caret-position="330">
+              <caret line="84" column="36" selection-start-line="84" selection-start-column="36" selection-end-line="84" selection-end-column="36" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -105,26 +129,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/com/linesix/akhaten/common/blocks/BlockTypes.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="323">
-              <caret line="20" column="45" selection-start-line="20" selection-start-column="45" selection-end-line="20" selection-end-column="45" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/com/linesix/akhaten/util/Misc.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="42">
-              <caret line="17" column="17" selection-start-line="17" selection-start-column="17" selection-end-line="17" selection-end-column="17" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/com/linesix/akhaten/common/blocks/item/ItemHartnellRoundel.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="255">
-              <caret line="28" column="18" lean-forward="true" selection-start-line="28" selection-start-column="18" selection-end-line="28" selection-end-column="18" />
+            <state relative-caret-position="170">
+              <caret line="23" column="102" selection-start-line="23" selection-start-column="102" selection-end-line="23" selection-end-column="102" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -145,6 +151,8 @@
     <findStrings>
       <find>dimen</find>
       <find>dim</find>
+      <find>Syste</find>
+      <find>System</find>
     </findStrings>
   </component>
   <component name="Git.Settings">
@@ -154,8 +162,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/src/main/java/com/linesix/akhaten/proxy/ClientProxy.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/linesix/akhaten/proxy/CommonProxy.java" />
         <option value="$PROJECT_DIR$/src/main/resources/assets/akhaten/models/block/gallifrey_stone.json" />
         <option value="$PROJECT_DIR$/src/main/resources/assets/akhaten/models/block/block_roundel.json" />
         <option value="$PROJECT_DIR$/src/main/java/com/linesix/akhaten/commands/Commands.java" />
@@ -173,7 +179,6 @@
         <option value="$PROJECT_DIR$/Akhaten Credits.md" />
         <option value="$PROJECT_DIR$/src/main/java/com/linesix/akhaten/commands/CommandSetCoordinates.java" />
         <option value="$PROJECT_DIR$/saves/Test/tardises/tardFile_Lord_Bertrahm.json" />
-        <option value="$PROJECT_DIR$/src/main/java/com/linesix/akhaten/util/Tardfile.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/linesix/akhaten/blocks/machines/tardisblocks/Handbrake.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/linesix/akhaten/blocks/machines/MachineTardis.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/linesix/akhaten/blocks/BlockTypes.java" />
@@ -184,12 +189,6 @@
         <option value="$PROJECT_DIR$/src/main/resources/assets/akhaten/blockstates/block_roundel.json" />
         <option value="$PROJECT_DIR$/src/main/resources/assets/akhaten/models/item/block_roundel.json" />
         <option value="$PROJECT_DIR$/src/main/resources/assets/akhaten/models/block/block_roundelhartnell.json" />
-        <option value="$PROJECT_DIR$/src/main/java/com/linesix/akhaten/common/blocks/Names.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/linesix/akhaten/common/Reference.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/linesix/akhaten/common/blocks/BuildingBlocks.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/linesix/akhaten/common/blocks/DimBlocks.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/linesix/akhaten/Akhaten.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/linesix/akhaten/common/blocks/MachineBlocks.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/linesix/akhaten/common/blocks/building/Door.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/linesix/akhaten/common/blocks/gallifrey/GallifreyDirt.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/linesix/akhaten/common/blocks/gallifrey/GallifreyGrass.java" />
@@ -203,13 +202,22 @@
         <option value="$PROJECT_DIR$/src/main/java/com/linesix/akhaten/common/blocks/item/IMetaBlockName.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/linesix/akhaten/common/blocks/item/ItemHartnellRoundel.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/linesix/akhaten/util/Misc.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/linesix/akhaten/Akhaten.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/linesix/akhaten/common/blocks/DimBlocks.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/linesix/akhaten/common/blocks/BuildingBlocks.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/linesix/akhaten/common/blocks/machines/tardis/Handbrake.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/linesix/akhaten/util/Tardfile.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/linesix/akhaten/common/Reference.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/linesix/akhaten/common/blocks/Names.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/linesix/akhaten/common/blocks/MachineBlocks.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/linesix/akhaten/common/blocks/machines/tardis/TardisMonitor.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/linesix/akhaten/common/blocks/BlockTypes.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/linesix/akhaten/common/blocks/building/HartnellRoundel.java" />
       </list>
     </option>
   </component>
   <component name="ProjectFrameBounds">
-    <option name="x" value="538" />
+    <option name="x" value="537" />
     <option name="y" value="162" />
     <option name="width" value="3066" />
     <option name="height" value="1464" />
@@ -222,8 +230,8 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="Scope" />
       <pane id="PackagesPane" />
+      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -276,26 +284,6 @@
               <item name="common" type="462c0819:PsiDirectoryNode" />
               <item name="blocks" type="462c0819:PsiDirectoryNode" />
             </path>
-            <path>
-              <item name="Akhaten" type="b2602c69:ProjectViewProjectNode" />
-              <item name="Akhaten" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-              <item name="akhaten" type="462c0819:PsiDirectoryNode" />
-              <item name="common" type="462c0819:PsiDirectoryNode" />
-              <item name="blocks" type="462c0819:PsiDirectoryNode" />
-              <item name="item" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="Akhaten" type="b2602c69:ProjectViewProjectNode" />
-              <item name="Akhaten" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-              <item name="akhaten" type="462c0819:PsiDirectoryNode" />
-              <item name="util" type="462c0819:PsiDirectoryNode" />
-            </path>
           </expand>
           <select />
         </subPane>
@@ -311,18 +299,18 @@
     <property name="project.structure.last.edited" value="Project" />
     <property name="project.structure.proportion" value="0.15" />
     <property name="project.structure.side.proportion" value="0.0" />
-    <property name="settings.editor.selected.configurable" value="preferences.DiscordConfigurable" />
+    <property name="settings.editor.selected.configurable" value="preferences.PresenceConfigurable" />
   </component>
   <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/src/main/resources/assets/akhaten/models/block" />
+    </key>
     <key name="MoveFile.RECENT_KEYS">
       <recent name="D:\Workspace\Akhaten\src\main\java\com\linesix\akhaten\common" />
       <recent name="$PROJECT_DIR$/src/main/resources/assets/akhaten/textures/blocks" />
       <recent name="$PROJECT_DIR$/src/main/resources/assets/akhaten/textures" />
       <recent name="$PROJECT_DIR$/src/main/resources/assets/akhaten/models/item" />
       <recent name="$PROJECT_DIR$" />
-    </key>
-    <key name="CopyFile.RECENT_KEYS">
-      <recent name="$PROJECT_DIR$/src/main/resources/assets/akhaten/models/block" />
     </key>
   </component>
   <component name="RunDashboard">
@@ -452,22 +440,23 @@
     <servers />
   </component>
   <component name="ToolWindowManager">
-    <frame x="359" y="108" width="2044" height="976" extended-state="0" />
+    <frame x="358" y="108" width="2044" height="976" extended-state="0" />
+    <editor active="true" />
     <layout>
       <window_info id="Image Layers" order="0" />
       <window_info id="Capture Tool" order="1" />
       <window_info id="Designer" order="2" />
       <window_info id="UI Designer" order="3" />
       <window_info id="Favorites" order="4" side_tool="true" />
-      <window_info active="true" content_ui="combo" id="Project" order="5" visible="true" weight="0.3109879" />
+      <window_info content_ui="combo" id="Project" order="5" visible="true" weight="0.32157257" />
       <window_info id="Gradle" order="6" weight="0.14366516" />
-      <window_info anchor="bottom" id="Event Log" order="0" sideWeight="0.5149105" side_tool="true" visible="true" weight="0.26895735" />
+      <window_info anchor="bottom" id="Event Log" order="0" sideWeight="0.516129" side_tool="true" visible="true" weight="0.33056873" />
       <window_info anchor="bottom" id="Version Control" order="1" sideWeight="0.49962935" weight="0.329429" />
       <window_info anchor="bottom" id="Terminal" order="2" sideWeight="0.49851742" weight="0.329429" />
       <window_info anchor="bottom" id="Build" order="3" sideWeight="0.49858516" weight="0.32938388" />
       <window_info anchor="bottom" id="Message" order="4" />
-      <window_info anchor="bottom" id="Find" order="5" sideWeight="0.49851742" weight="0.329429" />
-      <window_info anchor="bottom" id="Run" order="6" sideWeight="0.48508945" weight="0.21590023" />
+      <window_info anchor="bottom" id="Find" order="5" sideWeight="0.49798387" weight="0.32938388" />
+      <window_info active="true" anchor="bottom" id="Run" order="6" sideWeight="0.48387095" visible="true" weight="0.33056873" />
       <window_info anchor="bottom" id="Debug" order="7" weight="0.4" />
       <window_info anchor="bottom" id="Cvs" order="8" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="9" weight="0.4" />
@@ -478,10 +467,10 @@
       <window_info anchor="right" id="Maven Projects" order="3" />
       <window_info anchor="right" id="Theme Preview" order="4" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="5" type="SLIDING" weight="0.4" />
-      <window_info anchor="right" id="Structure" order="6" sideWeight="0.49945474" side_tool="true" visible="true" weight="0.14768144" />
+      <window_info anchor="right" id="Structure" order="6" sideWeight="0.49945474" side_tool="true" weight="0.14768144" />
       <window_info anchor="right" id="Ant Build" order="7" weight="0.24981467" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="8" weight="0.25" />
-      <window_info anchor="right" id="Messages" order="9" sideWeight="0.50054526" side_tool="true" visible="true" weight="0.116500996" />
+      <window_info anchor="right" id="Messages" order="9" sideWeight="0.50054526" side_tool="true" visible="true" weight="0.11643145" />
       <window_info anchor="right" id="Maven" order="10" />
     </layout>
     <layout-to-restore>
@@ -574,13 +563,6 @@
     <option name="FILTER_TARGETS" value="false" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/src/main/resources/assets/akhaten/models/item/gallifrey_dirt.json">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="40">
-          <caret line="2" lean-forward="true" selection-start-line="2" selection-end-line="2" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/resources/assets/akhaten/models/block/gallifrey_stone.json">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="60">
@@ -687,13 +669,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/linesix/akhaten/util/Tardfile.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1720">
-          <caret line="98" column="23" selection-start-line="98" selection-start-column="23" selection-end-line="98" selection-end-column="23" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/saves/Test/tardises/tardFile_Lord_Bertrahm.json" />
     <entry file="file://$PROJECT_DIR$/src/main/resources/assets/akhaten/blockstates/gallifrey_dirt.json">
       <provider selected="true" editor-type-id="text-editor">
@@ -720,44 +695,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="140">
           <caret line="7" column="1" lean-forward="true" selection-start-line="7" selection-start-column="1" selection-end-line="7" selection-end-column="1" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/linesix/akhaten/common/blocks/DimBlocks.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state>
-          <caret column="42" lean-forward="true" selection-end-column="42" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/linesix/akhaten/common/Reference.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="238">
-          <caret line="14" selection-start-line="14" selection-end-line="14" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/linesix/akhaten/common/blocks/Names.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="357">
-          <caret line="21" column="60" lean-forward="true" selection-start-line="21" selection-start-column="12" selection-end-line="21" selection-end-column="60" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/linesix/akhaten/common/blocks/MachineBlocks.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="153">
-          <caret line="9" column="31" lean-forward="true" selection-start-line="9" selection-start-column="31" selection-end-line="9" selection-end-column="31" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/linesix/akhaten/Akhaten.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="170">
-          <caret line="10" column="44" selection-start-line="10" selection-start-column="44" selection-end-line="10" selection-end-column="44" />
         </state>
       </provider>
     </entry>
@@ -789,30 +726,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="34">
           <caret line="2" column="34" selection-start-line="2" selection-start-column="34" selection-end-line="2" selection-end-column="34" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/linesix/akhaten/common/blocks/machines/MachineTardis.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="33">
-          <caret line="2" column="34" selection-start-line="2" selection-start-column="34" selection-end-line="2" selection-end-column="34" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/linesix/akhaten/common/blocks/machines/tardisblocks/Handbrake.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="51">
-          <caret line="3" column="34" selection-start-line="3" selection-start-column="34" selection-end-line="3" selection-end-column="34" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/linesix/akhaten/common/blocks/BuildingBlocks.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="408">
-          <caret line="24" column="13" selection-start-line="24" selection-start-column="13" selection-end-line="24" selection-end-column="13" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -874,15 +787,96 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/com/linesix/akhaten/util/Misc.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="42">
+        <state relative-caret-position="289">
           <caret line="17" column="17" selection-start-line="17" selection-start-column="17" selection-end-line="17" selection-end-column="17" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/com/linesix/akhaten/common/blocks/item/ItemHartnellRoundel.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="255">
-          <caret line="28" column="18" lean-forward="true" selection-start-line="28" selection-start-column="18" selection-end-line="28" selection-end-column="18" />
+        <state relative-caret-position="442">
+          <caret line="28" column="18" selection-start-line="28" selection-start-column="18" selection-end-line="28" selection-end-column="18" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/linesix/akhaten/common/blocks/DimBlocks.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="374">
+          <caret line="70" column="48" lean-forward="true" selection-start-line="70" selection-start-column="48" selection-end-line="70" selection-end-column="48" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/linesix/akhaten/common/blocks/machines/tardis/Handbrake.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1734">
+          <caret line="102" column="17" selection-start-line="102" selection-start-column="17" selection-end-line="102" selection-end-column="17" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/linesix/akhaten/common/Reference.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="68">
+          <caret line="4" column="24" lean-forward="true" selection-start-line="4" selection-start-column="24" selection-end-line="4" selection-end-column="24" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/linesix/akhaten/util/Tardfile.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-1149">
+          <caret line="178" selection-start-line="178" selection-end-line="178" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/linesix/akhaten/Akhaten.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="212">
+          <caret line="44" selection-start-line="44" selection-end-line="44" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/linesix/akhaten/common/blocks/BuildingBlocks.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-789">
+          <caret line="60" column="33" selection-start-line="60" selection-start-column="33" selection-end-line="60" selection-end-column="33" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/linesix/akhaten/common/blocks/machines/tardis/MachineTardis.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="17">
+          <caret line="28" column="13" selection-start-line="28" selection-start-column="13" selection-end-line="28" selection-end-column="13" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/linesix/akhaten/common/blocks/Names.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="357">
+          <caret line="22" column="64" selection-start-line="22" selection-start-column="64" selection-end-line="22" selection-end-column="64" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/linesix/akhaten/common/blocks/machines/tardis/TardisMonitor.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="289">
+          <caret line="17" column="13" selection-start-line="17" selection-start-column="13" selection-end-line="17" selection-end-column="13" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
@@ -891,15 +885,25 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/com/linesix/akhaten/common/blocks/BlockTypes.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="323">
-          <caret line="20" column="45" selection-start-line="20" selection-start-column="45" selection-end-line="20" selection-end-column="45" />
+        <state relative-caret-position="170">
+          <caret line="23" column="102" selection-start-line="23" selection-start-column="102" selection-end-line="23" selection-end-column="102" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/linesix/akhaten/common/blocks/MachineBlocks.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-561">
+          <caret line="21" column="25" lean-forward="true" selection-start-line="21" selection-start-column="25" selection-end-line="21" selection-end-column="25" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/com/linesix/akhaten/common/blocks/building/HartnellRoundel.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="399">
-          <caret line="81" column="54" lean-forward="true" selection-start-line="81" selection-start-column="54" selection-end-line="81" selection-end-column="54" />
+        <state relative-caret-position="330">
+          <caret line="84" column="36" selection-start-line="84" selection-start-column="36" selection-end-line="84" selection-end-column="36" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>

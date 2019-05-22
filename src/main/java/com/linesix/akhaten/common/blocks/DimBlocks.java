@@ -49,7 +49,7 @@ public class DimBlocks {
 
     public static void init() {
 
-        System.out.println("Initializing dimensional-block-variables...");
+        Reference.logger.info("Initializing dimensional-block-variables...");
 
         // Initialization of Block-Variables below
         try {
@@ -64,7 +64,7 @@ public class DimBlocks {
 
         } finally { // When everything is done, execute the code below
 
-            System.out.println("DONE!");
+            Reference.logger.info("DONE!");
 
         }
 

@@ -1,4 +1,4 @@
-package com.linesix.akhaten.common.blocks.machines.tardisblocks;
+package com.linesix.akhaten.common.blocks.machines.tardis;
 
 import com.google.gson.JsonObject;
 import com.linesix.akhaten.common.Reference;
@@ -83,8 +83,6 @@ public class Handbrake extends Block {
 
                 worldIn.playSound(null, pos, new SoundEvent(new ResourceLocation(Reference.MODID, SoundRegistry.sound_paths[0])), SoundCategory.BLOCKS, 10.0f, soundPitch);
 
-                System.out.println(SoundRegistry.sound_events.get(1).getSoundName().toString());
-
                 BlockPos oldPos = new BlockPos(x, y, z); // Generate new  BlockPos for old Tardis position
                 try {
                     Tardfile.updateTardfile(tardfilePath, playerIn.getName(), id, playerIn.getUniqueID().toString(), setCoords, setCoords, dim, setDim,new boolean[] {true, false});
@@ -103,7 +101,6 @@ public class Handbrake extends Block {
                 } catch (IOException e) {
                     e.printStackTrace();
                 }
-                System.out.println(setDim); // DEBUG
                 DimensionManager.getWorld(setDim).setBlockState(newPos, MachineBlocks.machine_tardis.getDefaultState());
 
             }

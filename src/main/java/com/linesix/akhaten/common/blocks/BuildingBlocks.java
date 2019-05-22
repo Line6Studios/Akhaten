@@ -44,7 +44,7 @@ public class BuildingBlocks {
 
     public static void init() {
 
-        System.out.println("Initializing building-block-variables...");
+        Reference.logger.info("Initializing building-block-variables...");
 
         // Initialization of Block-Variables below
         try {
@@ -58,7 +58,7 @@ public class BuildingBlocks {
 
         } finally { // When everything is done, execute the code below
 
-            System.out.println("DONE!");
+            Reference.logger.info("DONE!");
 
         }
 

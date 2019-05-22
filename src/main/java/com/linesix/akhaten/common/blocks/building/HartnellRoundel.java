@@ -2,6 +2,7 @@ package com.linesix.akhaten.common.blocks.building;
 
 import com.linesix.akhaten.common.Reference;
 import com.linesix.akhaten.common.blocks.BlockTypes;
+import com.linesix.akhaten.common.blocks.BuildingBlocks;
 import com.linesix.akhaten.common.blocks.DimBlocks;
 import com.linesix.akhaten.common.blocks.Names;
 import com.linesix.akhaten.util.Misc;
@@ -28,7 +29,7 @@ public class HartnellRoundel extends Block implements IMetaBlockName {
 
         setUnlocalizedName(getUnlocalizedName());
         setRegistryName(Reference.RESOURCE_PREFIX + Names.Machines.Tardis.Roundels.hartnell_roundels);
-        setCreativeTab(DimBlocks.dimblocktab);
+        setCreativeTab(BuildingBlocks.buildblocktab);
         setSoundType(SoundType.METAL);
         setDefaultState(this.blockState.getBaseState().withProperty(TYPE, BlockTypes.HartnellRoundelTypes.NORMAL));
 
@@ -81,7 +82,7 @@ public class HartnellRoundel extends Block implements IMetaBlockName {
     public String getSpecialName(ItemStack stack) {
         String unlocName = stack.getUnlocalizedName();
         int index = Misc.getIndexByVal(unlocName, BlockTypes.HartnellRoundelTypes.unlocNames);
-
+        System.out.println(unlocName); // DEBUG
         return BlockTypes.HartnellRoundelTypes.values()[index].getName();
     }
 

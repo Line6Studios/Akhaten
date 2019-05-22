@@ -4,9 +4,10 @@ tile.akhaten:gallifrey_stone.name=Gallifrey Stone
 tile.akhaten:gallifrey_grass.name=Gallifrey Grass
 tile.akhaten:gallifrey_dirt.name=Gallifrey Dirt
 tile.akhaten:tardis_door.name=TARDIS Door
-tile.akhaten:block_roundel.name=Roundel
+tile.akhaten:block_roundelhartnell.name=1963 Roundel
 machine_tile.akhaten:machine_tardis.name=TT Capsule
 machine_tile.akhaten:tardis_handbrake.name=TARDIS Handbrake
+machine_tile.akhaten:tardis_monitor.name=TARDIS Monitor
 
 #Items
 item.item.akhaten:vortex_manipulator.name=Vortex Manipulator

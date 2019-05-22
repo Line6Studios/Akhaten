@@ -42,8 +42,7 @@ public class Akhaten {
     @Mod.EventHandler
     public void preInit(FMLPreInitializationEvent event) {
 
-        System.out.println("Entering PreInit phase");
-
+        Reference.logger.info("Entering PreInit phase...");
 
         // Register Items Blocks and Sounds Below
         SoundRegistry.init();
@@ -57,7 +56,7 @@ public class Akhaten {
     @Mod.EventHandler
     public void init(FMLInitializationEvent event) {
 
-        System.out.println("Entering Init phase");
+        Reference.logger.info("Entering Init phase...");
 
         // Register Dimensions below
         Dimensions.registerDimensions();
@@ -65,7 +64,7 @@ public class Akhaten {
     }
 
     @Mod.EventHandler
-    public void serverStarting(FMLServerStartingEvent event) {
+    public void serverStarting(FMLServerStartingEvent event) { // This method just exists for registering commands
 
         // Register Commands Below
         Commands.register(event);
@@ -75,7 +74,7 @@ public class Akhaten {
     @Mod.EventHandler
     public void postInit(FMLPostInitializationEvent event) {
 
-        System.out.println("Entering PostInit phase");
+        Reference.logger.info("Entering PostInit phase...");
 
     }
 

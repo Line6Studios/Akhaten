@@ -1,4 +1,4 @@
-package com.linesix.akhaten.common.blocks.machines;
+package com.linesix.akhaten.common.blocks.machines.tardis;
 
 import com.linesix.akhaten.common.Reference;
 import com.linesix.akhaten.common.blocks.MachineBlocks;

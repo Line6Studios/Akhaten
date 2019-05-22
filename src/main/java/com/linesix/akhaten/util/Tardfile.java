@@ -1,6 +1,7 @@
 package com.linesix.akhaten.util;
 
 import com.google.gson.JsonObject;
+import com.linesix.akhaten.common.Reference;
 import net.minecraft.command.ICommandSender;
 import net.minecraft.entity.EntityLivingBase;
 import net.minecraft.util.math.BlockPos;
@@ -25,8 +26,6 @@ public class Tardfile {
      *
      */
 
-    public TardfileTemplate tardfileTemplate;
-
     /**
      * Generates a simple Tardfile using PrintWriter.
      *
@@ -37,7 +36,7 @@ public class Tardfile {
 
         if (path.exists()) {
 
-            System.out.println("Generating tardFile for user" + placer.getName() + "...");
+            Reference.logger.info("Generating tardFile for user" + placer.getName() + "...");
 
             int id = (path).list().length + 1;
             id = id - 1;
@@ -50,7 +49,7 @@ public class Tardfile {
                 FileUtil.writeFileFromArray(pathComplete, tardfilearray, FileUtil.LineMods.LN_BREAK);
             } catch (FileAlreadyExistsException e) {
 
-                System.out.println("File for user " + placer.getName() + "already exists!");
+                Reference.logger.info("File for user " + placer.getName() + "already exists!");
                 placer.sendMessage(new TextComponentString("You already own a TARDIS! To delete it use /delete-tardis!"));
                 worldIn.destroyBlock(pos, true);
 
@@ -135,7 +134,7 @@ public class Tardfile {
         // Delete the old file
         if (!path.delete()) {
 
-            System.out.println("Couldn't delete JSON file! Returning...");
+            Reference.logger.warning("Couldn't delete JSON file! Returning...");
             return false;
 
         }
@@ -178,7 +177,7 @@ public class Tardfile {
 
         } catch (Exception e) {
 
-            System.out.println("An Error occured whilst deleting tardis of player " + user.getName() + "!");
+            Reference.logger.warning("An Error occured whilst deleting tardis of player " + user.getName() + "!");
             user.sendMessage(new TextComponentString("An error occured whilst deleting your TARDIS!"));
             e.printStackTrace();
             return;
