@@ -1,22 +1,23 @@
 # KÄÄNTÄJÄ SYORI
-# VERSIO 2019.4
-# PVM 10.05.2019
+# VERSIO 2019.5
+# PVM 23.05.2019
 
 # Kuutiot [Blocks] [6-10]
 tile.akhaten:gallifrey_stone.name=Gallifreyin Kivi
 tile.akhaten:gallifrey_grass.name=Gallifreyin Ruoho
 tile.akhaten:gallifrey_dirt.name=Gallifreyin Multa
 tile.akhaten:tardis_door.name=TARDIS Ovi
-tile.akhaten:block_roundel.name=Ympyrä
+tile.akhaten:block_roundel.name=1963 Ympyrä
 
-# Kuutiot [Machine] [13-14] 
+# Kuutiot [Machine] [13-15] 
 machine_tile.akhaten:machine_tardis.name=Aikamatka Kapseli
 machine_tile.akhaten:tardis_handbrake.name=TARDIS Seisontajarru
+machine_tile.akhaten:tardis_monitor.name=TARDIS Näyttö
 
-# Esinet [Items] [17]
+# Esinet [Items] [18]
 item.item.akhaten:vortex_manipulator.name=Vortex-manipulaattori
 
-# Välilehdet [Tabs] [20-23]
+# Välilehdet [Tabs] [21-24]
 itemGroup.akhaten_dimensional_blocks=Akhaten Ulottuvuuden Kuutiot
 itemGroup.akhaten_gadgets=Akhaten Laiteet
 itemGroup.akhaten_machines=Akhaten Koneet
