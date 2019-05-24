@@ -30,3 +30,4 @@ src/main/resources/assets/akhaten/models/block/machine_tardis.json
 /bin/
 .settings/org.eclipse.buildship.core.prefs
 .idea/workspace.xml
+src/main/java/com/linesix/akhaten/common/blocks/building/HartnellRoundel.java

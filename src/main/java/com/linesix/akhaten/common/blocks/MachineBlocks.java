@@ -125,18 +125,16 @@ public class MachineBlocks {
     public static void registerRenders(ModelRegistryEvent event) {
 
         for (final Block block : blocks) {
-
-            registerRender(Item.getItemFromBlock(block));
-
+            registerRender(block, 0);
         }
 
 
     }
 
-    public static void registerRender(Item item) {
+    public static void registerRender(Block block, int meta) {
 
-        ModelLoader.setCustomModelResourceLocation(item, 0,
-                new ModelResourceLocation(item.getRegistryName(), "inventory"));
+        ModelLoader.setCustomModelResourceLocation(Item.getItemFromBlock(block), meta,
+                new ModelResourceLocation(Item.getItemFromBlock(block).getRegistryName(), "inventory"));
 
     }
 

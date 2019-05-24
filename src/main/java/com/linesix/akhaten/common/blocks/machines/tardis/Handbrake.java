@@ -41,12 +41,15 @@ public class Handbrake extends Block {
     @Override
     public boolean onBlockActivated(World worldIn, BlockPos pos, IBlockState state, EntityPlayer playerIn, EnumHand hand, EnumFacing facing, float hitX, float hitY, float hitZ) {
 
-        // This method handles de- and rematerialising of tardises
+        // This method handles de- and rematerialising of tardises---
 
         // Randomize the pitch of the sound
         Random r = new Random();
-        float minPitch = 0.5f;
-        float soundPitch = minPitch + r.nextFloat() * (1.5f - minPitch);
+        float minPitchDemat = -0.5f;
+        float dematSoundPitch = minPitchDemat + r.nextFloat() * (1.5f - minPitchDemat);
+
+        float minPitchRemat = 1f;
+        float rematSoundPitch = minPitchRemat + r.nextFloat() * (1.5f - minPitchRemat);
 
         // Load and parse the Tardfile
         File tardfilePath = Tardfile.findTardfileByName(playerIn.getName());
@@ -81,7 +84,7 @@ public class Handbrake extends Block {
 
             if (tardisState[1]) { // If the TARDIS isn't dematerialised, demat it
 
-                worldIn.playSound(null, pos, new SoundEvent(new ResourceLocation(Reference.MODID, SoundRegistry.sound_paths[0])), SoundCategory.BLOCKS, 10.0f, soundPitch);
+                worldIn.playSound(null, pos, new SoundEvent(new ResourceLocation(Reference.MODID, SoundRegistry.sound_paths[0])), SoundCategory.BLOCKS, 10.0f, dematSoundPitch);
 
                 BlockPos oldPos = new BlockPos(x, y, z); // Generate new  BlockPos for old Tardis position
                 try {
@@ -93,7 +96,7 @@ public class Handbrake extends Block {
 
             } else if (tardisState[0]) { // If the TARDIS isn't materialised, remat it
 
-                worldIn.playSound(null, pos, SoundRegistry.registerSound("", SoundRegistry.sound_paths[1]), SoundCategory.BLOCKS, 1.0f, soundPitch);
+                worldIn.playSound(null, pos, SoundRegistry.registerSound("", SoundRegistry.sound_paths[1]), SoundCategory.BLOCKS, 1.0f, rematSoundPitch);
 
                 BlockPos newPos = new BlockPos(setX, setY, setZ); // Generate BlockPos for new Tardis position
                 try {

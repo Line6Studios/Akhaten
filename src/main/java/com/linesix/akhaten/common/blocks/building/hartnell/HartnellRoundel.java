@@ -1,46 +1,37 @@
-package com.linesix.akhaten.common.blocks.building;
+package com.linesix.akhaten.common.blocks.building.hartnell;
 
 import com.linesix.akhaten.common.Reference;
 import com.linesix.akhaten.common.blocks.BlockTypes;
 import com.linesix.akhaten.common.blocks.BuildingBlocks;
-import com.linesix.akhaten.common.blocks.DimBlocks;
 import com.linesix.akhaten.common.blocks.Names;
+import com.linesix.akhaten.common.blocks.item.IMetaBlockName;
 import com.linesix.akhaten.util.Misc;
 import net.minecraft.block.Block;
 import net.minecraft.block.SoundType;
 import net.minecraft.block.material.Material;
+import net.minecraft.block.properties.IProperty;
 import net.minecraft.block.properties.PropertyEnum;
 import net.minecraft.block.state.BlockStateContainer;
+import net.minecraft.block.state.IBlockState;
 import net.minecraft.creativetab.CreativeTabs;
 import net.minecraft.item.ItemStack;
 import net.minecraft.util.NonNullList;
-
-import com.linesix.akhaten.common.blocks.item.IMetaBlockName;
-import net.minecraft.block.state.IBlockState;
-import net.minecraft.block.properties.IProperty;
 
 public class HartnellRoundel extends Block implements IMetaBlockName {
 
     public static final PropertyEnum TYPE = PropertyEnum.create("type", BlockTypes.HartnellRoundelTypes.class);
 
-    public HartnellRoundel() { // Hartnell Roundel constructor
-
+    public HartnellRoundel() {
         super(Material.IRON);
 
         setUnlocalizedName(getUnlocalizedName());
         setRegistryName(Reference.RESOURCE_PREFIX + Names.Machines.Tardis.Roundels.hartnell_roundels);
         setCreativeTab(BuildingBlocks.buildblocktab);
         setSoundType(SoundType.METAL);
-        setDefaultState(this.blockState.getBaseState().withProperty(TYPE, BlockTypes.HartnellRoundelTypes.NORMAL));
-
     }
 
     @Override
-    public String getUnlocalizedName() {
-
-        return "tile." + Reference.RESOURCE_PREFIX + Names.Machines.Tardis.Roundels.hartnell_roundels;
-
-    }
+    public String getUnlocalizedName() {return "tile." + Reference.RESOURCE_PREFIX + Names.Machines.Tardis.Roundels.hartnell_roundels;}
 
     // Block State related code below \/
 
@@ -73,6 +64,8 @@ public class HartnellRoundel extends Block implements IMetaBlockName {
         for(int i = 0; i < BlockTypes.HartnellRoundelTypes.values().length; i++) {
 
             items.add(new ItemStack(this, 1, i));
+            System.out.println(items);
+            System.out.println(BlockTypes.HartnellRoundelTypes.values()[i]);
 
         }
 

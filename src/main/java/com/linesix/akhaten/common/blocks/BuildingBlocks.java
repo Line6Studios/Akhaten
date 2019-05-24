@@ -2,7 +2,7 @@ package com.linesix.akhaten.common.blocks;
 
 import com.google.common.base.Preconditions;
 import com.linesix.akhaten.common.Reference;
-import com.linesix.akhaten.common.blocks.building.HartnellRoundel;
+import com.linesix.akhaten.common.blocks.building.hartnell.HartnellRoundel;
 import com.linesix.akhaten.common.blocks.building.Door;
 import com.linesix.akhaten.tabs.TabBuilding;
 import net.minecraft.block.Block;
@@ -47,21 +47,10 @@ public class BuildingBlocks {
         Reference.logger.info("Initializing building-block-variables...");
 
         // Initialization of Block-Variables below
-        try {
+        block_roundel = new HartnellRoundel();
+        block_door = new Door();
 
-            block_roundel = new HartnellRoundel();
-            block_door = new Door();
-
-        } catch (Exception e) { // If theres an error whilst initializing any of the Variables, execute the code below
-
-            throw e;
-
-        } finally { // When everything is done, execute the code below
-
-            Reference.logger.info("DONE!");
-
-        }
-
+        Reference.logger.info("DONE!");
         // End Initialization of Block-Variables
 
     }

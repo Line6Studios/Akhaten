@@ -11,7 +11,7 @@ public class BlockTypes {
     *
     */
 
-    public static enum HartnellRoundelTypes implements IStringSerializable {
+    public enum HartnellRoundelTypes implements IStringSerializable {
 
         // This enum contains different block-types
         // of the 1963 / William Hartnell Roundels
