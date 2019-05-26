@@ -25,7 +25,7 @@ import javax.annotation.Nonnull;
 import java.util.HashSet;
 import java.util.Set;
 
-@Mod.EventBusSubscriber(modid = Reference.MODID, value = Side.CLIENT)
+@Mod.EventBusSubscriber(modid = Reference.MODID)
 public class BuildingBlocks {
 
     /*
@@ -113,20 +113,25 @@ public class BuildingBlocks {
 
     }
 
-    @SubscribeEvent
-    public static void onRegisterModelsEvent(@Nonnull final ModelRegistryEvent event) {
-
-        //ClientRegistry.bindTileEntitySpecialRenderer(TileEntity);
-        ForgeRegistries.ITEMS.getValues().stream()
-        .filter(item -> item.getRegistryName().getResourceDomain().equals(Reference.MODID))
-        .forEach(item -> {ModelLoader.setCustomModelResourceLocation(item, 0, new ModelResourceLocation(item.getRegistryName(), "normal"));});
-
-    }
-
     public static void registerRender(Item item) {
 
         ModelLoader.setCustomModelResourceLocation(item, 0,
                 new ModelResourceLocation(item.getRegistryName(), "inventory"));
+
+    }
+
+    @Mod.EventBusSubscriber(modid = Reference.MODID, value = Side.CLIENT)
+    public final class ClientEventSubscriber {
+
+        @SubscribeEvent
+        public void onRegisterModelsEvent(@Nonnull final ModelRegistryEvent event) {
+
+            //ClientRegistry.bindTileEntitySpecialRenderer(TileEntity);
+            ForgeRegistries.ITEMS.getValues().stream()
+                    .filter(item -> item.getRegistryName().getResourceDomain().equals(Reference.MODID))
+                    .forEach(item -> {ModelLoader.setCustomModelResourceLocation(item, 0, new ModelResourceLocation(item.getRegistryName(), "normal"));});
+
+        }
 
     }
 

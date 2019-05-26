@@ -1,12 +1,12 @@
 {
-  "forge_marker":"1",
+  "forge_marker":1,
   "defaults": {
 	"textures": {
 		"all":"akhaten:blocks/block_roundelhartnell"
 	},
 	"model":"akhaten:blocks/block_roundelhartnell",
 	"uvlock":"false"
-  }
+  },
   "variants": {
     "normal": [
       { "model": "akhaten:block_roundelhartnell" }
