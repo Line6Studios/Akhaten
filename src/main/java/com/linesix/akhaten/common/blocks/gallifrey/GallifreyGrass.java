@@ -1,7 +1,7 @@
 package com.linesix.akhaten.common.blocks.gallifrey;
 
 import com.linesix.akhaten.common.Reference;
-import com.linesix.akhaten.common.blocks.DimBlocks;
+import com.linesix.akhaten.common.blocks.registries.DimBlocks;
 import com.linesix.akhaten.common.blocks.Names;
 
 import net.minecraft.block.Block;

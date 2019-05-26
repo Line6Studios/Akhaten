@@ -1,4 +1,4 @@
-package com.linesix.akhaten.common.blocks;
+package com.linesix.akhaten.common.blocks.registries;
 
 import com.google.common.base.Preconditions;
 import com.linesix.akhaten.common.blocks.machines.tardis.MachineTardis;

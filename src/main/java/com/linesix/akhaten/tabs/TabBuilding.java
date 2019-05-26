@@ -1,6 +1,6 @@
 package com.linesix.akhaten.tabs;
 
-import com.linesix.akhaten.common.blocks.BuildingBlocks;
+import com.linesix.akhaten.common.blocks.registries.BuildingBlocks;
 import net.minecraft.creativetab.CreativeTabs;
 import net.minecraft.item.ItemStack;
 

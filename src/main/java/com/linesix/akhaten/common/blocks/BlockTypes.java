@@ -19,13 +19,9 @@ public class BlockTypes {
         NORMAL("normal", 0),
         HIGHRES("high_res", 1);
 
-        public static String[] unlocNames = {
-
-                "tile." + Reference.RESOURCE_PREFIX + Names.Machines.Tardis.Roundels.hartnell_roundels
-
-        };
         private int ID;
         private String name;
+        public static String[] unlocNames;
 
         HartnellRoundelTypes(String name, int ID) {
         	

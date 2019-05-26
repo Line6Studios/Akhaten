@@ -1,10 +1,11 @@
-package com.linesix.akhaten.common.blocks;
+package com.linesix.akhaten.common.blocks.registries;
 
 import com.google.common.base.Preconditions;
 import com.linesix.akhaten.common.Reference;
-import com.linesix.akhaten.common.blocks.building.hartnell.HartnellRoundel;
-import com.linesix.akhaten.common.blocks.building.Door;
-import com.linesix.akhaten.tabs.TabBuilding;
+import com.linesix.akhaten.common.blocks.gallifrey.GallifreyDirt;
+import com.linesix.akhaten.common.blocks.gallifrey.GallifreyGrass;
+import com.linesix.akhaten.common.blocks.gallifrey.GallifreyStone;
+import com.linesix.akhaten.tabs.TabDim;
 import net.minecraft.block.Block;
 import net.minecraft.client.renderer.block.model.ModelResourceLocation;
 import net.minecraft.creativetab.CreativeTabs;
@@ -18,14 +19,17 @@ import net.minecraftforge.fml.common.Mod;
 import net.minecraftforge.fml.common.eventhandler.SubscribeEvent;
 import net.minecraftforge.registries.IForgeRegistry;
 
+import javax.annotation.Resource;
 import java.util.HashSet;
 import java.util.Set;
 
 @Mod.EventBusSubscriber(modid = Reference.MODID)
-public class BuildingBlocks {
+public class DimBlocks {
+
+    // TODO: Add in Dimensions
 
     /*
-     * Registration Handler of all Building Blocks
+     * Registration Handler of all Dimensional Blocks
      *
      * Author: Felix Eckert (TheBertrahmPlays / Angry German)
      *
@@ -33,24 +37,37 @@ public class BuildingBlocks {
 
     public static final Set<ItemBlock> ITEM_BLOCKS = new HashSet<>(); // Create a set for all item blocks
 
-    public static CreativeTabs buildblocktab = new TabBuilding();
+    public static CreativeTabs dimblocktab = new TabDim();
 
     private static Block[] blocks; // Create an array for all blocks
 
     // Creation of all Block-Variables below
-    public static HartnellRoundel block_roundel;
-    public static Door block_door;
+    public static GallifreyGrass gallifrey_grass;
+    public static GallifreyStone gallifrey_stone;
+    public static GallifreyDirt gallifrey_dirt;
     // End Creation of all Block-Variables
 
     public static void init() {
 
-        Reference.logger.info("Initializing building-block-variables...");
+        Reference.logger.info("Initializing dimensional-block-variables...");
 
         // Initialization of Block-Variables below
-        block_roundel = new HartnellRoundel();
-        block_door = new Door();
+        try {
 
-        Reference.logger.info("DONE!");
+            gallifrey_stone = new GallifreyStone();
+            gallifrey_grass = new GallifreyGrass();
+            gallifrey_dirt = new GallifreyDirt();
+
+        } catch (Exception e) { // If theres an error whilst initializing any of the Variables, execute the code below
+
+            throw e;
+
+        } finally { // When everything is done, execute the code below
+
+            Reference.logger.info("DONE!");
+
+        }
+
         // End Initialization of Block-Variables
 
     }
@@ -62,12 +79,13 @@ public class BuildingBlocks {
 
         blocks = new Block[] { // Add all block vars in this array
 
-                block_roundel,
-                block_door
+                gallifrey_stone,
+                gallifrey_grass,
+                gallifrey_dirt
 
         };
 
-        registry.registerAll(blocks); // Register all blocks at once
+        registry.registerAll(blocks); // Reigster all blocks at once
 
     }
 
@@ -78,8 +96,9 @@ public class BuildingBlocks {
 
         final ItemBlock[] items = { // Put the registry in a variable
 
-                new ItemBlock(block_roundel),
-                new ItemBlock(block_door)
+                new ItemBlock(gallifrey_stone),
+                new ItemBlock(gallifrey_grass),
+                new ItemBlock(gallifrey_dirt)
 
         };
 
@@ -90,7 +109,7 @@ public class BuildingBlocks {
             final ResourceLocation registryName = Preconditions.checkNotNull(block.getRegistryName(),
                     "Block %s gas null registry name", block); // Get the registry name of the block (if it's not null)
             registry.register(item.setRegistryName(registryName)); // Set the registry name to content of variable
-            // "registryName"
+                                                                   // "registryName"
 
             ITEM_BLOCKS.add(item); // Finally add the item to The ITEM_BLOCKS set
 

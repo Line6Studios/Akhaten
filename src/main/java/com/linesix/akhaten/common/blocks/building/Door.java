@@ -1,7 +1,7 @@
 package com.linesix.akhaten.common.blocks.building;
 
 import com.linesix.akhaten.common.Reference;
-import com.linesix.akhaten.common.blocks.BuildingBlocks;
+import com.linesix.akhaten.common.blocks.registries.BuildingBlocks;
 import com.linesix.akhaten.common.blocks.Names;
 import com.linesix.akhaten.common.dimensions.DimensionTardis;
 import com.linesix.akhaten.util.AkhatenTeleporter;

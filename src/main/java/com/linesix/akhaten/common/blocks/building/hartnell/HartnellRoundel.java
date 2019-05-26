@@ -2,7 +2,7 @@ package com.linesix.akhaten.common.blocks.building.hartnell;
 
 import com.linesix.akhaten.common.Reference;
 import com.linesix.akhaten.common.blocks.BlockTypes;
-import com.linesix.akhaten.common.blocks.BuildingBlocks;
+import com.linesix.akhaten.common.blocks.registries.BuildingBlocks;
 import com.linesix.akhaten.common.blocks.Names;
 import com.linesix.akhaten.common.blocks.item.IMetaBlockName;
 import com.linesix.akhaten.util.Misc;
@@ -64,8 +64,6 @@ public class HartnellRoundel extends Block implements IMetaBlockName {
         for(int i = 0; i < BlockTypes.HartnellRoundelTypes.values().length; i++) {
 
             items.add(new ItemStack(this, 1, i));
-            System.out.println(items);
-            System.out.println(BlockTypes.HartnellRoundelTypes.values()[i]);
 
         }
 
