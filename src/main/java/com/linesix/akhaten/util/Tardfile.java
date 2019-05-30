@@ -34,8 +34,6 @@ public class Tardfile {
      */
     public static void genTardfile(World worldIn, BlockPos pos, EntityLivingBase placer, File path) throws FileNotFoundException {
 
-        if (path.exists()) {
-
             Reference.logger.info("Generating tardFile for user" + placer.getName() + "...");
 
             int id = (path).list().length + 1;
@@ -46,6 +44,8 @@ public class Tardfile {
             String[] tardfilearray = createTardFileArray(placer.getName(), placer.getUniqueID().toString(), id, pos.getX(), pos.getY(), pos.getZ(), pos.getX(), pos.getY(), pos.getZ(), 0, 0,new boolean[] {false, true}); // Create the array containing all base information
 
             try {
+            	if (!path.exists())
+            		path.mkdir();
                 FileUtil.writeFileFromArray(pathComplete, tardfilearray, FileUtil.LineMods.LN_BREAK);
             } catch (FileAlreadyExistsException e) {
 
@@ -76,13 +76,6 @@ public class Tardfile {
                 return;
 
             }
-
-        } else {
-
-            path.mkdir();
-            return;
-
-        }
 
     }
 
