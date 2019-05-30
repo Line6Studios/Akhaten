@@ -1,11 +1,15 @@
 package com.linesix.akhaten.common.blocks.building;
 
+import java.io.IOException;
+
+import com.google.gson.JsonObject;
 import com.linesix.akhaten.common.Reference;
-import com.linesix.akhaten.common.blocks.registries.BuildingBlocks;
 import com.linesix.akhaten.common.blocks.Names;
+import com.linesix.akhaten.common.blocks.registries.BuildingBlocks;
 import com.linesix.akhaten.common.dimensions.DimensionTardis;
 import com.linesix.akhaten.util.AkhatenTeleporter;
 import com.linesix.akhaten.util.Tardfile;
+
 import net.minecraft.block.Block;
 import net.minecraft.block.material.Material;
 import net.minecraft.block.state.IBlockState;
@@ -43,17 +47,25 @@ public class Door extends Block {
 
         if(!worldIn.isRemote) { // If it's server side go on
 
-            boolean isDemat = Tardfile.getTardisStateFromTardFile(Tardfile.findparseTardfileByName(playerIn.getName()))[0]; // Get the demat state
+        	JsonObject data = null;
+        	try {
+        		data = Tardfile.findparseTardfileByName(playerIn.getName());
+        	} catch (IOException e) {
+        		playerIn.sendMessage(new TextComponentString("An error occured, if you're unable to exit the TARDIS, use a Vortex Manipulator!"));
+        		return true;
+        	}
+        	
+            boolean isDemat = Tardfile.getTardisStateFromTardFile(data)[0]; // Get the demat state
 
-            int[] coordinates = Tardfile.getCoordsFromTardfile(Tardfile.findparseTardfileByName(playerIn.getName())); // Get the current tardis coordinates
+            int[] coordinates = Tardfile.getCoordsFromTardfile(data); // Get the current tardis coordinates
 
             WorldServer dimension = FMLCommonHandler.instance().getMinecraftServerInstance().getWorld(
-                    Tardfile.getDimensionFromTardfile(Tardfile.findparseTardfileByName(playerIn.getName()))); // Get the dimension of the TARDIS as a WorldServer
+                    Tardfile.getDimensionFromTardfile(data)); // Get the dimension of the TARDIS as a WorldServer
 
             if (!isDemat && playerIn.dimension == DimensionTardis.ID_TARDIS) { // If the player is in the TARDIS Dimension and the Tardis isn't dematerialized, go on
 
                 worldIn.getMinecraftServer().getPlayerList().transferPlayerToDimension((EntityPlayerMP) playerIn,
-                        Tardfile.getDimensionFromTardfile(Tardfile.findparseTardfileByName(playerIn.getName())), new AkhatenTeleporter(dimension, coordinates[0], coordinates[1], coordinates[2])); // Teleport the player
+                        Tardfile.getDimensionFromTardfile(data), new AkhatenTeleporter(dimension, coordinates[0], coordinates[1], coordinates[2])); // Teleport the player
 
             } else {
 

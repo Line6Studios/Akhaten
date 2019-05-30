@@ -12,6 +12,7 @@ import net.minecraft.block.state.IBlockState;
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.util.*;
 import net.minecraft.util.math.BlockPos;
+import net.minecraft.util.text.TextComponentString;
 import net.minecraft.world.World;
 import net.minecraftforge.common.DimensionManager;
 
@@ -52,8 +53,14 @@ public class Handbrake extends Block {
         float rematSoundPitch = minPitchRemat + r.nextFloat() * (1.5f - minPitchRemat);
 
         // Load and parse the Tardfile
-        File tardfilePath = Tardfile.findTardfileByName(playerIn.getName());
-        JsonObject tardfile = Tardfile.findparseTardfileByName(playerIn.getName());
+        File tardfilePath = tardfilePath = Tardfile.findTardfileByName(playerIn.getName());
+        JsonObject tardfile = null;
+        try {
+        	tardfile = Tardfile.findparseTardfileByName(playerIn.getName());
+        } catch (IOException e) {
+        	playerIn.sendMessage(new TextComponentString("You need to own a TARDIS before you can dematerialise one!"));
+        	return true;
+        }
 
         // Create variables for all required properties of the Tardfile
         int[] setCoords, oldCoords;
@@ -80,7 +87,8 @@ public class Handbrake extends Block {
         id = Tardfile.getTardisIDFromTardfile(tardfile);
         // ---------------------------------------------------------
 
-        if (!worldIn.isRemote) { // If it's serverside continue
+        // De- / Rematerialise it if it's serverside
+        if (!worldIn.isRemote) {
 
             if (tardisState[1]) { // If the TARDIS isn't dematerialised, demat it
 

@@ -192,21 +192,11 @@ public class Tardfile {
      * @param name Username
      *
      */
-    public static JsonObject findparseTardfileByName(String name) {
+    public static JsonObject findparseTardfileByName(String name) throws IOException {
 
         JsonObject data;
 
-        try {
-
-            data = FileUtil.parseJSON(new File(DimensionManager.getCurrentSaveRootDirectory().getPath() + "/tardises/tardFile_" + name + ".json"));
-
-        } catch (IOException e) {
-
-            e.printStackTrace();
-
-            return null;
-
-        }
+        data = FileUtil.parseJSON(new File(DimensionManager.getCurrentSaveRootDirectory().getPath() + "/tardises/tardFile_" + name + ".json"));
 
         return data;
 
@@ -215,7 +205,6 @@ public class Tardfile {
     public static File findTardfileByName(String name) {
 
         File data;
-
         data = new File(DimensionManager.getCurrentSaveRootDirectory().getPath() + "/tardises/tardFile_" + name + ".json");
 
         return data;
