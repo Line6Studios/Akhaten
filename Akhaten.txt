@@ -1,0 +1,25 @@
+This file contains TODO general notes and some documentation
+
+Current Version: 0.5.1 BETA
+
++--------------------------------------------
+Credits:
+	Felix Eckert / Angry German / Bertrahm: Lead Dev, Owner, Artist
+	Ghanou Craft HD: Artist
+	[{Jay}]: Artist, Dev
+	Syorito Hatsuki: Translator (Russian, Finnish)
++--------------------------------------------
+
++--DEV--+
+
++--------------------------------------------
+TODO:
+	- Implement Jay's models
+	- Add TARDIS animations
+	- Add Monitor GUI
++--------------------------------------------		
+
++--------------------------------------------
+Notes:
+	
++--------------------------------------------
