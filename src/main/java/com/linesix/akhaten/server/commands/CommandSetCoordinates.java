@@ -21,7 +21,7 @@ public class CommandSetCoordinates extends CommandBase {
     @Override
     public String getUsage(ICommandSender sender) {
 
-        return "Missing argument! Required <x> <y> <z>";
+        return "Missing argument! Required <x> <y> <z> <dimID>";
 
     }
 
@@ -33,13 +33,14 @@ public class CommandSetCoordinates extends CommandBase {
             JsonObject tf = Tardfile.findparseTardfileByName(sender.getName());
 
             int id = tf.get("tardis_id").getAsInt();
+            int[] intCoords = Tardfile.getIntCoordsFromTardfile(tf);
             int[] coords = Tardfile.getCoordsFromTardfile(tf);
             int[] setCoords = {Integer.parseInt(args[0]), Integer.parseInt(args[1]), Integer.parseInt(args[2])};
             int dim = Tardfile.getDimensionFromTardfile(tf);
             int setDim = Integer.parseInt(args[3]);
 
             Tardfile.updateTardfile(Tardfile.findTardfileByName(sender.getName()), sender.getName(), id,
-                    sender.getCommandSenderEntity().getUniqueID().toString(), coords, setCoords, dim, setDim,
+                    sender.getCommandSenderEntity().getUniqueID().toString(), intCoords, coords, setCoords, dim, setDim,
                     Tardfile.getTardisStateFromTardFile(Tardfile.findparseTardfileByName("Lord_Bertrahm")));
 
         } catch (IOException e) {

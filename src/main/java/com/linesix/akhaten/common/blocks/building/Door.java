@@ -56,7 +56,6 @@ public class Door extends Block {
         	}
         	
             boolean isDemat = Tardfile.getTardisStateFromTardFile(data)[0]; // Get the demat state
-
             int[] coordinates = Tardfile.getCoordsFromTardfile(data); // Get the current tardis coordinates
 
             WorldServer dimension = FMLCommonHandler.instance().getMinecraftServerInstance().getWorld(

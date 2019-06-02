@@ -1,4 +1,4 @@
-This file contains TODO general notes and some documentation
+This file contains T0DO general notes and some documentation
 
 Current Version: 0.5.1 BETA
 
@@ -6,9 +6,20 @@ Current Version: 0.5.1 BETA
 Credits:
 	Felix Eckert / Angry German / Bertrahm: Lead Dev, Owner, Artist
 	Ghanou Craft HD: Artist
-	[{Jay}]: Artist, Dev
+	[{Jay}]: Artist
 	Syorito Hatsuki: Translator (Russian, Finnish)
 +--------------------------------------------
+
++--------------------------------------------
+Special Thanks:
+    McJty: Providing the Teleporter class (com.linesix.akhaten.util.AkhatenTeleporter)
++--------------------------------------------
+
+
++--------------------------------------------
+Links:
++--------------------------------------------
+
 
 +--DEV--+
 

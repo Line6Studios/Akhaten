@@ -63,13 +63,14 @@ public class Handbrake extends Block {
         }
 
         // Create variables for all required properties of the Tardfile
-        int[] setCoords, oldCoords;
+        int[] intCoords, setCoords, oldCoords;
         int setX, setY, setZ, x, y, z;
         int dim, setDim;
         int id;
         boolean[] tardisState;
 
         // Write the tardfile property variables
+        intCoords = Tardfile.getIntCoordsFromTardfile(tardfile);
         setCoords = Tardfile.getSetCoordsFromTardfile(tardfile);
         oldCoords = Tardfile.getCoordsFromTardfile(tardfile);
 
@@ -96,7 +97,7 @@ public class Handbrake extends Block {
 
                 BlockPos oldPos = new BlockPos(x, y, z); // Generate new  BlockPos for old Tardis position
                 try {
-                    Tardfile.updateTardfile(tardfilePath, playerIn.getName(), id, playerIn.getUniqueID().toString(), setCoords, setCoords, dim, setDim,new boolean[] {true, false});
+                    Tardfile.updateTardfile(tardfilePath, playerIn.getName(), id, playerIn.getUniqueID().toString(), intCoords, setCoords, setCoords, dim, setDim,new boolean[] {true, false});
                 } catch (IOException e) {
                     e.printStackTrace();
                 }
@@ -108,7 +109,7 @@ public class Handbrake extends Block {
 
                 BlockPos newPos = new BlockPos(setX, setY, setZ); // Generate BlockPos for new Tardis position
                 try {
-                    Tardfile.updateTardfile(tardfilePath, playerIn.getName(), id, playerIn.getUniqueID().toString(), oldCoords, setCoords, dim, setDim, new boolean[] {false, true});
+                    Tardfile.updateTardfile(tardfilePath, playerIn.getName(), id, playerIn.getUniqueID().toString(), intCoords, oldCoords, setCoords, dim, setDim, new boolean[] {false, true});
                 } catch (IOException e) {
                     e.printStackTrace();
                 }

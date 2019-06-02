@@ -1,4 +1,4 @@
-package com.linesix.akhaten.common.blocks.building.hartnell;
+package com.linesix.akhaten.common.blocks.building.tardis;
 
 import com.linesix.akhaten.common.Reference;
 import com.linesix.akhaten.common.blocks.BlockTypes;

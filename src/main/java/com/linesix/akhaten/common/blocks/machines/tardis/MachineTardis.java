@@ -1,5 +1,6 @@
 package com.linesix.akhaten.common.blocks.machines.tardis;
 
+import com.google.gson.JsonObject;
 import com.linesix.akhaten.common.Reference;
 import com.linesix.akhaten.common.blocks.registries.MachineBlocks;
 import com.linesix.akhaten.common.blocks.Names;
@@ -25,6 +26,7 @@ import net.minecraftforge.fml.common.FMLCommonHandler;
 
 import java.io.File;
 import java.io.FileNotFoundException;
+import java.io.IOException;
 
 public class MachineTardis extends Block {
 
@@ -50,23 +52,30 @@ public class MachineTardis extends Block {
 
         if (!worldIn.isRemote) {
 
-            float playerX = playerIn.getPosition().getX();
-            float playerY = playerIn.getPosition().getY();
-            float playerZ = playerIn.getPosition().getZ();
+            JsonObject playerTardfile;
 
-            int lastDim = worldIn.provider.getDimension();
+            try {
+                playerTardfile = Tardfile.findparseTardfileByName(playerIn.getName());
+            } catch (IOException e) {
+                playerIn.sendMessage(new TextComponentString("The TARDIS refuses to let you in, are you sure that it'S yours?"));
+                return false;
+            }
+
+            int[] intCoords = Tardfile.getIntCoordsFromTardfile(playerTardfile);
+            int[] coords = Tardfile.getCoordsFromTardfile(playerTardfile);
+            int dim = Tardfile.getDimensionFromTardfile(playerTardfile);
 
             WorldServer worldServer = FMLCommonHandler.instance().getMinecraftServerInstance().getWorld(playerIn.dimension);
 
             if (playerIn.dimension == DimensionTardis.ID_TARDIS) {
 
                 worldIn.getMinecraftServer().getPlayerList().transferPlayerToDimension((EntityPlayerMP) playerIn,
-                        lastDim, new AkhatenTeleporter(worldServer, playerX, playerY, playerZ));
+                        dim, new AkhatenTeleporter(worldServer, coords[0], coords[1], coords[2]));
 
             } else {
 
                 worldIn.getMinecraftServer().getPlayerList().transferPlayerToDimension((EntityPlayerMP) playerIn,
-                        DimensionTardis.ID_TARDIS, new AkhatenTeleporter(worldServer, playerX, playerY, playerZ));
+                        DimensionTardis.ID_TARDIS, new AkhatenTeleporter(worldServer, intCoords[0], intCoords[1], intCoords[2]));
 
             }
 
