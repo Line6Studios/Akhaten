@@ -28,6 +28,14 @@ public class Names {
 
             }
 
+            public class Other {
+
+                public static final String coral_wiring = "block_coralwire";
+                public static final String coral_wall = "block_coralwall";
+                public static final String coral_consoleblock = "coral_consoleblock";
+
+            }
+
         }
 
     }

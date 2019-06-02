@@ -2,7 +2,9 @@ package com.linesix.akhaten.common.blocks.registries;
 
 import com.google.common.base.Preconditions;
 import com.linesix.akhaten.common.Reference;
-import com.linesix.akhaten.common.blocks.building.hartnell.HartnellRoundel;
+import com.linesix.akhaten.common.blocks.building.tardis.CoralWall;
+import com.linesix.akhaten.common.blocks.building.tardis.CoralWire;
+import com.linesix.akhaten.common.blocks.building.tardis.HartnellRoundel;
 import com.linesix.akhaten.common.blocks.building.Door;
 import com.linesix.akhaten.tabs.TabBuilding;
 import net.minecraft.block.Block;
@@ -14,7 +16,6 @@ import net.minecraft.util.ResourceLocation;
 import net.minecraftforge.client.event.ModelRegistryEvent;
 import net.minecraftforge.client.model.ModelLoader;
 import net.minecraftforge.event.RegistryEvent;
-import net.minecraftforge.fml.client.registry.ClientRegistry;
 import net.minecraftforge.fml.common.Mod;
 import net.minecraftforge.fml.common.eventhandler.SubscribeEvent;
 import net.minecraftforge.fml.common.registry.ForgeRegistries;
@@ -43,6 +44,8 @@ public class BuildingBlocks {
 
     // Creation of all Block-Variables below
     public static HartnellRoundel block_roundel;
+    public static CoralWire block_coralwire;
+    public static CoralWall block_coralwall;
     public static Door block_door;
     // End Creation of all Block-Variables
 
@@ -52,6 +55,8 @@ public class BuildingBlocks {
 
         // Initialization of Block-Variables below
         block_roundel = new HartnellRoundel();
+        block_coralwire = new CoralWire();
+        block_coralwall = new CoralWall();
         block_door = new Door();
 
         Reference.logger.info("DONE!");
@@ -67,6 +72,8 @@ public class BuildingBlocks {
         blocks = new Block[] { // Add all block vars in this array
 
                 block_roundel,
+                block_coralwire,
+                block_coralwall,
                 block_door
 
         };
@@ -83,6 +90,8 @@ public class BuildingBlocks {
         final ItemBlock[] items = { // Put the registry in a variable
 
                 new ItemBlock(block_roundel),
+                new ItemBlock(block_coralwire),
+                new ItemBlock(block_coralwall),
                 new ItemBlock(block_door)
 
         };
