@@ -1,8 +1,0 @@
-{
-      "parent": "block/cube_all",
-      "textures": {
-    
-        "all": "akhaten:blocks/block_roundelhartnellhr"
-    
-      }
-}
