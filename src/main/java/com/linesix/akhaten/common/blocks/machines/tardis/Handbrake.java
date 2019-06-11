@@ -5,7 +5,7 @@ import com.linesix.akhaten.common.Reference;
 import com.linesix.akhaten.common.blocks.registries.MachineBlocks;
 import com.linesix.akhaten.common.blocks.Names;
 import com.linesix.akhaten.common.sound.SoundRegistry;
-import com.linesix.akhaten.util.Tardfile;
+import com.linesix.akhaten.util.tardis.Tardfile;
 import net.minecraft.block.Block;
 import net.minecraft.block.material.Material;
 import net.minecraft.block.state.IBlockState;

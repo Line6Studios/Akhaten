@@ -1,7 +1,7 @@
 package com.linesix.akhaten.server.commands;
 
 import com.google.gson.JsonObject;
-import com.linesix.akhaten.util.Tardfile;
+import com.linesix.akhaten.util.tardis.Tardfile;
 import net.minecraft.command.CommandBase;
 import net.minecraft.command.CommandException;
 import net.minecraft.command.ICommandSender;

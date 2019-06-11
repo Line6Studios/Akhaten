@@ -1,7 +1,8 @@
-package com.linesix.akhaten.util;
+package com.linesix.akhaten.util.tardis;
 
 import com.google.gson.JsonObject;
 import com.linesix.akhaten.common.Reference;
+import com.linesix.akhaten.util.FileUtil;
 import net.minecraft.command.ICommandSender;
 import net.minecraft.entity.EntityLivingBase;
 import net.minecraft.util.math.BlockPos;
@@ -94,18 +95,7 @@ public class Tardfile {
 
         String[] tardfile = createTardFileArray(name, uuid, tardis_id, intCoords[0], intCoords[1], intCoords[2],coords[0],coords[1], coords[2], setCoords[0], setCoords[1], setCoords[2], dimension, setDimension,tardis_state);
 
-        PrintWriter writer = new PrintWriter(path);
-
-        writer.write("");
-
-        for (String i : tardfile) {
-
-            writer.write(i+"\n");
-
-        }
-
-        writer.close();
-
+        FileUtil.writeFileFromArray(path, tardfile, FileUtil.LineMods.LN_BREAK);
         replaceChar(path);
 
     }
@@ -126,17 +116,11 @@ public class Tardfile {
 
         // Delete the old file
         if (!path.delete()) {
-
             Reference.logger.warning("Couldn't delete JSON file! Returning...");
             return false;
-
         }
 
-        PrintWriter writer = new PrintWriter(path); // Create a new PrintWriter
-
-        writer.write(newJSON); // Write the new JSON
-
-        writer.close();
+        FileUtil.writeFile(path, newJSON);
 
         return true;
 

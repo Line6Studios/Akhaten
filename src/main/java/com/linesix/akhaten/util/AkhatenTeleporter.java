@@ -9,6 +9,14 @@ import net.minecraft.world.WorldServer;
 
 public class AkhatenTeleporter extends Teleporter {
 
+    /*
+    * Akhaten Teleporter
+    * This is part of the "utils" package,
+    * thus it can be reused in different mods
+    *
+    * Author: McJty
+    */
+
     private final WorldServer worldServerInstance;
 
     private double x;

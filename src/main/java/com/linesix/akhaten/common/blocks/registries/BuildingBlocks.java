@@ -2,9 +2,9 @@ package com.linesix.akhaten.common.blocks.registries;
 
 import com.google.common.base.Preconditions;
 import com.linesix.akhaten.common.Reference;
-import com.linesix.akhaten.common.blocks.building.tardis.CoralWall;
-import com.linesix.akhaten.common.blocks.building.tardis.CoralWire;
-import com.linesix.akhaten.common.blocks.building.tardis.HartnellRoundel;
+import com.linesix.akhaten.common.blocks.building.tardis.coral.CoralWall;
+import com.linesix.akhaten.common.blocks.building.tardis.coral.CoralWire;
+import com.linesix.akhaten.common.blocks.building.tardis.hartnell.HartnellRoundel;
 import com.linesix.akhaten.common.blocks.building.Door;
 import com.linesix.akhaten.tabs.TabBuilding;
 import net.minecraft.block.Block;
@@ -102,8 +102,7 @@ public class BuildingBlocks {
 
             final ResourceLocation registryName = Preconditions.checkNotNull(block.getRegistryName(),
                     "Block %s gas null registry name", block); // Get the registry name of the block (if it's not null)
-            registry.register(item.setRegistryName(registryName)); // Set the registry name to content of variable
-            // "registryName"
+            registry.register(item.setRegistryName(registryName)); // Set the registry name to content of variable "registryName"
 
             ITEM_BLOCKS.add(item); // Finally add the item to The ITEM_BLOCKS set
 

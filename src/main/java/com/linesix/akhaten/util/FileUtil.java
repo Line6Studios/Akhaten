@@ -36,24 +36,31 @@ public class FileUtil {
      * @param endlMod Modifiers for end of the Line, look at com.linesix.akhaten.util.FileUtil.LineMods
      *
      * @throws FileNotFoundException
+     * @throws FileAlreadyExistsException
      *
      * */
     public static void writeFileFromArray(File file, String[] input, int endlMod) throws FileNotFoundException, FileAlreadyExistsException {
 
-        if (file.exists()) {
-
+        if (file.exists())
             throw new FileAlreadyExistsException("The file "+file.getPath()+" already exists!");
-
-        }
 
         PrintWriter writer = new PrintWriter(file);
 
         for (String i : input) { // Write the file from the array
-
             writer.write(i+"\n");
-
         }
 
+        writer.close();
+
+    }
+
+    public static void writeFile(File file, String input) throws FileNotFoundException, FileAlreadyExistsException {
+
+        if (file.exists())
+            throw new FileAlreadyExistsException("the file "+file.getPath()+" already exists!");
+
+        PrintWriter writer = new PrintWriter(file);
+        writer.write(input);
         writer.close();
 
     }

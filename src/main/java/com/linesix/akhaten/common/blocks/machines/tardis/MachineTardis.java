@@ -7,7 +7,7 @@ import com.linesix.akhaten.common.blocks.Names;
 import com.linesix.akhaten.common.dimensions.DimensionTardis;
 import com.linesix.akhaten.util.AkhatenTeleporter;
 import com.linesix.akhaten.util.FileUtil;
-import com.linesix.akhaten.util.Tardfile;
+import com.linesix.akhaten.util.tardis.Tardfile;
 import net.minecraft.block.Block;
 import net.minecraft.block.material.Material;
 import net.minecraft.block.state.IBlockState;
