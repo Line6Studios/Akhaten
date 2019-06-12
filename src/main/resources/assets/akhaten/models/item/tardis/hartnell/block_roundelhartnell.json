@@ -1,5 +1,5 @@
 {
-  "parent": "akhaten:block/tardis/block_roundelhartnellhr",
+  "parent": "akhaten:block/tardis/hartnell/block_roundelhartnell",
 
   "display": {
     "thirdperson": {

@@ -1,10 +1,10 @@
 {
   "variants": {
     "type=normal": [
-      { "model": "akhaten:tardis/block_roundelhartnell" }
+      { "model": "akhaten:tardis/hartnell/block_roundelhartnell" }
     ],
 	"type=high_res":[
-	  { "model": "akhaten:tardis/block_roundelhartnellhr" }
+	  { "model": "akhaten:tardis/hartnell/block_roundelhartnellhr" }
 	]
   }
 }

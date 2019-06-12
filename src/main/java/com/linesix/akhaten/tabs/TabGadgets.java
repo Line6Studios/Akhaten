@@ -1,6 +1,6 @@
 package com.linesix.akhaten.tabs;
 
-import com.linesix.akhaten.common.items.Gadgets;
+import com.linesix.akhaten.common.items.registries.Gadgets;
 import net.minecraft.creativetab.CreativeTabs;
 import net.minecraft.item.ItemStack;
 

@@ -4,7 +4,8 @@ import com.linesix.akhaten.common.blocks.registries.BuildingBlocks;
 import com.linesix.akhaten.common.blocks.registries.DimBlocks;
 import com.linesix.akhaten.common.blocks.registries.MachineBlocks;
 import com.linesix.akhaten.common.dimensions.Dimensions;
-import com.linesix.akhaten.common.items.Gadgets;
+import com.linesix.akhaten.common.items.registries.Gadgets;
+import com.linesix.akhaten.common.items.registries.Materials;
 import net.minecraftforge.fml.common.event.FMLInitializationEvent;
 import net.minecraftforge.fml.common.event.FMLPostInitializationEvent;
 import net.minecraftforge.fml.common.event.FMLPreInitializationEvent;
@@ -17,6 +18,7 @@ public class ClientProxy extends CommonProxy {
         MachineBlocks.init();
         BuildingBlocks.init();
         Gadgets.init();
+        Materials.init();
 
         super.preInit(event);
 

@@ -1,5 +1,5 @@
 {
-  "parent": "akhaten:block/block_coralwire",
+  "parent": "akhaten:block/tardis/coral/block_coralwire",
 
   "display": {
     "thirdperson": {

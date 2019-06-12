@@ -1,4 +1,4 @@
-package com.linesix.akhaten.common.items;
+package com.linesix.akhaten.common.items.registries;
 
 import com.linesix.akhaten.common.Reference;
 import com.linesix.akhaten.tabs.TabGadgets;

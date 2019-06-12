@@ -1,9 +1,7 @@
 {
-
-  "variants": {
-    "normal": [
-      { "model": "akhaten:machine_tardis" }
-    ]
-  }
-
+	"forge_marker":1,
+	"defaults": {
+		"textures": {},
+		"model":"akhaten:910policebox.obj"
+	}
 }

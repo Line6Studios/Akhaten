@@ -15,6 +15,7 @@ import net.minecraft.item.ItemBlock;
 import net.minecraft.util.ResourceLocation;
 import net.minecraftforge.client.event.ModelRegistryEvent;
 import net.minecraftforge.client.model.ModelLoader;
+import net.minecraftforge.client.model.obj.OBJLoader;
 import net.minecraftforge.event.RegistryEvent;
 import net.minecraftforge.fml.common.Mod;
 import net.minecraftforge.fml.common.eventhandler.SubscribeEvent;
@@ -112,6 +113,8 @@ public class BuildingBlocks {
 
     @SubscribeEvent
     public static void registerRenders(ModelRegistryEvent event) {
+
+        OBJLoader.INSTANCE.addDomain(Reference.MODID);
 
         for (final Block block : blocks) {
 

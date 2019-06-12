@@ -13,9 +13,11 @@ machine_tile.akhaten:tardis_monitor.name=TARDIS Monitor
 
 #Items
 item.item.akhaten:vortex_manipulator.name=Vortex Manipulator
+item.item.akhaten:electronic_circuit.name=Electronic Circuit
 
 #Tabs
 itemGroup.akhaten_dimensional_blocks=Akhaten Dimensional Blocks
 itemGroup.akhaten_gadgets=Akhaten Gadgets
 itemGroup.akhaten_machines=Akhaten Machines
 itemGroup.akhaten_building_blocks=Akhaten Building Blocks
+itemGroup.akhaten_materials=Akhaten Materials

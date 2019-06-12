@@ -43,14 +43,8 @@ public class Handbrake extends Block {
     public boolean onBlockActivated(World worldIn, BlockPos pos, IBlockState state, EntityPlayer playerIn, EnumHand hand, EnumFacing facing, float hitX, float hitY, float hitZ) {
 
         // This method handles de- and rematerialising of tardises---
-
-        // Randomize the pitch of the sound
-        Random r = new Random();
-        float minPitchDemat = -0.5f;
-        float dematSoundPitch = minPitchDemat + r.nextFloat() * (1.5f - minPitchDemat);
-
-        float minPitchRemat = 1f;
-        float rematSoundPitch = minPitchRemat + r.nextFloat() * (1.5f - minPitchRemat);
+        float dematSoundPitch = 0.8f;
+        float rematSoundPitch = 1.0f;
 
         // Load and parse the Tardfile
         File tardfilePath = tardfilePath = Tardfile.findTardfileByName(playerIn.getName());

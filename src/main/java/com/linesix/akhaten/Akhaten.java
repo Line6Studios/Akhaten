@@ -3,12 +3,14 @@ package com.linesix.akhaten;
 import com.linesix.akhaten.common.blocks.registries.BuildingBlocks;
 import com.linesix.akhaten.common.blocks.registries.DimBlocks;
 import com.linesix.akhaten.common.blocks.registries.MachineBlocks;
+import com.linesix.akhaten.common.items.registries.Materials;
 import com.linesix.akhaten.server.commands.Commands;
 import com.linesix.akhaten.common.dimensions.Dimensions;
-import com.linesix.akhaten.common.items.Gadgets;
+import com.linesix.akhaten.common.items.registries.Gadgets;
 import com.linesix.akhaten.proxy.CommonProxy;
 import com.linesix.akhaten.common.sound.SoundRegistry;
 import com.linesix.akhaten.common.Reference;
+import net.minecraftforge.client.model.obj.OBJLoader;
 import net.minecraftforge.fml.common.Mod;
 import net.minecraftforge.fml.common.SidedProxy;
 import net.minecraftforge.fml.common.event.FMLInitializationEvent;
@@ -44,12 +46,15 @@ public class Akhaten {
 
         Reference.logger.info("Entering PreInit phase...");
 
+        //OBJLoader.INSTANCE.addDomain(Reference.MODID);
+
         // Register Items Blocks and Sounds Below
         SoundRegistry.init();
         DimBlocks.init();
         MachineBlocks.init();
         BuildingBlocks.init();
         Gadgets.init();
+        Materials.init();
 
     }
 

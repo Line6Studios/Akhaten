@@ -1,6 +1,6 @@
 package com.linesix.akhaten.common.items.gadgets;
 
-import com.linesix.akhaten.common.items.Gadgets;
+import com.linesix.akhaten.common.items.registries.Gadgets;
 import com.linesix.akhaten.common.items.ItemBase;
 import com.linesix.akhaten.common.items.ItemNames;
 import com.linesix.akhaten.util.AkhatenTeleporter;

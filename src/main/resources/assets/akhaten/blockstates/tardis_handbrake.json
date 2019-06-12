@@ -2,7 +2,7 @@
 
   "variants": {
     "normal": [
-      { "model": "akhaten:tardis_handbrake" }
+      { "model": "akhaten:tardis/tardis_handbrake" }
     ]
   }
 

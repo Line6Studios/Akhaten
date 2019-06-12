@@ -1,7 +1,7 @@
 {
 	"variants": {
 		"normal":[{
-			"model": "akhaten:block_coralwire"
+			"model": "akhaten:tardis/coral/block_coralwire"
 		}]
 	}
 }
