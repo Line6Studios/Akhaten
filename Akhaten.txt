@@ -5,6 +5,7 @@ Current Version: 0.5.1 BETA
 +--------------------------------------------
 Credits:
 	Felix Eckert / Angry German / Bertrahm: Lead Dev, Owner, Artist
+	inferno4you: Developer
 	Ghanou Craft HD: Artist
 	[{Jay}]: Artist
 	Syorito Hatsuki: Translator (Russian, Finnish)
