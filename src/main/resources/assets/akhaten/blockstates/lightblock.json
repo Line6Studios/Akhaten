@@ -1,0 +1,13 @@
+{
+  "forge_marker":1,
+  "defaults": {
+    "textures": {
+      "#None": "akhaten:blocks/lightbox"
+    },
+    "model":"akhaten:lightbox.obj"
+  },
+  "variants": {
+    "normal": [{}],
+    "inventory": [{}]
+  }
+}

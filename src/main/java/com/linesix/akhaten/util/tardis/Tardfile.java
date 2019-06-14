@@ -33,12 +33,11 @@ public class Tardfile {
      * @throws FileNotFoundException if the json file / the "tardises" directory could not be found
      *
      */
-    public static void genTardfile(World worldIn, BlockPos pos, EntityLivingBase placer, File path) throws FileNotFoundException {
+    public static void genTardfile(World worldIn, BlockPos pos, EntityLivingBase placer, File path) throws FileNotFoundException, NullPointerException{
 
             Reference.logger.info("Generating tardFile for user" + placer.getName() + "...");
 
-            int id = (path).list().length + 1;
-            id = id - 1;
+            int id = path.getAbsoluteFile().list().length;
 
             File pathComplete = new File(FileUtil.combine(path, new File("/tardFile_" + placer.getName() + ".json"))); // Create the whole path
 

@@ -19,16 +19,21 @@ import net.minecraft.util.EnumFacing;
 import net.minecraft.util.EnumHand;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.text.TextComponentString;
+import net.minecraft.world.IBlockAccess;
 import net.minecraft.world.World;
 import net.minecraft.world.WorldServer;
-import net.minecraftforge.common.DimensionManager;
 import net.minecraftforge.fml.common.FMLCommonHandler;
+import net.minecraftforge.fml.relauncher.Side;
+import net.minecraftforge.fml.relauncher.SideOnly;
 
 import java.io.File;
 import java.io.FileNotFoundException;
 import java.io.IOException;
+import java.util.UUID;
 
 public class MachineTardis extends Block {
+    private UUID owner = null; //UUID of player.
+    private int[] coords = null;
 
     public MachineTardis() {
 
@@ -103,22 +108,26 @@ public class MachineTardis extends Block {
                 if (!worldIn.isRemote) {
 
                     placer.sendMessage(new TextComponentString("Congratulations for getting your own Type 40 TT Capsule!"));
+                    owner = placer.getUniqueID();
+                    File saveRootDIR = worldIn.getSaveHandler().getWorldDirectory().getAbsoluteFile();
 
-                    File saveRootDIR = DimensionManager.getCurrentSaveRootDirectory();
 
                     String fullPath = FileUtil.combine(saveRootDIR, new File("tardises"));
                     File tardFile = new File(fullPath);
+                    if (tardFile.exists()){}
+                    else {
+                        tardFile.mkdir();
+                    }
 
                     try {
 
                         Tardfile.genTardfile(worldIn, pos, placer, tardFile);
 
-                    } catch (FileNotFoundException e) {
+                    } catch (FileNotFoundException | NullPointerException e) {
 
                         e.printStackTrace();
 
                     }
-
                 }
 
             } else {
@@ -129,6 +138,22 @@ public class MachineTardis extends Block {
 
         }
 
+    }
+
+    @Override
+    @SideOnly(Side.CLIENT)
+    public boolean shouldSideBeRendered(IBlockState blockState, IBlockAccess worldIn, BlockPos pos, EnumFacing side) {
+        return false;
+    }
+
+    @Override
+    public boolean isBlockNormalCube(IBlockState blockState) {
+        return false;
+    }
+
+    @Override
+    public boolean isOpaqueCube(IBlockState blockState) {
+        return false;
     }
 
 }
