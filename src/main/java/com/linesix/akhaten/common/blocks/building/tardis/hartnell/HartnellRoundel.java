@@ -17,9 +17,7 @@ import net.minecraft.creativetab.CreativeTabs;
 import net.minecraft.item.ItemStack;
 import net.minecraft.util.NonNullList;
 
-public class HartnellRoundel extends Block implements IMetaBlockName {
-
-    public static final PropertyEnum TYPE = PropertyEnum.create("type", BlockTypes.HartnellRoundelTypes.class);
+public class HartnellRoundel extends Block {
 
     public HartnellRoundel() {
         super(Material.IRON);
@@ -32,49 +30,5 @@ public class HartnellRoundel extends Block implements IMetaBlockName {
 
     @Override
     public String getUnlocalizedName() {return "tile." + Reference.RESOURCE_PREFIX + Names.Machines.Tardis.Roundels.hartnell_roundels;}
-
-    // Block State related code below \/
-
-    @Override
-    protected BlockStateContainer createBlockState() {
-
-        return new BlockStateContainer(this, new IProperty[] {TYPE});
-
-    }
-
-    @Override
-    public int getMetaFromState(IBlockState state) {
-
-        BlockTypes.HartnellRoundelTypes type = (BlockTypes.HartnellRoundelTypes) state.getValue(TYPE);
-
-        return type.getID();
-
-    }
-
-    @Override
-    public IBlockState getStateFromMeta(int meta) {
-
-        return this.getDefaultState().withProperty(TYPE, BlockTypes.HartnellRoundelTypes.values()[meta]);
-
-    }
-
-    @Override
-    public void getSubBlocks(CreativeTabs itemIn, NonNullList<ItemStack> items) {
-
-        for(int i = 0; i < BlockTypes.HartnellRoundelTypes.values().length; i++) {
-
-            items.add(new ItemStack(this, 1, i));
-
-        }
-
-    }
-
-    @Override
-    public String getSpecialName(ItemStack stack) {
-        String unlocName = stack.getUnlocalizedName();
-        int index = Misc.getIndexByVal(unlocName, BlockTypes.HartnellRoundelTypes.unlocNames);
-        System.out.println(unlocName); // DEBUG
-        return BlockTypes.HartnellRoundelTypes.values()[index].getName();
-    }
 
 }

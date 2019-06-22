@@ -2,9 +2,6 @@
   "variants": {
     "type=normal": [
       { "model": "akhaten:block_roundelhartnell" }
-    ],
-	"type=high_res":[
-	  { "model": "akhaten:block_roundelhartnellhr" }
-	]
+    ]
   }
 }
