@@ -1,0 +1,6 @@
+Akhaten Changelog, please add all changes made to this file and your Name,
+under the version you made them!
+
+Akhaten 0.5.2 -> LATEST:
+	- Fixed interior locations: Felix Eckert
+	- Added OBJs: inferno4you
