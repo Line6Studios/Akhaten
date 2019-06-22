@@ -98,19 +98,14 @@ public class MachineTardis extends Block {
     public void onBlockPlacedBy(World worldIn, BlockPos pos, IBlockState state, EntityLivingBase placer, ItemStack stack) {
 
         if (worldIn.provider.getDimension() == DimensionTardis.ID_TARDIS) {
-
             worldIn.destroyBlock(pos, true);
-
         } else {
-
             if (placer instanceof EntityPlayer || placer instanceof EntityPlayerMP) {
-
                 if (!worldIn.isRemote) {
 
-                    placer.sendMessage(new TextComponentString("Congratulations for getting your own Type 40 TT Capsule!"));
+                    Reference.logger.info("Player "+placer.getName()+" placed a TARDIS, generating...");
                     owner = placer.getUniqueID();
                     File saveRootDIR = worldIn.getSaveHandler().getWorldDirectory().getAbsoluteFile();
-
 
                     String fullPath = FileUtil.combine(saveRootDIR, new File("tardises"));
                     File tardFile = new File(fullPath);
@@ -120,24 +115,15 @@ public class MachineTardis extends Block {
                     }
 
                     try {
-
                         Tardfile.genTardfile(worldIn, pos, placer, tardFile);
-
                     } catch (FileNotFoundException | NullPointerException e) {
-
-                        e.printStackTrace();
-
+                      	e.printStackTrace();
                     }
                 }
-
             } else {
-
                 worldIn.destroyBlock(pos, false);
-
             }
-
         }
-
     }
 
     @Override

@@ -1,4 +1,4 @@
-package com.linesix.akhaten.common.dimensions.renderes;
+package com.linesix.akhaten.common.dimensions.renderers;
 
 import net.minecraft.client.Minecraft;
 import net.minecraft.client.multiplayer.WorldClient;
@@ -8,8 +8,6 @@ public class TardisDimRenderer extends IRenderHandler {
 
 
     @Override
-    public void render(float partialTicks, WorldClient world, Minecraft mc) {
-
-    }
+    public void render(float partialTicks, WorldClient world, Minecraft mc) {}
 
 }

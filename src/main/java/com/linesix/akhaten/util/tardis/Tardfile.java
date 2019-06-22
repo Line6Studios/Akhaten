@@ -6,7 +6,10 @@ import com.linesix.akhaten.util.FileUtil;
 import net.minecraft.command.ICommandSender;
 import net.minecraft.entity.EntityLivingBase;
 import net.minecraft.util.math.BlockPos;
+import net.minecraft.util.text.ITextComponent;
+import net.minecraft.util.text.Style;
 import net.minecraft.util.text.TextComponentString;
+import net.minecraft.util.text.TextFormatting;
 import net.minecraft.world.World;
 import net.minecraftforge.common.DimensionManager;
 
@@ -15,6 +18,8 @@ import java.io.*;
 import java.nio.file.FileAlreadyExistsException;
 import java.nio.file.Files;
 import java.nio.file.Paths;
+import java.util.Iterator;
+import java.util.List;
 
 public class Tardfile {
 
@@ -25,10 +30,17 @@ public class Tardfile {
      *
      * Author: Felix Eckert (TheBertrahmPlays / Angry German)
      *
+     * TODO: 
+     *
      */
 
     /**
      * Generates a simple Tardfile using PrintWriter.
+     *
+     * @param worldIn World that the player is currently located in
+     * @param pos The position the TARDIS was placed at
+     * @param placer The player that placed the TARDIS
+     * @param path The Path to the current SaveRootDirectory
      *
      * @throws FileNotFoundException if the json file / the "tardises" directory could not be found
      *
@@ -37,46 +49,42 @@ public class Tardfile {
 
             Reference.logger.info("Generating tardFile for user" + placer.getName() + "...");
 
-            int id = path.getAbsoluteFile().list().length;
-
             File pathComplete = new File(FileUtil.combine(path, new File("/tardFile_" + placer.getName() + ".json"))); // Create the whole path
-
-            String[] tardfilearray = createTardFileArray(placer.getName(), placer.getUniqueID().toString(), id, 0, 64, 0, pos.getX(), pos.getY(), pos.getZ(), pos.getX(), pos.getY(), pos.getZ(), 0, 0,new boolean[] {false, true}); // Create the array containing all base information
-
+            
+            int id = path.getAbsoluteFile().list().length; // ID is based on Number of Tardfiles
+            int playerDimension = placer.world.provider.getDimension(); // Get the current dimension of the player
+            int interiorX = 100*id+25;
+            int interiorZ = 100*id+25;
+            
+            String[] tardfilearray = createTardFileArray(placer.getName(), placer.getUniqueID().toString(), id, interiorX, 64, interiorZ, 
+            		pos.getX(), pos.getY(), pos.getZ(), pos.getX(), pos.getY(), pos.getZ(), playerDimension, 0,new boolean[] {false, true}); // Create the array containing all base information
+            
             try {
-            	if (!path.exists())
-            		path.mkdir();
-                FileUtil.writeFileFromArray(pathComplete, tardfilearray, FileUtil.LineMods.LN_BREAK);
-            } catch (FileAlreadyExistsException e) {
-
+            	if (!path.exists()) // If the "tardises" directory doesn't exit, create it
+            		path.mkdir(); // Create "tardises" directory
+                FileUtil.writeFileFromArray(pathComplete, tardfilearray, FileUtil.LineMods.LN_BREAK); // Finally write the Tardfile
+            } catch (FileAlreadyExistsException e) { // If a Tardfile for that user already exists
                 Reference.logger.info("File for user " + placer.getName() + "already exists!");
-                placer.sendMessage(new TextComponentString("You already own a TARDIS! To delete it use /delete-tardis!"));
-                worldIn.destroyBlock(pos, true);
-
+                placer.sendMessage((ITextComponent) new TextComponentString("You already own a TARDIS! To delete it use /delete-tardis!").getStyle().setColor(TextFormatting.RED)); // Send message for deleting tardis
+                worldIn.destroyBlock(pos, true); // Destroy the Tardis
             }
-
+            
+            // Replace every single quote with a double quote
             try {
-
-                if (replaceChar(pathComplete)) {
-
-                    return;
-
-                } else {
-
-                    placer.sendMessage(new TextComponentString("A critical error has occured and the tardFile could not be written, try again later!"));
+                if (!replaceChar(pathComplete)) {
+                    placer.sendMessage((ITextComponent) new TextComponentString("An error has occured and the Tardfile could not be written!").getStyle().setColor(TextFormatting.RED));
                     worldIn.destroyBlock(pos, true);
                     return;
-
                 }
-
             } catch (IOException e) {
-
                 e.printStackTrace();
-                placer.sendMessage(new TextComponentString("A critical error has occured and the tardFile could not be written, try again later!"));
+                placer.sendMessage(new TextComponentString("A critical error has occured and the tardFile could not be written!"));
                 return;
-
             }
 
+            // Finally congratulate the player, for getting the TARDIS
+            placer.sendMessage((ITextComponent) new TextComponentString("Congratulations for getting your own Type 40 TT Capsule.").getStyle().setColor(TextFormatting.GREEN));
+            
     }
 
     /**

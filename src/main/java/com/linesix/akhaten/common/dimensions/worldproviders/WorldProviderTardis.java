@@ -2,7 +2,8 @@ package com.linesix.akhaten.common.dimensions.worldproviders;
 
 import com.linesix.akhaten.common.dimensions.DimensionTardis;
 import com.linesix.akhaten.common.dimensions.chunkgenerators.ChunkGeneratorTardis;
-import com.linesix.akhaten.common.dimensions.renderes.TardisDimRenderer;
+import com.linesix.akhaten.common.dimensions.renderers.TardisDimRenderer;
+
 import net.minecraft.world.DimensionType;
 import net.minecraft.world.WorldProvider;
 import net.minecraft.world.gen.IChunkGenerator;
