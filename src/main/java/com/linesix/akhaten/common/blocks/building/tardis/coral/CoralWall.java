@@ -13,12 +13,12 @@ public class CoralWall extends Block {
         super(Material.ROCK);
 
         setUnlocalizedName(getUnlocalizedName());
-        setRegistryName(Reference.RESOURCE_PREFIX + Names.Machines.Tardis.Other.coral_wall);
+        setRegistryName(Reference.RESOURCE_PREFIX + Names.Machines.Tardis.Coral.coral_wall);
         setCreativeTab(BuildingBlocks.buildblocktab);
         setSoundType(SoundType.STONE);
     }
 
     @Override
-    public String getUnlocalizedName() {return "tile." + Reference.RESOURCE_PREFIX + Names.Machines.Tardis.Other.coral_wall;}
+    public String getUnlocalizedName() {return "tile." + Reference.RESOURCE_PREFIX + Names.Machines.Tardis.Coral.coral_wall;}
 
 }

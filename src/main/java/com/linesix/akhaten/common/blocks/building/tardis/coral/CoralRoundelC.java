@@ -3,22 +3,22 @@ package com.linesix.akhaten.common.blocks.building.tardis.coral;
 import com.linesix.akhaten.common.Reference;
 import com.linesix.akhaten.common.blocks.Names;
 import com.linesix.akhaten.common.blocks.registries.BuildingBlocks;
-import net.minecraft.block.Block;
+
 import net.minecraft.block.SoundType;
 import net.minecraft.block.material.Material;
+import net.minecraft.block.Block;
 
-public class CoralWire extends Block {
-
-    public CoralWire() {
-        super(Material.IRON);
+public class CoralRoundelC extends Block {
+	public CoralRoundelC() {
+        super(Material.ROCK);
 
         setUnlocalizedName(getUnlocalizedName());
-        setRegistryName(Reference.RESOURCE_PREFIX + Names.Machines.Tardis.Coral.coral_wiring);
+        setRegistryName(Reference.RESOURCE_PREFIX + Names.Machines.Tardis.Coral.coral_roundel_c);
         setCreativeTab(BuildingBlocks.buildblocktab);
-        setSoundType(SoundType.METAL);
+        setSoundType(SoundType.STONE);
     }
 
     @Override
-    public String getUnlocalizedName() {return "tile." + Reference.RESOURCE_PREFIX + Names.Machines.Tardis.Coral.coral_wiring;}
+    public String getUnlocalizedName() {return "tile." + Reference.RESOURCE_PREFIX + Names.Machines.Tardis.Coral.coral_roundel_c;}
 
 }

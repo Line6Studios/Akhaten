@@ -2,6 +2,9 @@ package com.linesix.akhaten.common.blocks.registries;
 
 import com.google.common.base.Preconditions;
 import com.linesix.akhaten.common.Reference;
+import com.linesix.akhaten.common.blocks.building.tardis.coral.CoralRoundelA;
+import com.linesix.akhaten.common.blocks.building.tardis.coral.CoralRoundelB;
+import com.linesix.akhaten.common.blocks.building.tardis.coral.CoralRoundelC;
 import com.linesix.akhaten.common.blocks.building.tardis.coral.CoralWall;
 import com.linesix.akhaten.common.blocks.building.tardis.coral.CoralWire;
 import com.linesix.akhaten.common.blocks.building.tardis.hartnell.HartnellRoundel;
@@ -47,6 +50,9 @@ public class BuildingBlocks {
     public static HartnellRoundel block_roundel;
     public static CoralWire block_coralwire;
     public static CoralWall block_coralwall;
+    public static CoralRoundelA block_coralroundel_a;
+    public static CoralRoundelB block_coralroundel_b;
+    public static CoralRoundelC block_coralroundel_c;
     public static Door block_door;
     // End Creation of all Block-Variables
 
@@ -58,6 +64,9 @@ public class BuildingBlocks {
         block_roundel = new HartnellRoundel();
         block_coralwire = new CoralWire();
         block_coralwall = new CoralWall();
+        block_coralroundel_a = new CoralRoundelA();
+        block_coralroundel_b = new CoralRoundelB();
+        block_coralroundel_c = new CoralRoundelC();
         block_door = new Door();
 
         Reference.logger.info("DONE!");
@@ -75,6 +84,9 @@ public class BuildingBlocks {
                 block_roundel,
                 block_coralwire,
                 block_coralwall,
+                block_coralroundel_a,
+                block_coralroundel_b,
+                block_coralroundel_c,
                 block_door
 
         };
@@ -93,6 +105,9 @@ public class BuildingBlocks {
                 new ItemBlock(block_roundel),
                 new ItemBlock(block_coralwire),
                 new ItemBlock(block_coralwall),
+                new ItemBlock(block_coralroundel_a),
+                new ItemBlock(block_coralroundel_b),
+                new ItemBlock(block_coralroundel_c),
                 new ItemBlock(block_door)
 
         };
@@ -102,7 +117,7 @@ public class BuildingBlocks {
             final Block block = item.getBlock(); // Get the ItemBlock
 
             final ResourceLocation registryName = Preconditions.checkNotNull(block.getRegistryName(),
-                    "Block %s gas null registry name", block); // Get the registry name of the block (if it's not null)
+                    "Block %s has null registry name", block); // Get the registry name of the block (if it's not null)
             registry.register(item.setRegistryName(registryName)); // Set the registry name to content of variable "registryName"
 
             ITEM_BLOCKS.add(item); // Finally add the item to The ITEM_BLOCKS set

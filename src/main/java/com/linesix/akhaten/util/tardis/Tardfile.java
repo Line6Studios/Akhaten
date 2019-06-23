@@ -53,8 +53,8 @@ public class Tardfile {
             
             int id = path.getAbsoluteFile().list().length; // ID is based on Number of Tardfiles
             int playerDimension = placer.world.provider.getDimension(); // Get the current dimension of the player
-            int interiorX = 100*id+25;
-            int interiorZ = 100*id+25;
+            int interiorX = 100*id+25; // interior x
+            int interiorZ = 100*id+25; // interior y
             
             String[] tardfilearray = createTardFileArray(placer.getName(), placer.getUniqueID().toString(), id, interiorX, 64, interiorZ, 
             		pos.getX(), pos.getY(), pos.getZ(), pos.getX(), pos.getY(), pos.getZ(), playerDimension, 0,new boolean[] {false, true}); // Create the array containing all base information

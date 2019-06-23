@@ -1,0 +1,6 @@
+{
+  "parent": "block/cube_all",
+  "textures": {
+    "all": "akhaten:blocks/tardis/block_coralroundel_a"
+  }
+}

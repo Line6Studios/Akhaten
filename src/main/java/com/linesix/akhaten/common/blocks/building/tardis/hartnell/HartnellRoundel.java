@@ -23,12 +23,12 @@ public class HartnellRoundel extends Block {
         super(Material.IRON);
 
         setUnlocalizedName(getUnlocalizedName());
-        setRegistryName(Reference.RESOURCE_PREFIX + Names.Machines.Tardis.Roundels.hartnell_roundels);
+        setRegistryName(Reference.RESOURCE_PREFIX + Names.Machines.Tardis.Hartnell.hartnell_roundels);
         setCreativeTab(BuildingBlocks.buildblocktab);
         setSoundType(SoundType.METAL);
     }
 
     @Override
-    public String getUnlocalizedName() {return "tile." + Reference.RESOURCE_PREFIX + Names.Machines.Tardis.Roundels.hartnell_roundels;}
+    public String getUnlocalizedName() {return "tile." + Reference.RESOURCE_PREFIX + Names.Machines.Tardis.Hartnell.hartnell_roundels;}
 
 }
