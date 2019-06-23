@@ -118,7 +118,6 @@ public class Tardfile {
     public static boolean replaceChar(File path) throws IOException {
 
         String json = new String(Files.readAllBytes(Paths.get(path.getPath()))); // Read the single-line json file to a String
-
         String newJSON = json.replaceAll("\\'", Character.toString('"')); // Replace all instances of the single quote with a double quote
 
         // Delete the old file
