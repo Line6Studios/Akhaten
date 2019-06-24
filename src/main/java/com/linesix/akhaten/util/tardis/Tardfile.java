@@ -21,6 +21,8 @@ import java.nio.file.Paths;
 import java.util.Iterator;
 import java.util.List;
 
+import javax.annotation.Nullable;
+
 public class Tardfile {
 
     /* Tardfile creation and update class
@@ -45,7 +47,7 @@ public class Tardfile {
      * @throws FileNotFoundException if the json file / the "tardises" directory could not be found
      *
      */
-    public static void genTardfile(World worldIn, BlockPos pos, EntityLivingBase placer, File path) throws FileNotFoundException, NullPointerException{
+    public static JsonObject genTardfile(World worldIn, BlockPos pos, EntityLivingBase placer, File path) throws FileNotFoundException, NullPointerException{
 
             Reference.logger.info("Generating tardFile for user" + placer.getName() + "...");
 
@@ -57,7 +59,7 @@ public class Tardfile {
             int interiorZ = 100*id+25; // interior y
             
             String[] tardfilearray = createTardFileArray(placer.getName(), placer.getUniqueID().toString(), id, interiorX, 64, interiorZ, 
-            		pos.getX(), pos.getY(), pos.getZ(), pos.getX(), pos.getY(), pos.getZ(), playerDimension, 0,new boolean[] {false, true}); // Create the array containing all base information
+            		pos.getX(), pos.getY(), pos.getZ(), pos.getX(), pos.getY(), pos.getZ(), playerDimension, 0,new boolean[] {false, true}, true); // Create the array containing all base information
             
             try {
             	if (!path.exists()) // If the "tardises" directory doesn't exit, create it
@@ -65,25 +67,31 @@ public class Tardfile {
                 FileUtil.writeFileFromArray(pathComplete, tardfilearray, FileUtil.LineMods.LN_BREAK); // Finally write the Tardfile
             } catch (FileAlreadyExistsException e) { // If a Tardfile for that user already exists
                 Reference.logger.info("File for user " + placer.getName() + "already exists!");
-                placer.sendMessage((ITextComponent) new TextComponentString("You already own a TARDIS! To delete it use /delete-tardis!").getStyle().setColor(TextFormatting.RED)); // Send message for deleting tardis
+                placer.sendMessage(new TextComponentString("You already own a TARDIS! To delete it use /delete-tardis!")); // Send message for deleting tardis
                 worldIn.destroyBlock(pos, true); // Destroy the Tardis
             }
             
             // Replace every single quote with a double quote
             try {
                 if (!replaceChar(pathComplete)) {
-                    placer.sendMessage((ITextComponent) new TextComponentString("An error has occured and the Tardfile could not be written!").getStyle().setColor(TextFormatting.RED));
+                    placer.sendMessage(new TextComponentString("An error has occured and the Tardfile could not be written!"));
                     worldIn.destroyBlock(pos, true);
-                    return;
+                    return new JsonObject();
                 }
             } catch (IOException e) {
                 e.printStackTrace();
                 placer.sendMessage(new TextComponentString("A critical error has occured and the tardFile could not be written!"));
-                return;
+                return new JsonObject();
             }
-
+            
             // Finally congratulate the player, for getting the TARDIS
-            placer.sendMessage((ITextComponent) new TextComponentString("Congratulations for getting your own Type 40 TT Capsule.").getStyle().setColor(TextFormatting.GREEN));
+            placer.sendMessage(new TextComponentString("Congratulations for getting your own Type 40 TT Capsule."));
+            try {
+				return FileUtil.parseJSON(pathComplete);
+			} catch (IOException e) {
+				e.printStackTrace();
+				return new JsonObject();
+			}
             
     }
 
@@ -100,7 +108,7 @@ public class Tardfile {
 
         path.delete(); // Delete the old tardfile
 
-        String[] tardfile = createTardFileArray(name, uuid, tardis_id, intCoords[0], intCoords[1], intCoords[2],coords[0],coords[1], coords[2], setCoords[0], setCoords[1], setCoords[2], dimension, setDimension,tardis_state);
+        String[] tardfile = createTardFileArray(name, uuid, tardis_id, intCoords[0], intCoords[1], intCoords[2],coords[0],coords[1], coords[2], setCoords[0], setCoords[1], setCoords[2], dimension, setDimension, tardis_state, false);
 
         FileUtil.writeFileFromArray(path, tardfile, FileUtil.LineMods.LN_BREAK);
         replaceChar(path);
@@ -139,7 +147,7 @@ public class Tardfile {
      * @param user user that called the command
      *
      */
-    public static void deleteTardFile(File path, ICommandSender user, World world) {
+    public static void deleteTardFile(File path, @Nullable ICommandSender user, @Nullable World world) {
 
         try {
 
@@ -149,19 +157,24 @@ public class Tardfile {
 
             int x = coords[0]; // Get the x coordinate
             int y = coords[1]; // Get the y coordinate
-            int z = coords[2]; // Geth the z coordinate
+            int z = coords[2]; // Get the z coordinate
 
-            BlockPos tardisBlockPos = new BlockPos(x, y, z); // Create a new BlockPos
-
-            world.destroyBlock(tardisBlockPos, true); // Destroy the tardis
+            if (world != null) {
+            	BlockPos tardisBlockPos = new BlockPos(x, y, z); // Create a new BlockPos
+            	world.destroyBlock(tardisBlockPos, true); // Destroy the tardis
+            }
 
             path.delete(); // Delete the tardfile
-            user.sendMessage(new TextComponentString("Succesfully deleted your old TARDIS!"));
+            if (user != null) {
+            	user.sendMessage(new TextComponentString("Succesfully deleted your old TARDIS!"));
+            }
 
         } catch (Exception e) {
 
             Reference.logger.warning("An Error occured whilst deleting tardis of player " + user.getName() + "!");
-            user.sendMessage(new TextComponentString("An error occured whilst deleting your TARDIS!"));
+            if (user != null) {
+            	user.sendMessage(new TextComponentString("An error occured whilst deleting your TARDIS!"));
+            }
             e.printStackTrace();
             return;
 
@@ -213,7 +226,7 @@ public class Tardfile {
      * @param setDimension the dimension the tardis is set for
      *
      */
-    private static String[] createTardFileArray(String user, String uuid, int tardis_id, int intX, int intY, int intZ,int x, int y, int z, int setX, int setY, int setZ, int dimension, int setDimension,boolean[] state) {
+    private static String[] createTardFileArray(String user, String uuid, int tardis_id, int intX, int intY, int intZ,int x, int y, int z, int setX, int setY, int setZ, int dimension, int setDimension, boolean[] state, boolean firstTimeLoadingTD) {
 
         String[] template;
         template = new String[]{
@@ -233,7 +246,8 @@ public class Tardfile {
                 "  'setX':'"  + setX +  "',",
                 "  'setY':'"  + setY +  "',",
                 "  'setZ':'" + setZ +  "',",
-                "  'setDimension':'" + setDimension + "'\n}"
+                "  'setDimension':'" + setDimension + "',",
+                "  'firstTimeLoadingTD':'" + firstTimeLoadingTD+ "'\n}"
 
         };
 
@@ -294,6 +308,10 @@ public class Tardfile {
 
         return data.get("setDimension").getAsInt();
 
+    }
+    
+    public static boolean getFirstTimeLoadingTD(JsonObject data) {
+    	return data.get("firstTimeLoadingTD").getAsBoolean();
     }
 
 }

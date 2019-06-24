@@ -14,6 +14,7 @@ import net.minecraft.block.state.IBlockState;
 import net.minecraft.entity.EntityLivingBase;
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.entity.player.EntityPlayerMP;
+import net.minecraft.init.Blocks;
 import net.minecraft.item.ItemStack;
 import net.minecraft.util.EnumFacing;
 import net.minecraft.util.EnumHand;
@@ -66,31 +67,30 @@ public class MachineTardis extends Block {
                 return false;
             }
 
-            int[] intCoords = Tardfile.getIntCoordsFromTardfile(playerTardfile);
-            int[] coords = Tardfile.getCoordsFromTardfile(playerTardfile);
-            int dim = Tardfile.getDimensionFromTardfile(playerTardfile);
+            int[] intCoords = Tardfile.getIntCoordsFromTardfile(playerTardfile); // TARDIS interior coordinates
+            int[] coords = Tardfile.getCoordsFromTardfile(playerTardfile); // Outside Coordinates of the TARDIS
+            int dim = Tardfile.getDimensionFromTardfile(playerTardfile); // The current dimension the TARDIS (exterior) is located in
 
             WorldServer worldServer = FMLCommonHandler.instance().getMinecraftServerInstance().getWorld(playerIn.dimension);
 
-            if (playerIn.dimension == DimensionTardis.ID_TARDIS) {
-
+            if (playerIn.dimension == DimensionTardis.ID_TARDIS) { // If the player is inside, teleport him out (DEBUG)
                 worldIn.getMinecraftServer().getPlayerList().transferPlayerToDimension((EntityPlayerMP) playerIn,
                         dim, new AkhatenTeleporter(worldServer, coords[0], coords[1], coords[2]));
-
-            } else {
-
+            } else { // If the player is outside, teleport him inside
                 worldIn.getMinecraftServer().getPlayerList().transferPlayerToDimension((EntityPlayerMP) playerIn,
-                        DimensionTardis.ID_TARDIS, new AkhatenTeleporter(worldServer, intCoords[0], intCoords[1], intCoords[2]));
+                        DimensionTardis.ID_TARDIS, new AkhatenTeleporter(worldServer, intCoords[0], intCoords[1], intCoords[2])); // Teleporting
+    
+                if (Tardfile.getFirstTimeLoadingTD(playerTardfile)) { // If it's the first time of him entering the TARDIS, place a Stone Block
+            		playerIn.getServer().getWorld(DimensionTardis.ID_TARDIS).mayPlace(Blocks.STONE, new BlockPos(intCoords[0], intCoords[1], intCoords[2]), false, EnumFacing.UP, playerIn);
+            	}
 
             }
 
             return true;
 
-        } else {
-
-            return true;
-
         }
+        
+        return true;
 
     }
 
@@ -102,22 +102,22 @@ public class MachineTardis extends Block {
         } else {
             if (placer instanceof EntityPlayer || placer instanceof EntityPlayerMP) {
                 if (!worldIn.isRemote) {
-
                     Reference.logger.info("Player "+placer.getName()+" placed a TARDIS, generating...");
+                    
                     owner = placer.getUniqueID();
                     File saveRootDIR = worldIn.getSaveHandler().getWorldDirectory().getAbsoluteFile();
-
+                    
                     String fullPath = FileUtil.combine(saveRootDIR, new File("tardises"));
                     File tardFile = new File(fullPath);
                     if (tardFile.exists()){}
                     else {
                         tardFile.mkdir();
                     }
-
+                    
                     try {
-                        Tardfile.genTardfile(worldIn, pos, placer, tardFile);
+                    	Tardfile.genTardfile(worldIn, pos, placer, tardFile);
                     } catch (FileNotFoundException | NullPointerException e) {
-                      	e.printStackTrace();
+                    	e.printStackTrace();
                     }
                 }
             } else {
