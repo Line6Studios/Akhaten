@@ -32,3 +32,4 @@ src/main/resources/assets/akhaten/models/block/machine_tardis.json
 .idea/workspace.xml
 src/main/java/com/linesix/akhaten/common/blocks/building/HartnellRoundel.java
 .idea/workspace.xml
+clean.bat
