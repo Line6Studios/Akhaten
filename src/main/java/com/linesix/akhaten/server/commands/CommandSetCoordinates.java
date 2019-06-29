@@ -41,7 +41,7 @@ public class CommandSetCoordinates extends CommandBase {
 
             Tardfile.updateTardfile(Tardfile.findTardfileByName(sender.getName()), sender.getName(), id,
                     sender.getCommandSenderEntity().getUniqueID().toString(), intCoords, coords, setCoords, dim, setDim,
-                    Tardfile.getTardisStateFromTardFile(Tardfile.findparseTardfileByName("Lord_Bertrahm")));
+                    Tardfile.getTardisStateFromTardFile(Tardfile.findparseTardfileByName(sender.getName())));
 
         } catch (IOException e) {
             e.printStackTrace();

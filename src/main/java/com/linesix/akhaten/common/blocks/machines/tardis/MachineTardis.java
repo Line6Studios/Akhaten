@@ -81,17 +81,15 @@ public class MachineTardis extends Block {
                         DimensionTardis.ID_TARDIS, new AkhatenTeleporter(worldServer, intCoords[0], intCoords[1], intCoords[2])); // Teleporting
     
                 if (Tardfile.getFirstTimeLoadingTD(playerTardfile)) { // If it's the first time of him entering the TARDIS, place a Stone Block
-            		playerIn.getServer().getWorld(DimensionTardis.ID_TARDIS).mayPlace(Blocks.STONE, new BlockPos(intCoords[0], intCoords[1], intCoords[2]), false, EnumFacing.UP, playerIn);
+            		playerIn.getServer().getWorld(DimensionTardis.ID_TARDIS).mayPlace(Blocks.STONE, new BlockPos(intCoords[0], intCoords[1], intCoords[2]), true, EnumFacing.NORTH, playerIn);
             	}
 
             }
-
+            
             return true;
-
         }
         
         return true;
-
     }
 
     @Override
