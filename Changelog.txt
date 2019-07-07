@@ -2,6 +2,7 @@ Akhaten Changelog, please add all changes made to this file and your Name,
 under the version you made them!
 
 Akhaten 0.5.2 -> LATEST:
+	- Added Stattenheim Remote
 	- Added Coral Roundels (3 Types): Felix Eckert
 	- Fixed interior locations: Felix Eckert
 	- Added OBJs: inferno4you

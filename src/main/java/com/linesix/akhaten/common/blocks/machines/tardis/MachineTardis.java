@@ -43,7 +43,8 @@ public class MachineTardis extends Block {
         setUnlocalizedName(getUnlocalizedName());
         setRegistryName(Reference.RESOURCE_PREFIX + Names.Machines.machine_tardis);
         setCreativeTab(MachineBlocks.machineblocktab);
-
+        setBlockUnbreakable();
+        
     }
 
     @Override
@@ -55,15 +56,13 @@ public class MachineTardis extends Block {
 
     @Override
     public boolean onBlockActivated(World worldIn, BlockPos pos, IBlockState state, EntityPlayer playerIn, EnumHand hand, EnumFacing facing, float hitX, float hitY, float hitZ) {
-
         if (!worldIn.isRemote) {
-
             JsonObject playerTardfile;
 
             try {
                 playerTardfile = Tardfile.findparseTardfileByName(playerIn.getName());
             } catch (IOException e) {
-                playerIn.sendMessage(new TextComponentString("The TARDIS refuses to let you in, are you sure that it'S yours?"));
+                playerIn.sendMessage(new TextComponentString("The TARDIS refuses to let you in, are you sure that this Tardis is yours?"));
                 return false;
             }
 
@@ -73,18 +72,12 @@ public class MachineTardis extends Block {
 
             WorldServer worldServer = FMLCommonHandler.instance().getMinecraftServerInstance().getWorld(playerIn.dimension);
 
-            if (playerIn.dimension == DimensionTardis.ID_TARDIS) { // If the player is inside, teleport him out (DEBUG)
-                worldIn.getMinecraftServer().getPlayerList().transferPlayerToDimension((EntityPlayerMP) playerIn,
-                        dim, new AkhatenTeleporter(worldServer, coords[0], coords[1], coords[2]));
-            } else { // If the player is outside, teleport him inside
-                worldIn.getMinecraftServer().getPlayerList().transferPlayerToDimension((EntityPlayerMP) playerIn,
-                        DimensionTardis.ID_TARDIS, new AkhatenTeleporter(worldServer, intCoords[0], intCoords[1], intCoords[2])); // Teleporting
-    
-                if (Tardfile.getFirstTimeLoadingTD(playerTardfile)) { // If it's the first time of him entering the TARDIS, place a Stone Block
-            		playerIn.getServer().getWorld(DimensionTardis.ID_TARDIS).mayPlace(Blocks.STONE, new BlockPos(intCoords[0], intCoords[1], intCoords[2]), true, EnumFacing.NORTH, playerIn);
-            	}
-
+            if (Tardfile.getFirstTimeLoadingTD(playerTardfile)) { // If it's the first time of him entering the TARDIS, place a Stone Block
+            	playerIn.getServer().getWorld(DimensionTardis.ID_TARDIS).setBlockState(new BlockPos(intCoords[0], intCoords[1], intCoords[2]), Blocks.COBBLESTONE.getDefaultState(), 3);
             }
+            
+            worldIn.getMinecraftServer().getPlayerList().transferPlayerToDimension((EntityPlayerMP) playerIn,
+            		DimensionTardis.ID_TARDIS, new AkhatenTeleporter(worldServer, intCoords[0], intCoords[1], intCoords[2])); // Teleporting
             
             return true;
         }
@@ -123,7 +116,7 @@ public class MachineTardis extends Block {
             }
         }
     }
-
+    
     @Override
     @SideOnly(Side.CLIENT)
     public boolean shouldSideBeRendered(IBlockState blockState, IBlockAccess worldIn, BlockPos pos, EnumFacing side) {
