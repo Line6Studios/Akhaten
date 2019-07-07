@@ -17,6 +17,7 @@ import net.minecraftforge.fml.common.eventhandler.SubscribeEvent;
 import net.minecraftforge.registries.IForgeRegistry;
 
 import com.linesix.akhaten.common.items.materials.ElectronicCircut;
+import com.linesix.akhaten.common.items.materials.SilicateIngot;
 
 @Mod.EventBusSubscriber(modid = Reference.MODID)
 public class Materials {
@@ -36,12 +37,14 @@ public class Materials {
 
     //Create all Gadget-Item vars below
     public static ElectronicCircut electronic_circuit;
+    public static SilicateIngot silicate_ingot;  
     //End creation of Gadget-Item vars
 
     public static void init() {
 
         // Initialization of Gadget-Item-Variables below
         electronic_circuit = new ElectronicCircut();
+        silicate_ingot = new SilicateIngot();
         // End Initialization of Gadget-Item-Variables
 
     }
@@ -52,7 +55,8 @@ public class Materials {
         final IForgeRegistry<Item> registry = event.getRegistry(); // Put the registry in a variable
 
         items = new Item[] { // List all Items in here
-                electronic_circuit
+                electronic_circuit,
+                silicate_ingot
         };
 
         for (final Item item : items) {

@@ -3,6 +3,7 @@ package com.linesix.akhaten.proxy;
 import com.linesix.akhaten.common.blocks.registries.BuildingBlocks;
 import com.linesix.akhaten.common.blocks.registries.DimBlocks;
 import com.linesix.akhaten.common.blocks.registries.MachineBlocks;
+import com.linesix.akhaten.common.blocks.registries.Ores;
 import com.linesix.akhaten.common.dimensions.Dimensions;
 import com.linesix.akhaten.common.items.registries.Gadgets;
 import com.linesix.akhaten.common.items.registries.Materials;
@@ -22,6 +23,7 @@ public class ClientProxy extends CommonProxy {
         super.preInit(event);
         OBJLoader.INSTANCE.addDomain(MODID);
         DimBlocks.init();
+        Ores.init();
         MachineBlocks.init();
         BuildingBlocks.init();
         Gadgets.init();

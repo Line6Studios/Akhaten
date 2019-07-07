@@ -5,11 +5,9 @@ public class Names {
     // This class contains all block names
 
     public class Dimensional {
-
         public static final String gallifrey_stone = "gallifrey_stone";
         public static final String gallifrey_grass = "gallifrey_grass";
         public static final String gallifrey_dirt = "gallifrey_dirt";
-
     }
 
     public class Machines {
@@ -36,6 +34,10 @@ public class Names {
             }   
         }
 
+    }
+    
+    public class Ores {
+    	public static final String silicon_ore = "silicon_ore";
     }
 
 }

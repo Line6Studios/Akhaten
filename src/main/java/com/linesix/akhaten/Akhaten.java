@@ -3,12 +3,14 @@ package com.linesix.akhaten;
 import com.linesix.akhaten.common.blocks.registries.BuildingBlocks;
 import com.linesix.akhaten.common.blocks.registries.DimBlocks;
 import com.linesix.akhaten.common.blocks.registries.MachineBlocks;
+import com.linesix.akhaten.common.blocks.registries.Ores;
 import com.linesix.akhaten.common.items.registries.Materials;
 import com.linesix.akhaten.server.commands.Commands;
 import com.linesix.akhaten.common.dimensions.Dimensions;
 import com.linesix.akhaten.common.items.registries.Gadgets;
 import com.linesix.akhaten.proxy.CommonProxy;
 import com.linesix.akhaten.common.sound.SoundRegistry;
+import com.linesix.akhaten.common.worldgen.OreGen;
 import com.linesix.akhaten.common.Reference;
 import net.minecraftforge.client.model.obj.OBJLoader;
 import net.minecraftforge.fml.common.Mod;
@@ -17,6 +19,7 @@ import net.minecraftforge.fml.common.event.FMLInitializationEvent;
 import net.minecraftforge.fml.common.event.FMLPostInitializationEvent;
 import net.minecraftforge.fml.common.event.FMLPreInitializationEvent;
 import net.minecraftforge.fml.common.event.FMLServerStartingEvent;
+import net.minecraftforge.fml.common.registry.GameRegistry;
 
 import java.util.Random;
 
@@ -51,6 +54,7 @@ public class Akhaten {
         // Register Items Blocks and Sounds Below
         SoundRegistry.init();
         DimBlocks.init();
+        Ores.init();
         MachineBlocks.init();
         BuildingBlocks.init();
         Gadgets.init();
@@ -65,6 +69,7 @@ public class Akhaten {
 
         // Register Dimensions below
         Dimensions.registerDimensions();
+        GameRegistry.registerWorldGenerator(new OreGen(), 0);
 
     }
 
