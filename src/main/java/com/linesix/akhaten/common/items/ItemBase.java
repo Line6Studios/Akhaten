@@ -6,7 +6,7 @@ import net.minecraft.item.Item;
 
 public class ItemBase extends Item {
 
-    public ItemBase(String name, String unlocalizedName,CreativeTabs tab) {
+    public ItemBase(String name, String unlocalizedName, CreativeTabs tab) {
 
         setUnlocalizedName(getUnlocalizedName(unlocalizedName));
         setRegistryName(Reference.RESOURCE_PREFIX + name);

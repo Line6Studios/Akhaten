@@ -2,6 +2,7 @@
 tile.akhaten:gallifrey_stone.name=Gallifrey Stone
 tile.akhaten:gallifrey_grass.name=Gallifrey Grass
 tile.akhaten:gallifrey_dirt.name=Gallifrey Dirt
+tile.akhaten:silicon_ore.name=Silicon Ore
 tile.akhaten:tardis_door.name=TARDIS Door
 tile.akhaten:block_roundelhartnell.name=1963 Roundel
 tile.akhaten:block_coralwire.name=Coralwire
@@ -16,6 +17,7 @@ machine_tile.akhaten:tardis_monitor.name=TARDIS Monitor
 #Items
 item.item.akhaten:vortex_manipulator.name=Vortex Manipulator
 item.item.akhaten:electronic_circuit.name=Electronic Circuit
+item.item.akhaten:silicate_ingot.name=Silicon Ingot
 
 #Tabs
 itemGroup.akhaten_dimensional_blocks=Akhaten Dimensional Blocks

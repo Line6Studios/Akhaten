@@ -1,0 +1,6 @@
+{
+	"parent":"item/generated",
+	"textures": {
+		"layer0":"akhaten:items/block_icons/machine_tardis"
+	}
+}

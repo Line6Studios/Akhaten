@@ -1,0 +1,18 @@
+{
+	"__comment":"Crafting recipe for the Electronic circuit material",
+	"type":"minecraft:crafting_shaped",
+	"pattern": [
+		" 1 ",
+		"232",
+		"   "
+	],
+		"key": {
+		"1": {"item":"minecraft:redstone"},
+		"2": {"item":"akhaten:silicate_ingot"},
+		"3": {"item":"minecraft:iron_ingot"}
+	},
+	"result": {
+		"item":"akhaten:electronic_circuit",
+		"count":1
+	}
+}

@@ -9,6 +9,7 @@ public class ItemNames {
 
     public class Materials {
         public static final String electronic_circuit = "electronic_circuit";
+        public static final String silicate_ingot = "silicate_ingot";
     }
 
 }

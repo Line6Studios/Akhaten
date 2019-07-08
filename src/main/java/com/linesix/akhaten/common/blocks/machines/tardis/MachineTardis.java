@@ -73,11 +73,13 @@ public class MachineTardis extends Block {
             WorldServer worldServer = FMLCommonHandler.instance().getMinecraftServerInstance().getWorld(playerIn.dimension);
 
             if (Tardfile.getFirstTimeLoadingTD(playerTardfile)) { // If it's the first time of him entering the TARDIS, place a Stone Block
-            	playerIn.getServer().getWorld(DimensionTardis.ID_TARDIS).setBlockState(new BlockPos(intCoords[0], intCoords[1], intCoords[2]), Blocks.COBBLESTONE.getDefaultState(), 3);
+            	playerIn.getServer().getWorld(DimensionTardis.ID_TARDIS).setBlockState(new BlockPos(intCoords[0], intCoords[1]-1, intCoords[2]), Blocks.STONE.getDefaultState(), 3);
             }
             
             worldIn.getMinecraftServer().getPlayerList().transferPlayerToDimension((EntityPlayerMP) playerIn,
-            		DimensionTardis.ID_TARDIS, new AkhatenTeleporter(worldServer, intCoords[0], intCoords[1], intCoords[2])); // Teleporting
+            		DimensionTardis.ID_TARDIS, new AkhatenTeleporter(worldServer, intCoords[0]+0.5, intCoords[1], intCoords[2]+0.5)); // Teleporting
+            
+            System.out.println(intCoords);
             
             return true;
         }
@@ -87,7 +89,6 @@ public class MachineTardis extends Block {
 
     @Override
     public void onBlockPlacedBy(World worldIn, BlockPos pos, IBlockState state, EntityLivingBase placer, ItemStack stack) {
-
         if (worldIn.provider.getDimension() == DimensionTardis.ID_TARDIS) {
             worldIn.destroyBlock(pos, true);
         } else {
