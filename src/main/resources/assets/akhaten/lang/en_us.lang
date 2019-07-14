@@ -10,6 +10,8 @@ tile.akhaten:block_coralwall.name=Coralwall
 tile.akhaten:block_coralroundel_a.name=Big Coral Roundel
 tile.akhaten:block_coralroundel_b.name=Middle Coral Roundel
 tile.akhaten:block_coralroundel_c.name=Small Coral Roundel
+
+#Machines
 machine_tile.akhaten:machine_tardis.name=TT Capsule
 machine_tile.akhaten:tardis_handbrake.name=TARDIS Handbrake
 machine_tile.akhaten:tardis_monitor.name=TARDIS Monitor

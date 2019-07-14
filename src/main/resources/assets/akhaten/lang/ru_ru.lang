@@ -1,8 +1,8 @@
 # ПЕРЕВЕЛ SYORI
-# ВЕРСИЯ 2019.6
-# ДАТА 20.06.2019
+# ВЕРСИЯ 2019.7
+# ДАТА 14.07.2019
 
-# Блоки [Blocks] [6-12]
+# Блоки [Tiles] [6-15]
 tile.akhaten:gallifrey_stone.name=Галлифрейский камень
 tile.akhaten:gallifrey_grass.name=Галлифрейская трава
 tile.akhaten:gallifrey_dirt.name=Галлифрейская грязь
@@ -10,17 +10,21 @@ tile.akhaten:tardis_door.name=Дверь
 tile.akhaten:block_roundel.name=1963 Кружок
 tile.akhaten:block_coralwire.name=Coralwire
 tile.akhaten:block_coralwall.name=Коралловая стена
+tile.akhaten:block_coralroundel_a.name=Большой Коралловый Круг
+tile.akhaten:block_coralroundel_b.name=Средний Коралловый Круг
+tile.akhaten:block_coralroundel_c.name=Маленький Коралловый Круг
 
-# Kuutiot [Machine] [15-17] 
+# Блоки [Machines] [18-20] 
 machine_tile.akhaten:machine_tardis.name=Капсула путешествия во времени
 machine_tile.akhaten:tardis_handbrake.name=Ручной тормоз TARDIS
 machine_tile.akhaten:tardis_monitor.name=TARDIS Экран
 
-# Предметы [Items] [20-21]
+# Предметы [Items] [23-25]
 item.item.akhaten:vortex_manipulator.name=Манипулятор временной воронки
 item.item.akhaten:electronic_circuit.name=Электронная схема
+item.item.akhaten:silicate_ingot.name=Силиконавый слиток
 
-# Разделы [Tabs] [24-28]
+# Разделы [Tabs] [28-32]
 itemGroup.akhaten_dimensional_blocks=Блоки измерения Akhaten:а
 itemGroup.akhaten_gadgets=Устройства Akhaten:а
 itemGroup.akhaten_machines=Машины Akhaten:а

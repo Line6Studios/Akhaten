@@ -1,8 +1,8 @@
 # KÄÄNTÄJÄ SYORI
-# VERSIO 2019.7
-# PVM 20.06.2019
+# VERSIO 2019.8
+# PVM 14.07.2019
 
-# Kuutiot [Blocks] [6-12]
+# Kuutiot [Tiles] [6-15]
 tile.akhaten:gallifrey_stone.name=Gallifreyin Kivi
 tile.akhaten:gallifrey_grass.name=Gallifreyin Ruoho
 tile.akhaten:gallifrey_dirt.name=Gallifreyin Multa
@@ -10,17 +10,21 @@ tile.akhaten:tardis_door.name=TARDIS Ovi
 tile.akhaten:block_roundel.name=1963 Ympyrä
 tile.akhaten:block_coralwire.name=Coralwire
 tile.akhaten:block_coralwall.name=Koralliseinä
+tile.akhaten:block_coralroundel_a.name=Suuri Koralli Ympyrä
+tile.akhaten:block_coralroundel_b.name=Keski Koralli Ympyrä
+tile.akhaten:block_coralroundel_c.name=Pieni Koralli Ympyrä
 
-# Kuutiot [Machine] [15-17] 
+# Kuutiot [Machines] [18-20] 
 machine_tile.akhaten:machine_tardis.name=Aikamatka Kapseli
 machine_tile.akhaten:tardis_handbrake.name=TARDIS Seisontajarru
 machine_tile.akhaten:tardis_monitor.name=TARDIS Näyttö
 
-# Esinet [Items] [20-21]
+# Esinet [Items] [23-25]
 item.item.akhaten:vortex_manipulator.name=Vortex-manipulaattori
 item.item.akhaten:electronic_circuit.name=Elektroninen piiri
+item.item.akhaten:silicate_ingot.name=Pii harko
 
-# Välilehdet [Tabs] [24-28]
+# Välilehdet [Tabs] [27-32]
 itemGroup.akhaten_dimensional_blocks=Akhatenin ulottuvuuden kuutiot
 itemGroup.akhaten_gadgets=Akhatenin laiteet
 itemGroup.akhaten_machines=Akhaten Koneet
