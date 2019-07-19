@@ -12,13 +12,18 @@ The official Linesix Studios Discord server: https://discord.gg/awHNvQd
 ## Credits
 ### Authors
 > Felix Eckert / Bertrahm - Lead Developer, Creator of Akhaten
+
 > inferno4you - Developer
 
 ### Artists
 > [{Jay}] / Peter Brachaki - Textures & Models
+
 > MoonlitLamps - Textures & Models
+
 > GhanoucCraftHD - Models
+
 > TheOfficialTimeGeezer - Mod Logo
+
 > Felix Eckert / Bertrahm - Textures
 
 ### Translators
@@ -26,7 +31,11 @@ The official Linesix Studios Discord server: https://discord.gg/awHNvQd
 
 ### Special Thanks to
 > McJTY
+
 > All Beta Testers
+
 > Minecraft Forge team
+
 > Mojang
+
 > The BBC
