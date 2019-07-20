@@ -1,5 +1,6 @@
 package com.linesix.akhaten.proxy;
 
+import com.linesix.akhaten.common.blocks.ores.SmeltingHandler;
 import com.linesix.akhaten.common.blocks.registries.BuildingBlocks;
 import com.linesix.akhaten.common.blocks.registries.DimBlocks;
 import com.linesix.akhaten.common.blocks.registries.MachineBlocks;
@@ -23,7 +24,8 @@ public class CommonProxy {
         BuildingBlocks.init();
         Gadgets.init();
         Materials.init();
-
+        SmeltingHandler.registerSmeltingRecipes();
+        
     }
 
     protected void init(FMLInitializationEvent event) {

@@ -20,7 +20,9 @@ public class SiliconOre extends Block {
 		setUnlocalizedName(getUnlocalizedName());
         setRegistryName(Reference.RESOURCE_PREFIX + Names.Ores.silicon_ore);
         setCreativeTab(DimBlocks.dimblocktab);
-    }
+        setHardness(3.0F);
+        setHarvestLevel("pickaxe", 1);
+	}
 
     @Override
     public String getUnlocalizedName() {
@@ -29,7 +31,7 @@ public class SiliconOre extends Block {
 
     @Override
     public Item getItemDropped(IBlockState state, Random rand, int fortune) {
-    	return Materials.silicate_ingot;
+    	return Materials.silicate_clump;
     }
     
     @Override

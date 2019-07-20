@@ -17,6 +17,7 @@ import net.minecraftforge.fml.common.eventhandler.SubscribeEvent;
 import net.minecraftforge.registries.IForgeRegistry;
 
 import com.linesix.akhaten.common.items.materials.ElectronicCircut;
+import com.linesix.akhaten.common.items.materials.SilicateClump;
 import com.linesix.akhaten.common.items.materials.SilicateIngot;
 
 @Mod.EventBusSubscriber(modid = Reference.MODID)
@@ -37,7 +38,8 @@ public class Materials {
 
     //Create all Gadget-Item vars below
     public static ElectronicCircut electronic_circuit;
-    public static SilicateIngot silicate_ingot;  
+    public static SilicateIngot silicate_ingot;
+    public static SilicateClump silicate_clump;
     //End creation of Gadget-Item vars
 
     public static void init() {
@@ -45,6 +47,7 @@ public class Materials {
         // Initialization of Gadget-Item-Variables below
         electronic_circuit = new ElectronicCircut();
         silicate_ingot = new SilicateIngot();
+        silicate_clump = new SilicateClump();
         // End Initialization of Gadget-Item-Variables
 
     }
@@ -56,7 +59,8 @@ public class Materials {
 
         items = new Item[] { // List all Items in here
                 electronic_circuit,
-                silicate_ingot
+                silicate_ingot,
+                silicate_clump
         };
 
         for (final Item item : items) {

@@ -1,5 +1,6 @@
 package com.linesix.akhaten;
 
+import com.linesix.akhaten.common.blocks.ores.SmeltingHandler;
 import com.linesix.akhaten.common.blocks.registries.BuildingBlocks;
 import com.linesix.akhaten.common.blocks.registries.DimBlocks;
 import com.linesix.akhaten.common.blocks.registries.MachineBlocks;
@@ -59,6 +60,7 @@ public class Akhaten {
         BuildingBlocks.init();
         Gadgets.init();
         Materials.init();
+        SmeltingHandler.registerSmeltingRecipes();
 
     }
 
