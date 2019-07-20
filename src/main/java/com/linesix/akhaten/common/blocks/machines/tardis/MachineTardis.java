@@ -62,7 +62,7 @@ public class MachineTardis extends Block {
             try {
                 playerTardfile = Tardfile.findparseTardfileByName(playerIn.getName());
             } catch (IOException e) {
-                playerIn.sendMessage(new TextComponentString("The TARDIS refuses to let you in, are you sure that this Tardis is yours?"));
+                playerIn.sendMessage(new TextComponentString("This TARDIS refuses to let you in, are you sure that this TARDIS is yours?"));
                 return false;
             }
 

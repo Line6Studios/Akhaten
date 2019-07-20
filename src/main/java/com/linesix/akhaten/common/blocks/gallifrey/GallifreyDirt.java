@@ -18,7 +18,8 @@ public class GallifreyDirt extends Block {
     setRegistryName(Reference.RESOURCE_PREFIX + Names.Dimensional.gallifrey_dirt);
     setCreativeTab(DimBlocks.dimblocktab);
     setSoundType(SoundType.PLANT);
-
+    setHardness(0.5F);
+    
   }
   
   @Override

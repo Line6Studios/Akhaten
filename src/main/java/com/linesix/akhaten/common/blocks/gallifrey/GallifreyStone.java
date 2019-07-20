@@ -15,7 +15,8 @@ public class GallifreyStone extends Block {
         setUnlocalizedName(getUnlocalizedName());
         setRegistryName(Reference.RESOURCE_PREFIX + Names.Dimensional.gallifrey_stone);
         setCreativeTab(DimBlocks.dimblocktab);
-
+        setHardness(1.7F);
+        
     }
 
     @Override

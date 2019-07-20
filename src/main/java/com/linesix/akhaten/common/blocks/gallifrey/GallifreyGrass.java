@@ -17,7 +17,8 @@ public class GallifreyGrass extends Block {
         setRegistryName(Reference.RESOURCE_PREFIX + Names.Dimensional.gallifrey_grass);
         setCreativeTab(DimBlocks.dimblocktab);
         setSoundType(SoundType.PLANT);
-
+        setHardness(0.6F);
+        
     }
 
     @Override
