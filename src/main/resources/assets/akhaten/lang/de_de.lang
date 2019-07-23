@@ -1,0 +1,36 @@
+# German language file for Akhaten
+# Author: Felix Eckert
+
+# Blöcke
+tile.akhaten:gallifrey_stone.name=Gallifrey Stein
+tile.akhaten:gallifrey_grass.name=Gallifrey Gras
+tile.akhaten:gallifrey_dirt.name=Gallifrey Erde
+tile.akhaten:silicon_ore.name=Silikon Erz
+tile.akhaten:tardis_door.name=TARDIS Tür
+tile.akhaten:block_roundelhartnell.name=1963 Roundel
+tile.akhaten:block_coralwire.name=2005 TARDIS Kabel
+tile.akhaten:block_coralwall.name=2005 TARDIS Wand
+tile.akhaten:block_coralroundel_a.name=Coral Roundel
+tile.akhaten:block_coralroundel_b.name=Mittleres Coral Roundel
+tile.akhaten:block_coralroundel_c.name=Kleines Coral Roundel
+
+# Maschinen
+machine_tile.akhaten:machine_tardis.name=TT-Kapsel
+machine_tile.akhaten:tardis_handbrake.name=TARDIS Handbrake
+machine_tile.akhaten:tardis_monitor.name=TARDIS Monitor
+
+# Items
+item.item.akhaten:vortex_manipulator.name=Vortex Manipulator
+item.item.akhaten:electronic_circuit.name=Elektronischer-Schaltkreis
+item.item.akhaten:silicate_ingot.name=Silikon Barren
+item.item.akhaten:aerotronic_circuit.name=Aerotronischer-Schaltkreis
+item.item.akhaten:aerotronic_core.name=Aerotronischer-Kern
+item.item.akhaten:aerotronic_capacitor.name=Aerotronischer-Kondensator
+item.item.akahten:artron_capacitor.name=Artron-Kondensator
+
+# Tabs
+itemGroup.akhaten_dimensional_blocks=Akhaten Dimensional Blocks
+itemGroup.akhaten_gadgets=Akhaten Gadgets
+itemGroup.akhaten_machines=Akhaten Machines
+itemGroup.akhaten_building_blocks=Akhaten Building Blocks
+itemGroup.akhaten_materials=Akhaten Materials

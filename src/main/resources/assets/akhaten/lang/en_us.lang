@@ -1,3 +1,6 @@
+# English Language file for Akhaten
+# Authors: Felix Eckert, Syorito Hatsuki
+
 #Blocks
 tile.akhaten:gallifrey_stone.name=Gallifrey Stone
 tile.akhaten:gallifrey_grass.name=Gallifrey Grass
@@ -20,6 +23,10 @@ machine_tile.akhaten:tardis_monitor.name=TARDIS Monitor
 item.item.akhaten:vortex_manipulator.name=Vortex Manipulator
 item.item.akhaten:electronic_circuit.name=Electronic Circuit
 item.item.akhaten:silicate_ingot.name=Silicon Ingot
+item.item.akhaten:aerotronic_circuit.name=Aerotronic Circuit
+item.item.akhaten:aerotronic_core.name=Aerotronic Core
+item.item.akhaten:aerotronic_capacitor.name=Aerotronic Capacitor
+item.item.akahten:artron_capacitor.name=Artron Capacitor
 
 #Tabs
 itemGroup.akhaten_dimensional_blocks=Akhaten Dimensional Blocks
