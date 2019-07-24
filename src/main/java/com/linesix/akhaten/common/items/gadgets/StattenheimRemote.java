@@ -14,6 +14,7 @@ import net.minecraft.creativetab.CreativeTabs;
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.init.Blocks;
 import net.minecraft.item.ItemStack;
+import net.minecraft.nbt.NBTTagCompound;
 import net.minecraft.util.ActionResult;
 import net.minecraft.util.EnumActionResult;
 import net.minecraft.util.EnumFacing;
@@ -32,6 +33,25 @@ public class StattenheimRemote extends ItemBase {
 	@Override
 	public EnumActionResult onItemUse(EntityPlayer player, World worldIn, BlockPos pos, EnumHand hand, EnumFacing facing, float hitX, float hitY, float hitZ) {
 		if (!worldIn.isRemote) {
+			if(player.isSneaking()) {
+				ItemStack stack = player.getHeldItem(hand);
+				NBTTagCompound nbt = stack.getTagCompound();
+				
+				if (nbt == null) 
+					nbt = new NBTTagCompound();
+				
+				if (!nbt.hasKey("ID")) {
+					try {
+						nbt.setInteger("ID", Tardfile.getTardisIDFromTardfile(Tardfile.findparseTardfileByName(player.getName())));
+						stack.setStackDisplayName("Stattenheim Remote ("+nbt.getInteger("ID")+")");
+					} catch (IOException e) {
+						e.printStackTrace();
+					}
+				}
+				
+				System.out.println(nbt.getInteger("ID"));
+			}
+			
 			try {
 				JsonObject tardfile = Tardfile.findparseTardfileByName(player.getName()); // Load the users Tardfile
 				
