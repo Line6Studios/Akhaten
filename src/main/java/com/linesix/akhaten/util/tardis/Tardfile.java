@@ -1,5 +1,6 @@
 package com.linesix.akhaten.util.tardis;
 
+import com.google.gson.Gson;
 import com.google.gson.JsonObject;
 import com.linesix.akhaten.common.Reference;
 import com.linesix.akhaten.util.FileUtil;
@@ -84,6 +85,17 @@ public class Tardfile {
                 return new JsonObject();
             }
             
+            // Register the tardis in the TardfileIndex
+            try {
+				registerTardfile(id, placer.getName());
+			} catch (IOException e) {
+				placer.sendMessage(new TextComponentString("An error has occured whilst trying to register you TARDIS!"));
+				worldIn.destroyBlock(pos, true);
+				pathComplete.delete();
+				e.printStackTrace();
+				return new JsonObject();
+			}
+            
             // Finally congratulate the player, for getting the TARDIS
             placer.sendMessage(new TextComponentString("Congratulations for getting your own Type 40 TT Capsule."));
             try {
@@ -96,6 +108,29 @@ public class Tardfile {
     }
 
     /**
+     * Registers a Tardfile to the tardfileIndex, which is located in the tardises directory of the current SaveRootDirectory
+     * 
+     * @param id The ID of the TARDIS to register
+     * @param owner The Owner of the TARDIS to register
+     * 
+     * @throws IOException 
+     */
+    public static void registerTardfile(int id, String owner) throws IOException {
+    	File registry = new File(DimensionManager.getCurrentSaveRootDirectory() + "/tardises/tardfileIndex.json"); // Create a new path to the TardfileIndex/Registry
+    	JsonObject registryJSON; // Create a variable for the index/registry to be stored in temporarely
+    	
+    	if (!registry.exists())  // If the registry file doesn't exist
+    		FileUtil.writeFile(registry, "{\n}"); // Create it
+    
+		registryJSON = FileUtil.parseJSON(registry); // Parse the registry JSON
+		registryJSON.add(String.valueOf(id), new Gson().fromJson("{'owner':'"+owner+"'}", JsonObject.class)); // Append the info
+		
+		registry.delete(); // Delete the old registry file
+
+		FileUtil.writeFile(registry, registryJSON.toString()); // Write the new one
+    }
+    
+    /**
      * Updates a tardfile
      *
      * @param path The path of the tardfile to update
@@ -105,14 +140,12 @@ public class Tardfile {
      *
      */
     public static void updateTardfile(File path, String name, int tardis_id, String uuid, int[] intCoords,int[] coords, int[] setCoords, int dimension, int setDimension, boolean[] tardis_state) throws IOException {
-
         path.delete(); // Delete the old tardfile
 
         String[] tardfile = createTardFileArray(name, uuid, tardis_id, intCoords[0], intCoords[1], intCoords[2],coords[0],coords[1], coords[2], setCoords[0], setCoords[1], setCoords[2], dimension, setDimension, tardis_state, false);
 
         FileUtil.writeFileFromArray(path, tardfile, FileUtil.LineMods.LN_BREAK);
         replaceChar(path);
-
     }
 
     /**
@@ -189,22 +222,24 @@ public class Tardfile {
      *
      */
     public static JsonObject findparseTardfileByName(String name) throws IOException {
-
         JsonObject data;
-
         data = FileUtil.parseJSON(new File(DimensionManager.getCurrentSaveRootDirectory().getPath() + "/tardises/tardFile_" + name + ".json"));
 
         return data;
-
     }
 
     public static File findTardfileByName(String name) {
-
         File data;
         data = new File(DimensionManager.getCurrentSaveRootDirectory().getPath() + "/tardises/tardFile_" + name + ".json");
 
         return data;
+    }
+    
+    public static JsonObject findparseTardfileByID(int id) throws IOException {
+    	JsonObject tardfileIndex = FileUtil.parseJSON(new File(DimensionManager.getCurrentSaveRootDirectory().getPath() + "/tardises/tardfileIndex.json"));
+    	JsonObject data = null;
 
+    	return data;
     }
 
     /**
@@ -252,7 +287,6 @@ public class Tardfile {
         };
 
         return template;
-
     }
 
     // Tardfile field getters below

@@ -72,13 +72,10 @@ public class FileUtil {
      *
      */
     public static JsonObject parseJSON(File path) throws IOException {
-
         String rawData = new String(Files.readAllBytes(Paths.get(path.getPath())));
-
         JsonObject data = new Gson().fromJson(rawData, JsonObject.class);
 
         return data;
-
     }
 
     public static class LineMods {
