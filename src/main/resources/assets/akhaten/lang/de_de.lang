@@ -23,10 +23,12 @@ machine_tile.akhaten:tardis_monitor.name=TARDIS Monitor
 item.item.akhaten:vortex_manipulator.name=Vortex Manipulator
 item.item.akhaten:electronic_circuit.name=Elektronischer-Schaltkreis
 item.item.akhaten:silicate_ingot.name=Silikon Barren
+item.item.akhaten:silicate_clump.name=Silikon Klumpen
 item.item.akhaten:aerotronic_circuit.name=Aerotronischer-Schaltkreis
 item.item.akhaten:aerotronic_core.name=Aerotronischer-Kern
 item.item.akhaten:aerotronic_capacitor.name=Aerotronischer-Kondensator
-item.item.akahten:artron_capacitor.name=Artron-Kondensator
+item.item.akhaten:artron_capacitor.name=Artron-Kondensator
+item.item.akhaten:stattenheim_remote.name=Stattenheim-Fernbedinung
 
 # Tabs
 itemGroup.akhaten_dimensional_blocks=Akhaten Dimensional Blocks
