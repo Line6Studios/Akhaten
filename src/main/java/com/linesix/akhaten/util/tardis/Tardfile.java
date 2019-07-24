@@ -87,7 +87,7 @@ public class Tardfile {
             
             // Register the tardis in the TardfileIndex
             try {
-				registerTardfile(id, placer.getName());
+				registerTardfile(id, new int[] {pos.getX(), pos.getY(), pos.getZ()},placer.getName());
 			} catch (IOException e) {
 				placer.sendMessage(new TextComponentString("An error has occured whilst trying to register you TARDIS!"));
 				worldIn.destroyBlock(pos, true);
@@ -115,7 +115,7 @@ public class Tardfile {
      * 
      * @throws IOException 
      */
-    public static void registerTardfile(int id, String owner) throws IOException {
+    public static void registerTardfile(int id, int[] xyz, String owner) throws IOException {
     	File registry = new File(DimensionManager.getCurrentSaveRootDirectory() + "/tardises/tardfileIndex.json"); // Create a new path to the TardfileIndex/Registry
     	JsonObject registryJSON; // Create a variable for the index/registry to be stored in temporarely
     	
@@ -123,7 +123,7 @@ public class Tardfile {
     		FileUtil.writeFile(registry, "{\n}"); // Create it
     
 		registryJSON = FileUtil.parseJSON(registry); // Parse the registry JSON
-		registryJSON.add(String.valueOf(id), new Gson().fromJson("{'owner':'"+owner+"'}", JsonObject.class)); // Append the info
+		registryJSON.add(String.valueOf(id), new Gson().fromJson("{'owner':'"+owner+"', 'xyz':{'x':"+xyz[0]+", 'y':"+xyz[1]+", 'z':"+xyz[2]+"}}", JsonObject.class)); // Append the info
 		
 		registry.delete(); // Delete the old registry file
 
@@ -235,7 +235,7 @@ public class Tardfile {
         return data;
     }
     
-    public static JsonObject findparseTardfileByID(int id) throws IOException {
+    public static JsonObject findparseTardfileByXYZ(int[] xyz) throws IOException {
     	JsonObject tardfileIndex = FileUtil.parseJSON(new File(DimensionManager.getCurrentSaveRootDirectory().getPath() + "/tardises/tardfileIndex.json"));
     	JsonObject data = null;
 
