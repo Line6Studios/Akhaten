@@ -47,6 +47,7 @@ public class Tardfile {
      *
      * @throws FileNotFoundException if the json file / the "tardises" directory could not be found
      *
+     * @author Felix Eckert
      */
     public static JsonObject genTardfile(World worldIn, BlockPos pos, EntityLivingBase placer, File path) throws FileNotFoundException, NullPointerException{
 
@@ -87,7 +88,7 @@ public class Tardfile {
             
             // Register the tardis in the TardfileIndex
             try {
-				registerTardfile(id, new int[] {pos.getX(), pos.getY(), pos.getZ()},placer.getName());
+				registerTardfile(id, new int[] {pos.getX(), pos.getY(), pos.getZ()},placer.getName(), id);
 			} catch (IOException e) {
 				placer.sendMessage(new TextComponentString("An error has occured whilst trying to register you TARDIS!"));
 				worldIn.destroyBlock(pos, true);
@@ -114,16 +115,23 @@ public class Tardfile {
      * @param owner The Owner of the TARDIS to register
      * 
      * @throws IOException 
+     * 
+     * @author Felix Eckert
      */
-    public static void registerTardfile(int id, int[] xyz, String owner) throws IOException {
+    public static void registerTardfile(int id, int[] xyz, String owner, int tardises) throws IOException {
     	File registry = new File(DimensionManager.getCurrentSaveRootDirectory() + "/tardises/tardfileIndex.json"); // Create a new path to the TardfileIndex/Registry
     	JsonObject registryJSON; // Create a variable for the index/registry to be stored in temporarely
     	
-    	if (!registry.exists())  // If the registry file doesn't exist
+    	if (!registry.exists()) {  // If the registry file doesn't exist
     		FileUtil.writeFile(registry, "{\n}"); // Create it
-    
-		registryJSON = FileUtil.parseJSON(registry); // Parse the registry JSON
+    		registryJSON = FileUtil.parseJSON(registry); // Parse the registry JSON
+    		registryJSON.addProperty("registeredTardises", String.valueOf(tardises));
+    	} else {
+    		registryJSON = FileUtil.parseJSON(registry); // Parse the registry JSON
+    	}
 		registryJSON.add(String.valueOf(id), new Gson().fromJson("{'owner':'"+owner+"', 'xyz':{'x':"+xyz[0]+", 'y':"+xyz[1]+", 'z':"+xyz[2]+"}}", JsonObject.class)); // Append the info
+		registryJSON.remove("registeredTardises");
+		registryJSON.addProperty("registeredTardises", String.valueOf(tardises));
 		
 		registry.delete(); // Delete the old registry file
 
@@ -138,6 +146,7 @@ public class Tardfile {
      * @param setCoords The coordinates that were set for the tardis
      * @param tardis_state The state of the tardis (demat / remat)
      *
+     * @author Felix Eckert
      */
     public static void updateTardfile(File path, String name, int tardis_id, String uuid, int[] intCoords,int[] coords, int[] setCoords, int dimension, int setDimension, boolean[] tardis_state) throws IOException {
         path.delete(); // Delete the old tardfile
@@ -152,12 +161,11 @@ public class Tardfile {
      * Replaces all single-quotes in a JSON file with double-quotes
      *
      * @param path path to the JSON file
-     *
      * @throws IOException
-     *
+     * 
+     * @author Felix Eckert
      */
     public static boolean replaceChar(File path) throws IOException {
-
         String json = new String(Files.readAllBytes(Paths.get(path.getPath()))); // Read the single-line json file to a String
         String newJSON = json.replaceAll("\\'", Character.toString('"')); // Replace all instances of the single quote with a double quote
 
@@ -170,7 +178,6 @@ public class Tardfile {
         FileUtil.writeFile(path, newJSON);
 
         return true;
-
     }
 
     /**
@@ -179,11 +186,10 @@ public class Tardfile {
      * @param path path to the file to delete
      * @param user user that called the command
      *
+     * @author Felix Eckert
      */
     public static void deleteTardFile(File path, @Nullable ICommandSender user, @Nullable World world) {
-
         try {
-
             JsonObject data = FileUtil.parseJSON(path); // Parse the tardfile
 
             int[] coords = getCoordsFromTardfile(data); // Get the coords from the tardfile for generating a new BlockPos
@@ -201,18 +207,14 @@ public class Tardfile {
             if (user != null) {
             	user.sendMessage(new TextComponentString("Succesfully deleted your old TARDIS!"));
             }
-
         } catch (Exception e) {
-
             Reference.logger.warning("An Error occured whilst deleting tardis of player " + user.getName() + "!");
             if (user != null) {
             	user.sendMessage(new TextComponentString("An error occured whilst deleting your TARDIS!"));
             }
             e.printStackTrace();
             return;
-
         }
-
     }
 
     /**
@@ -220,26 +222,64 @@ public class Tardfile {
      *
      * @param name Username
      *
+     * @author Felix Eckert
      */
-    public static JsonObject findparseTardfileByName(String name) throws IOException {
+    public static JsonObject findparseTardfileByName(String name) {
         JsonObject data;
-        data = FileUtil.parseJSON(new File(DimensionManager.getCurrentSaveRootDirectory().getPath() + "/tardises/tardFile_" + name + ".json"));
+        try {
+			data = FileUtil.parseJSON(new File(DimensionManager.getCurrentSaveRootDirectory().getPath() + "/tardises/tardFile_" + name + ".json"));
+		} catch (IOException e) {
+			return null;
+		}
 
         return data;
     }
 
+    /**
+     * Searches for a Json file by name and returns a File (Object)
+     *
+     * @param name Username
+     * @author Felix Eckert
+     */
     public static File findTardfileByName(String name) {
         File data;
         data = new File(DimensionManager.getCurrentSaveRootDirectory().getPath() + "/tardises/tardFile_" + name + ".json");
 
         return data;
     }
-    
-    public static JsonObject findparseTardfileByXYZ(int[] xyz) throws IOException {
-    	JsonObject tardfileIndex = FileUtil.parseJSON(new File(DimensionManager.getCurrentSaveRootDirectory().getPath() + "/tardises/tardfileIndex.json"));
-    	JsonObject data = null;
 
-    	return data;
+    /**
+     * Searches for a Json file by XYZ and returns an int (ID of TARDIS)
+     *
+     * @param name Username
+     *
+     * @author Felix Eckert
+     */
+    public static int findparseTardfileByXYZ(int[] xyz, String user) throws IOException {
+    	JsonObject tardfileIndex = FileUtil.parseJSON(new File(DimensionManager.getCurrentSaveRootDirectory().getPath() + "/tardises/tardfileIndex.json"));
+
+    	for (int i = 0; i < tardfileIndex.get("registeredTardises").getAsInt(); i++) {
+    		if (i == 0)
+    			continue;
+    		JsonObject tempObj = tardfileIndex.get(String.valueOf(i)).getAsJsonObject();
+    		JsonObject xyzJSON = tempObj.get("xyz").getAsJsonObject();
+    		int x = xyzJSON.get("x").getAsInt();
+    		int y = xyzJSON.get("y").getAsInt();
+    		int z = xyzJSON.get("z").getAsInt();
+ 
+    		System.out.println(tempObj.toString());
+    		System.out.println(xyzJSON.toString());
+    		System.out.println(tempObj.get("owner").getAsString());
+    		
+    		if (x == xyz[0] && y == xyz[1] && z == xyz[2]) {
+    			System.out.println("AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA");
+    			if (tempObj.get("owner").getAsString() == user) {
+    				return i;
+    			}
+    		}
+    	}
+    	
+    	return -1;
     }
 
     /**
@@ -259,7 +299,8 @@ public class Tardfile {
      * @param setZ the Z coordinate the tardis is set for
      * @param dimension the current dimension of the tardis
      * @param setDimension the dimension the tardis is set for
-     *
+     * 
+     * @author Felix Eckert
      */
     private static String[] createTardFileArray(String user, String uuid, int tardis_id, int intX, int intY, int intZ,int x, int y, int z, int setX, int setY, int setZ, int dimension, int setDimension, boolean[] state, boolean firstTimeLoadingTD) {
 

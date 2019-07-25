@@ -42,7 +42,7 @@ public class StattenheimRemote extends ItemBase {
 				
 				if (!nbt.hasKey("ID")) {
 					try {
-						nbt.setInteger("ID", Tardfile.getTardisIDFromTardfile(Tardfile.findparseTardfileByName(player.getName())));
+						nbt.setInteger("ID", Tardfile.findparseTardfileByXYZ(new int[] {pos.getX(), pos.getY(), pos.getZ()}, player.getName()));
 						stack.setStackDisplayName("Stattenheim Remote ("+nbt.getInteger("ID")+")");
 					} catch (IOException e) {
 						e.printStackTrace();

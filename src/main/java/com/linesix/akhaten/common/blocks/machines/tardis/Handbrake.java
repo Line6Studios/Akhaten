@@ -48,11 +48,10 @@ public class Handbrake extends Block {
 
         // Load and parse the Tardfile
         File tardfilePath = tardfilePath = Tardfile.findTardfileByName(playerIn.getName());
-        JsonObject tardfile = null;
-        try {
-        	tardfile = Tardfile.findparseTardfileByName(playerIn.getName());
-        } catch (IOException e) {
-        	playerIn.sendMessage(new TextComponentString("You need to own a TARDIS before you can dematerialise one!"));
+        JsonObject tardfile;
+
+        tardfile = Tardfile.findparseTardfileByName(playerIn.getName());
+        if (tardfile == null) {
         	return true;
         }
 

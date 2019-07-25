@@ -22,10 +22,8 @@ public class FileUtil {
      *
      */
     public static String combine(File path1, File path2) {
-
-        File file2 = new File(path1.getPath(), path2.getPath());
-        return file2.getPath();
-
+        File file = new File(path1.getPath(), path2.getPath());
+        return file.getPath();
     }
 
     /**
@@ -40,7 +38,6 @@ public class FileUtil {
      *
      * */
     public static void writeFileFromArray(File file, String[] input, int endlMod) throws FileNotFoundException, FileAlreadyExistsException {
-
         if (file.exists())
             throw new FileAlreadyExistsException("The file "+file.getPath()+" already exists!");
 
@@ -51,18 +48,15 @@ public class FileUtil {
         }
 
         writer.close();
-
     }
 
     public static void writeFile(File file, String input) throws FileNotFoundException, FileAlreadyExistsException {
-
         if (file.exists())
-            throw new FileAlreadyExistsException("the file "+file.getPath()+" already exists!");
+            throw new FileAlreadyExistsException("The file "+file.getPath()+" already exists!");
 
         PrintWriter writer = new PrintWriter(file);
         writer.write(input);
         writer.close();
-
     }
 
     /**
@@ -79,10 +73,7 @@ public class FileUtil {
     }
 
     public static class LineMods {
-
         public static int NO_MOD = 0;
         public static int LN_BREAK = 1;
-
     }
-
 }

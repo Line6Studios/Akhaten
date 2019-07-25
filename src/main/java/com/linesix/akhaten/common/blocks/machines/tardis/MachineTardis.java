@@ -59,13 +59,13 @@ public class MachineTardis extends Block {
         if (!worldIn.isRemote) {
             JsonObject playerTardfile;
 
-            try {
-                playerTardfile = Tardfile.findparseTardfileByName(playerIn.getName());
-            } catch (IOException e) {
+           
+            playerTardfile = Tardfile.findparseTardfileByName(playerIn.getName());
+            if (playerTardfile == null) {
                 playerIn.sendMessage(new TextComponentString("This TARDIS refuses to let you in, are you sure that this TARDIS is yours?"));
                 return false;
             }
-
+                
             int[] intCoords = Tardfile.getIntCoordsFromTardfile(playerTardfile); // TARDIS interior coordinates
             int[] coords = Tardfile.getCoordsFromTardfile(playerTardfile); // Outside Coordinates of the TARDIS
             int dim = Tardfile.getDimensionFromTardfile(playerTardfile); // The current dimension the TARDIS (exterior) is located in
