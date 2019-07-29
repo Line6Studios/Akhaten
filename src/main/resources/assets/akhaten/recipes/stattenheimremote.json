@@ -1,0 +1,19 @@
+{
+	"__comment":"Crafting Recipe for the Stattenheim Remote",
+	"type":"minecraft:crafting_shaped",
+	"pattern": [
+		"414",
+		"434",
+		"424"
+	],
+	"key": {
+		"1": {"item":"akhaten:aerotronic_circuit"},
+		"2": {"item":"akhaten:electronic_circuit"},
+		"3": {"item":"akhaten:artron_capacitor"},
+		"4": {"item":"akhaten:titanium_ingot"}
+	},
+	"result": {
+		"item":"akhaten:stattenheim_remote",
+		"count":1
+	}
+}
