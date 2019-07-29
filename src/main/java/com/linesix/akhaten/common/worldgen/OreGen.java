@@ -24,6 +24,7 @@ public class OreGen implements IWorldGenerator {
 		switch(world.provider.getDimension()) {			
 		case 0:
 			runGeneration(Ores.silicon_ore.getDefaultState(), 4, 12, 0, 50, BlockMatcher.forBlock(Blocks.STONE), world, random, chunkX, chunkZ);
+			runGeneration(Ores.rutile_ore.getDefaultState(), 3, 8, 0, 32, BlockMatcher.forBlock(Blocks.STONE), world, random, chunkX, chunkZ);
 			
 		case 1:
 			break;

@@ -5,6 +5,7 @@ import java.util.Set;
 
 import com.google.common.base.Preconditions;
 import com.linesix.akhaten.common.Reference;
+import com.linesix.akhaten.common.blocks.ores.RutileOre;
 import com.linesix.akhaten.common.blocks.ores.SiliconOre;
 import com.linesix.akhaten.tabs.TabDim;
 
@@ -37,21 +38,20 @@ public class Ores {
 
     // Creation of all Block-Variables below
     public static SiliconOre silicon_ore;
+    public static RutileOre rutile_ore;
     // End Creation of all Block-Variables
 
-    public static void init() {
-
-        Reference.logger.info("Initializing machine-block-variables...");
-
-        // Initialization of Block-Variables below
+    public static void init() { 
+    	// Initialization of Block-Variables below
         silicon_ore = new SiliconOre();
+        rutile_ore = new RutileOre();
         // End Initialization of Block-Variables
 
         // Write all block-variables to the blocks array
         blocks = new Block[] {
-        		silicon_ore
+        		silicon_ore,
+        		rutile_ore
         };
-
     }
 
     @SubscribeEvent
@@ -69,7 +69,8 @@ public class Ores {
         final IForgeRegistry<Item> registry = event.getRegistry();
 
         final ItemBlock[] items = {
-        		new ItemBlock(silicon_ore)
+        		new ItemBlock(silicon_ore),
+        		new ItemBlock(rutile_ore)
         };
 
         for (final ItemBlock item : items) {

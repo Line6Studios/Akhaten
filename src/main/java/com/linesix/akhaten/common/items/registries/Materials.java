@@ -21,8 +21,11 @@ import com.linesix.akhaten.common.items.materials.AerotronicCircuit;
 import com.linesix.akhaten.common.items.materials.AerotronicCore;
 import com.linesix.akhaten.common.items.materials.ArtronCapacitor;
 import com.linesix.akhaten.common.items.materials.ElectronicCircut;
+import com.linesix.akhaten.common.items.materials.RawTitanium;
+import com.linesix.akhaten.common.items.materials.RutileOre;
 import com.linesix.akhaten.common.items.materials.SilicateClump;
 import com.linesix.akhaten.common.items.materials.SilicateIngot;
+import com.linesix.akhaten.common.items.materials.TitaniumIngot;
 
 @Mod.EventBusSubscriber(modid = Reference.MODID)
 public class Materials {
@@ -47,6 +50,9 @@ public class Materials {
     public static AerotronicCircuit aerotronic_circuit;
     public static AerotronicCore aerotronic_core;
     public static ArtronCapacitor artron_capacitor;
+    public static RawTitanium raw_titanium;
+    public static TitaniumIngot titanium_ingot;
+    public static RutileOre rutile_ore;
     //End creation of Gadget-Item vars
 
     public static void init() {
@@ -58,6 +64,9 @@ public class Materials {
         aerotronic_core = new AerotronicCore();
         aerotronic_capacitor = new AerotronicCapacitor();
         artron_capacitor = new ArtronCapacitor();
+        raw_titanium = new RawTitanium();
+        titanium_ingot = new TitaniumIngot();
+        rutile_ore = new RutileOre();
         // End Initialization of Gadget-Item-Variables
     }
 
@@ -72,7 +81,10 @@ public class Materials {
                 aerotronic_capacitor,
                 aerotronic_core,
                 aerotronic_circuit,
-                artron_capacitor
+                artron_capacitor,
+                raw_titanium,
+                titanium_ingot,
+                rutile_ore
         };
 
         for (final Item item : items) {

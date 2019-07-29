@@ -1,7 +1,8 @@
 package com.linesix.akhaten.common.items;
 
 public class ItemNames {
-
+	public static final String testitem = "testitem";
+	
     public class Gadgets {
         public static final String vortex_manipulator = "vortex_manipulator";
         public static final String stattenheim_remote = "stattenheim_remote";
@@ -15,6 +16,9 @@ public class ItemNames {
         public static final String artron_capacitor = "artron_capacitor";
         public static final String silicate_ingot = "silicate_ingot";
         public static final String silicate_clump = "silicate_clump";
+        public static final String raw_titanium = "raw_titanium";
+        public static final String titanium_ingot = "titanium_ingot";
+        public static final String rutile_ore = "inv_rutile_ore";
     }
 
 }
