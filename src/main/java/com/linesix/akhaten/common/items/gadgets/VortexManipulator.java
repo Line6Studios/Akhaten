@@ -34,7 +34,7 @@ public class VortexManipulator extends ItemBase {
 
         WorldServer worldServer = FMLCommonHandler.instance().getMinecraftServerInstance().getWorld(player.dimension);
 
-        System.out.println("VortexManipulater used by player " + player);
+        
 
         if (!world.isRemote) {
             if (player.dimension == 0) {
@@ -42,7 +42,7 @@ public class VortexManipulator extends ItemBase {
                 player.attackEntityFrom(DamageSource.MAGIC, teleportDamageAmount);
 
                 world.getMinecraftServer().getPlayerList().transferPlayerToDimension((EntityPlayerMP) player,
-                        2, new AkhatenTeleporter(worldServer, playerX, playerY, playerZ));
+                        -1, new AkhatenTeleporter(worldServer, playerX, playerY, playerZ));
 
             } else {
 
