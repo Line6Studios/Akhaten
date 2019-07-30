@@ -1,28 +1,26 @@
 package com.linesix.akhaten.util.tardis;
 
-import com.google.gson.Gson;
-import com.google.gson.JsonObject;
-import com.linesix.akhaten.common.Reference;
-import com.linesix.akhaten.util.FileUtil;
-import net.minecraft.command.ICommandSender;
-import net.minecraft.entity.EntityLivingBase;
-import net.minecraft.util.math.BlockPos;
-import net.minecraft.util.text.ITextComponent;
-import net.minecraft.util.text.Style;
-import net.minecraft.util.text.TextComponentString;
-import net.minecraft.util.text.TextFormatting;
-import net.minecraft.world.World;
-import net.minecraftforge.common.DimensionManager;
-
-import java.io.*;
-
+import java.io.File;
+import java.io.FileNotFoundException;
+import java.io.IOException;
 import java.nio.file.FileAlreadyExistsException;
 import java.nio.file.Files;
 import java.nio.file.Paths;
-import java.util.Iterator;
-import java.util.List;
 
 import javax.annotation.Nullable;
+
+import com.google.gson.Gson;
+import com.google.gson.JsonElement;
+import com.google.gson.JsonObject;
+import com.linesix.akhaten.common.Reference;
+import com.linesix.akhaten.util.FileUtil;
+
+import net.minecraft.command.ICommandSender;
+import net.minecraft.entity.EntityLivingBase;
+import net.minecraft.util.math.BlockPos;
+import net.minecraft.util.text.TextComponentString;
+import net.minecraft.world.World;
+import net.minecraftforge.common.DimensionManager;
 
 public class Tardfile {
 
@@ -55,7 +53,7 @@ public class Tardfile {
 
             File pathComplete = new File(FileUtil.combine(path, new File("/tardFile_" + placer.getName() + ".json"))); // Create the whole path
             
-            int id = path.getAbsoluteFile().list().length; // ID is based on Number of Tardfiles
+            int id = path.getAbsoluteFile().list().length + 1; // ID is based on Number of Tardfiles
             int playerDimension = placer.world.provider.getDimension(); // Get the current dimension of the player
             int interiorX = 100*id+25; // interior x
             int interiorZ = 100*id+25; // interior y
@@ -259,26 +257,21 @@ public class Tardfile {
     	JsonObject tardfileIndex = FileUtil.parseJSON(new File(DimensionManager.getCurrentSaveRootDirectory().getPath() + "/tardises/tardfileIndex.json"));
 
     	for (int i = 0; i < tardfileIndex.get("registeredTardises").getAsInt(); i++) {
-    		if (i == 0)
-    			continue;
-    		JsonObject tempObj = tardfileIndex.get(String.valueOf(i)).getAsJsonObject();
-    		JsonObject xyzJSON = tempObj.get("xyz").getAsJsonObject();
-    		int x = xyzJSON.get("x").getAsInt();
-    		int y = xyzJSON.get("y").getAsInt();
-    		int z = xyzJSON.get("z").getAsInt();
- 
-    		System.out.println(tempObj.toString());
-    		System.out.println(xyzJSON.toString());
-    		System.out.println(tempObj.get("owner").getAsString());
+    		System.out.println("HEY YA!");
+    		System.out.println(i);
     		
-    		if (x == xyz[0] && y == xyz[1] && z == xyz[2]) {
-    			System.out.println("AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA");
-    			if (tempObj.get("owner").getAsString() == user) {
-    				return i;
-    			}
+    		JsonElement tempObj = tardfileIndex.get(String.valueOf(i+1));
+    		String xyzElement = tempObj.getAsJsonObject().get("xyz").getAsString();
+    		int[] xyz2 = {
+    				0,//xyzElement.get("x").getAsInt(), 
+    				1,//xyzElement.get("y").getAsInt(),
+    				2//xyzElement.get("z").getAsInt()
+    		};
+    		
+    		if (xyz[0] == xyz2[0] && xyz[1] == xyz2[1] && xyz[2] == xyz2[2]) {
+    			System.out.println("Du DU Dä DIIIEE");
     		}
     	}
-    	
     	return -1;
     }
 
