@@ -55,15 +55,15 @@ public class Akhaten {
         // Register Items Blocks and Sounds Below
         SoundRegistry.init();
         DimBlocks.init();
-        Ores.init();
         MachineBlocks.init();
         BuildingBlocks.init();
         Gadgets.init();
         Materials.init();
+        Ores.init();
         SmeltingHandler.registerSmeltingRecipes();
 
     }
-
+    
     @Mod.EventHandler
     public void init(FMLInitializationEvent event) {
 

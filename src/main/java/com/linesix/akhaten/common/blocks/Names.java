@@ -38,6 +38,7 @@ public class Names {
     
     public class Ores {
     	public static final String silicon_ore = "silicon_ore";
+    	public static final String rutile_ore = "rutile_ore";
     }
 
 }
