@@ -2,6 +2,11 @@ Akhaten Changelog, please add all changes made to this file and your Name,
 under the version you made them!
 
 Akhaten 0.5.2 -> LATEST:
+	- Added Aerotronics : Felix Eckert
+		+ Aerotronic Circuit
+		+ Aerotronic Core
+		+ Aerotronic Capacitor
+	- Added Atron Capacitor : Felix Eckert
 	- Added Silicon Ore, Ingot and Clump: Felix Eckert
 	- Added Stattenheim Remote: Felix Eckert
 	- Added Coral Roundels (3 Types): Felix Eckert

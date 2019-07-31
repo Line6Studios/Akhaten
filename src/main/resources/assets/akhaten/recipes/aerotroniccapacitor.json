@@ -1,0 +1,18 @@
+{
+	"__comment":"Crafting recipe for the Aerotronic Capacitor material",
+	"type":"minecraft:crafting_shaped",
+	"pattern": [
+	" 1 ",
+	"232",
+	" 2 "
+	],
+	"key": {		
+		"1": {"item":"minecraft:diamond"},
+		"2": {"item":"minecraft:iron_ingot"},
+		"3": {"item":"minecraft:glowstone_dust"}
+	},
+	"result": {
+		"item":"akhaten:aerotronic_capacitor",
+		"count": 1
+	}
+}

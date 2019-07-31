@@ -1,0 +1,19 @@
+{
+	"__comment":"Crafting recipe for the Aerotronic-Circuit material",
+	"type":"minecraft:crafting_shaped",
+	"pattern": [
+	" 1 ",
+	"232",
+	" 4 "
+	],
+	"key": {		
+		"1": {"item":"minecraft:gold_ingot"},
+		"2": {"item":"akhaten:artron_capacitor"},
+		"3": {"item":"akhaten:electronic_circuit"},
+		"4": {"item":"akhaten:aerotronic_core"}
+	},
+	"result": {
+		"item":"akhaten:aerotronic_circuit",
+		"count": 1
+	}
+}

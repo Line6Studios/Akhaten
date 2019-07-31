@@ -1,0 +1,20 @@
+{
+	"__comment":"Crafting recipe for the Aerotronic-Core material",
+	"type":"minecraft:crafting_shaped",
+	"pattern": [
+	" 1 ",
+	"253",
+	" 4 "
+	],
+	"key": {		
+		"1": {"item":"minecraft:glowstone_dust"},
+		"2": {"item":"akhaten:artron_capacitor"},
+		"3": {"item":"akhaten:aerotronic_capacitor"},
+		"4": {"item":"minecraft:redstone"},
+		"5": {"item":"akhaten:silicate_ingot"}
+	},
+	"result": {
+		"item":"akhaten:aerotronic_core",
+		"count": 1
+	}
+}

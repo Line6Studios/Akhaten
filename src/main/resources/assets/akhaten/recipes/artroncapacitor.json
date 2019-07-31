@@ -1,0 +1,19 @@
+{
+	"__comment":"Crafting recipe for the Artron Capacitor material",
+	"type":"minecraft:crafting_shaped",
+	"pattern": [
+	" 1 ",
+	"232",
+	" 4 "
+	],
+	"key": {		
+		"1": {"item":"minecraft:gold_ingot"},
+		"2": {"item":"minecraft:diamond"},
+		"3": {"item":"minecraft:redstone"},
+		"4": {"item":"minecraft:redstone_torch"}
+	},
+	"result": {
+		"item":"akhaten:artron_capacitor",
+		"count": 1
+	}
+}

@@ -9,6 +9,10 @@ public class ItemNames {
 
     public class Materials {
         public static final String electronic_circuit = "electronic_circuit";
+        public static final String aerotronic_circuit = "aerotronic_circuit";
+        public static final String aerotronic_core = "aerotronic_core";
+        public static final String aerotronic_capacitor = "aerotronic_capacitor";
+        public static final String artron_capacitor = "artron_capacitor";
         public static final String silicate_ingot = "silicate_ingot";
         public static final String silicate_clump = "silicate_clump";
     }

@@ -21,9 +21,7 @@ public class DimensionTardis {
     public static DimensionType TARDIS_DIM = DimensionType.register(TARDIS_NAME, "_"+TARDIS_NAME, ID_TARDIS, WorldProviderTardis.class, false);
 
     public static void register() {
-
         DimensionManager.registerDimension(ID_TARDIS, TARDIS_DIM);
-
     }
 
 }
