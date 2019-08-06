@@ -8,8 +8,8 @@ Akhaten 0.5.2 -> 0.6.0:
 		+ Aerotronic Core
 		+ Aerotronic Capacitor
 	- Added Atron Capacitor : Felix Eckert
-	- Added Silicon Ore, Ingot and Clump: Felix Eckert
-	- Added Stattenheim Remote: Felix Eckert
-	- Added Coral Roundels (3 Types): Felix Eckert
+	- Added Silicon Ore, Ingot and Clump: Felix Eckert (Textures by Jess)
+	- Added Stattenheim Remote: Felix Eckert (Model by Jess (Un-Implemented))
+	- Added Coral Roundels (3 Types): Felix Eckert (Textures by Jess)
 	- Fixed interior locations: Felix Eckert
 	- Added OBJs: inferno4you
