@@ -239,11 +239,24 @@ public class Tardfile {
      * if found it returns the Tardfile as an JsonObject
      * 
      * @param id The ID of the TARDIS to search for
-     * 
+     * @throws IOException 
      * @author Felix Eckert
      * */
-    public static JsonObject parseTardfileByID(int id) {
-    	return null;
+    public static JsonObject parseTardfileByID(int id) throws IOException, IllegalArgumentException {
+    	JsonObject tardfileIndex = FileUtil.parseJSON(new File(
+    			DimensionManager.getCurrentSaveRootDirectory().getPath() + "/tardises/tardfileIndex.json"));// Parse the tardfile regsitry/index
+    	JsonObject tardfileIndexObject;
+    	JsonObject tardfile;
+    	
+    	if (tardfileIndex.get("registeredTardises").getAsInt() < id) { // Check if the ID is valid
+    		throw new IllegalArgumentException("The TARDIS ID cannot be bigger than the number of registered TARDISes!");
+    	}
+    	//System.out.println(tardfileIndex.toString());
+    	System.out.println("--ID: " + id);
+    	tardfileIndexObject = tardfileIndex.get(String.valueOf(id)).getAsJsonObject(); // Get the matching tardfileIndex entry
+    	tardfile = parseTardfileByName(tardfileIndexObject.get("owner").getAsString()); // Parse the matching tardfile
+    	
+    	return tardfile; // Finally return the given TARDFILE
     }
     
     /**

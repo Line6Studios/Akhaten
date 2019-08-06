@@ -35,9 +35,9 @@ public class StattenheimRemote extends ItemBase {
 	@Override
 	public EnumActionResult onItemUse(EntityPlayer player, World worldIn, BlockPos pos, EnumHand hand, EnumFacing facing, float hitX, float hitY, float hitZ) {
 		if (!worldIn.isRemote) {
+			ItemStack stack = player.getHeldItem(hand);
+			NBTTagCompound nbt = stack.getTagCompound();
 			if(player.isSneaking()) {
-				ItemStack stack = player.getHeldItem(hand);
-				NBTTagCompound nbt = stack.getTagCompound();
 				int id = 0;
 				try {
 					id = Tardfile.getTardisIDByXYZ(new int[] {pos.getX(), pos.getY(), pos.getZ()}, player.getName());
@@ -57,14 +57,23 @@ public class StattenheimRemote extends ItemBase {
 				
 				if (!nbt.hasKey("ID")) {
 					nbt.setInteger("ID", id);
-					stack.setStackDisplayName("Stattenheim Remote ("+nbt.getInteger("ID")+")");
+				} else {
+					nbt.removeTag("ID");
+					nbt.setInteger("ID", id);
 				}
 				
+				stack.setTagCompound(nbt);
+				stack.setStackDisplayName("Stattenheim Remote ("+nbt.getInteger("ID")+")");
 				return EnumActionResult.PASS;
 			}
 			
 			try {
-				JsonObject tardfile = Tardfile.parseTardfileByName(player.getName()); // Load the users Tardfile
+				if (!nbt.hasKey("ID")) {
+					player.sendMessage(new TextComponentString("You need to bind your TARDIS before summoning it using the Stattenheim Remote"));
+					return EnumActionResult.SUCCESS;
+				}
+				System.out.println(nbt.getInteger("ID"));
+				JsonObject tardfile = Tardfile.parseTardfileByID(nbt.getInteger("ID")); // Load the users Tardfile
 				
 				if (!Tardfile.getTardisStateFromTardFile(tardfile)[0]) {
 					int[] oldCoords = Tardfile.getCoordsFromTardfile(tardfile);
