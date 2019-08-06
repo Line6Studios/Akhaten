@@ -3,14 +3,15 @@
 	"type":"minecraft:crafting_shaped",
 	"pattern": [
 		"121",
-		"343",
+		"345",
 		"111"
 	],
 	"key": {
 		"1": {"item":"minecraft:iron_block"},
-		"2": {"item":"minecraft:gold_ingot"},
+		"2": {"item":"akhaten:artron_capacitor"},
 		"3": {"item":"akhaten:electronic_circuit"},
-		"4": {"item":"minecraft:beacon"}
+		"4": {"item":"minecraft:beacon"},
+		"5": {"item":"akhaten:aerotronic_circuit"}
 	},
 	"result": {
 		"item":"akhaten:machine_tardis",

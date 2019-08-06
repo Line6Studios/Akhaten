@@ -13,7 +13,6 @@ import net.minecraftforge.fml.common.Mod;
 import java.util.HashSet;
 import java.util.Set;
 
-import com.linesix.akhaten.common.items.TestItem;
 import com.linesix.akhaten.common.items.gadgets.StattenheimRemote;
 import com.linesix.akhaten.common.items.gadgets.VortexManipulator;
 import net.minecraftforge.fml.common.eventhandler.SubscribeEvent;
@@ -38,7 +37,6 @@ public class Gadgets {
     //Create all Gadget-Item vars below
     public static VortexManipulator vortex_manipulator;
     public static StattenheimRemote stattenheim_remote;
-    public static TestItem testitem;
     //End creation of Gadget-Item vars
 
     public static void init() {
