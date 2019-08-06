@@ -50,7 +50,7 @@ public class Handbrake extends Block {
         File tardfilePath = tardfilePath = Tardfile.findTardfileByName(playerIn.getName());
         JsonObject tardfile;
 
-        tardfile = Tardfile.findparseTardfileByName(playerIn.getName());
+        tardfile = Tardfile.parseTardfileByName(playerIn.getName());
         if (tardfile == null) {
         	return true;
         }

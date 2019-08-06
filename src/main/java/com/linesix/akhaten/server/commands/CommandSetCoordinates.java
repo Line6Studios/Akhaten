@@ -30,7 +30,7 @@ public class CommandSetCoordinates extends CommandBase {
 
         try {
 
-            JsonObject tf = Tardfile.findparseTardfileByName(sender.getName());
+            JsonObject tf = Tardfile.parseTardfileByName(sender.getName());
 
             int id = tf.get("tardis_id").getAsInt();
             int[] intCoords = Tardfile.getIntCoordsFromTardfile(tf);
@@ -41,7 +41,7 @@ public class CommandSetCoordinates extends CommandBase {
 
             Tardfile.updateTardfile(Tardfile.findTardfileByName(sender.getName()), sender.getName(), id,
                     sender.getCommandSenderEntity().getUniqueID().toString(), intCoords, coords, setCoords, dim, setDim,
-                    Tardfile.getTardisStateFromTardFile(Tardfile.findparseTardfileByName(sender.getName())));
+                    Tardfile.getTardisStateFromTardFile(Tardfile.parseTardfileByName(sender.getName())));
 
         } catch (IOException e) {
             e.printStackTrace();

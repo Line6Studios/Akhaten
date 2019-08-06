@@ -60,7 +60,7 @@ public class MachineTardis extends Block {
             JsonObject playerTardfile;
 
            
-            playerTardfile = Tardfile.findparseTardfileByName(playerIn.getName());
+            playerTardfile = Tardfile.parseTardfileByName(playerIn.getName());
             if (playerTardfile == null) {
                 playerIn.sendMessage(new TextComponentString("This TARDIS refuses to let you in, are you sure that this TARDIS is yours?"));
                 return false;

@@ -10,6 +10,7 @@ import java.nio.file.Paths;
 import javax.annotation.Nullable;
 
 import com.google.gson.Gson;
+import com.google.gson.JsonArray;
 import com.google.gson.JsonElement;
 import com.google.gson.JsonObject;
 import com.linesix.akhaten.common.Reference;
@@ -127,7 +128,7 @@ public class Tardfile {
     	} else {
     		registryJSON = FileUtil.parseJSON(registry); // Parse the registry JSON
     	}
-		registryJSON.add(String.valueOf(id), new Gson().fromJson("{'owner':'"+owner+"', 'xyz':{'x':"+xyz[0]+", 'y':"+xyz[1]+", 'z':"+xyz[2]+"}}", JsonObject.class)); // Append the info
+		registryJSON.add(String.valueOf(id), new Gson().fromJson("{'owner':'"+owner+"', 'xyz':[{'val':'"+xyz[0]+"'}, {'val':'"+xyz[1]+"'}, {'val':'"+xyz[2]+"'}]}", JsonObject.class)); // Append the info
 		registryJSON.remove("registeredTardises");
 		registryJSON.addProperty("registeredTardises", String.valueOf(tardises));
 		
@@ -222,7 +223,7 @@ public class Tardfile {
      *
      * @author Felix Eckert
      */
-    public static JsonObject findparseTardfileByName(String name) {
+    public static JsonObject parseTardfileByName(String name) {
         JsonObject data;
         try {
 			data = FileUtil.parseJSON(new File(DimensionManager.getCurrentSaveRootDirectory().getPath() + "/tardises/tardFile_" + name + ".json"));
@@ -233,6 +234,18 @@ public class Tardfile {
         return data;
     }
 
+    /**
+     * Searches for a Tardfile in the tardfileIndex/registry by a given TARDIS ID,
+     * if found it returns the Tardfile as an JsonObject
+     * 
+     * @param id The ID of the TARDIS to search for
+     * 
+     * @author Felix Eckert
+     * */
+    public static JsonObject parseTardfileByID(int id) {
+    	return null;
+    }
+    
     /**
      * Searches for a Json file by name and returns a File (Object)
      *
@@ -253,28 +266,31 @@ public class Tardfile {
      *
      * @author Felix Eckert
      */
-    public static int findparseTardfileByXYZ(int[] xyz, String user) throws IOException {
-    	JsonObject tardfileIndex = FileUtil.parseJSON(new File(DimensionManager.getCurrentSaveRootDirectory().getPath() + "/tardises/tardfileIndex.json"));
+    public static int getTardisIDByXYZ(int[] xyz, String user) throws IOException {
+    	JsonObject tardfileIndex = FileUtil.parseJSON(new File(DimensionManager.getCurrentSaveRootDirectory().getPath() + "/tardises/tardfileIndex.json")); // Load the TARDFILE registry
 
+    	// Loop through registered TARDISES
     	for (int i = 0; i < tardfileIndex.get("registeredTardises").getAsInt(); i++) {
-    		System.out.println("HEY YA!");
-    		System.out.println(i);
-    		
-    		JsonElement tempObj = tardfileIndex.get(String.valueOf(i+1));
-    		String xyzElement = tempObj.getAsJsonObject().get("xyz").getAsString();
-    		int[] xyz2 = {
-    				0,//xyzElement.get("x").getAsInt(), 
-    				1,//xyzElement.get("y").getAsInt(),
-    				2//xyzElement.get("z").getAsInt()
+    		JsonElement tempObj = tardfileIndex.get(String.valueOf(i+1)); // Temporary JSON-Object for current TARDIS
+    		JsonArray xyzElement = tempObj.getAsJsonObject().get("xyz").getAsJsonArray(); // Get the Coordinates as a JSON Array
+    		String owner = tempObj.getAsJsonObject().get("owner").getAsString(); // Get the Owner as String
+    		int[] xyz2 = { // Write the Coordinates from the TARDFILE to an array
+    				xyzElement.get(0).getAsJsonObject().get("val").getAsInt(),
+    				xyzElement.get(1).getAsJsonObject().get("val").getAsInt(),
+    				xyzElement.get(2).getAsJsonObject().get("val").getAsInt()
     		};
     		
-    		if (xyz[0] == xyz2[0] && xyz[1] == xyz2[1] && xyz[2] == xyz2[2]) {
-    			System.out.println("Du DU Dä DIIIEE");
+    		if (xyz[0] == xyz2[0] && xyz[1] == xyz2[1] && xyz[2] == xyz2[2]) { // Check if the coordinates match
+    			if (owner.matches(user)) { // Check if the user matches
+    				return i+1;
+    			} else {
+    				return -1;
+    			}
     		}
     	}
-    	return -1;
+    	return -2;
     }
-
+    
     /**
      * Create the "Tardfile array" that is going to be written to the JSON file...
      *

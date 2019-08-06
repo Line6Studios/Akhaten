@@ -48,7 +48,7 @@ public class Door extends Block {
         if(!worldIn.isRemote) { // If it's server side go on
 
         	JsonObject data;
-        	data = Tardfile.findparseTardfileByName(playerIn.getName());
+        	data = Tardfile.parseTardfileByName(playerIn.getName());
         	
         	if (data == null) {
         		playerIn.sendMessage(new TextComponentString("An error occured, if you're unable to exit the TARDIS, use a Vortex Manipulator!"));

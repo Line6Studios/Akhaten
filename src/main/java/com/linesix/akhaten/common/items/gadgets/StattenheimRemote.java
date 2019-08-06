@@ -3,6 +3,7 @@ package com.linesix.akhaten.common.items.gadgets;
 import java.io.IOException;
 
 import com.google.gson.JsonObject;
+import com.linesix.akhaten.common.Reference;
 import com.linesix.akhaten.common.blocks.registries.MachineBlocks;
 import com.linesix.akhaten.common.items.ItemBase;
 import com.linesix.akhaten.common.items.ItemNames;
@@ -22,6 +23,7 @@ import net.minecraft.util.EnumHand;
 import net.minecraft.util.SoundCategory;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.math.Vec3d;
+import net.minecraft.util.text.TextComponentString;
 import net.minecraft.world.World;
 
 public class StattenheimRemote extends ItemBase {
@@ -36,24 +38,33 @@ public class StattenheimRemote extends ItemBase {
 			if(player.isSneaking()) {
 				ItemStack stack = player.getHeldItem(hand);
 				NBTTagCompound nbt = stack.getTagCompound();
+				int id = 0;
+				try {
+					id = Tardfile.getTardisIDByXYZ(new int[] {pos.getX(), pos.getY(), pos.getZ()}, player.getName());
+				} catch (IOException e) {
+					e.printStackTrace();
+				}
+				
+				if (id == -1) {
+					player.sendMessage(new TextComponentString("This TARDIS is not your own, thus you cannot bind it!"));
+				} else if(id == -2) {
+					player.sendMessage(new TextComponentString("An unknown error occured whilst trying to bind your TARDIS!"));
+					Reference.logger.warning("An (unknown error occured whilst trying to bind a TARDIS to a Stattenheim Remote!");
+				}
 				
 				if (nbt == null) 
 					nbt = new NBTTagCompound();
 				
 				if (!nbt.hasKey("ID")) {
-					try {
-						nbt.setInteger("ID", Tardfile.findparseTardfileByXYZ(new int[] {pos.getX(), pos.getY(), pos.getZ()}, player.getName()));
-						stack.setStackDisplayName("Stattenheim Remote ("+nbt.getInteger("ID")+")");
-					} catch (IOException e) {
-						e.printStackTrace();
-					}
+					nbt.setInteger("ID", id);
+					stack.setStackDisplayName("Stattenheim Remote ("+nbt.getInteger("ID")+")");
 				}
 				
-				System.out.println(nbt.getInteger("ID"));
+				return EnumActionResult.PASS;
 			}
 			
 			try {
-				JsonObject tardfile = Tardfile.findparseTardfileByName(player.getName()); // Load the users Tardfile
+				JsonObject tardfile = Tardfile.parseTardfileByName(player.getName()); // Load the users Tardfile
 				
 				if (!Tardfile.getTardisStateFromTardFile(tardfile)[0]) {
 					int[] oldCoords = Tardfile.getCoordsFromTardfile(tardfile);
