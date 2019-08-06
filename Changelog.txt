@@ -1,7 +1,7 @@
 Akhaten Changelog, please add all changes made to this file and your Name,
 under the version you made them!
 
-Akhaten 0.5.2 -> LATEST:
+Akhaten 0.5.2 -> 0.6.0:
 	- Updated TARDIS Crafting : Felix Eckert
 	- Added Aerotronics : Felix Eckert
 		+ Aerotronic Circuit
