@@ -101,9 +101,8 @@ public class StattenheimRemote extends ItemBase {
 			worldIn.setBlockState(pos.up(), MachineBlocks.machine_tardis.getDefaultState(), 3);
 			
 			return EnumActionResult.SUCCESS;
-			
 		}
-		
+
 		return EnumActionResult.PASS;
 	}
 	

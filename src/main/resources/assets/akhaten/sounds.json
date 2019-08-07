@@ -1,19 +1,14 @@
 {
-
   "machines/tardis_demat": {
-
-    "stream":"true",
-
+    "stream":true,
     "sounds":[{"name":"akhaten:machines/tardis_demat"}]
-
   },
-
   "machines/tardis_remat": {
-
-    "stream":"true",
-
+    "stream":true,
     "sounds":[{"name":"akhaten:machines/tardis_remat"}]
-
+  },
+  "gadgets/seconddoctor_sonic": {
+	"stream":true,
+	"sounds":[{"name":"akhaten:gadgets/seconddoctor_sonic"}]
   }
-
 }

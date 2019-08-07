@@ -6,6 +6,7 @@ public class ItemNames {
     public class Gadgets {
         public static final String vortex_manipulator = "vortex_manipulator";
         public static final String stattenheim_remote = "stattenheim_remote";
+        public static final String seconddoctor_sonic = "seconddoctor_sonic";
     }
 
     public class Materials {
