@@ -3,7 +3,10 @@ under the version you made them!
 
 Akhaten 0.5.2 -> 0.6.0:
 	- Updated TARDIS Crafting : Felix Eckert
-	- Added Titanium: Felix Eckert (Texture by MoonlitLamps)
+	- Added Titanium: Felix Eckert 
+		+ Titanium Ingot (Texture by MoonlitLamps)
+		+ Raw Titanium
+		+ Titanium Ore
 	- Added Aerotronics : Felix Eckert
 		+ Aerotronic Circuit
 		+ Aerotronic Core
