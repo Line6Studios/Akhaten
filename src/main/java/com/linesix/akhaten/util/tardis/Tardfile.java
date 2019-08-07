@@ -243,11 +243,17 @@ public class Tardfile {
      * @author Felix Eckert
      * */
     public static JsonObject parseTardfileByID(int id) throws IOException, IllegalArgumentException {
-    	JsonObject tardfileIndex = FileUtil.parseJSON(new File(
-    			DimensionManager.getCurrentSaveRootDirectory().getPath() + "/tardises/tardfileIndex.json"));// Parse the tardfile regsitry/index
+    	JsonObject tardfileIndex;
     	JsonObject tardfileIndexObject;
     	JsonObject tardfile;
-    	
+
+    	try {
+            tardfileIndex = getRegistry();// Parse the tardfile regsitry/index
+        } catch(IOException e) {
+    	    e.printStackTrace();
+    	    return null;
+        }
+
     	if (tardfileIndex.get("registeredTardises").getAsInt() < id) { // Check if the ID is valid
     		throw new IllegalArgumentException("The TARDIS ID cannot be bigger than the number of registered TARDISes!");
     	}
@@ -275,12 +281,12 @@ public class Tardfile {
     /**
      * Searches for a Json file by XYZ and returns an int (ID of TARDIS)
      *
-     * @param name Username
-     *
+     * @param user Username
+     * @param xyz Coordinates
      * @author Felix Eckert
      */
     public static int getTardisIDByXYZ(int[] xyz, String user) throws IOException {
-    	JsonObject tardfileIndex = FileUtil.parseJSON(new File(DimensionManager.getCurrentSaveRootDirectory().getPath() + "/tardises/tardfileIndex.json")); // Load the TARDFILE registry
+        JsonObject tardfileIndex = getRegistry(); // Load the TARDFILE registry
 
     	// Loop through registered TARDISES
     	for (int i = 0; i < tardfileIndex.get("registeredTardises").getAsInt(); i++) {
@@ -303,7 +309,15 @@ public class Tardfile {
     	}
     	return -2;
     }
-    
+
+    public static JsonObject getRegistry() throws IOException {
+        File pathToRegistry = new File(DimensionManager.getCurrentSaveRootDirectory().getPath() + "/tardises/tardfileIndex.json");
+        if (!pathToRegistry.exists()) {
+            throw new IOException("The Tardfile Index doesn't exist! It was either deleted or the creation of it failed.\nSee https://line6studios.github.io/projects/akhaten/problems.html#fne-tardfileindex for help!");
+        }
+        return FileUtil.parseJSON(pathToRegistry);
+    }
+
     /**
      * Create the "Tardfile array" that is going to be written to the JSON file...
      *

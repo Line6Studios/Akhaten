@@ -49,7 +49,7 @@ public class StattenheimRemote extends ItemBase {
 					player.sendMessage(new TextComponentString("This TARDIS is not your own, thus you cannot bind it!"));
 				} else if(id == -2) {
 					player.sendMessage(new TextComponentString("An unknown error occured whilst trying to bind your TARDIS!"));
-					Reference.logger.warning("An (unknown error occured whilst trying to bind a TARDIS to a Stattenheim Remote!");
+					Reference.logger.warning("An (unknown) error occured whilst trying to bind a TARDIS to a Stattenheim Remote!");
 				}
 				
 				if (nbt == null) 
@@ -74,7 +74,11 @@ public class StattenheimRemote extends ItemBase {
 				}
 				System.out.println(nbt.getInteger("ID"));
 				JsonObject tardfile = Tardfile.parseTardfileByID(nbt.getInteger("ID")); // Load the users Tardfile
-				
+				if (tardfile == null) {
+					player.sendMessage(new TextComponentString("Something went wrong whilst loading your Tardfile, send your latest.log to the mod-authors for help!"));
+					return EnumActionResult.FAIL;
+				}
+
 				if (!Tardfile.getTardisStateFromTardFile(tardfile)[0]) {
 					int[] oldCoords = Tardfile.getCoordsFromTardfile(tardfile);
 					BlockPos oldCoordsPos = new BlockPos(oldCoords[0], oldCoords[1], oldCoords[2]);
