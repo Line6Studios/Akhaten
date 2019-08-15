@@ -1,6 +1,11 @@
 Akhaten Changelog, please add all changes made to this file and your Name,
 under the version you made them!
 
+Akhaten 0.6.0 -> 0.6.1:
+    - Fixed bugs
+        - You can now enter the TARDIS after summoning it with the Stattenheim Remote
+        - The icon for the machines tab is now the TARDIS icon
+
 Akhaten 0.5.2 -> 0.6.0:
 	- Updated TARDIS Crafting : Felix Eckert
 	- Added Titanium: Felix Eckert 
