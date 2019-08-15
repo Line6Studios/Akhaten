@@ -1,14 +1,14 @@
 {
-	"forge_marker":1,
-	"defaults": {
-		"textures": {
-			"#None" : "akhaten:blocks/machines/machine_tardis"
-		},
-		"model":"akhaten:910policebox.obj"
-	},
-	"variants": {
-		"normal": [{}],
-		"inventory": [{
-		}]
-	}
+    "forge_marker":1,
+    "defaults": {
+        "textures": {
+            "#None" : "akhaten:blocks/machines/machine_tardis"
+        },
+        "model":"akhaten:blocks/910policebox.obj"
+    },
+    "variants": {
+        "normal": [{}],
+        "inventory": [{
+        }]
+    }
 }

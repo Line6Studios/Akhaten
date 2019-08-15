@@ -5,7 +5,6 @@ import net.minecraft.creativetab.CreativeTabs;
 import net.minecraft.item.ItemStack;
 
 public class TabMaterials extends CreativeTabs {
-
     public TabMaterials() {
         super("akhaten_materials");
     }
@@ -14,5 +13,4 @@ public class TabMaterials extends CreativeTabs {
     public ItemStack getTabIconItem() {
         return new ItemStack(Materials.electronic_circuit);
     }
-
 }
