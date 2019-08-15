@@ -6,6 +6,7 @@ tile.akhaten:gallifrey_stone.name=Gallifrey Stein
 tile.akhaten:gallifrey_grass.name=Gallifrey Gras
 tile.akhaten:gallifrey_dirt.name=Gallifrey Erde
 tile.akhaten:silicon_ore.name=Silikon Erz
+tile.akhaten:rutile_ore.name=Rutil Erz
 tile.akhaten:tardis_door.name=TARDIS Tür
 tile.akhaten:block_roundelhartnell.name=1963 Roundel
 tile.akhaten:block_coralwire.name=2005 TARDIS Kabel
@@ -24,11 +25,15 @@ item.item.akhaten:vortex_manipulator.name=Vortex Manipulator
 item.item.akhaten:electronic_circuit.name=Elektronischer-Schaltkreis
 item.item.akhaten:silicate_ingot.name=Silikon Barren
 item.item.akhaten:silicate_clump.name=Silikon Klumpen
+item.item.akhaten:raw_titanium.name=Rohes Titan
+item.item.akhaten:titanium_ingot.name=Titan Barren
+item.item.akhaten:inv_rutile_ore.name=Rutil Erz
 item.item.akhaten:aerotronic_circuit.name=Aerotronischer-Schaltkreis
 item.item.akhaten:aerotronic_core.name=Aerotronischer-Kern
 item.item.akhaten:aerotronic_capacitor.name=Aerotronischer-Kondensator
 item.item.akhaten:artron_capacitor.name=Artron-Kondensator
 item.item.akhaten:stattenheim_remote.name=Stattenheim-Fernbedinung
+item.item.akhaten:seconddoctor_sonic.name=Schallschraubenzieher des 2. Doktors
 
 # Tabs
 itemGroup.akhaten_dimensional_blocks=Akhaten Dimensional Blocks

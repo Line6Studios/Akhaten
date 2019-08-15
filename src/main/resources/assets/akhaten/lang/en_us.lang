@@ -33,6 +33,7 @@ item.item.akhaten:aerotronic_core.name=Aerotronic Core
 item.item.akhaten:aerotronic_capacitor.name=Aerotronic Capacitor
 item.item.akhaten:artron_capacitor.name=Artron Capacitor
 item.item.akhaten:stattenheim_remote.name=Stattenheim Remote
+item.item.akhaten:seconddoctor_sonic.name=2nd Doctor's Sonic Screwdriver
 
 #Tabs
 itemGroup.akhaten_dimensional_blocks=Akhaten Dimensional Blocks

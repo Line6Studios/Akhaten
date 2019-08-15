@@ -50,7 +50,7 @@ public class Akhaten {
 
         Reference.logger.info("Entering PreInit phase...");
 
-        //OBJLoader.INSTANCE.addDomain(Reference.MODID);
+        OBJLoader.INSTANCE.addDomain(Reference.MODID);
 
         // Register Items Blocks and Sounds Below
         SoundRegistry.init();
