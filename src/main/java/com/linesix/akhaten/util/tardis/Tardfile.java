@@ -147,13 +147,49 @@ public class Tardfile {
      *
      * @author Felix Eckert
      */
-    public static void updateTardfile(File path, String name, int tardis_id, String uuid, int[] intCoords,int[] coords, int[] setCoords, int dimension, int setDimension, boolean[] tardis_state) throws IOException {
+    public static void updateTardfile(File path, String name, int tardis_id, String uuid, int[] intCoords, int[] coords, int[] setCoords, int dimension, int setDimension, boolean[] tardis_state) throws IOException {
         path.delete(); // Delete the old tardfile
 
         String[] tardfile = createTardFileArray(name, uuid, tardis_id, intCoords[0], intCoords[1], intCoords[2],coords[0],coords[1], coords[2], setCoords[0], setCoords[1], setCoords[2], dimension, setDimension, tardis_state, false);
 
         FileUtil.writeFileFromArray(path, tardfile, FileUtil.LineMods.LN_BREAK);
         replaceChar(path);
+    }
+
+    public static void updateTardfileRegistry(int id, String owner, int[] xyz) {
+        JsonObject tardfileIndex;
+        File tardfileIndexFile = new File(DimensionManager.getCurrentSaveRootDirectory() + "/tardises/tardfileIndex.json"); // File Object for the Tardfile Index/Registry for writing
+        try { // Parse the Tardfile Index/registry
+            tardfileIndex = getRegistry();
+        } catch (IOException e) {
+            e.printStackTrace();
+            return;
+        }
+        JsonObject updateObject = tardfileIndex.get(String.valueOf(id)).getAsJsonObject(); // Get the actual entry
+
+        // Remove old fields/values
+        updateObject.remove("xyz");
+        updateObject.remove("owner");
+
+        // Add the new Values
+        updateObject.addProperty("owner", owner);
+        updateObject.add("xyz", new Gson().fromJson("[{'val':'"+xyz[0]+"'}, {'val':'"+xyz[1]+"'}, {'val':'"+xyz[2]+"'}]", JsonArray.class));
+
+        // Updated the Entry in the Index
+        tardfileIndex.remove(String.valueOf(id));
+        tardfileIndex.add(String.valueOf(id), updateObject);
+
+        // Delete old index
+        if (tardfileIndexFile.exists() && tardfileIndexFile.canWrite()) {
+            try { // Write new entry
+                tardfileIndexFile.delete();
+                FileUtil.writeFile(tardfileIndexFile, tardfileIndex.toString());
+            } catch (FileNotFoundException e) {
+                e.printStackTrace();
+            } catch (FileAlreadyExistsException e) {
+                e.printStackTrace();
+            }
+        }
     }
 
     /**
@@ -367,58 +403,39 @@ public class Tardfile {
     }
 
     // Tardfile field getters below
-
     public static int[] getIntCoordsFromTardfile(JsonObject data) {
-
         int[] intCoords = {data.get("intX").getAsInt(), data.get("intY").getAsInt(), data.get("intZ").getAsInt()};
         return intCoords;
-
     }
 
     public static int[] getCoordsFromTardfile(JsonObject data) {
-
         int[] coords = {data.get("x").getAsInt(), data.get("y").getAsInt(), data.get("z").getAsInt()};
-
         return coords;
-
     }
 
     public static boolean[] getTardisStateFromTardFile(JsonObject data) {
-
         return new boolean[]{data.get("is_demat").getAsBoolean(), data.get("is_remat").getAsBoolean()};
-
     }
 
     public static int[] getSetCoordsFromTardfile(JsonObject data) {
-
         int[] setCoords = {data.get("setX").getAsInt(), data.get("setY").getAsInt(), data.get("setZ").getAsInt()};
-
         return setCoords;
-
     }
 
     public static int getTardisIDFromTardfile(JsonObject data) {
-
         return data.get("tardis_id").getAsInt();
-
     }
 
     public static String getUUIDFromTardfile(JsonObject data) {
-
         return data.get("uuid").getAsString();
-
     }
 
     public static int getDimensionFromTardfile(JsonObject data) {
-
         return data.get("dimension").getAsInt();
-
     }
 
     public static int getSetDimensionFromTardfile(JsonObject data) {
-
         return data.get("setDimension").getAsInt();
-
     }
     
     public static boolean getFirstTimeLoadingTD(JsonObject data) {

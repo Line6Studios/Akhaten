@@ -86,12 +86,20 @@ public class StattenheimRemote extends ItemBase {
 					worldIn.setBlockState(oldCoordsPos, Blocks.AIR.getDefaultState(), 3);
 					
 					// Update the users Tardfile
-					Tardfile.updateTardfile(Tardfile.findTardfileByName(player.getName()), player.getName(), Tardfile.getTardisIDFromTardfile(tardfile), 
-							Tardfile.getUUIDFromTardfile(tardfile), Tardfile.getIntCoordsFromTardfile(tardfile), new int[] {pos.up().getX(), pos.up().getY(), pos.up().getZ()}, 
+					Tardfile.updateTardfile(Tardfile.findTardfileByName(
+							player.getName()),
+							player.getName(),
+							Tardfile.getTardisIDFromTardfile(tardfile),
+							Tardfile.getUUIDFromTardfile(tardfile),
+							Tardfile.getIntCoordsFromTardfile(tardfile),
+							new int[] {pos.up().getX(), pos.up().getY(), pos.up().getZ()},
 							Tardfile.getSetCoordsFromTardfile(tardfile), 
 							Tardfile.getDimensionFromTardfile(tardfile), 
 							Tardfile.getSetDimensionFromTardfile(tardfile), 
-							Tardfile.getTardisStateFromTardFile(tardfile));
+							Tardfile.getTardisStateFromTardFile(tardfile)
+					);
+
+					Tardfile.updateTardfileRegistry(nbt.getInteger("ID"), player.getName(), new int[] {pos.up().getX(), pos.up().getY(), pos.up().getZ()});
 				}
 			} catch (IOException e) {
 				e.printStackTrace();

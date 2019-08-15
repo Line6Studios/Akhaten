@@ -59,18 +59,20 @@ public class MachineTardis extends Block {
         if (!worldIn.isRemote) {
             JsonObject playerTardfile;
 
-           
-            playerTardfile = Tardfile.parseTardfileByName(playerIn.getName());
+            try { // Load the Tardfile of the Tardis by Coordinates
+                playerTardfile = Tardfile.parseTardfileByID(Tardfile.getTardisIDByXYZ(new int[] {pos.getX(), pos.getY(), pos.getZ()},
+                        playerIn.getName()));
+            } catch (IOException e) {
+                e.printStackTrace();
+                return false;
+            }
             if (playerTardfile == null) {
                 playerIn.sendMessage(new TextComponentString("This TARDIS refuses to let you in, are you sure that this TARDIS is yours?"));
                 return false;
             }
-                
-            int[] intCoords = Tardfile.getIntCoordsFromTardfile(playerTardfile); // TARDIS interior coordinates
-            int[] coords = Tardfile.getCoordsFromTardfile(playerTardfile); // Outside Coordinates of the TARDIS
-            int dim = Tardfile.getDimensionFromTardfile(playerTardfile); // The current dimension the TARDIS (exterior) is located in
 
-            WorldServer worldServer = FMLCommonHandler.instance().getMinecraftServerInstance().getWorld(playerIn.dimension);
+            int[] intCoords = Tardfile.getIntCoordsFromTardfile(playerTardfile); // TARDIS interior coordinates
+            WorldServer worldServer = FMLCommonHandler.instance().getMinecraftServerInstance().getWorld(playerIn.dimension); // Get the worldserver for the teleportation
 
             if (Tardfile.getFirstTimeLoadingTD(playerTardfile)) { // If it's the first time of him entering the TARDIS, place a Stone Block
             	playerIn.getServer().getWorld(DimensionTardis.ID_TARDIS).setBlockState(new BlockPos(intCoords[0], intCoords[1]-1, intCoords[2]), Blocks.STONE.getDefaultState(), 3);
