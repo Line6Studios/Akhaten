@@ -8,7 +8,7 @@
   "url": "https://minecraft.curseforge.com/projects/akhaten",
   "updateUrl": "https://minecraft.curseforge.com/projects/akhaten/files",
   "authorList": ["TheBertrahmPlays, inferno4you"],
-  "credits": "TheBertrahmPlays: Owner & Developer, GhanouCraft: Modeller / Texturer, Syorito Hatsuki: finnish & russian translation/keeping .lang files updated, inferno4you: Developer; Special thanks to McJty for the AkhatenTeleporter!",
+  "credits": "TheBertrahmPlays: Owner & Developer, GhanouCraft: Modeller / Texturer, Syorito Hatsuki: finnish & russian translation/keeping .lang files updated, inferno4you: Developer, Jess/Jay: Modeller&Textures, MoonlitLamps: Textures; Special thanks to McJty for the AkhatenTeleporter!",
   "logoFile": "AkhatenLogo.png",
   "screenshots": [],
   "dependencies": []

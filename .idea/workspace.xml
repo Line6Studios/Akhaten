@@ -120,8 +120,8 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/main/resources/mcmod.info">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="85">
-              <caret line="5" column="19" selection-start-line="5" selection-start-column="19" selection-end-line="5" selection-end-column="19" />
+            <state relative-caret-position="170">
+              <caret line="10" column="236" selection-start-line="10" selection-start-column="236" selection-end-line="10" selection-end-column="236" />
             </state>
           </provider>
         </entry>
@@ -293,7 +293,7 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="Application.Akhaten Client">
+  <component name="RunManager" selected="Gradle.Akhaten [build]">
     <configuration name="Akhaten Client" type="Application" factoryName="Application" singleton="true">
       <option name="ALTERNATIVE_JRE_PATH" value="1.8" />
       <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="true" />
@@ -416,15 +416,15 @@
       <window_info id="Designer" order="2" />
       <window_info id="UI Designer" order="3" />
       <window_info id="Favorites" order="4" side_tool="true" />
-      <window_info active="true" content_ui="combo" id="Project" order="5" visible="true" weight="0.24135189" />
-      <window_info id="Gradle" order="6" weight="0.14364919" />
+      <window_info content_ui="combo" id="Project" order="5" weight="0.24135189" />
+      <window_info id="Gradle" order="6" visible="true" weight="0.14353877" />
       <window_info anchor="bottom" id="Event Log" order="0" sideWeight="0.24373758" side_tool="true" visible="true" weight="0.25643024" />
       <window_info anchor="bottom" id="Version Control" order="1" sideWeight="0.49962935" weight="0.329429" />
       <window_info anchor="bottom" id="Terminal" order="2" sideWeight="0.49821073" weight="0.3289166" />
       <window_info anchor="bottom" id="Build" order="3" sideWeight="0.49858516" weight="0.32938388" />
       <window_info anchor="bottom" id="Message" order="4" />
       <window_info anchor="bottom" id="Find" order="5" sideWeight="0.4950298" weight="0.3289166" />
-      <window_info anchor="bottom" id="Run" order="6" sideWeight="0.7562624" visible="true" weight="0.25643024" />
+      <window_info active="true" anchor="bottom" id="Run" order="6" sideWeight="0.7562624" visible="true" weight="0.25643024" />
       <window_info anchor="bottom" id="Debug" order="7" weight="0.4" />
       <window_info anchor="bottom" id="Cvs" order="8" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="9" weight="0.4" />
@@ -913,8 +913,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/resources/mcmod.info">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="85">
-          <caret line="5" column="19" selection-start-line="5" selection-start-column="19" selection-end-line="5" selection-end-column="19" />
+        <state relative-caret-position="170">
+          <caret line="10" column="236" selection-start-line="10" selection-start-column="236" selection-end-line="10" selection-end-column="236" />
         </state>
       </provider>
     </entry>
