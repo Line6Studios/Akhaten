@@ -2,12 +2,10 @@ package com.linesix.akhaten.common.blocks.registries;
 
 import com.google.common.base.Preconditions;
 import com.linesix.akhaten.common.Reference;
-import com.linesix.akhaten.common.blocks.building.tardis.coral.CoralRoundelA;
-import com.linesix.akhaten.common.blocks.building.tardis.coral.CoralRoundelB;
-import com.linesix.akhaten.common.blocks.building.tardis.coral.CoralRoundelC;
+import com.linesix.akhaten.common.blocks.Names;
+import com.linesix.akhaten.common.blocks.building.tardis.RoundelBase;
 import com.linesix.akhaten.common.blocks.building.tardis.coral.CoralWall;
 import com.linesix.akhaten.common.blocks.building.tardis.coral.CoralWire;
-import com.linesix.akhaten.common.blocks.building.tardis.hartnell.HartnellRoundel;
 import com.linesix.akhaten.common.blocks.building.Door;
 import com.linesix.akhaten.tabs.TabBuilding;
 import net.minecraft.block.Block;
@@ -47,40 +45,36 @@ public class BuildingBlocks {
     private static Block[] blocks; // Create an array for all blocks
 
     // Creation of all Block-Variables below
-    public static HartnellRoundel block_roundel;
+    public static RoundelBase block_roundel;
     public static CoralWire block_coralwire;
     public static CoralWall block_coralwall;
-    public static CoralRoundelA block_coralroundel_a;
-    public static CoralRoundelB block_coralroundel_b;
-    public static CoralRoundelC block_coralroundel_c;
+    public static RoundelBase block_coralroundel_a;
+    public static RoundelBase block_coralroundel_b;
+    public static RoundelBase block_coralroundel_c;
     public static Door block_door;
     // End Creation of all Block-Variables
 
     public static void init() {
-
         Reference.logger.info("Initializing building-block-variables...");
 
         // Initialization of Block-Variables below
-        block_roundel = new HartnellRoundel();
+        block_roundel = new RoundelBase(Names.Machines.Tardis.Hartnell.hartnell_roundels);
         block_coralwire = new CoralWire();
         block_coralwall = new CoralWall();
-        block_coralroundel_a = new CoralRoundelA();
-        block_coralroundel_b = new CoralRoundelB();
-        block_coralroundel_c = new CoralRoundelC();
+        block_coralroundel_a = new RoundelBase(Names.Machines.Tardis.Coral.coral_roundel_a);
+        block_coralroundel_b = new RoundelBase(Names.Machines.Tardis.Coral.coral_roundel_b);
+        block_coralroundel_c = new RoundelBase(Names.Machines.Tardis.Coral.coral_roundel_c);
         block_door = new Door();
 
         Reference.logger.info("DONE!");
         // End Initialization of Block-Variables
-
     }
 
     @SubscribeEvent
     public static void RegisterBlocks(final RegistryEvent.Register<Block> event) {
-
         final IForgeRegistry<Block> registry = event.getRegistry(); // Put the registry in a variable
 
         blocks = new Block[] { // Add all block vars in this array
-
                 block_roundel,
                 block_coralwire,
                 block_coralwall,
@@ -88,20 +82,16 @@ public class BuildingBlocks {
                 block_coralroundel_b,
                 block_coralroundel_c,
                 block_door
-
         };
 
         registry.registerAll(blocks); // Register all blocks at once
-
     }
 
     @SubscribeEvent
     public static void registerItemBlocks(final RegistryEvent.Register<Item> event) {
-
         final IForgeRegistry<Item> registry = event.getRegistry();
 
         final ItemBlock[] items = { // Put the registry in a variable
-
                 new ItemBlock(block_roundel),
                 new ItemBlock(block_coralwire),
                 new ItemBlock(block_coralwall),
@@ -109,34 +99,25 @@ public class BuildingBlocks {
                 new ItemBlock(block_coralroundel_b),
                 new ItemBlock(block_coralroundel_c),
                 new ItemBlock(block_door)
-
         };
 
         for (final ItemBlock item : items) {
-
             final Block block = item.getBlock(); // Get the ItemBlock
-
             final ResourceLocation registryName = Preconditions.checkNotNull(block.getRegistryName(),
-                    "Block %s has null registry name", block); // Get the registry name of the block (if it's not null)
+                    "Block %s has a null registry name", block); // Get the registry name of the block (if it's not null)
             registry.register(item.setRegistryName(registryName)); // Set the registry name to content of variable "registryName"
 
             ITEM_BLOCKS.add(item); // Finally add the item to The ITEM_BLOCKS set
-
         }
-
     }
 
     @SubscribeEvent
     public static void registerRenders(ModelRegistryEvent event) {
-
         OBJLoader.INSTANCE.addDomain(Reference.MODID);
 
         for (final Block block : blocks) {
-
             registerRender(Item.getItemFromBlock(block));
-
         }
-
     }
 
     public static void registerRender(Item item) {

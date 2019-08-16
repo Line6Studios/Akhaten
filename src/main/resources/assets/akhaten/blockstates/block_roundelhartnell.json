@@ -1,6 +1,6 @@
 {
   "variants": {
-    "type=normal": [
+    "normal": [
       { "model": "akhaten:block_roundelhartnell" }
     ]
   }

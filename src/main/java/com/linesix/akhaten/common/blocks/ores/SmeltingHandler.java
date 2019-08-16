@@ -19,8 +19,8 @@ public class SmeltingHandler {
 	
 	public static void registerSmeltingRecipes() {
 		GameRegistry.addSmelting(Materials.silicate_clump, new ItemStack(Materials.silicate_ingot), 2);
-		GameRegistry.addSmelting(Materials.rutile_ore, new ItemStack(Materials.raw_titanium), 3);
-		GameRegistry.addSmelting(Ores.rutile_ore, new ItemStack(Materials.raw_titanium), 3);
+		//GameRegistry.addSmelting(Materials.rutile_ore, new ItemStack(Materials.raw_titanium), 3); <-- Bad and Temporary soloution for smelting Rutile ore, KEEP DISABLED
+		GameRegistry.addSmelting(new ItemStack(Ores.rutile_ore), new ItemStack(Materials.raw_titanium), 3);
 		GameRegistry.addSmelting(Materials.raw_titanium, new ItemStack(Materials.titanium_ingot), 3);
 	}
 

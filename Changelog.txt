@@ -1,6 +1,14 @@
 Akhaten Changelog, please add all changes made to this file and your Name,
 under the version you made them!
 
+Akhaten 0.6.1 -> LATEST:
+    - Universal Roundel Base added : Felix Eckert
+    - Second Doctor's Sonic Screwdriver added : Felix Eckert
+    - Bug Fixes
+        - 1963 Roundel texture fixed
+    - Texture/Model additions
+        + Texture for Rutile/Titanium Ore added
+
 Akhaten 0.6.0 -> 0.6.1:
     - Fixed bugs
         - You can now enter the TARDIS after summoning it with the Stattenheim Remote
