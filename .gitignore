@@ -20,6 +20,7 @@ usernamecache.json
 .gradle/gradle.log
 clean.sh
 run.sh
+.idea/workspace.xml
 
 #Classes
 src/main/java/com/linesix/akhaten/handler/TardisHandler.java
@@ -33,3 +34,4 @@ src/main/resources/assets/akhaten/models/block/machine_tardis.json
 src/main/java/com/linesix/akhaten/common/blocks/building/HartnellRoundel.java
 .idea/workspace.xml
 clean.bat
+.idea/workspace.xml
