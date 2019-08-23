@@ -22,11 +22,6 @@ public class RutileOre extends Block {
         setHardness(3.0F);
         setHarvestLevel("pickaxe", 1);
 	}
-
-	@Override
-	public Item getItemDropped(IBlockState state, Random rand, int fortune) {
-		return Materials.rutile_ore;
-	}
 	
     @Override
     public String getUnlocalizedName() {

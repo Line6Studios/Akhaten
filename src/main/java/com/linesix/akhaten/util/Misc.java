@@ -16,12 +16,10 @@ public class Misc {
      * in the given array
      * */
     public static int getIndexByVal(String val, String[] inputARR) throws NoSuchElementException {
-
         int index = 0;
         boolean succes = false;
 
         for (int i = 0; i < inputARR.length; i++) {
-
             if (inputARR[i] == val) {
 
                 index = i;
@@ -29,7 +27,6 @@ public class Misc {
                 break;
 
             }
-
         }
 
         if (succes)

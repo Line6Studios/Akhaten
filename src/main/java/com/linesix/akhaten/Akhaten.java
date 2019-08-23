@@ -13,6 +13,7 @@ import com.linesix.akhaten.proxy.CommonProxy;
 import com.linesix.akhaten.common.sound.SoundRegistry;
 import com.linesix.akhaten.common.worldgen.OreGen;
 import com.linesix.akhaten.common.Reference;
+import net.minecraft.util.text.TextComponentString;
 import net.minecraftforge.client.model.obj.OBJLoader;
 import net.minecraftforge.fml.common.Mod;
 import net.minecraftforge.fml.common.SidedProxy;
@@ -47,9 +48,7 @@ public class Akhaten {
 
     @Mod.EventHandler
     public void preInit(FMLPreInitializationEvent event) {
-
         Reference.logger.info("Entering PreInit phase...");
-
         OBJLoader.INSTANCE.addDomain(Reference.MODID);
 
         // Register Items Blocks and Sounds Below
@@ -60,34 +59,30 @@ public class Akhaten {
         Gadgets.init();
         Materials.init();
         Ores.init();
-        SmeltingHandler.registerSmeltingRecipes();
-
     }
     
     @Mod.EventHandler
     public void init(FMLInitializationEvent event) {
-
         Reference.logger.info("Entering Init phase...");
 
         // Register Dimensions below
         Dimensions.registerDimensions();
         GameRegistry.registerWorldGenerator(new OreGen(), 0);
 
+        // Other registries
+        SmeltingHandler.registerSmeltingRecipes();
     }
 
     @Mod.EventHandler
     public void serverStarting(FMLServerStartingEvent event) { // This method just exists for registering commands
-
         // Register Commands Below
         Commands.register(event);
-
+        event.getServer().sendMessage(new TextComponentString("Thank you for playing with Akhaten!"));
     }
 
     @Mod.EventHandler
     public void postInit(FMLPostInitializationEvent event) {
-
         Reference.logger.info("Entering PostInit phase...");
-
     }
 
 }

@@ -5,7 +5,8 @@ Akhaten 0.6.1 -> LATEST:
     - Universal Roundel Base added : Felix Eckert
     - Second Doctor's Sonic Screwdriver added : Felix Eckert
     - Bug Fixes
-        - 1963 Roundel texture fixed
+        - 1963 Roundel texture fixed : Felix Eckert
+        - Rutile Ore now smelts : Felix Eckert
     - Texture/Model additions
         + Texture for Rutile/Titanium Ore added
 
