@@ -4,6 +4,7 @@ import com.google.common.base.Preconditions;
 import com.linesix.akhaten.common.blocks.machines.tardis.MachineTardis;
 import com.linesix.akhaten.common.blocks.machines.tardis.Handbrake;
 import com.linesix.akhaten.common.blocks.machines.tardis.TardisMonitor;
+import com.linesix.akhaten.common.blocks.machines.tardis.tardiscore.*;
 import com.linesix.akhaten.tabs.TabMachines;
 import net.minecraft.block.Block;
 import net.minecraft.client.renderer.block.model.ModelResourceLocation;
@@ -25,7 +26,6 @@ import java.util.Set;
 
 @Mod.EventBusSubscriber(modid = Reference.MODID)
 public class MachineBlocks {
-
    /* Registration of all Machine Blocks
     *
     * Author: Felix Eckert (TheBertrahmPlays / Angry German)
@@ -42,69 +42,55 @@ public class MachineBlocks {
     public static MachineTardis machine_tardis;
     public static Handbrake tardis_handbrake;
     public static TardisMonitor tardis_monitor;
+    public static TardisCore tardis_core;
+    public static CoreBeam core_beam;
+    public static CoreFrame core_frame;
+    public static CoreConnector core_connector;
+    public static ConsoleInterface console_interface;
     // End Creation of all Block-Variables
 
     public static void init() {
-
         Reference.logger.info("Initializing machine-block-variables...");
 
         // Initialization of Block-Variables below
-        try {
-
-            machine_tardis = new MachineTardis();
-            tardis_handbrake = new Handbrake();
-            tardis_monitor = new TardisMonitor();
-
-        } catch (Exception e) {
-
-            throw e;
-
-        } finally { // When everything is done, execute the code below
-
-            Reference.logger.info("DONE!");
-
-        }
+         machine_tardis = new MachineTardis();
+        tardis_handbrake = new Handbrake();
+        tardis_monitor = new TardisMonitor();
+        Reference.logger.info("DONE!");
         // End Initialization of Block-Variables
 
-        // Write all block-variables to the blocks array
-        try {
-
-            blocks = new Block[] {
-
-                    machine_tardis,
-                    tardis_handbrake,
-                    tardis_monitor
-
-            };
-
-        } catch (Exception e) {
-
-            throw e;
-
-        }
-
+        blocks = new Block[] {
+                machine_tardis,
+                tardis_handbrake,
+                tardis_monitor,
+                tardis_core,
+                console_interface,
+                core_beam,
+                core_connector,
+                core_frame
+        };
     }
 
     @SubscribeEvent
     public static void registerBlocks(final RegistryEvent.Register<Block> event) {
-
         IForgeRegistry<Block> registry = event.getRegistry();
 
         registry.registerAll(blocks); // Reigster all blocks at once
-
     }
 
     @SubscribeEvent
     public static void registerItemBlocks(final RegistryEvent.Register<Item> event) {
-
         final IForgeRegistry<Item> registry = event.getRegistry();
 
         final ItemBlock[] items = {
-
                 new ItemBlock(machine_tardis),
                 new ItemBlock(tardis_handbrake),
-                new ItemBlock(tardis_monitor)
-
+                new ItemBlock(tardis_monitor),
+                new ItemBlock(tardis_core),
+                new ItemBlock(console_interface),
+                new ItemBlock(core_beam),
+                new ItemBlock(core_connector),
+                new ItemBlock(core_frame)
         };
 
         for (final ItemBlock item : items) {
@@ -124,22 +110,16 @@ public class MachineBlocks {
 
     @SubscribeEvent
     public static void registerRenders(ModelRegistryEvent event) {
-
         OBJLoader.INSTANCE.addDomain(Reference.MODID);
 
         for (final Block block : blocks) {
             registerRender(block, 0);
         }
-
-
     }
 
     public static void registerRender(Block block, int meta) {
-
         ModelLoader.setCustomModelResourceLocation(Item.getItemFromBlock(block), meta,
                 new ModelResourceLocation(Item.getItemFromBlock(block).getRegistryName(), "inventory"));
 
     }
-
-
 }

@@ -12,13 +12,11 @@ import net.minecraft.block.state.IBlockState;
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.util.*;
 import net.minecraft.util.math.BlockPos;
-import net.minecraft.util.text.TextComponentString;
 import net.minecraft.world.World;
 import net.minecraftforge.common.DimensionManager;
 
 import java.io.File;
 import java.io.IOException;
-import java.util.Random;
 
 public class Handbrake extends Block {
 
@@ -83,9 +81,7 @@ public class Handbrake extends Block {
 
         // De- / Rematerialise it if it's serverside
         if (!worldIn.isRemote) {
-
             if (tardisState[1]) { // If the TARDIS isn't dematerialised, demat it
-
                 worldIn.playSound(null, pos, new SoundEvent(new ResourceLocation(Reference.MODID, SoundRegistry.sound_paths[0])), SoundCategory.BLOCKS, 10.0f, dematSoundPitch);
 
                 BlockPos oldPos = new BlockPos(x, y, z); // Generate new  BlockPos for old Tardis position
@@ -95,9 +91,7 @@ public class Handbrake extends Block {
                     e.printStackTrace();
                 }
                 DimensionManager.getWorld(dim).destroyBlock(oldPos, false);
-
             } else if (tardisState[0]) { // If the TARDIS isn't materialised, remat it
-
                 worldIn.playSound(null, pos, SoundRegistry.registerSound("", SoundRegistry.sound_paths[1]), SoundCategory.BLOCKS, 1.0f, rematSoundPitch);
 
                 BlockPos newPos = new BlockPos(setX, setY, setZ); // Generate BlockPos for new Tardis position
@@ -109,13 +103,9 @@ public class Handbrake extends Block {
                 DimensionManager.getWorld(setDim).setBlockState(newPos, MachineBlocks.machine_tardis.getDefaultState());
 
             }
-
             return true;
-
         } else {
-
             return true;
-
         }
 
     }

@@ -59,6 +59,7 @@ public class Akhaten {
         Gadgets.init();
         Materials.init();
         Ores.init();
+        Reference.logger.info("(VERSION) Client is using Akhaten version: "+Reference.VERSION);
     }
     
     @Mod.EventHandler
@@ -77,12 +78,12 @@ public class Akhaten {
     public void serverStarting(FMLServerStartingEvent event) { // This method just exists for registering commands
         // Register Commands Below
         Commands.register(event);
-        event.getServer().sendMessage(new TextComponentString("Thank you for playing with Akhaten!"));
     }
 
     @Mod.EventHandler
     public void postInit(FMLPostInitializationEvent event) {
         Reference.logger.info("Entering PostInit phase...");
+        System.out.println("Fantastic! You are playing with Akhaten, thank you!");
     }
 
 }

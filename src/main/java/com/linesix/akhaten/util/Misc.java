@@ -21,11 +21,9 @@ public class Misc {
 
         for (int i = 0; i < inputARR.length; i++) {
             if (inputARR[i] == val) {
-
                 index = i;
                 succes = true;
                 break;
-
             }
         }
 

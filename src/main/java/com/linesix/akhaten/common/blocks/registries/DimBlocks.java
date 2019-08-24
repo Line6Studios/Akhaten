@@ -48,33 +48,19 @@ public class DimBlocks {
     // End Creation of all Block-Variables
 
     public static void init() {
-
         Reference.logger.info("Initializing dimensional-block-variables...");
 
         // Initialization of Block-Variables below
-        try {
+        gallifrey_stone = new GallifreyStone();
+        gallifrey_grass = new GallifreyGrass();
+        gallifrey_dirt = new GallifreyDirt();
 
-            gallifrey_stone = new GallifreyStone();
-            gallifrey_grass = new GallifreyGrass();
-            gallifrey_dirt = new GallifreyDirt();
-
-        } catch (Exception e) { // If theres an error whilst initializing any of the Variables, execute the code below
-
-            throw e;
-
-        } finally { // When everything is done, execute the code below
-
-            Reference.logger.info("DONE!");
-
-        }
-
+        Reference.logger.info("DONE!");
         // End Initialization of Block-Variables
-
     }
 
     @SubscribeEvent
     public static void RegisterBlocks(final RegistryEvent.Register<Block> event) {
-
         final IForgeRegistry<Block> registry = event.getRegistry(); // Put the registry in a variable
 
         blocks = new Block[] { // Add all block vars in this array
@@ -86,14 +72,11 @@ public class DimBlocks {
         };
 
         registry.registerAll(blocks); // Reigster all blocks at once
-
     }
 
     @SubscribeEvent
     public static void registerItemBlocks(final RegistryEvent.Register<Item> event) {
-
         final IForgeRegistry<Item> registry = event.getRegistry();
-
         final ItemBlock[] items = { // Put the registry in a variable
 
                 new ItemBlock(gallifrey_stone),
@@ -103,36 +86,24 @@ public class DimBlocks {
         };
 
         for (final ItemBlock item : items) {
-
             final Block block = item.getBlock(); // Get the ItemBlock
-
             final ResourceLocation registryName = Preconditions.checkNotNull(block.getRegistryName(),
                     "Block %s gas null registry name", block); // Get the registry name of the block (if it's not null)
-            registry.register(item.setRegistryName(registryName)); // Set the registry name to content of variable
-                                                                   // "registryName"
+            registry.register(item.setRegistryName(registryName)); // Set the registry name to content of variable "registryName"
 
             ITEM_BLOCKS.add(item); // Finally add the item to The ITEM_BLOCKS set
-
         }
-
     }
 
     @SubscribeEvent
     public static void registerRenders(ModelRegistryEvent event) {
-
         for (final Block block : blocks) {
-
             registerRender(Item.getItemFromBlock(block));
-
         }
-
     }
 
     public static void registerRender(Item item) {
-
         ModelLoader.setCustomModelResourceLocation(item, 0,
                 new ModelResourceLocation(item.getRegistryName(), "inventory"));
-
     }
-
 }
