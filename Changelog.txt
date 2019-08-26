@@ -2,6 +2,12 @@ Akhaten Changelog, please add all changes made to this file and your Name,
 under the version you made them!
 
 Akhaten 0.6.1 -> LATEST:
+    - Added TARDIS Core Blocks (Currently NO Functionality) : Felix Eckert
+        - TARDIS Core Beam
+        - TARDIS Core Frame
+        - TARDIS Core
+        - TARDIS Console Interface
+        - TARDIS Core connector
     - Universal Roundel Base added : Felix Eckert
     - Second Doctor's Sonic Screwdriver added : Felix Eckert
     - Bug Fixes
@@ -9,6 +15,7 @@ Akhaten 0.6.1 -> LATEST:
         - Rutile Ore now smelts : Felix Eckert
     - Texture/Model additions
         + Texture for Rutile/Titanium Ore added
+        + Added Invetory Model For Rutile Ore
 
 Akhaten 0.6.0 -> 0.6.1:
     - Fixed bugs

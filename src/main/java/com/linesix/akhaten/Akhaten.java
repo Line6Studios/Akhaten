@@ -13,7 +13,6 @@ import com.linesix.akhaten.proxy.CommonProxy;
 import com.linesix.akhaten.common.sound.SoundRegistry;
 import com.linesix.akhaten.common.worldgen.OreGen;
 import com.linesix.akhaten.common.Reference;
-import net.minecraft.util.text.TextComponentString;
 import net.minecraftforge.client.model.obj.OBJLoader;
 import net.minecraftforge.fml.common.Mod;
 import net.minecraftforge.fml.common.SidedProxy;
@@ -27,9 +26,6 @@ import java.util.Random;
 
 @Mod(modid = Reference.MODID, name = Reference.NAME, version = Reference.VERSION)
 public class Akhaten {
-
-
-
    /*
     * Akhaten Public Beta (Version 0.6.1)
     * Copyright (C) 2019 Linesix Studios, Licensed under the ISC license
@@ -71,7 +67,7 @@ public class Akhaten {
         GameRegistry.registerWorldGenerator(new OreGen(), 0);
 
         // Other registries
-        SmeltingHandler.registerSmeltingRecipes();
+        SmeltingHandler.registerSmeltingRecipes(); // Register all Smelting recipes
     }
 
     @Mod.EventHandler
