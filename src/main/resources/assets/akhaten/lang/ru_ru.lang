@@ -1,6 +1,7 @@
-# ПЕРЕВЕЛ SYORI
-# ВЕРСИЯ 2019.7
-# ДАТА 14.07.2019
+# Файл русского языка для Ахатена
+# Авторы: Syorito Hatsuki
+# Версия 2019.8
+# Дата 31.08.2019
 
 # Блоки [Tiles] [6-15]
 tile.akhaten:gallifrey_stone.name=Галлифрейский камень
@@ -19,12 +20,22 @@ machine_tile.akhaten:machine_tardis.name=Капсула путешествия �
 machine_tile.akhaten:tardis_handbrake.name=Ручной тормоз TARDIS
 machine_tile.akhaten:tardis_monitor.name=TARDIS Экран
 
-# Предметы [Items] [23-25]
+# Предметы [Items] [23-35]
 item.item.akhaten:vortex_manipulator.name=Манипулятор временной воронки
 item.item.akhaten:electronic_circuit.name=Электронная схема
 item.item.akhaten:silicate_ingot.name=Силиконавый слиток
+item.item.akhaten:silicate_clump.name=Кремниевый комок
+item.item.akhaten:raw_titanium.name=Сырой титан
+item.item.akhaten:titanium_ingot.name=Титановый слиток
+item.item.akhaten:inv_rutile_ore.name=Рутиловая руда
+item.item.akhaten:aerotronic_circuit.name=Аэротронная схема
+item.item.akhaten:aerotronic_core.name=Аэротронное ядро
+item.item.akhaten:aerotronic_capacitor.name=Аэротронный конденсатор
+item.item.akhaten:artron_capacitor.name=Artron-конденсатор
+item.item.akhaten:stattenheim_remote.name=Stattenheim Remote (Я фиг знает)
+item.item.akhaten:seconddoctor_sonic.name=2-я Докторская Звуковая Отвертка
 
-# Разделы [Tabs] [28-32]
+# Разделы [Tabs] [38-42]
 itemGroup.akhaten_dimensional_blocks=Блоки измерения Akhaten:а
 itemGroup.akhaten_gadgets=Устройства Akhaten:а
 itemGroup.akhaten_machines=Машины Akhaten:а

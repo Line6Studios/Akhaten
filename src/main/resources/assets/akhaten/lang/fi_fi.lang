@@ -1,6 +1,7 @@
-# KÄÄNTÄJÄ SYORI
-# VERSIO 2019.8
-# PVM 14.07.2019
+# Suomen kielinen tiedosto Ahatenille
+# Tekijät: Syorito Hatsuki
+# Version 2019.9
+# PVM 31.08.2019
 
 # Kuutiot [Tiles] [6-15]
 tile.akhaten:gallifrey_stone.name=Gallifreyin Kivi
@@ -19,12 +20,22 @@ machine_tile.akhaten:machine_tardis.name=Aikamatka Kapseli
 machine_tile.akhaten:tardis_handbrake.name=TARDIS Seisontajarru
 machine_tile.akhaten:tardis_monitor.name=TARDIS Näyttö
 
-# Esinet [Items] [23-25]
+# Esinet [Items] [23-35]
 item.item.akhaten:vortex_manipulator.name=Vortex-manipulaattori
 item.item.akhaten:electronic_circuit.name=Elektroninen piiri
 item.item.akhaten:silicate_ingot.name=Pii harko
+item.item.akhaten:silicate_clump.name=Pii pallo
+item.item.akhaten:raw_titanium.name=Raaka titaani
+item.item.akhaten:titanium_ingot.name=Titaaniharkko
+item.item.akhaten:inv_rutile_ore.name=Rutiilimalmi
+item.item.akhaten:aerotronic_circuit.name=Aerotroninen piiri
+item.item.akhaten:aerotronic_core.name=Aerotroninen ydin
+item.item.akhaten:aerotronic_capacitor.name=Aerotroninen kondensaattori
+item.item.akhaten:artron_capacitor.name=Artron-kondensaattori
+item.item.akhaten:stattenheim_remote.name=Suojakaukosäädin
+item.item.akhaten:seconddoctor_sonic.name=Toinen tohtorin ääni ruuvitaltta
 
-# Välilehdet [Tabs] [27-32]
+# Välilehdet [Tabs] [38-42]
 itemGroup.akhaten_dimensional_blocks=Akhatenin ulottuvuuden kuutiot
 itemGroup.akhaten_gadgets=Akhatenin laiteet
 itemGroup.akhaten_machines=Akhaten Koneet
