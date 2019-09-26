@@ -7,7 +7,6 @@ import net.minecraft.world.World;
 
 public class SonicUtils {
     public static void toggleIronDoor(IBlockState state, BlockPos pos, World worldIn) {
-        System.out.println("META STATE: "+Blocks.IRON_DOOR.getMetaFromState(state));
         int metaState = Blocks.IRON_DOOR.getMetaFromState(state);
 
         if (metaState == 8 || metaState == 9) {
@@ -15,10 +14,8 @@ public class SonicUtils {
         }
 
         if (metaState < 4) {
-            System.out.println("CLOSE DOOR");
             Blocks.IRON_DOOR.toggleDoor(worldIn, pos, true);
         } else if (metaState == 4 || metaState == 11 || metaState == 10 || metaState > 4 && metaState < 8) {
-            System.out.println("OPEN DOOR");
             Blocks.IRON_DOOR.toggleDoor(worldIn, pos, false);
         }
     }

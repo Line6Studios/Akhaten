@@ -45,7 +45,6 @@ public class Akhaten {
     @Mod.EventHandler
     public void preInit(FMLPreInitializationEvent event) {
         Reference.logger.info("Entering PreInit phase...");
-        OBJLoader.INSTANCE.addDomain(Reference.MODID);
 
         // Register Items Blocks and Sounds Below
         SoundRegistry.init();

@@ -154,6 +154,8 @@ public class Tardfile {
 
         FileUtil.writeFileFromArray(path, tardfile, FileUtil.LineMods.LN_BREAK);
         replaceChar(path);
+
+        updateTardfileRegistry(tardis_id, name, coords);
     }
 
     public static void updateTardfileRegistry(int id, String owner, int[] xyz) {
@@ -395,7 +397,8 @@ public class Tardfile {
                 "  'setY':'"  + setY +  "',",
                 "  'setZ':'" + setZ +  "',",
                 "  'setDimension':'" + setDimension + "',",
-                "  'firstTimeLoadingTD':'" + firstTimeLoadingTD+ "'\n}"
+                "  'firstTimeLoadingTD':'" + firstTimeLoadingTD+ "',",
+                "  'installedModules':{}" + "\n}"
 
         };
 

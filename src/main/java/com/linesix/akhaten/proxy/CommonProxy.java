@@ -15,7 +15,6 @@ import net.minecraftforge.fml.common.event.FMLPreInitializationEvent;
 public class CommonProxy {
 
     protected void preInit(FMLPreInitializationEvent event) {
-
         System.out.println("Entering PreInit phase");
 
         DimBlocks.init();
@@ -25,21 +24,16 @@ public class CommonProxy {
         Gadgets.init();
         Materials.init();
         SmeltingHandler.registerSmeltingRecipes();
-        
     }
 
     protected void init(FMLInitializationEvent event) {
-
         System.out.println("Entering PreInit phase");
 
         Dimensions.registerDimensions();
-
     }
 
     protected void postInit(FMLPostInitializationEvent event) {
-
         System.out.println("Entering PostInit phase");
-
     }
 
 }
