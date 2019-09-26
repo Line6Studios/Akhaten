@@ -22,6 +22,7 @@ import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.text.TextComponentString;
 import net.minecraft.world.World;
 import net.minecraftforge.common.DimensionManager;
+import scala.Int;
 
 public class Tardfile {
 
@@ -68,20 +69,20 @@ public class Tardfile {
                 FileUtil.writeFileFromArray(pathComplete, tardfilearray, FileUtil.LineMods.LN_BREAK); // Finally write the Tardfile
             } catch (FileAlreadyExistsException e) { // If a Tardfile for that user already exists
                 Reference.logger.info("File for user " + placer.getName() + "already exists!");
-                placer.sendMessage(new TextComponentString("You already own a TARDIS! To delete it use /delete-tardis!")); // Send message for deleting tardis
+                placer.sendMessage(new TextComponentString("§4You already own a TARDIS! To delete it use /delete-tardis!")); // Send message for deleting tardis
                 worldIn.destroyBlock(pos, true); // Destroy the Tardis
             }
             
             // Replace every single quote with a double quote
             try {
                 if (!replaceChar(pathComplete)) {
-                    placer.sendMessage(new TextComponentString("An error has occured and the Tardfile could not be written!"));
+                    placer.sendMessage(new TextComponentString("§4An error has occured and the Tardfile could not be written!"));
                     worldIn.destroyBlock(pos, true);
                     return new JsonObject();
                 }
             } catch (IOException e) {
                 e.printStackTrace();
-                placer.sendMessage(new TextComponentString("A critical error has occured and the tardFile could not be written!"));
+                placer.sendMessage(new TextComponentString("§4An error has occured and the tardFile could not be written!"));
                 return new JsonObject();
             }
             
@@ -89,7 +90,7 @@ public class Tardfile {
             try {
 				registerTardfile(id, new int[] {pos.getX(), pos.getY(), pos.getZ()},placer.getName(), id);
 			} catch (IOException e) {
-				placer.sendMessage(new TextComponentString("An error has occured whilst trying to register you TARDIS!"));
+				placer.sendMessage(new TextComponentString("§4An error has occured whilst trying to register you TARDIS!"));
 				worldIn.destroyBlock(pos, true);
 				pathComplete.delete();
 				e.printStackTrace();
@@ -97,7 +98,7 @@ public class Tardfile {
 			}
             
             // Finally congratulate the player, for getting the TARDIS
-            placer.sendMessage(new TextComponentString("Congratulations for getting your own Type 40 TT Capsule."));
+            placer.sendMessage(new TextComponentString("§2Congratulations for getting your own §6Type 40 TT Capsule."));
             try {
 				return FileUtil.parseJSON(pathComplete);
 			} catch (IOException e) {
@@ -155,7 +156,7 @@ public class Tardfile {
         FileUtil.writeFileFromArray(path, tardfile, FileUtil.LineMods.LN_BREAK);
         replaceChar(path);
 
-        updateTardfileRegistry(tardis_id, name, coords);
+        updateTardfileRegistry(tardis_id, name, coords, false);
     }
 
     /**
@@ -165,7 +166,7 @@ public class Tardfile {
      * @param xyz
      * @author FelixEcker
      * */
-    public static void updateTardfileRegistry(int id, String owner, int[] xyz) {
+    public static void updateTardfileRegistry(int id, String owner, int[] xyz, boolean deleteEntry) {
         JsonObject tardfileIndex;
         File tardfileIndexFile = new File(DimensionManager.getCurrentSaveRootDirectory() + "/tardises/tardfileIndex.json"); // File Object for the Tardfile Index/Registry for writing
         try { // Parse the Tardfile Index/registry
@@ -187,6 +188,10 @@ public class Tardfile {
         // Updated the Entry in the Index
         tardfileIndex.remove(String.valueOf(id));
         tardfileIndex.add(String.valueOf(id), updateObject);
+
+        if (deleteEntry) {
+            tardfileIndex.remove(String.valueOf(id));
+        }
 
         // Delete old index
         if (tardfileIndexFile.exists() && tardfileIndexFile.canWrite()) {
@@ -247,14 +252,17 @@ public class Tardfile {
             	world.destroyBlock(tardisBlockPos, true); // Destroy the tardis
             }
 
+            System.out.println(getTardisIDFromTardfile(data));
+            System.out.println(user.getName());
+            updateTardfileRegistry(getTardisIDFromTardfile(data), user.getName(), new int[]{0,0,0}, true);
             path.delete(); // Delete the tardfile
             if (user != null) {
-            	user.sendMessage(new TextComponentString("Succesfully deleted your old TARDIS!"));
+            	user.sendMessage(new TextComponentString("§2Succesfully deleted your old TARDIS!"));
             }
         } catch (Exception e) {
             Reference.logger.warning("An Error occured whilst deleting tardis of player " + user.getName() + "!");
             if (user != null) {
-            	user.sendMessage(new TextComponentString("An error occured whilst deleting your TARDIS!"));
+            	user.sendMessage(new TextComponentString("§4An error occured whilst deleting your TARDIS!"));
             }
             e.printStackTrace();
             return;
@@ -430,24 +438,10 @@ public class Tardfile {
         return setCoords;
     }
 
-    public static int getTardisIDFromTardfile(JsonObject data) {
-        return data.get("tardis_id").getAsInt();
-    }
-
-    public static String getUUIDFromTardfile(JsonObject data) {
-        return data.get("uuid").getAsString();
-    }
-
-    public static int getDimensionFromTardfile(JsonObject data) {
-        return data.get("dimension").getAsInt();
-    }
-
-    public static int getSetDimensionFromTardfile(JsonObject data) {
-        return data.get("setDimension").getAsInt();
-    }
-    
-    public static boolean getFirstTimeLoadingTD(JsonObject data) {
-    	return data.get("firstTimeLoadingTD").getAsBoolean();
-    }
+    public static int getTardisIDFromTardfile(JsonObject data) { return data.get("tardis_id").getAsInt(); }
+    public static String getUUIDFromTardfile(JsonObject data) { return data.get("uuid").getAsString(); }
+    public static int getDimensionFromTardfile(JsonObject data) { return data.get("dimension").getAsInt(); }
+    public static int getSetDimensionFromTardfile(JsonObject data) { return data.get("setDimension").getAsInt(); }
+    public static boolean getFirstTimeLoadingTD(JsonObject data) { return data.get("firstTimeLoadingTD").getAsBoolean(); }
 
 }

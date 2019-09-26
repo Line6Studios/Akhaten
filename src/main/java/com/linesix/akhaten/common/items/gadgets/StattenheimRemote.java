@@ -99,7 +99,7 @@ public class StattenheimRemote extends ItemBase {
 							Tardfile.getTardisStateFromTardFile(tardfile)
 					);
 
-					Tardfile.updateTardfileRegistry(nbt.getInteger("ID"), player.getName(), new int[] {pos.up().getX(), pos.up().getY(), pos.up().getZ()});
+					Tardfile.updateTardfileRegistry(nbt.getInteger("ID"), player.getName(), new int[] {pos.up().getX(), pos.up().getY(), pos.up().getZ()}, false);
 				}
 			} catch (IOException e) {
 				e.printStackTrace();
