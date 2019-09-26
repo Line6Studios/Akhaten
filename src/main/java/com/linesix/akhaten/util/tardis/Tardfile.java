@@ -158,6 +158,13 @@ public class Tardfile {
         updateTardfileRegistry(tardis_id, name, coords);
     }
 
+    /**
+     * Used for updating the Tardfile Index/Registry
+     * @param id
+     * @param owner
+     * @param xyz
+     * @author FelixEcker
+     * */
     public static void updateTardfileRegistry(int id, String owner, int[] xyz) {
         JsonObject tardfileIndex;
         File tardfileIndexFile = new File(DimensionManager.getCurrentSaveRootDirectory() + "/tardises/tardfileIndex.json"); // File Object for the Tardfile Index/Registry for writing
@@ -295,8 +302,6 @@ public class Tardfile {
     	if (tardfileIndex.get("registeredTardises").getAsInt() < id) { // Check if the ID is valid
     		throw new IllegalArgumentException("The TARDIS ID cannot be bigger than the number of registered TARDISes!");
     	}
-    	//System.out.println(tardfileIndex.toString());
-    	System.out.println("--ID: " + id);
     	tardfileIndexObject = tardfileIndex.get(String.valueOf(id)).getAsJsonObject(); // Get the matching tardfileIndex entry
     	tardfile = parseTardfileByName(tardfileIndexObject.get("owner").getAsString()); // Parse the matching tardfile
     	

@@ -2,6 +2,7 @@ package com.linesix.akhaten.common.items.registries;
 
 import com.linesix.akhaten.common.Reference;
 import com.linesix.akhaten.common.items.gadgets.sonics.SecondDoctorSonic;
+import com.linesix.akhaten.common.items.gadgets.sonics.ThirdDoctorSonic;
 import com.linesix.akhaten.tabs.TabGadgets;
 import net.minecraft.client.renderer.block.model.ModelResourceLocation;
 import net.minecraft.creativetab.CreativeTabs;
@@ -39,6 +40,7 @@ public class Gadgets {
     public static VortexManipulator vortex_manipulator;
     public static StattenheimRemote stattenheim_remote;
     public static SecondDoctorSonic seconddoctor_sonic;
+    public static ThirdDoctorSonic thirddoctor_sonic;
     //End creation of Gadget-Item vars
 
     public static void init() {
@@ -46,6 +48,7 @@ public class Gadgets {
         vortex_manipulator = new VortexManipulator();
         stattenheim_remote = new StattenheimRemote();
         seconddoctor_sonic = new SecondDoctorSonic();
+        thirddoctor_sonic = new ThirdDoctorSonic();
         //testitem = new TestItem();
         // End Initialization of Gadget-Item-Variables
     }
@@ -57,7 +60,8 @@ public class Gadgets {
         items = new Item[] { // List all Items in here
                 vortex_manipulator,
                 stattenheim_remote,
-                seconddoctor_sonic
+                seconddoctor_sonic,
+                thirddoctor_sonic
         };
 
         for (final Item item : items) {

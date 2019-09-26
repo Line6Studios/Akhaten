@@ -9,7 +9,9 @@ Akhaten 0.6.1 -> LATEST:
         - TARDIS Console Interface
         - TARDIS Core connector
     - Universal Roundel Base added : Felix Eckert
-    - Second Doctor's Sonic Screwdriver added : Felix Eckert
+    - Sonic Screwdrivers added
+        - Second Doctor's sonic : Felix Eckert
+        - Third Doctor's sonic  : Felix Eckert
     - Bug Fixes
         - 1963 Roundel texture fixed : Felix Eckert
         - Rutile Ore now smelts : Felix Eckert

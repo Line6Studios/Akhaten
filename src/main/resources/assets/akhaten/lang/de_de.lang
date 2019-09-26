@@ -34,6 +34,7 @@ item.item.akhaten:aerotronic_capacitor.name=Aerotronischer-Kondensator
 item.item.akhaten:artron_capacitor.name=Artron-Kondensator
 item.item.akhaten:stattenheim_remote.name=Stattenheim-Fernbedinung
 item.item.akhaten:seconddoctor_sonic.name=Schallschraubenzieher des 2. Doktors
+item.item.akhaten:thirddoctor_sonic.name=Schallschraubenzieher des 3. Doktors
 
 # Tabs
 itemGroup.akhaten_dimensional_blocks=Akhaten Dimensional Blocks
