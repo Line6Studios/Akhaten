@@ -48,14 +48,10 @@ public class DimBlocks {
     // End Creation of all Block-Variables
 
     public static void init() {
-        Reference.logger.info("Initializing dimensional-block-variables...");
-
         // Initialization of Block-Variables below
         gallifrey_stone = new GallifreyStone();
         gallifrey_grass = new GallifreyGrass();
         gallifrey_dirt = new GallifreyDirt();
-
-        Reference.logger.info("DONE!");
         // End Initialization of Block-Variables
     }
 

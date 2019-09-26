@@ -55,8 +55,6 @@ public class BuildingBlocks {
     // End Creation of all Block-Variables
 
     public static void init() {
-        Reference.logger.info("Initializing building-block-variables...");
-
         // Initialization of Block-Variables below
         block_roundel = new RoundelBase(Names.Machines.Tardis.Hartnell.hartnell_roundels);
         block_coralwire = new CoralWire();
@@ -65,8 +63,6 @@ public class BuildingBlocks {
         block_coralroundel_b = new RoundelBase(Names.Machines.Tardis.Coral.coral_roundel_b);
         block_coralroundel_c = new RoundelBase(Names.Machines.Tardis.Coral.coral_roundel_c);
         block_door = new Door();
-
-        Reference.logger.info("DONE!");
         // End Initialization of Block-Variables
     }
 

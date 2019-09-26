@@ -2,6 +2,7 @@ Akhaten Changelog, please add all changes made to this file and your Name,
 under the version you made them!
 
 Akhaten 0.6.1 -> LATEST:
+    - Added LogIn message : Felix Eckert
     - Added TARDIS Core Blocks (Currently NO Functionality) : Felix Eckert
         - TARDIS Core Beam
         - TARDIS Core Frame
