@@ -66,8 +66,8 @@ public class MachineTardis extends Block {
                 e.printStackTrace();
                 return false;
             }
-            if (playerTardfile == null) {
-                playerIn.sendMessage(new TextComponentString("This TARDIS refuses to let you in, are you sure that this TARDIS is yours?"));
+            if (!playerTardfile.get("user").getAsString().matches(playerIn.getName())) {
+                playerIn.sendMessage(new TextComponentString("§4This TARDIS belongs to §6"+playerTardfile.get("user").getAsString()));
                 return false;
             }
 
@@ -80,8 +80,6 @@ public class MachineTardis extends Block {
             
             worldIn.getMinecraftServer().getPlayerList().transferPlayerToDimension((EntityPlayerMP) playerIn,
             		DimensionTardis.ID_TARDIS, new AkhatenTeleporter(worldServer, intCoords[0]+0.5, intCoords[1], intCoords[2]+0.5)); // Teleporting
-            
-            System.out.println(intCoords);
             
             return true;
         }
@@ -118,12 +116,6 @@ public class MachineTardis extends Block {
                 worldIn.destroyBlock(pos, false);
             }
         }
-    }
-    
-    @Override
-    @SideOnly(Side.CLIENT)
-    public boolean shouldSideBeRendered(IBlockState blockState, IBlockAccess worldIn, BlockPos pos, EnumFacing side) {
-        return false;
     }
 
     @Override
