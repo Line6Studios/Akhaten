@@ -3,24 +3,28 @@
 # Version 2019.9
 # PVM 31.08.2019
 
-# Kuutiot [Tiles] [6-15]
+# Kuutiot [Tiles] [6-20]
 tile.akhaten:gallifrey_stone.name=Gallifreyin Kivi
 tile.akhaten:gallifrey_grass.name=Gallifreyin Ruoho
 tile.akhaten:gallifrey_dirt.name=Gallifreyin Multa
+tile.akhaten:silicon_ore.name=Pii-malmi
+tile.akhaten:rutile_ore.name=Rutiilimalmi
 tile.akhaten:tardis_door.name=TARDIS Ovi
 tile.akhaten:block_roundel.name=1963 Ympyrä
+# TODO How to translate?
 tile.akhaten:block_coralwire.name=Coralwire
+
 tile.akhaten:block_coralwall.name=Koralliseinä
 tile.akhaten:block_coralroundel_a.name=Suuri Koralli Ympyrä
 tile.akhaten:block_coralroundel_b.name=Keski Koralli Ympyrä
 tile.akhaten:block_coralroundel_c.name=Pieni Koralli Ympyrä
 
-# Kuutiot [Machines] [18-20] 
+# Kuutiot [Machines] [22-25] 
 machine_tile.akhaten:machine_tardis.name=Aikamatka Kapseli
 machine_tile.akhaten:tardis_handbrake.name=TARDIS Seisontajarru
 machine_tile.akhaten:tardis_monitor.name=TARDIS Näyttö
 
-# Esinet [Items] [23-35]
+# Esinet [Items] [27-41]
 item.item.akhaten:vortex_manipulator.name=Vortex-manipulaattori
 item.item.akhaten:electronic_circuit.name=Elektroninen piiri
 item.item.akhaten:silicate_ingot.name=Pii harko
@@ -34,8 +38,9 @@ item.item.akhaten:aerotronic_capacitor.name=Aerotroninen kondensaattori
 item.item.akhaten:artron_capacitor.name=Artron-kondensaattori
 item.item.akhaten:stattenheim_remote.name=Suojakaukosäädin
 item.item.akhaten:seconddoctor_sonic.name=Toinen tohtorin ääni ruuvitaltta
+item.item.akhaten:thirddoctor_sonic.name=Kolmas tohtorin ääni ruuvitaltta
 
-# Välilehdet [Tabs] [38-42]
+# Välilehdet [Tabs] [43-48]
 itemGroup.akhaten_dimensional_blocks=Akhatenin ulottuvuuden kuutiot
 itemGroup.akhaten_gadgets=Akhatenin laiteet
 itemGroup.akhaten_machines=Akhaten Koneet
