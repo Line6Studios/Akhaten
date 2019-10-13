@@ -3,24 +3,28 @@
 # Версия 2019.8
 # Дата 31.08.2019
 
-# Блоки [Tiles] [6-15]
+# Блоки [Tiles] [6-20]
 tile.akhaten:gallifrey_stone.name=Галлифрейский камень
 tile.akhaten:gallifrey_grass.name=Галлифрейская трава
 tile.akhaten:gallifrey_dirt.name=Галлифрейская грязь
+tile.akhaten:silicon_ore.name=Кремниевая руда
+tile.akhaten:rutile_ore.name=Рутиловая руда
 tile.akhaten:tardis_door.name=Дверь 
 tile.akhaten:block_roundel.name=1963 Кружок
+# TODO How to translate?
 tile.akhaten:block_coralwire.name=Coralwire
+
 tile.akhaten:block_coralwall.name=Коралловая стена
 tile.akhaten:block_coralroundel_a.name=Большой Коралловый Круг
 tile.akhaten:block_coralroundel_b.name=Средний Коралловый Круг
 tile.akhaten:block_coralroundel_c.name=Маленький Коралловый Круг
 
-# Блоки [Machines] [18-20] 
-tile.akhaten:machine_tardis.name=Капсула путешествия во времени
-tile.akhaten:tardis_handbrake.name=Ручной тормоз TARDIS
-tile.akhaten:tardis_monitor.name=TARDIS Экран
+# Блоки [Machines] [22-25] 
+machine_tile.akhaten:machine_tardis.name=Капсула путешествия во времени
+machine_tile.akhaten:tardis_handbrake.name=Ручной тормоз TARDIS
+machine_tile.akhaten:tardis_monitor.name=TARDIS Экран
 
-# Предметы [Items] [23-35]
+# Предметы [Items] [27-41]
 item.item.akhaten:vortex_manipulator.name=Манипулятор временной воронки
 item.item.akhaten:electronic_circuit.name=Электронная схема
 item.item.akhaten:silicate_ingot.name=Силиконавый слиток
@@ -34,8 +38,9 @@ item.item.akhaten:aerotronic_capacitor.name=Аэротронный конден�
 item.item.akhaten:artron_capacitor.name=Artron-конденсатор
 item.item.akhaten:stattenheim_remote.name=Stattenheim Remote (Я фиг знает)
 item.item.akhaten:seconddoctor_sonic.name=2-я Докторская Звуковая Отвертка
+item.item.akhaten:thirddoctor_sonic.name=3-я Докторская Звуковая Отвертка
 
-# Разделы [Tabs] [38-42]
+# Разделы [Tabs] [43-48]
 itemGroup.akhaten_dimensional_blocks=Блоки измерения Akhaten:а
 itemGroup.akhaten_gadgets=Устройства Akhaten:а
 itemGroup.akhaten_machines=Машины Akhaten:а
