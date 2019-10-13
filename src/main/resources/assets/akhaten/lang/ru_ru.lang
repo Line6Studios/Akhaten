@@ -20,9 +20,9 @@ tile.akhaten:block_coralroundel_b.name=Средний Коралловый Кр�
 tile.akhaten:block_coralroundel_c.name=Маленький Коралловый Круг
 
 # Блоки [Machines] [22-25] 
-machine_tile.akhaten:machine_tardis.name=Капсула путешествия во времени
-machine_tile.akhaten:tardis_handbrake.name=Ручной тормоз TARDIS
-machine_tile.akhaten:tardis_monitor.name=TARDIS Экран
+tile.akhaten:machine_tardis.name=Капсула путешествия во времени
+tile.akhaten:tardis_handbrake.name=Ручной тормоз TARDIS
+tile.akhaten:tardis_monitor.name=TARDIS Экран
 
 # Предметы [Items] [27-41]
 item.item.akhaten:vortex_manipulator.name=Манипулятор временной воронки
