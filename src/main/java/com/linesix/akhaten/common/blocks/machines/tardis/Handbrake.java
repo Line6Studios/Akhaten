@@ -33,7 +33,7 @@ public class Handbrake extends Block {
     @Override
     public String getUnlocalizedName() {
 
-        return "machine_tile." + Reference.RESOURCE_PREFIX + Names.Machines.Tardis.handbrake;
+        return "tile." + Reference.RESOURCE_PREFIX + Names.Machines.Tardis.handbrake;
 
     }
 

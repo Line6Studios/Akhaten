@@ -16,9 +16,9 @@ tile.akhaten:block_coralroundel_b.name=Mittleres Coral Roundel
 tile.akhaten:block_coralroundel_c.name=Kleines Coral Roundel
 
 # Maschinen
-machine_tile.akhaten:machine_tardis.name=TT-Kapsel
-machine_tile.akhaten:tardis_handbrake.name=TARDIS Handbrake
-machine_tile.akhaten:tardis_monitor.name=TARDIS Monitor
+tile.akhaten:machine_tardis.name=TT-Kapsel
+tile.akhaten:tardis_handbrake.name=TARDIS Handbremse
+tile.akhaten:tardis_monitor.name=TARDIS Monitor
 
 # Items
 item.item.akhaten:vortex_manipulator.name=Vortex Manipulator

@@ -16,9 +16,9 @@ tile.akhaten:block_coralroundel_b.name=Keski Koralli Ympyrä
 tile.akhaten:block_coralroundel_c.name=Pieni Koralli Ympyrä
 
 # Kuutiot [Machines] [18-20] 
-machine_tile.akhaten:machine_tardis.name=Aikamatka Kapseli
-machine_tile.akhaten:tardis_handbrake.name=TARDIS Seisontajarru
-machine_tile.akhaten:tardis_monitor.name=TARDIS Näyttö
+tile.akhaten:machine_tardis.name=Aikamatka Kapseli
+tile.akhaten:tardis_handbrake.name=TARDIS Seisontajarru
+tile.akhaten:tardis_monitor.name=TARDIS Näyttö
 
 # Esinet [Items] [23-35]
 item.item.akhaten:vortex_manipulator.name=Vortex-manipulaattori
