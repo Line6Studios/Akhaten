@@ -22,6 +22,7 @@ import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.text.TextComponentString;
 import net.minecraft.world.World;
 import net.minecraftforge.common.DimensionManager;
+import org.lwjgl.Sys;
 import scala.Int;
 
 public class Tardfile {
@@ -351,11 +352,7 @@ public class Tardfile {
     		};
     		
     		if (xyz[0] == xyz2[0] && xyz[1] == xyz2[1] && xyz[2] == xyz2[2]) { // Check if the coordinates match
-    			if (owner.matches(user)) { // Check if the user matches
-    				return i+1;
-    			} else {
-    				return -1;
-    			}
+    		    return i+1;
     		}
     	}
     	return -2;
@@ -411,11 +408,54 @@ public class Tardfile {
                 "  'setZ':'" + setZ +  "',",
                 "  'setDimension':'" + setDimension + "',",
                 "  'firstTimeLoadingTD':'" + firstTimeLoadingTD+ "',",
+                "  'trustedPlayers':[],",
                 "  'installedModules':{}" + "\n}"
 
         };
 
         return template;
+    }
+
+    public static boolean addCompanionToTardfile(File file, String name) {
+        JsonObject data = null;
+        try {
+            data = FileUtil.parseJSON(file);
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+
+        JsonArray trusted = data.get("trustedPlayers").getAsJsonArray();
+        trusted.add(name);
+        data.remove("trustedPlayers");
+        data.add("trustedPlayers", trusted);
+        file.delete();
+        try {
+            FileUtil.writeFile(file, data.toString());
+        } catch (FileNotFoundException e) {
+            e.printStackTrace();
+        } catch (FileAlreadyExistsException e) {
+            e.printStackTrace();
+        }
+
+        return true;
+    }
+
+    public static boolean isCompanion(File file, String name) {
+        JsonObject data = null;
+        try {
+            data = FileUtil.parseJSON(file);
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+
+        JsonArray trusted = data.get("trustedPlayers").getAsJsonArray();
+        for (int i = 0 ; i <= trusted.size()-1; i++) {
+            if (trusted.get(i).getAsString().matches(name)) {
+                return true;
+            }
+        }
+
+        return false;
     }
 
     // Tardfile field getters below

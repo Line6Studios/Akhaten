@@ -61,7 +61,7 @@ public class MachineTardis extends Block {
             }
 
             // Check if the TARDIS belongs to the player, of if he's a companion, if not return.
-            if (!playerTardfile.get("user").getAsString().matches(playerIn.getName()) && !Tardfile.isCompanion(new File(DimensionManager.getCurrentSaveRootDirectory()+"/tardises/tardFile_"+playerTardfile.get("user").getAsString()), playerIn.getName())) {
+            if (!playerTardfile.get("user").getAsString().matches(playerIn.getName()) && !Tardfile.isCompanion(new File(DimensionManager.getCurrentSaveRootDirectory()+"/tardises/tardFile_"+playerTardfile.get("user").getAsString()+".json"), playerIn.getName())) {
                 playerIn.sendMessage(new TextComponentString("§4This TARDIS belongs to §6"+playerTardfile.get("user").getAsString()));
                 return false;
             }
