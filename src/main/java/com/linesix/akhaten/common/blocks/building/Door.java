@@ -1,7 +1,5 @@
 package com.linesix.akhaten.common.blocks.building;
 
-import java.io.IOException;
-
 import com.google.gson.JsonObject;
 import com.linesix.akhaten.common.Reference;
 import com.linesix.akhaten.common.blocks.Names;
@@ -36,22 +34,16 @@ public class Door extends Block {
     }
 
     @Override
-    public String getUnlocalizedName() {
-
-        return "tile." + Reference.RESOURCE_PREFIX + Names.Machines.Tardis.door;
-
-    }
+    public String getUnlocalizedName() { return "tile." + Reference.RESOURCE_PREFIX + Names.Machines.Tardis.door; }
 
     @Override
     public boolean onBlockActivated(World worldIn, BlockPos pos, IBlockState state, EntityPlayer playerIn, EnumHand hand, EnumFacing facing, float hitX, float hitY, float hitZ) {
-
         if(!worldIn.isRemote) { // If it's server side go on
-
         	JsonObject data;
         	data = Tardfile.parseTardfileByName(playerIn.getName());
         	
         	if (data == null) {
-        		playerIn.sendMessage(new TextComponentString("An error occured, if you're unable to exit the TARDIS, use a Vortex Manipulator!"));
+        		playerIn.sendMessage(new TextComponentString("§4An error occured, if you're unable to exit the TARDIS, use a Vortex Manipulator!"));
         		return true;
         	}
         	
@@ -67,15 +59,11 @@ public class Door extends Block {
                         Tardfile.getDimensionFromTardfile(data), new AkhatenTeleporter(dimension, coordinates[0], coordinates[1], coordinates[2])); // Teleport the player
 
             } else {
-
-                playerIn.sendMessage(new TextComponentString("You cannot leave your TARDIS while it is dematerialised!"));
-
+                playerIn.sendMessage(new TextComponentString("§4You cannot leave your TARDIS while it is dematerialised!"));
             }
-
         }
 
         return true;
-
     }
 
 }
