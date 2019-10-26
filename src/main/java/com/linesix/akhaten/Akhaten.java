@@ -13,10 +13,7 @@ import com.linesix.akhaten.proxy.CommonProxy;
 import com.linesix.akhaten.common.sound.SoundRegistry;
 import com.linesix.akhaten.common.worldgen.OreGen;
 import com.linesix.akhaten.common.Reference;
-import net.minecraft.util.text.ITextComponent;
-import net.minecraft.util.text.Style;
 import net.minecraft.util.text.TextComponentString;
-import net.minecraftforge.client.model.obj.OBJLoader;
 import net.minecraftforge.fml.common.Mod;
 import net.minecraftforge.fml.common.SidedProxy;
 import net.minecraftforge.fml.common.event.FMLInitializationEvent;
@@ -27,8 +24,6 @@ import net.minecraftforge.fml.common.eventhandler.SubscribeEvent;
 import net.minecraftforge.fml.common.gameevent.PlayerEvent;
 import net.minecraftforge.fml.common.registry.GameRegistry;
 
-import java.util.Iterator;
-import java.util.List;
 import java.util.Random;
 
 @Mod(modid = Reference.MODID, name = Reference.NAME, version = Reference.VERSION)

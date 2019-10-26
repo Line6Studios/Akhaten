@@ -16,6 +16,7 @@ import com.google.gson.JsonObject;
 import com.linesix.akhaten.common.Reference;
 import com.linesix.akhaten.util.FileUtil;
 
+import com.sun.org.apache.xml.internal.security.signature.ReferenceNotInitializedException;
 import net.minecraft.command.ICommandSender;
 import net.minecraft.entity.EntityLivingBase;
 import net.minecraft.util.math.BlockPos;
@@ -364,6 +365,74 @@ public class Tardfile {
             throw new IOException("The Tardfile Index doesn't exist! It was either deleted or the creation of it failed.\nSee https://line6studios.github.io/projects/akhaten/problems.html#fne-tardfileindex for help!");
         }
         return FileUtil.parseJSON(pathToRegistry);
+    }
+
+    /**
+     * Retrieve someones Tardis History
+     *
+     * @param name
+     */
+    public static JsonObject retrieveTardisHistory(String name) throws IOException {
+        File history = new File(DimensionManager.getCurrentSaveRootDirectory()+"/tardises/tardisHistory.json");
+        JsonObject historyJson = FileUtil.parseJSON(history);
+        if(!historyJson.has(name)) {
+            return null;
+        }
+
+        return historyJson.get(name).getAsJsonObject();
+    }
+
+    /**
+     * Get the Tardis History File
+     * */
+    public static JsonObject getTardisHistory() {
+        try {
+            return FileUtil.parseJSON(new File(DimensionManager.getCurrentSaveRootDirectory()+"/tardises/tardisHistory.json"));
+        } catch (IOException e) {
+            e.printStackTrace();
+            return null;
+        }
+    }
+
+    /**
+     * Update someones Tardis History
+     * @param user
+     * @param id
+     * */
+    public static void updateTardisHistory(String user, int id) throws IOException, NullPointerException {
+        File history = new File(DimensionManager.getCurrentSaveRootDirectory()+"/tardises/tardisHistory.json"); // Path to the History
+        JsonObject historyJson;
+        JsonObject playerHistory = null;
+        JsonArray past;
+
+        com.sun.org.apache.xml.internal.security.Init.init();
+
+        if (!history.exists()) {
+            FileUtil.writeFile(history,"{\n}");
+        }
+
+        historyJson = FileUtil.parseJSON(history);
+        if (!historyJson.has(user)) {
+            historyJson.add(user, new Gson().fromJson("{'latest':0,\n  'past':[]\n}", JsonObject.class));
+        }
+
+        playerHistory = historyJson.get(user).getAsJsonObject();
+        past = playerHistory.get("past").getAsJsonArray();
+        playerHistory.remove("latest");
+        playerHistory.add("latest", new Gson().fromJson(String.valueOf(id), JsonElement.class));
+
+        past.add(id);
+        playerHistory.remove("past");
+        playerHistory.add("past", new Gson().fromJson(past.toString(), JsonArray.class));
+
+        if (playerHistory == null) {
+            throw new NullPointerException("An errror occured whilst updating the Tardis History of player "+user);
+        }
+
+        historyJson.remove(user);
+        historyJson.add(user, new Gson().fromJson(playerHistory.toString(), JsonObject.class));
+        history.delete();
+        FileUtil.writeFile(history, historyJson.toString());
     }
 
     /**
